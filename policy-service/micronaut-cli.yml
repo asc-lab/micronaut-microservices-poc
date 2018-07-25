@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: pl.altkom.asc.lab
+---
+testFramework: spock
+sourceLanguage: java

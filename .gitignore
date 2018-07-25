@@ -1,0 +1,37 @@
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+
+**/dist/
+**/node_modules/
+**/npm-debug.log*
+**/yarn-error.log*
+
+# IDEs
+**/.idea/
+**/jsconfig.json
+**/.vscode/
+
+# Typings file.
+**/typings/
+
+# Misc
+**/tmp/
+
+# Mac OSX Finder files.
+**/.DS_Store
+.DS_Store
