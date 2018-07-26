@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: pl.altkom.asc.lab
+defaultPackage: pl.altkom.asc.lab.micronaut.poc.payment
 ---
 testFramework: spock
 sourceLanguage: java

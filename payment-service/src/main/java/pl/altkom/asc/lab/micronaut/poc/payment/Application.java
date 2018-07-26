@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab;
+package pl.altkom.asc.lab.micronaut.poc.payment;
 
 import io.micronaut.runtime.Micronaut;
 

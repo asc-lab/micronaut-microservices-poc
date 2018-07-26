@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>pl.altkom.asc.lab</groupId>
+    <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>payment-service</artifactId>
     <version>0.1</version>
+
     <properties>
-        <exec.mainClass>pl.altkom.asc.lab.Application</exec.mainClass>
+        <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.payment.Application</exec.mainClass>
         <micronaut.version>1.0.0.M3</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
+
     <repositories>
         <repository>
             <id>jcenter.bintray.com</id>
             <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -27,6 +31,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>io.micronaut</groupId>
@@ -53,6 +58,14 @@
             <artifactId>inject-java</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -83,6 +96,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -137,6 +151,11 @@
                             <arg>-parameters</arg>
                         </compilerArgs>
                         <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>1.18.0</version>
+                            </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>inject-java</artifactId>

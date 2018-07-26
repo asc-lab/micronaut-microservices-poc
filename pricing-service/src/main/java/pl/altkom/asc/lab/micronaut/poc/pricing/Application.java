@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab;
+package pl.altkom.asc.lab.micronaut.poc.pricing;
 
 import io.micronaut.runtime.Micronaut;
 
