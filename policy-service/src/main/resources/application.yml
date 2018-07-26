@@ -1,7 +1,29 @@
 micronaut:
     application:
         name: policy-service
-                
-#Uncomment to set server port
-#    server:
-#        port: 8080
+---
+datasources.default: {}
+---
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    #pooled: true
+    #jmxExport: true
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+---
+jackson:
+  serialization:
+    failOnEmptyBeans: false
+    writeDatesAsTimestamps: false
+---
+kafka:
+  bootstrap:
+    servers: localhost:9092

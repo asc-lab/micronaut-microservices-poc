@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: pl.altkom.asc.lab
+defaultPackage: pl.altkom.asc.lab.micronaut.poc.policy
 ---
-testFramework: spock
+testFramework: junit
 sourceLanguage: java

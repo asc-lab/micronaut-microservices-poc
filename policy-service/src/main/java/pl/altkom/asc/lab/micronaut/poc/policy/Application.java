@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab;
+package pl.altkom.asc.lab.micronaut.poc.policy;
 
 import io.micronaut.runtime.Micronaut;
 
