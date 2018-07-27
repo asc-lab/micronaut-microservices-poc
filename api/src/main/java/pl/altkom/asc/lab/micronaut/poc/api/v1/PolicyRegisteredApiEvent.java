@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PolicyDto {
-    private String policyNumber;
+public class PolicyRegisteredApiEvent {
+
+    private PolicyDto policy;
 }
