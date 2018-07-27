@@ -39,3 +39,39 @@ http://localhost:9411/zipkin/
 ```
 http://localhost:9000/
 ```
+
+## Examples
+
+Example JSON for `/policies` POST:
+```
+{
+	"policyVersion": {
+		"policyNumber": "P1",
+		"productCode": "ABO_GOLD",
+		"policyHolder": {
+			"firstName": "Jan",
+			"lastName": "Bak",
+			"pesel": "11111111116"
+		},
+		"accountNumber": "901291092012910",
+		"versionNumber": 1,
+		"covers": [{
+				"code": "C1",
+				"services": [{
+						"code": "S1",
+						"coPayment": {
+							"percent": 10,
+							"amount": null
+						},
+						"limit": {
+							"periodTypeCode": "POLICY_YEAR",
+							"maxQuantity": 10,
+							"maxAmount": null
+						}
+					}
+				]
+			}
+		]
+	}
+}
+```
