@@ -18,6 +18,11 @@
             </compilerArgs>
             <annotationProcessorPaths>
               <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.0</version>
+              </path>
+              <path>
                 <groupId>io.micronaut</groupId>
                 <artifactId>inject-java</artifactId>
                 <version>${micronaut.version}</version>
@@ -79,6 +84,12 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.spockframework</groupId>
       <artifactId>spock-core</artifactId>
       <version>1.1-groovy-2.4</version>
@@ -128,7 +139,7 @@
   </dependencyManagement>
   <properties>
     <jdk.version>1.8</jdk.version>
-    <exec.mainClass>Application</exec.mainClass>
+    <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.payment.Application</exec.mainClass>
     <micronaut.version>1.0.0.M3</micronaut.version>
   </properties>
 </project>

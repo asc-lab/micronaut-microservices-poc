@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.policy.shared.optional;
+package pl.altkom.asc.lab.micronaut.poc.payment.shared.optional;
 
 import java.util.Optional;
 import java.util.function.Consumer;

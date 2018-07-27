@@ -58,12 +58,15 @@
             <artifactId>inject-java</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
-            <scope>provided</scope>
+            <groupId>io.micronaut.configuration</groupId>
+            <artifactId>kafka</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>discovery-client</artifactId>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -94,6 +97,13 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -151,11 +161,6 @@
                             <arg>-parameters</arg>
                         </compilerArgs>
                         <annotationProcessorPaths>
-                            <path>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                                <version>1.18.0</version>
-                            </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>inject-java</artifactId>
