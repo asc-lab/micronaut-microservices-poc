@@ -17,7 +17,7 @@ public class PolicyRegisteredListener {
         this.policyAccountRepository = policyAccountRepository;
     }
 
-    @Topic("policy-registered")
+    @Topic("policy-registered-outside")
     void onPolicyRegistered(PolicyRegisteredApiEvent event) {
         Optional<PolicyAccount> accountOpt = policyAccountRepository.findForPolicy(event.getPolicy().getPolicyNumber());
 

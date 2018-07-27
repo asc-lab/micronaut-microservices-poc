@@ -22,7 +22,7 @@ jpa:
 jackson:
   serialization:
     failOnEmptyBeans: false
-    writeDatesAsTimestamps: false
+    writeDatesAsTimestamps: true
 ---
 kafka:
   bootstrap:
