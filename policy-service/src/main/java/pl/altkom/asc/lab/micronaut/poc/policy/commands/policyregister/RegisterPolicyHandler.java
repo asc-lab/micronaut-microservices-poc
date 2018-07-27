@@ -1,6 +1,9 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister;
 
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.api.v1.PolicyDto;
+import pl.altkom.asc.lab.micronaut.poc.api.v1.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.client.kafka.KafkaPolicyClient;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyFactory;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRegisteredEvent;
@@ -16,7 +19,7 @@ public class RegisterPolicyHandler implements CommandHandler<RegisterPolicyResul
 
     private final PolicyRepository policyRepository;
     private final PolicyFactory policyFactory = new PolicyFactory();
-    private final RegisterPolicyClient policyClient;
+    private final KafkaPolicyClient policyClient;
 
     @Override
     public RegisterPolicyResult handle(RegisterPolicyCommand cmd) {
@@ -28,6 +31,7 @@ public class RegisterPolicyHandler implements CommandHandler<RegisterPolicyResul
 
         policyRepository.save(policy);
         policyClient.policyRegisteredEvent(policy.getNumber(), new PolicyRegisteredEvent(policy));
+        policyClient.policyRegisteredOutsideEvent(policy.getNumber(), new PolicyRegisteredApiEvent(new PolicyDto(policy.getNumber())));
 
         return RegisterPolicyResult.success(policy);
     }

@@ -7,17 +7,17 @@ import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.annotations.Require
 import javax.inject.Singleton;
 import java.util.Optional;
 
-@RequiresJdbc
-@Singleton
-public class JdbcPolicyRepository implements PolicyRepository {
-
-    @Override
-    public Optional<Policy> findByNumber(String number) {
-        return Optional.empty();
-    }
-
-    @Override
-    public void save(Policy newPolicy) {
-
-    }
-}
+//@RequiresJdbc
+//@Singleton
+//public class JdbcPolicyRepository implements PolicyRepository {
+//
+//    @Override
+//    public Optional<Policy> findByNumber(String number) {
+//        return Optional.empty();
+//    }
+//
+//    @Override
+//    public void save(Policy newPolicy) {
+//
+//    }
+//}

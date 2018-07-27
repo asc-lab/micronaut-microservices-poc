@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Getter
 public class Quantity {
+
     private BigDecimal value;
 
     public static Quantity of(BigDecimal value) {

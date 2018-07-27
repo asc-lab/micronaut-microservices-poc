@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 
-public class PolicyBuilder {
+class PolicyBuilder {
 
     static Policy build() {
         return new Policy(1L,

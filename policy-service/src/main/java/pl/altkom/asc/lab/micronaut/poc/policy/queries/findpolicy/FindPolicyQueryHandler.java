@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 @Singleton
 @RequiredArgsConstructor
 public class FindPolicyQueryHandler implements QueryHandler<FindPolicyQueryResult, FindPolicyQuery> {
+
     private final PolicyViewRepository policyViewRepository;
 
     @Override

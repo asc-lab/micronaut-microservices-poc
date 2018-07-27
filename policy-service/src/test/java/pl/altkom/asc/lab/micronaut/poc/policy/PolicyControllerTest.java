@@ -1,5 +1,7 @@
 package pl.altkom.asc.lab.micronaut.poc.policy;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.runtime.server.EmbeddedServer;
 import org.junit.AfterClass;
@@ -8,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import pl.altkom.asc.lab.micronaut.poc.policy.client.PolicyClient;
 import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.RegisterPolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.RegisterPolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.queries.findpolicy.FindPolicyQueryResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.queries.findpolicy.dto.PolicyViewDto;
 
@@ -24,13 +27,6 @@ public class PolicyControllerTest {
         client = server.getApplicationContext().createBean(PolicyClient.class, server.getURL());
     }
 
-    @AfterClass
-    public static void cleanup() {
-        if (server != null) {
-            server.stop();
-        }
-    }
-
     @Test
     public void testPolicies() {
         FindPolicyQueryResult policies = client.policies();
@@ -43,16 +39,27 @@ public class PolicyControllerTest {
     public void testRegisterPolicy() {
         String policyNumber = "P1";
         RegisterPolicyCommand cmd = new RegisterPolicyCommand(PolicyBuilder.buildDto(policyNumber, 1L));
-        client.register(cmd);
+        printJson(cmd);
+        RegisterPolicyResult result = client.register(cmd);
 
-        FindPolicyQueryResult policies = client.policies();
-        Optional<PolicyViewDto> dto = policies.getPolicies()
-                .stream()
-                .filter(x -> x.getNumber().equals(policyNumber))
-                .findAny();
+        Assert.assertNotNull(result);
+        Assert.assertEquals(policyNumber, result.getPolicyNumber());
+    }
 
-        Assert.assertNotNull(dto);
-        Assert.assertTrue(dto.isPresent());
-        Assert.assertEquals(policyNumber, dto.get().getNumber());
+    private void printJson(RegisterPolicyCommand cmd) {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String json = mapper.writeValueAsString(cmd);
+            System.out.println(json);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @AfterClass
+    public static void cleanup() {
+        if (server != null)
+            server.stop();
+
     }
 }

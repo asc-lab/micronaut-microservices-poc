@@ -32,4 +32,8 @@ public class Policy {
     public PolicyVersionCollection versions() {
         return new PolicyVersionCollection(this, versions);
     }
+
+    public void close() {
+        //TODO implement close business logic (specification pattern example)
+    }
 }

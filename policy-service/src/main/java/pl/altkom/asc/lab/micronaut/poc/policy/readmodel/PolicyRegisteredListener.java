@@ -10,7 +10,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRegisteredEvent;
 
 @KafkaListener(offsetReset = OffsetReset.EARLIEST)
 @RequiredArgsConstructor
-public class PolicyReadModelListener {
+public class PolicyRegisteredListener {
 
     private final PolicyViewRepository policyViewRepository;
 
@@ -19,7 +19,7 @@ public class PolicyReadModelListener {
         saveMappedPolicy(event.getPolicy());
     }
 
-    @Topic("policy-closed")
+    //@Topic("policy-closed")
     void onPolicyClosed(PolicyClosedEvent event) {
         saveMappedPolicy(event.getPolicy());
     }

@@ -9,6 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PACKAGE, ElementType.TYPE})
 @Requires(beans = DataSource.class)
-@Requires(property = "datasource.url")
+@Requires(property = "datasources.default.url")
 public @interface RequiresJdbc {
 }

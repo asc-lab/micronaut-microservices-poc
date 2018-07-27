@@ -3,7 +3,6 @@ package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.mock;
 import io.micronaut.context.annotation.Replaces;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.jdbc.JdbcPolicyViewRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyViewRepository;
 
@@ -13,8 +12,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@Replaces(JdbcPolicyViewRepository.class)
-@Requires(env = Environment.TEST)
+//@Replaces(JdbcPolicyViewRepository.class)
+//@Requires(env = Environment.TEST)
 @Singleton
 public class MockPolicyViewRepository implements PolicyViewRepository {
 
