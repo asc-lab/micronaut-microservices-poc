@@ -1,14 +1,16 @@
 package pl.altkom.asc.lab.micronaut.poc.payment;
 
+import io.micronaut.configuration.hystrix.annotation.HystrixCommand;
 import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Get;
-import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccount;
+import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.PolicyAccountDto;
+import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.operations.PaymentOperations;
 import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccountRepository;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @Controller("/payment")
-public class PaymentController {
+public class PaymentController implements PaymentOperations {
 
     private final PolicyAccountRepository policyAccountRepository;
 
@@ -16,8 +18,11 @@ public class PaymentController {
         this.policyAccountRepository = policyAccountRepository;
     }
 
-    @Get("/accounts")
-    public Collection<PolicyAccount> accounts() {
-        return policyAccountRepository.findAll();
+    @Override
+    @HystrixCommand
+    public Collection<PolicyAccountDto> accounts() {
+        return policyAccountRepository.findAll().stream()
+                .map(x -> new PolicyAccountDto(x.getPolicyNumber(), x.getPolicyAccountNumber()))
+                .collect(Collectors.toList());
     }
 }

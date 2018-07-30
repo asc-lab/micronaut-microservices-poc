@@ -17,9 +17,9 @@ public class MockPolicyAccountRepository implements PolicyAccountRepository {
     private LinkedHashMap<String, PolicyAccount> init() {
         LinkedHashMap<String, PolicyAccount> map = new LinkedHashMap<>();
 
-        map.put("PA1", new PolicyAccount("POLICY_1"));
-        map.put("PA2", new PolicyAccount("POLICY_2"));
-        map.put("PA3", new PolicyAccount("POLICY_3"));
+        map.put("PA1", new PolicyAccount("POLICY_1", "231232132131"));
+        map.put("PA2", new PolicyAccount("POLICY_2", "389hfswjfrh2032r"));
+        map.put("PA3", new PolicyAccount("POLICY_3", "0rju130fhj20"));
 
         return map;
     }

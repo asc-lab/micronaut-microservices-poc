@@ -11,7 +11,10 @@ consul:
     registration:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
-
+---
+hystrix:
+  stream:
+    enabled: true
 ---
 #tracing:
 #  zipkin:

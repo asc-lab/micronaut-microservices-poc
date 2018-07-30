@@ -12,9 +12,12 @@ import java.util.Optional;
 public class PolicyRegisteredListener {
 
     private final PolicyAccountRepository policyAccountRepository;
+    private final PolicyAccountNumberGenerator policyAccountNumberGenerator;
 
-    public PolicyRegisteredListener(PolicyAccountRepository policyAccountRepository) {
+
+    public PolicyRegisteredListener(PolicyAccountRepository policyAccountRepository, PolicyAccountNumberGenerator policyAccountNumberGenerator) {
         this.policyAccountRepository = policyAccountRepository;
+        this.policyAccountNumberGenerator = policyAccountNumberGenerator;
     }
 
     @Topic("policy-registered-outside")
@@ -26,7 +29,7 @@ public class PolicyRegisteredListener {
     }
 
     private void createAccount(PolicyDto policy) {
-        policyAccountRepository.save(new PolicyAccount(policy.getPolicyNumber()));
+        policyAccountRepository.save(new PolicyAccount(policy.getPolicyNumber(), policyAccountNumberGenerator.generate()));
     }
 
 }
