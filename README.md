@@ -7,35 +7,30 @@ mn create-app pl.altkom.asc.lab.[SERVICE-NAME]-service -f spock -b maven
 
 This command generate project with Spock test and Maven as build tool.
 
-## Run selected services
+## Architecture
+
+## Prerequisites
 
 ### Consul
 ```
 docker run -p 8500:8500 consul
 ```
-### Zipkin
-```
-docker run -d -p 9411:9411 openzipkin/zipkin
-```
-### Kafka
-Go to [kafka-example](kafka-docker/README.md).
-
-### Mongo
-```
-docker run -d --name=dev-mongo -p 27017:27017 mongo
-```
-
-## Dashboards
-
-### Consul
+Open dashboard:
 ```
 http://localhost:8500
 ```
 ### Zipkin
 ```
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
+Open dashboard:
+```
 http://localhost:9411/zipkin/
 ```
+
 ### Kafka
+Go to [kafka-example](kafka-docker/README.md).
+Open dashboard:
 ```
 http://localhost:9000/
 ```
@@ -75,3 +70,8 @@ Example JSON for `/policies` POST:
 	}
 }
 ```
+
+## References
+* [Micronaut Workshop](https://alvarosanchez.github.io/micronaut-workshop/)
+* [Building microservices with Micronaut (Part I)](https://mfarache.github.io/mfarache/Building-microservices-Micronoaut/)
+* [Building microservices with Micronaut (Part II)](https://mfarache.github.io/mfarache/Traceability-microservices-Micronoaut/)
