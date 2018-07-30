@@ -1,5 +1,6 @@
 package asc.demo.infrastructure;
 
+import asc.demo.domain.DemoProductsFactory;
 import asc.demo.domain.Product;
 import asc.demo.domain.Products;
 import com.mongodb.reactivestreams.client.MongoClient;
@@ -9,6 +10,7 @@ import io.reactivex.Single;
 
 import javax.inject.Singleton;
 import java.util.List;
+
 
 @Singleton
 public class ProductsRepository implements Products {
