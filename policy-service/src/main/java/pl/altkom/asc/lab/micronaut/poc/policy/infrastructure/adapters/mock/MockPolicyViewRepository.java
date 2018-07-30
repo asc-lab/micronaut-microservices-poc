@@ -17,7 +17,7 @@ import java.util.Map;
 @Singleton
 public class MockPolicyViewRepository implements PolicyViewRepository {
 
-    Map<String, PolicyView> policyMap = init();
+    private Map<String, PolicyView> policyMap = init();
 
     private Map<String, PolicyView> init() {
         Map<String, PolicyView> map = new LinkedHashMap<>();

@@ -85,6 +85,17 @@
     <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.1.7.1" level="project" />
     <orderEntry type="library" name="Maven: io.micronaut:discovery-client:1.0.0.M3" level="project" />
     <orderEntry type="library" name="Maven: io.micronaut:validation:1.0.0.M3" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:tracing:1.0.0.M3" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing:opentracing-api:0.31.0" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing:opentracing-util:0.31.0" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing:opentracing-noop:0.31.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.zipkin.brave:brave-instrumentation-http:4.19.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.brave:brave:4.19.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: io.zipkin.reporter2:zipkin-reporter:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.zipkin2:zipkin:2.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.opentracing.brave:brave-opentracing:0.30.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.brave:brave-tests:4.19.0" level="project" />
+    <orderEntry type="library" name="Maven: org.assertj:assertj-core:3.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.4.197" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:25.0-jre" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />

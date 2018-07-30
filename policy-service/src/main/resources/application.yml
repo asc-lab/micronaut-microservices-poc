@@ -7,8 +7,6 @@ datasources.default: {}
 datasources:
   default:
     url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-    #pooled: true
-    #jmxExport: true
     driverClassName: org.h2.Driver
     username: sa
     password: ''
@@ -33,12 +31,11 @@ consul:
     registration:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
-
 ---
-#tracing:
-#  zipkin:
-#    enabled: true
-#    http:
-#      url: http://localhost:9411
-#      sampler:
-#        probability: 0.1
+tracing:
+  zipkin:
+    enabled: true
+    http:
+      url: http://localhost:9411
+      sampler:
+        probability: 1.0 # Configuration taking 100% of the request to be processed by Zipkin. In a real production system, that could be overwhelming.

@@ -84,6 +84,29 @@
             <artifactId>discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>tracing</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-instrumentation-http</artifactId>
+            <version>4.19.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter</artifactId>
+            <scope>runtime</scope>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing.brave</groupId>
+            <artifactId>brave-opentracing</artifactId>
+            <scope>compile</scope>
+            <version>0.30.0</version>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>

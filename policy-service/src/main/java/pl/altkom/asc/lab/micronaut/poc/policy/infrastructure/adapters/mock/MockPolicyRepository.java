@@ -17,7 +17,7 @@ import java.util.Optional;
 @Singleton
 public class MockPolicyRepository implements PolicyRepository {
 
-    Map<String, Policy> policyMap = init();
+    private Map<String, Policy> policyMap = init();
 
     private Map<String, Policy> init() {
         Map<String, Policy> map = new LinkedHashMap<>();
