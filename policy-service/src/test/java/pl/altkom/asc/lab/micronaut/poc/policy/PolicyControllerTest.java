@@ -30,6 +30,7 @@ public class PolicyControllerTest {
     @Test
     public void testPolicies() {
         FindPolicyQueryResult policies = client.policies();
+
         Assert.assertNotNull(policies);
         Assert.assertNotNull(policies.getPolicies());
         Assert.assertFalse(policies.getPolicies().isEmpty());
