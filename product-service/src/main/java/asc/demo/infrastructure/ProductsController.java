@@ -1,5 +1,6 @@
 package asc.demo.infrastructure;
 
+import asc.demo.domain.DemoProductsFactory;
 import asc.demo.domain.Product;
 import asc.demo.domain.Products;
 import io.micronaut.http.annotation.Controller;
@@ -17,5 +18,11 @@ public class ProductsController {
     @Get("/")
     public Single<List<Product>> getAll() {
         return products.findAll();
+    }
+
+
+    @Get("/add")
+    public Single<Product> addOne() {
+        return products.add(DemoProductsFactory.house());
     }
 }

@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @JsonTypeInfo(
@@ -18,8 +18,15 @@ import lombok.NoArgsConstructor;
         @JsonSubTypes.Type(value = DateQuestion.class, name = "date"),
         @JsonSubTypes.Type(value = NumericQuestion.class, name = "numeric")
 })
+@BsonDiscriminator
 public class Question {
     private String code;
     private int index;
     private String text;
+
+    public Question(String code, int index, String text) {
+        this.code = code;
+        this.index = index;
+        this.text = text;
+    }
 }

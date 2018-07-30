@@ -6,8 +6,6 @@ import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoCollection;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
-import lombok.RequiredArgsConstructor;
-import org.bson.codecs.configuration.CodecProvider;
 
 import javax.inject.Singleton;
 import java.util.List;
@@ -21,19 +19,18 @@ public class ProductsRepository implements Products {
     }
 
     @Override
-    public Single<Product> save(Product product) {
+    public Single<Product> add(Product product) {
         return Single.fromPublisher(getCollection().insertOne(product)).map(success -> product);
     }
 
     @Override
     public Single<List<Product>> findAll() {
         return Flowable.fromPublisher(getCollection().find()).toList();
-        //return Arrays.asList(DemoProductsFactory.travel(), DemoProductsFactory.house());
     }
 
     private MongoCollection<Product> getCollection() {
         return mongoClient
-                .getDatabase("products")
+                .getDatabase("products-demo")
                 .getCollection("product", Product.class);
     }
 }

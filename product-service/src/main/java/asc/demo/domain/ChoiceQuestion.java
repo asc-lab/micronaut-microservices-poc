@@ -2,6 +2,8 @@ package asc.demo.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.bson.codecs.pojo.annotations.BsonCreator;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +13,12 @@ import java.util.List;
 public class ChoiceQuestion extends Question {
     private List<Choice> choices;
 
-    public ChoiceQuestion(String code, int index, String text, List<Choice> choices) {
+    @BsonCreator
+    public ChoiceQuestion(
+            @BsonProperty("code") String code,
+            @BsonProperty("index") int index,
+            @BsonProperty("text") String text,
+            @BsonProperty("choices") List<Choice> choices) {
         super(code, index, text);
         this.choices = choices;
     }

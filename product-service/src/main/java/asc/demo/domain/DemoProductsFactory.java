@@ -11,7 +11,7 @@ public class DemoProductsFactory {
         p.addCover("C2", "Illness", "", false, new BigDecimal("5000"));
         p.addCover("C3", "Assistance", "", true, null);
 
-        p.setQuestions(Arrays.asList(
+        p.addQuestions(Arrays.asList(
                 new ChoiceQuestion("DESTINATION", 1, "Destination", Arrays.asList(
                         new Choice("EUR", "Europe"),
                         new Choice("WORLD", "World"),
@@ -31,7 +31,7 @@ public class DemoProductsFactory {
         p.addCover("C3", "Theft", "", false, new BigDecimal("50000"));
         p.addCover("C4", "Assistance", "", true, null);
 
-        p.setQuestions(Arrays.asList(
+        p.addQuestions(Arrays.asList(
                 new ChoiceQuestion("TYP", 1, "Apartment / House", Arrays.asList(
                         new Choice("APT", "Apartment"),
                         new Choice("HOUSE", "House")
@@ -51,7 +51,7 @@ public class DemoProductsFactory {
         p.addCover("C3", "Fire", "", false, new BigDecimal("50000"));
         p.addCover("C4", "Equipment", "", true, new BigDecimal("300000"));
 
-        p.setQuestions(Arrays.asList(
+        p.addQuestions(Arrays.asList(
                 new ChoiceQuestion("TYP", 1, "Cultivation type", Arrays.asList(
                         new Choice("ZB", "Crop"),
                         new Choice("KW", "Vegetable")
