@@ -1,0 +1,14 @@
+micronaut:
+    application:
+        name: product-service
+                
+#Uncomment to set server port
+#    server:
+#        port: 8080
+
+mongodb:
+    uri: mongodb://localhost:27017/products
+    cluster:
+      maxWaitQueueSize: 5
+    connectionPool:
+      maxSize: 20
