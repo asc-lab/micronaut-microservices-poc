@@ -7,7 +7,24 @@ mn create-app pl.altkom.asc.lab.[SERVICE-NAME]-service -f spock -b maven
 
 This command generate project with Spock test and Maven as build tool.
 
-## Architecture
+## Architecture overview
+
+* **api** - common DTOs, exceptions, events (share with a lot of module in system)
+* **gateway** - [Gateway pattern from EAA Catalog](https://martinfowler.com/eaaCatalog/gateway.html) implementation
+* **payment-service** - the main responsibility of this module is create account for new Policy and show policy accounts list
+* **payment-service-api** - DTOs, exceptions and operations (methods) for payment-service
+* **policy-service** - the main responsibility of this module is register new Policy, close Policy and show policies list
+* **pricing-service** - the main responsibility of this module is return price for selected services
+* **pricing-service-api** - DTOs, exceptions and operations (methods) for pricing-service
+
+## Policy microservice
+TODO
+
+## Payment microservice
+TODO
+
+## Pricing microservice
+TODO
 
 ## Prerequisites
 
