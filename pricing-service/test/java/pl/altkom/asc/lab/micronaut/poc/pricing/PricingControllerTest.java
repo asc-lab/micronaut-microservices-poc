@@ -6,7 +6,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.ServicePriceDto;
 
 public class PricingControllerTest {
 

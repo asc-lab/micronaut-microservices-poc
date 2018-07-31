@@ -1,11 +1,13 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1;
 
+import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.Post;
 
 import javax.validation.constraints.NotBlank;
 
 public interface PricingOperations {
 
-    @Get("/{serviceCode}")
-    ServicePriceDto getPriceForService(@NotBlank String serviceCode);
+    @Post("/calculate")
+    CalculatePriceResult calculatePrice(@Body @NotBlank CalculatePriceCommand calculatePriceCommand);
 }
