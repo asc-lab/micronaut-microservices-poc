@@ -5,9 +5,11 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public interface PricingOperations {
 
     @Post("/calculate")
-    CalculatePriceResult calculatePrice(@Body CalculatePriceCommand calculatePriceCommand);
+    CalculatePriceResult calculatePrice(@Body @NotNull CalculatePriceCommand cmd);
 }

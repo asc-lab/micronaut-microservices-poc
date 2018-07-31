@@ -11,15 +11,16 @@ import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceResu
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.PricingOperations;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Controller("/pricing")
 @Validated
 @RequiredArgsConstructor
-public class PricingController  {
+public class PricingController implements PricingOperations {
     private final CalculatePriceHandler calculatePriceHandler;
 
-    @Post("/calculate")
-    public CalculatePriceResult calculatePrice(@Body CalculatePriceCommand cmd) {
+    @Override
+    public CalculatePriceResult calculatePrice(CalculatePriceCommand cmd) {
         return calculatePriceHandler.handle(cmd);
     }
 }
