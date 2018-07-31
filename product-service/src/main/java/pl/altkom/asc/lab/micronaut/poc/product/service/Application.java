@@ -1,4 +1,4 @@
-package asc.demo;
+package pl.altkom.asc.lab.micronaut.poc.product.service;
 
 import io.micronaut.runtime.Micronaut;
 

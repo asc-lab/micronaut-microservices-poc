@@ -1,4 +1,4 @@
-package asc.demo.domain;
+package pl.altkom.asc.lab.micronaut.poc.product.service.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

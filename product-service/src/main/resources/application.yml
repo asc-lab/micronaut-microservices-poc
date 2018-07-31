@@ -1,14 +1,16 @@
 micronaut:
     application:
         name: product-service
-                
-#Uncomment to set server port
-    server:
-        port: 8080
-
+---
 mongodb:
     uri: mongodb://localhost:27017/products-demo
     cluster:
       maxWaitQueueSize: 5
     connectionPool:
       maxSize: 20
+---
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"

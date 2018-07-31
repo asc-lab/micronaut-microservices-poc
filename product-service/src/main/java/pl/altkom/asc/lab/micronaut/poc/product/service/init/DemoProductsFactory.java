@@ -1,10 +1,16 @@
-package asc.demo.domain;
+package pl.altkom.asc.lab.micronaut.poc.product.service.init;
+
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Choice;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.ChoiceQuestion;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.NumericQuestion;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class DemoProductsFactory {
-    public static Product travel(){
+
+    public static Product travel() {
         Product p = new Product("TRI", "Safe Traveller", "/static/tourist.jpg", "Travel insurance", 10);
 
         p.addCover("C1", "Luggage", "", false, new BigDecimal("5000"));
@@ -23,7 +29,7 @@ public class DemoProductsFactory {
         return p;
     }
 
-    public static Product house(){
+    public static Product house() {
         Product p = new Product("HSI", "Happy House", "/static/house2.jpg", "House insurance", 5);
 
         p.addCover("C1", "Fire", "", false, new BigDecimal("200000"));
@@ -43,7 +49,7 @@ public class DemoProductsFactory {
         return p;
     }
 
-    public static Product farm(){
+    public static Product farm() {
         Product p = new Product("FAI", "Happy farm", "/static/farm.jpg", "Farm insurance", 1);
 
         p.addCover("C1", "Crops", "", false, new BigDecimal("200000"));
@@ -63,7 +69,7 @@ public class DemoProductsFactory {
         return p;
     }
 
-    public static Product car(){
+    public static Product car() {
         Product p = new Product("CAR", "Happy Driver", "/static/car.jpg", "Car insurance", 1);
 
         return p;

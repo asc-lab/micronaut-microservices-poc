@@ -113,7 +113,7 @@
   </dependencyManagement>
   <properties>
     <jdk.version>1.8</jdk.version>
-    <exec.mainClass>asc.demo.Application</exec.mainClass>
+    <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.product.service.Application</exec.mainClass>
     <micronaut.version>1.0.0.M2</micronaut.version>
   </properties>
 </project>

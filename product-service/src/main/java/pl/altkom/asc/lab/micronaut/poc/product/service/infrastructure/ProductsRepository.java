@@ -1,8 +1,7 @@
-package asc.demo.infrastructure;
+package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure;
 
-import asc.demo.domain.DemoProductsFactory;
-import asc.demo.domain.Product;
-import asc.demo.domain.Products;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoCollection;
 import io.reactivex.Flowable;
@@ -14,6 +13,7 @@ import java.util.List;
 
 @Singleton
 public class ProductsRepository implements Products {
+
     private final MongoClient mongoClient;
 
     public ProductsRepository(MongoClient mongoClient) {
