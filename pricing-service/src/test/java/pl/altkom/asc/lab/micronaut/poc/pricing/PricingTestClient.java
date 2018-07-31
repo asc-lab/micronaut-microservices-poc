@@ -8,6 +8,6 @@ import javax.validation.constraints.NotBlank;
 @Client(id = "/pricing-service", path = "/pricing")
 public interface PricingTestClient extends PricingOperations {
 
-    @Override
-    ServicePriceDto getPriceForService(@NotBlank String serviceCode);
+   // @Override
+    //ServicePriceDto getPriceForService(@NotBlank String serviceCode);
 }

@@ -1,6 +1,8 @@
-package pl.altkom.asc.lab.micronaut.poc.pricing;
+package pl.altkom.asc.lab.micronaut.poc.pricing.intrastructure.adapters.web;
 
+import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Post;
 import io.micronaut.validation.Validated;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.pricing.commands.calculateprice.CalculatePriceHandler;
@@ -17,7 +19,8 @@ public class PricingController implements PricingOperations {
     private final CalculatePriceHandler calculatePriceHandler;
 
     @Override
-    public CalculatePriceResult calculatePrice(@NotBlank CalculatePriceCommand cmd) {
+    @Post("/calculate")
+    public CalculatePriceResult calculatePrice(@Body CalculatePriceCommand cmd) {
         return calculatePriceHandler.handle(cmd);
     }
 }

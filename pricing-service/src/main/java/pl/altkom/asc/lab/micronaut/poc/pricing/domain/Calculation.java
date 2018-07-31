@@ -42,7 +42,7 @@ public class Calculation {
 
 
     public void updateTotal() {
-        totalPremium = getCovers()
+        totalPremium = covers
                 .values()
                 .stream()
                 .filter(c -> c.getPrice()!=null)

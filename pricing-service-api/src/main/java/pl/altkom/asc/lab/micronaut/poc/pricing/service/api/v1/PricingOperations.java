@@ -9,5 +9,5 @@ import javax.validation.constraints.NotBlank;
 public interface PricingOperations {
 
     @Post("/calculate")
-    CalculatePriceResult calculatePrice(@Body @NotBlank CalculatePriceCommand calculatePriceCommand);
+    CalculatePriceResult calculatePrice(@Body CalculatePriceCommand calculatePriceCommand);
 }
