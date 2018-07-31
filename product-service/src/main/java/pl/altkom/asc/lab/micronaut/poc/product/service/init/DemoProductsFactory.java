@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class DemoProductsFactory {
 
     public static Product travel() {
-        Product p = new Product("TRI", "Safe Traveller", "/static/tourist.jpg", "Travel insurance", 10);
+        Product p = new Product("TRI", "Safe Traveller", "/static/travel.jpg", "Travel insurance", 10);
 
         p.addCover("C1", "Luggage", "", false, new BigDecimal("5000"));
         p.addCover("C2", "Illness", "", false, new BigDecimal("5000"));
@@ -30,7 +30,7 @@ public class DemoProductsFactory {
     }
 
     public static Product house() {
-        Product p = new Product("HSI", "Happy House", "/static/house2.jpg", "House insurance", 5);
+        Product p = new Product("HSI", "Happy House", "/static/house.jpg", "House insurance", 5);
 
         p.addCover("C1", "Fire", "", false, new BigDecimal("200000"));
         p.addCover("C2", "Flood", "", false, new BigDecimal("100000"));

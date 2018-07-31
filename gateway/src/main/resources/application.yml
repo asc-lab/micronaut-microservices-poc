@@ -2,12 +2,9 @@ micronaut:
     application:
         name: gateway
     server:
-        port: 8080
-    cors:
-        enabled: true
-        configurations:
-            web:
-                allowedMethods: ["POST", "GET"]
+        port: 8081
+        cors:
+            enabled: true
 ---
 consul:
   client:

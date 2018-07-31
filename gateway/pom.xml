@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>gateway</artifactId>
-    <version>0.1</version>
+    <version>1.0</version>
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.gateway.Application</exec.mainClass>
@@ -102,13 +102,19 @@
 
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>policy-service-api</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
             <artifactId>payment-service-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>product-service-api</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>

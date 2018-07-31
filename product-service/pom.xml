@@ -86,6 +86,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>product-service-api</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

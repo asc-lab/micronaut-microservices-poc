@@ -3,7 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.policy;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.HttpStatus;
-import pl.altkom.asc.lab.micronaut.poc.api.v1.ServiceInfo;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.Health;
 
 @Controller("/hello")
 public class HelloController {
@@ -14,7 +14,7 @@ public class HelloController {
     }
 
     @Get("/version")
-    public ServiceInfo version() {
-        return new ServiceInfo("1.0", "OK");
+    public Health version() {
+        return new Health("1.0", "OK");
     }
 }

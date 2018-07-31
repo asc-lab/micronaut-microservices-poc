@@ -152,7 +152,7 @@
 
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>policy-service-api</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>

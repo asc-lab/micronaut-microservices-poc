@@ -3,8 +3,8 @@ package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
-import pl.altkom.asc.lab.micronaut.poc.api.v1.PolicyDto;
-import pl.altkom.asc.lab.micronaut.poc.api.v1.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyRegisteredApiEvent;
 
 import java.util.Optional;
 
@@ -13,7 +13,6 @@ public class PolicyRegisteredListener {
 
     private final PolicyAccountRepository policyAccountRepository;
     private final PolicyAccountNumberGenerator policyAccountNumberGenerator;
-
 
     public PolicyRegisteredListener(PolicyAccountRepository policyAccountRepository, PolicyAccountNumberGenerator policyAccountNumberGenerator) {
         this.policyAccountRepository = policyAccountRepository;

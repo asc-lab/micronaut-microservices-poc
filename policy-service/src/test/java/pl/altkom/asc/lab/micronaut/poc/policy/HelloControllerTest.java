@@ -6,9 +6,8 @@ import io.micronaut.runtime.server.EmbeddedServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.altkom.asc.lab.micronaut.poc.api.v1.ServiceInfo;
 import pl.altkom.asc.lab.micronaut.poc.policy.client.HelloClient;
-
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.Health;
 
 import static org.junit.Assert.assertEquals;
 
@@ -37,8 +36,8 @@ public class HelloControllerTest {
 
     @Test
     public void testVersion() {
-        ServiceInfo actualInfo = client.version();
-        ServiceInfo expectedInfo = new ServiceInfo("1.0", "OK");
+        Health actualInfo = client.version();
+        Health expectedInfo = new Health("1.0", "OK");
 
         assertEquals(expectedInfo.toString(), actualInfo.toString());
         assertEquals(expectedInfo.getStatus(), actualInfo.getStatus());

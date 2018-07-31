@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 import java.util.Collection;
 
 @Singleton
-@Controller("/payment")
+@Controller("/api/payments")
 public class PaymentGatewayController {
 
     @Inject

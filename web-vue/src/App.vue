@@ -10,7 +10,9 @@
 
         <hr/>
 
-        <router-view/>
+        <div id="main-container">
+            <router-view/>
+        </div>
     </div>
 </template>
 
@@ -24,7 +26,7 @@
     }
 
     #nav {
-        padding: 30px;
+        padding: 10px 10px 0 10px;
     }
 
     #nav a {
@@ -34,5 +36,10 @@
 
     #nav a.router-link-exact-active {
         color: #42b983;
+    }
+
+    #main-container {
+        width: 80%;
+        margin: 0 auto;
     }
 </style>

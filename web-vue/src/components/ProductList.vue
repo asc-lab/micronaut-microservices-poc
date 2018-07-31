@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-sm-4" v-for="product in products">
+        <div class="col-sm-3" v-for="product in products" :key="product.code">
             <ProductCard :product="product"></ProductCard>
         </div>
     </div>
@@ -20,12 +20,8 @@
         },
         created: function () {
             HTTP.get('/api/products').then(response => {
-                    this.products = response.data;
-                },
-                () => {
-                    console.error('something went wrong when calling api')
-                }
-            );
+                this.products = response.data;
+            });
         }
     }
 </script>

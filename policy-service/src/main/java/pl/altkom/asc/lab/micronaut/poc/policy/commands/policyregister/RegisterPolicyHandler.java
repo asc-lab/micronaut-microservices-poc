@@ -1,14 +1,14 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister;
 
 import lombok.RequiredArgsConstructor;
-import pl.altkom.asc.lab.micronaut.poc.api.v1.PolicyDto;
-import pl.altkom.asc.lab.micronaut.poc.api.v1.PolicyRegisteredApiEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.client.kafka.KafkaPolicyClient;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyFactory;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRegisteredEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.CommandHandler;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyRegisteredApiEvent;
 
 import javax.inject.Singleton;
 import java.util.Optional;

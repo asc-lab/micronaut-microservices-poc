@@ -1,29 +1,29 @@
 package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure;
 
-import pl.altkom.asc.lab.micronaut.poc.product.service.init.DemoProductsFactory;
-import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
-import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
 import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Get;
 import io.reactivex.Single;
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductDto;
+import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductOperations;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
+import pl.altkom.asc.lab.micronaut.poc.product.service.init.DemoProductsFactory;
 
 import java.util.List;
 
-@Controller("/api/products")
+@Controller("/api/product")
 @RequiredArgsConstructor
-public class ProductsController {
+public class ProductsController implements ProductOperations {
 
     private final Products products;
 
-    @Get("/")
-    public Single<List<Product>> getAll() {
-        return products.findAll();
+    @Override
+    public Single<List<ProductDto>> getAll() {
+        return products.findAll().map(ProductsAssembler::map);
     }
 
 
-    @Get("/add")
-    public Single<Product> addOne() {
-        return products.add(DemoProductsFactory.house());
+    @Override
+    public Single<ProductDto> addOne() {
+        return products.add(DemoProductsFactory.house()).map(ProductsAssembler::map);
     }
 }

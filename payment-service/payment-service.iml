@@ -82,6 +82,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="module" module-name="payment-service-api" />
-    <orderEntry type="module" module-name="api" />
+    <orderEntry type="module" module-name="policy-service-api" />
   </component>
 </module>

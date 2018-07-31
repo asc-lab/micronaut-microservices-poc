@@ -16,7 +16,7 @@
 
             <div class="offset-sm-2 col-sm-10">
                 <form>
-                    <div v-for="(a,index) in answers" class="form-group row">
+                    <div v-for="a in answers" class="form-group row" :key="a.id">
                         <label class="col-sm-2 col-form-label">{{a.question.text}} </label>
 
                         <div class="col-sm-6" v-if="a.question.type==='numeric'">
@@ -25,7 +25,7 @@
 
                         <div class="col-sm-6" v-if="a.question.type==='choice'">
                             <select class="form-control" v-model="a.answer" :disabled="mode=='VIEW' ? true : false">
-                                <option v-for="option in a.question.choices" v-bind:value="option.code">
+                                <option v-for="option in a.question.choices" v-bind:value="option.code" :key="option.code">
                                     {{ option.label }}
                                 </option>
                             </select>
@@ -57,7 +57,9 @@
                         </div>
                         <div class="col-sm-4">
                             <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="backToEdit" role="button">Zmień parametry</a>
-                            <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="golist" role="button">Powrót</a>
+                            <router-link :to="{name: 'products'}">
+                                <b-button variant="primary">Powrót</b-button>
+                            </router-link>
                         </div>
                     </div>
 
@@ -70,21 +72,20 @@
 </template>
 
 <script>
+    import {HTTP} from "./http/ApiClient";
+
     export default {
         name: 'ProductDetails',
         props: ['product'],
-        reated: function () {
-
-        },
-        mounted: function () {
+        created: function () {
             console.log(this.product);
 
-            for (var i = 0; i < this.product.questions.length; i++) {
-                var answer = {answer: null, question: this.product.questions[i]};
-                this.answers.push(answer);
-            }
+            // for (var i = 0; i < this.product.questions.length; i++) {
+            //     var answer = {answer: null, question: this.product.questions[i]};
+            //     this.answers.push(answer);
+            // }
         },
-        data: function () {
+        data() {
             return {
                 answers: [],
                 mode: 'EDIT',
@@ -95,38 +96,31 @@
         },
         methods: {
             golist: function () {
-                router.push({name: 'products'});
+                //router.push({name: 'products'});
             },
             backToEdit: function () {
                 this.mode = 'EDIT';
             },
             calculatePrice: function () {
-                //create request and call api
-                var request = {
+                const request = {
                     'productCode': this.product.code,
                     'selectedCovers': [],
                     'answers': []
                 };
 
-                for (var i = 0; i < this.product.covers.length; i++) {
+                for (let i = 0; i < this.product.covers.length; i++) {
                     request.selectedCovers.push(this.product.covers[i].code);
                 }
 
-                for (var i = 0; i < this.answers.length; i++) {
-                    request.answers.push({'questionCode': this.answers[i].question.code, 'answer': this.answers[i].answer});
+                for (let j = 0; j < this.answers.length; j++) {
+                    request.answers.push({'questionCode': this.answers[j].question.code, 'answer': this.answers[j].answer});
                 }
 
-                //call api
-                this.$http.post('/api/price', request).then(
-                    response => {
-                        console.log(response.body);
-                        this.mode = 'VIEW';
-                        this.price.amountToPay = response.body.totalPremium;
-                    },
-                    response => {
-                        console.error('something went wrong when calling api')
-                    }
-                );
+                HTTP.post('/api/price', request).then(response => {
+                    console.log(response.data);
+                    this.mode = 'VIEW';
+                    this.price.amountToPay = response.data.totalPremium;
+                });
             }
         }
     }

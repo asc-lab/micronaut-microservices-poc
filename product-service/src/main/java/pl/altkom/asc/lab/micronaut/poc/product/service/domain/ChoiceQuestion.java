@@ -23,7 +23,7 @@ public class ChoiceQuestion extends Question {
         this.choices = choices;
     }
 
-    public static List<Choice> yesNoChoice(){
+    public static List<Choice> yesNoChoice() {
         return Arrays.asList(
                 new Choice("YES", "Yes"),
                 new Choice("NO", "No")

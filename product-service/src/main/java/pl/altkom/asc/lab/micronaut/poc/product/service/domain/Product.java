@@ -2,7 +2,6 @@ package pl.altkom.asc.lab.micronaut.poc.product.service.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -52,11 +51,11 @@ public class Product {
     }
 
     public void addCover(String code, String name, String description, boolean isOptional, BigDecimal sumInsured) {
-        covers.add(new Cover(code,name,description,isOptional, sumInsured));
+        covers.add(new Cover(code, name, description, isOptional, sumInsured));
     }
 
-    public void addQuestions(List<Question> questions){
-        if (this.questions==null) {
+    public void addQuestions(List<Question> questions) {
+        if (this.questions == null) {
             this.questions = new ArrayList<>();
         }
         this.questions.addAll(questions);
