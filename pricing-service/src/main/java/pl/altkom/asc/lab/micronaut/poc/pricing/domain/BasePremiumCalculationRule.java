@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.mvel2.MVEL;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 @NoArgsConstructor
 @Getter
@@ -20,7 +21,7 @@ public class BasePremiumCalculationRule {
     }
 
     public boolean applies(Calculation calculation){
-        return applyIfFormula!=null && !applyIfFormula.isEmpty() ? true : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
+        return applyIfFormula==null || applyIfFormula.isEmpty() ? true : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
     }
 
     public BigDecimal calculateBasePrice(Calculation calculation){

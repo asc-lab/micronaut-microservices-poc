@@ -15,7 +15,7 @@ public abstract class DiscountMarkupRule {
     protected BigDecimal paramValue;
 
     public boolean applies(Calculation calculation){
-        return applyIfFormula!=null & !applyIfFormula.isEmpty() ? true : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
+        return applyIfFormula==null || applyIfFormula.isEmpty() ? true : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
     }
 
     public abstract Calculation apply(Calculation calculation);

@@ -15,10 +15,9 @@ import javax.validation.constraints.NotBlank;
 @Controller("/pricing")
 @Validated
 @RequiredArgsConstructor
-public class PricingController implements PricingOperations {
+public class PricingController  {
     private final CalculatePriceHandler calculatePriceHandler;
 
-    @Override
     @Post("/calculate")
     public CalculatePriceResult calculatePrice(@Body CalculatePriceCommand cmd) {
         return calculatePriceHandler.handle(cmd);
