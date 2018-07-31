@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure;
+package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure.adapters.mongo;
 
 import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
 import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
