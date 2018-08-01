@@ -16,18 +16,9 @@ This command generate project with Spock test and Maven as build tool.
 * **policy-service-api** - the main responsibility of this module is register new Policy, close Policy and show policies list
 * **pricing-service** - the main responsibility of this module is return price for selected services
 * **pricing-service-api** - DTOs, exceptions and operations (methods) for pricing-service
-* **product-service** -
+* **product-service** - 
 * **product-service-api** -
 * **web-vue** -
-
-## Policy microservice
-TODO
-
-## Payment microservice
-TODO
-
-## Pricing microservice
-TODO
 
 ## Prerequisites
 
@@ -93,7 +84,7 @@ Example JSON for `/policies` POST:
 
 ## Tracing requests with Zipkin
 <p align="center">
-    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-poc/master/examples/images/zipkin.png" />
+    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-poc/master/readme-images/zipkin.png" />
 </p>
 
 ## References

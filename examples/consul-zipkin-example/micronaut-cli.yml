@@ -1,5 +1,0 @@
-profile: service
-defaultPackage: pl.altkom.asc.lab.micronaut.poc
----
-testFramework: junit
-sourceLanguage: java
