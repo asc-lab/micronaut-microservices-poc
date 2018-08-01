@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
-    <artifactId>gateway</artifactId>
+    <artifactId>agent-portal-gateway</artifactId>
     <version>1.0</version>
 
     <properties>
