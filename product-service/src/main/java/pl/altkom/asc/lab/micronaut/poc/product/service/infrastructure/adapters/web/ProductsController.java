@@ -10,7 +10,7 @@ import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
 
 import java.util.List;
 
-@Controller("/api/product")
+@Controller("/api/products")
 @RequiredArgsConstructor
 public class ProductsController implements ProductOperations {
 

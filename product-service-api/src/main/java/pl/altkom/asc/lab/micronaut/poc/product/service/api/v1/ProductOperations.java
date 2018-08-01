@@ -11,6 +11,6 @@ public interface ProductOperations {
     @Get("/")
     Single<List<ProductDto>> getAll();
 
-    @Get("/{productCode}/")
+    @Get("/{productCode}")
     Maybe<ProductDto> get(String productCode);
 }

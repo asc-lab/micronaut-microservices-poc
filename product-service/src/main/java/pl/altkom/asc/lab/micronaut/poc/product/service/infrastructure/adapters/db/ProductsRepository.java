@@ -24,17 +24,25 @@ public class ProductsRepository implements Products {
 
     @Override
     public Single<Product> add(Product product) {
-        return Single.fromPublisher(getCollection().insertOne(product)).map(success -> product);
+        return Single.fromPublisher(
+                getCollection().insertOne(product)
+        ).map(success -> product);
     }
 
     @Override
     public Single<List<Product>> findAll() {
-        return Flowable.fromPublisher(getCollection().find()).toList();
+        return Flowable.fromPublisher(
+                getCollection().find()
+        ).toList();
     }
 
     @Override
     public Maybe<Product> findOne(String productCode) {
-        return Flowable.fromPublisher(getCollection().find(Filters.eq("code", productCode))).firstElement();
+        return Flowable.fromPublisher(
+                getCollection()
+                        .find(Filters.eq("code", productCode))
+                        .limit(1)
+        ).firstElement();
     }
 
     private MongoCollection<Product> getCollection() {
