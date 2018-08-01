@@ -20,7 +20,7 @@ class DemoProductsFactory {
 
         p.addCover("C1", "Luggage", "", false, new BigDecimal("5000"));
         p.addCover("C2", "Illness", "", false, new BigDecimal("5000"));
-        p.addCover("C3", "Assistance", "", true, null);
+        p.addCover("C3", "Assistance", "", true, new BigDecimal("10000"));
 
         p.addQuestions(Arrays.asList(
                 new ChoiceQuestion("DESTINATION", 1, "Destination", Arrays.asList(

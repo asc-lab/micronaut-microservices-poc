@@ -34,9 +34,11 @@
 
                             <!-- displays price -->
                             <div class="form-group row" v-if="mode=='VIEW'">
-                                <label class="col-sm-2 col-form-label">Price</label>
-                                <div class="col-sm-6">
-                                    {{price.amountToPay}} PLN
+                                <label class="col-sm-3 col-form-label">Price</label>
+                                <div class="col-sm-9">
+                                    <span class="float-left">
+                                        <strong>{{price.amountToPay}} PLN</strong>
+                                    </span>
                                 </div>
                             </div>
                         </form>
@@ -46,8 +48,8 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 margin-top-10" v-if="mode === 'EDIT'">
-                <div class="d-flex flex-row-reverse">
+            <div class="col-sm-12 margin-top-10">
+                <div class="d-flex flex-row-reverse" v-if="mode === 'EDIT'">
                     <div class="p-2">
                         <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="calculatePrice">Calculate price</button>
                     </div>
@@ -57,7 +59,6 @@
                         </router-link>
                     </div>
                 </div>
-
                 <div class="d-flex flex-row-reverse" v-if="mode === 'VIEW'">
                     <div class="p-2">
                         <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="calculatePrice">Buy</button>
@@ -127,10 +128,10 @@
                     request.answers.push({'questionCode': this.answers[j].question.code, 'answer': this.answers[j].answer});
                 }
 
-                HTTP.post('/pricing/price', request).then(response => {
+                HTTP.post('pricing/price', request).then(response => {
                     console.log(response.data);
                     this.mode = 'VIEW';
-                    this.price.amountToPay = response.data.totalPremium;
+                    this.price.amountToPay = response.data.totalPrice;
                 });
             }
         }

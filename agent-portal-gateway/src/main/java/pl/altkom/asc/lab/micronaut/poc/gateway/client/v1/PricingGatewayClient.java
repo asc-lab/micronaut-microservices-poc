@@ -7,7 +7,7 @@ import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceResu
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.PricingOperations;
 
 @Client(id = "pricing-service", path = "/pricing")
-@Retryable(attempts = "5", delay = "2s")
+@Retryable(attempts = "2", delay = "2s")
 public interface PricingGatewayClient extends PricingOperations {
 
     @Override

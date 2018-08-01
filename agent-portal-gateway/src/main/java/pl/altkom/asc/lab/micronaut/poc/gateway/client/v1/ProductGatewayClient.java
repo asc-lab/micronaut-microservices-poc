@@ -7,7 +7,7 @@ import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductDto;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductOperations;
 
 @Client(id = "product-service", path = "/products")
-@Retryable(attempts = "5", delay = "2s")
+@Retryable(attempts = "2", delay = "2s")
 public interface ProductGatewayClient extends ProductOperations {
 
     @Override
