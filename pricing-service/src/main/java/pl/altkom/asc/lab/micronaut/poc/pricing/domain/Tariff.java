@@ -5,13 +5,22 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "tariff")
 @NoArgsConstructor
 @Getter
 public class Tariff {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "code")
     private String code;
+    @ElementCollection
+    @CollectionTable(name = "base_price_rules", joinColumns = @JoinColumn(name = "tariff_id"))
     private List<BasePremiumCalculationRule> basePriceCalculationRules;
+    @OneToMany(mappedBy = "tariff", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DiscountMarkupRule> discountMarkupRules;
 
     public Tariff(Long id, String code) {

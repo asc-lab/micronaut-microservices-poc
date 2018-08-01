@@ -1,7 +1,11 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.domain;
 
+import java.util.Optional;
+
 public interface Tariffs {
-    Tariff findByCode(String code);
+    Optional<Tariff> findByCode(String code);
+    
+    Tariff getByCode(String code);
 
     void add(Tariff tariff);
 }

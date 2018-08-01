@@ -1,5 +1,6 @@
-package pl.altkom.asc.lab.micronaut.poc.pricing.commands.calculateprice;
+package pl.altkom.asc.lab.micronaut.poc.pricing.commands;
 
+import io.micronaut.spring.tx.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Calculation;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariff;
@@ -15,8 +16,9 @@ import java.util.stream.Collectors;
 public class CalculatePriceHandler {
     private final Tariffs tariffs;
 
+    @Transactional(readOnly = true)
     public CalculatePriceResult handle(CalculatePriceCommand calculatePriceCommand) {
-        Tariff tariff = tariffs.findByCode(calculatePriceCommand.getProductCode());
+        Tariff tariff = tariffs.getByCode(calculatePriceCommand.getProductCode());
         Calculation calculation = tariff.calculatePrice(toCalculation(calculatePriceCommand));
         return resultFromCalculation(calculation);
     }

@@ -5,13 +5,17 @@ import lombok.NoArgsConstructor;
 import org.mvel2.MVEL;
 
 import java.math.BigDecimal;
-import java.util.Map;
+import javax.persistence.*;
 
+@Embeddable
 @NoArgsConstructor
 @Getter
 public class BasePremiumCalculationRule {
+    @Column(name = "cover_code")
     private String coverCode;
+    @Column(name = "apply_if_formula")
     private String applyIfFormula;
+    @Column(name = "price_formula")
     private String basePriceFormula;
 
     public BasePremiumCalculationRule(String coverCode, String applyIfFormula, String basePriceFormula) {

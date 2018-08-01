@@ -1,29 +1,43 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.intrastructure.adapters.db;
 
+import io.micronaut.spring.tx.annotation.Transactional;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariff;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariffs;
-import pl.altkom.asc.lab.micronaut.poc.pricing.init.DemoTariffsFactory;
 
 import javax.inject.Singleton;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Optional;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 @Singleton
 public class TariffsDb implements Tariffs {
-    private final Map<String, Tariff> inMemoDb = new ConcurrentHashMap<>();
+    private final SessionFactory sessionFactory;
 
-    public TariffsDb() {
-        inMemoDb.put("HSI", DemoTariffsFactory.house());
-        inMemoDb.put("TRI", DemoTariffsFactory.tourist());
+    public TariffsDb(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    @Transactional
+    @Override
+    public Optional<Tariff> findByCode(String code) {
+        return currentSession()
+                .createQuery("from Tariff t where t.code = :code", Tariff.class)
+                .setParameter("code", code)
+                .uniqueResultOptional();
     }
 
     @Override
-    public Tariff findByCode(String code) {
-        return inMemoDb.get(code);
+    public Tariff getByCode(String code) {
+        return findByCode(code).orElseThrow(() -> new RuntimeException("Tariff not found"));
     }
 
+    @Transactional
     @Override
     public void add(Tariff tariff) {
-        inMemoDb.put(tariff.getCode(), tariff);
+        currentSession().save(tariff);
+    }
+    
+    private Session currentSession() {
+        return sessionFactory.getCurrentSession();
     }
 }
