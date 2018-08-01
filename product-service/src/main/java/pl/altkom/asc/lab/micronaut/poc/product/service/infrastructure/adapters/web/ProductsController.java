@@ -1,12 +1,12 @@
-package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure;
+package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure.adapters.web;
 
 import io.micronaut.http.annotation.Controller;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductDto;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductOperations;
 import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
-import pl.altkom.asc.lab.micronaut.poc.product.service.init.DemoProductsFactory;
 
 import java.util.List;
 
@@ -21,9 +21,8 @@ public class ProductsController implements ProductOperations {
         return products.findAll().map(ProductsAssembler::map);
     }
 
-
     @Override
-    public Single<ProductDto> addOne() {
-        return products.add(DemoProductsFactory.house()).map(ProductsAssembler::map);
+    public Maybe<ProductDto> get(String productCode) {
+        return products.findOne(productCode).map(ProductsAssembler::map);
     }
 }

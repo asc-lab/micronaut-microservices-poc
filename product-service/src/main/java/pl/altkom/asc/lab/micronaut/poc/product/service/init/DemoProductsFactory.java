@@ -8,10 +8,15 @@ import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
-public class DemoProductsFactory {
+class DemoProductsFactory {
 
-    public static Product travel() {
-        Product p = new Product("TRI", "Safe Traveller", "/static/travel.jpg", "Travel insurance", 10);
+    static Product travel() {
+        Product p = new Product(
+                "TRI",
+                "Safe Traveller",
+                "/static/travel.jpg",
+                "Travel insurance",
+                10);
 
         p.addCover("C1", "Luggage", "", false, new BigDecimal("5000"));
         p.addCover("C2", "Illness", "", false, new BigDecimal("5000"));
@@ -29,8 +34,13 @@ public class DemoProductsFactory {
         return p;
     }
 
-    public static Product house() {
-        Product p = new Product("HSI", "Happy House", "/static/house.jpg", "House insurance", 5);
+    static Product house() {
+        Product p = new Product(
+                "HSI",
+                "Happy House",
+                "/static/house.jpg",
+                "House insurance",
+                5);
 
         p.addCover("C1", "Fire", "", false, new BigDecimal("200000"));
         p.addCover("C2", "Flood", "", false, new BigDecimal("100000"));
@@ -49,8 +59,13 @@ public class DemoProductsFactory {
         return p;
     }
 
-    public static Product farm() {
-        Product p = new Product("FAI", "Happy farm", "/static/farm.jpg", "Farm insurance", 1);
+    static Product farm() {
+        Product p = new Product(
+                "FAI",
+                "Happy farm",
+                "/static/farm.jpg",
+                "Farm insurance",
+                1);
 
         p.addCover("C1", "Crops", "", false, new BigDecimal("200000"));
         p.addCover("C2", "Flood", "", false, new BigDecimal("100000"));
@@ -69,9 +84,12 @@ public class DemoProductsFactory {
         return p;
     }
 
-    public static Product car() {
-        Product p = new Product("CAR", "Happy Driver", "/static/car.jpg", "Car insurance", 1);
-
-        return p;
+    static Product car() {
+        return new Product(
+                "CAR",
+                "Happy Driver",
+                "/static/car.jpg",
+                "Car insurance",
+                1);
     }
 }

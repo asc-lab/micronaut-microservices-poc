@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure;
+package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure.adapters.web;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

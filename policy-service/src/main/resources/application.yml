@@ -10,12 +10,16 @@ datasources:
     driverClassName: org.h2.Driver
     username: sa
     password: ''
+---
 jpa:
-  default:
+ default:
+    packages-to-scan:
+        - 'pl.altkom.asc.lab.micronaut.poc.policy.domain'
     properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
+        hibernate:
+            hbm2ddl:
+                auto: update
+            show_sql: true
 ---
 jackson:
   serialization:

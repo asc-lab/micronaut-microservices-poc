@@ -12,6 +12,7 @@
                 <p>Wprowadz dane potrzebne do obliczenia ceny.</p>
             </div>
         </div>
+
         <div class="row">
 
             <div class="offset-sm-2 col-sm-10">

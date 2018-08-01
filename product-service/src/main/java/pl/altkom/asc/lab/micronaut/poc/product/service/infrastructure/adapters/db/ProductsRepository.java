@@ -1,11 +1,13 @@
-package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure.adapters.mongo;
+package pl.altkom.asc.lab.micronaut.poc.product.service.infrastructure.adapters.db;
 
-import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
-import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
+import com.mongodb.client.model.Filters;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoCollection;
 import io.reactivex.Flowable;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
+import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
 
 import javax.inject.Singleton;
 import java.util.List;
@@ -28,6 +30,11 @@ public class ProductsRepository implements Products {
     @Override
     public Single<List<Product>> findAll() {
         return Flowable.fromPublisher(getCollection().find()).toList();
+    }
+
+    @Override
+    public Maybe<Product> findOne(String productCode) {
+        return Flowable.fromPublisher(getCollection().find(Filters.eq("code", productCode))).firstElement();
     }
 
     private MongoCollection<Product> getCollection() {
