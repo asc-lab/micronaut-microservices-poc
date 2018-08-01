@@ -3,23 +3,27 @@ package pl.altkom.asc.lab.micronaut.poc.pricing.domain;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.*;
 
 @Entity
 @Table(name = "tariff")
 @NoArgsConstructor
 @Getter
 public class Tariff {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "code")
     private String code;
+
     @ElementCollection
     @CollectionTable(name = "base_price_rules", joinColumns = @JoinColumn(name = "tariff_id"))
     private List<BasePremiumCalculationRule> basePriceCalculationRules;
+
     @OneToMany(mappedBy = "tariff", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DiscountMarkupRule> discountMarkupRules;
 
@@ -30,23 +34,34 @@ public class Tariff {
         this.discountMarkupRules = new ArrayList<>();
     }
 
-    public BasePremiumCalculationRuleList rules(){
+    public BasePremiumCalculationRuleList rules() {
         return new BasePremiumCalculationRuleList(basePriceCalculationRules);
     }
 
-    public DiscountMarkupRuleList discountMarkupRules(){
-        return new DiscountMarkupRuleList(this,discountMarkupRules);
+    public DiscountMarkupRuleList discountMarkupRules() {
+        return new DiscountMarkupRuleList(this, discountMarkupRules);
     }
 
-    public Calculation calculatePrice(Calculation calculation){
-        //calc base prices
-        for (Cover c : calculation.getCovers().values()){
-            c.setPrice(rules().calculateBasePriceFor(c, calculation));
-        }
-        //apply discounts
-        discountMarkupRules().apply(calculation);
-        //build response
-        calculation.updateTotal();
+    public Calculation calculatePrice(Calculation calculation) {
+        calcBasePrices(calculation);
+        applyDiscounts(calculation);
+        buildResponse(calculation);
+
         return calculation;
     }
+
+    private void calcBasePrices(Calculation calculation) {
+        for (Cover c : calculation.getCovers().values()) {
+            c.setPrice(rules().calculateBasePriceFor(c, calculation));
+        }
+    }
+
+    private void applyDiscounts(Calculation calculation) {
+        discountMarkupRules().apply(calculation);
+    }
+
+    private void buildResponse(Calculation calculation) {
+        calculation.updateTotal();
+    }
+
 }

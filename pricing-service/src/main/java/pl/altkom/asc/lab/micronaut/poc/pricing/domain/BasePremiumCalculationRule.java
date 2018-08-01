@@ -4,17 +4,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.mvel2.MVEL;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import java.math.BigDecimal;
-import javax.persistence.*;
 
 @Embeddable
 @NoArgsConstructor
 @Getter
 public class BasePremiumCalculationRule {
+
     @Column(name = "cover_code")
     private String coverCode;
+
     @Column(name = "apply_if_formula")
     private String applyIfFormula;
+
     @Column(name = "price_formula")
     private String basePriceFormula;
 
@@ -24,11 +28,13 @@ public class BasePremiumCalculationRule {
         this.basePriceFormula = basePriceFormula;
     }
 
-    public boolean applies(Calculation calculation){
-        return applyIfFormula==null || applyIfFormula.isEmpty() ? true : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
+    public boolean applies(Calculation calculation) {
+        return applyIfFormula == null || applyIfFormula.isEmpty()
+                ? true
+                : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
     }
 
-    public BigDecimal calculateBasePrice(Calculation calculation){
+    public BigDecimal calculateBasePrice(Calculation calculation) {
         return MVEL.eval(basePriceFormula, calculation.toMap(), BigDecimal.class);
     }
 }

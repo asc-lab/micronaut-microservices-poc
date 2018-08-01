@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class DiscountMarkupRuleList {
+
     private Tariff tariff;
     private List<DiscountMarkupRule> discountMarkupRules;
 

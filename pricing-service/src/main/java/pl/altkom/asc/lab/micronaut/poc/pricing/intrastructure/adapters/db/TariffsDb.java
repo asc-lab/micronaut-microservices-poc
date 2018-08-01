@@ -1,16 +1,17 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.intrastructure.adapters.db;
 
 import io.micronaut.spring.tx.annotation.Transactional;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariff;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariffs;
 
 import javax.inject.Singleton;
 import java.util.Optional;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 @Singleton
 public class TariffsDb implements Tariffs {
+
     private final SessionFactory sessionFactory;
 
     public TariffsDb(SessionFactory sessionFactory) {
@@ -36,7 +37,7 @@ public class TariffsDb implements Tariffs {
     public void add(Tariff tariff) {
         currentSession().save(tariff);
     }
-    
+
     private Session currentSession() {
         return sessionFactory.getCurrentSession();
     }

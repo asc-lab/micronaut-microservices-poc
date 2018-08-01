@@ -9,18 +9,19 @@ import java.util.Map;
 
 @Getter
 public class Calculation {
+
     private String productCode;
     private LocalDate policyFrom;
     private LocalDate policyTo;
     private BigDecimal totalPremium;
-    private Map<String,Cover> covers = new HashMap<>();
-    private Map<String,Object> subject = new HashMap<>();
+    private Map<String, Cover> covers = new HashMap<>();
+    private Map<String, Object> subject = new HashMap<>();
 
     public Calculation(String productCode,
                        LocalDate policyFrom,
                        LocalDate policyTo,
                        Iterable<String> selectedCovers,
-                       Map<String,Object> subject) {
+                       Map<String, Object> subject) {
         this.productCode = productCode;
         this.policyFrom = policyFrom;
         this.policyTo = policyTo;
@@ -29,15 +30,17 @@ public class Calculation {
         this.subject = subject;
     }
 
-    public Map<String,Object> toMap(){
-        Map<String,Object> ctx = new HashMap<>();
-        ctx.put("policyFrom", policyFrom);
-        ctx.put("policyTo", policyTo);
-        for (Cover c : covers.values()){
-            ctx.put(c.getCode(), c);
+    public Map<String, Object> toMap() {
+        Map<String, Object> context = new HashMap<>();
+
+        context.put("policyFrom", policyFrom);
+        context.put("policyTo", policyTo);
+        for (Cover c : covers.values()) {
+            context.put(c.getCode(), c);
         }
-        ctx.putAll(subject);
-        return ctx;
+        context.putAll(subject);
+
+        return context;
     }
 
 
@@ -45,12 +48,12 @@ public class Calculation {
         totalPremium = covers
                 .values()
                 .stream()
-                .filter(c -> c.getPrice()!=null)
-                .map(c -> c.getPrice())
+                .filter(c -> c.getPrice() != null)
+                .map(Cover::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    private void zeroPrice(String cover){
-        covers.put(cover, new Cover(cover,BigDecimal.ZERO));
+    private void zeroPrice(String cover) {
+        covers.put(cover, new Cover(cover, BigDecimal.ZERO));
     }
 }

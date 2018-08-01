@@ -12,6 +12,7 @@ import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.PricingOperations;
 @Validated
 @RequiredArgsConstructor
 public class PricingController implements PricingOperations {
+
     private final CalculatePriceHandler calculatePriceHandler;
 
     @Override

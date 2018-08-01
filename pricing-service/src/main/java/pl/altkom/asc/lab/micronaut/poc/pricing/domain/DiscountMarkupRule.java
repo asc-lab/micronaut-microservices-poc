@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.mvel2.MVEL;
 
-import java.math.BigDecimal;
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @DiscriminatorColumn(name = "type")
@@ -14,19 +14,25 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 public abstract class DiscountMarkupRule {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "tariff_id")
     protected Tariff tariff;
+
     @Column(name = "apply_if_formula")
     protected String applyIfFormula;
+
     @Column(name = "param_value")
     protected BigDecimal paramValue;
 
-    public boolean applies(Calculation calculation){
-        return applyIfFormula==null || applyIfFormula.isEmpty() ? true : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
+    public boolean applies(Calculation calculation) {
+        return applyIfFormula == null || applyIfFormula.isEmpty()
+                ? true
+                : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
     }
 
     public abstract Calculation apply(Calculation calculation);
