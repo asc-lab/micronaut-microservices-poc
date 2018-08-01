@@ -20,16 +20,17 @@ public class TariffTest {
                     "TRI", 
                     LocalDate.of(2017,4,16),
                     LocalDate.of(2017,4,20),
-                    Arrays.asList("C1", "C2"), 
+                    Arrays.asList("C1", "C2", "C3"), 
                     subject);
 
             Tariff tariff = TariffsFactory.tourist();
 
             calculation =tariff.calculatePrice(calculation);
             
-            assertEquals("Total premium should be 78", new BigDecimal("78.00"), calculation.getTotalPremium());
+            assertEquals("Total premium should be 78", new BigDecimal("98.00"), calculation.getTotalPremium());
             assertEquals("C1 premium should be 26", new BigDecimal("26.00"), calculation.getCovers().get("C1").getPrice());
             assertEquals("C2 should be 52", new BigDecimal("52.00"), calculation.getCovers().get("C2").getPrice());
+            assertEquals("C3 should be 20", new BigDecimal("20.00"), calculation.getCovers().get("C3").getPrice());
         }
         
         @Test
