@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ProductDetails product=product></ProductDetails>
+        <ProductDetails v-bind:productCode=productCode></ProductDetails>
     </div>
 </template>
 
@@ -12,7 +12,9 @@
         components: {
             ProductDetails
         },
-        props: ['product']
+        props: {
+            productCode: String
+        }
     }
 </script>
 

@@ -19,7 +19,7 @@
             };
         },
         created: function () {
-            HTTP.get('/api/products').then(response => {
+            HTTP.get('products').then(response => {
                 this.products = response.data;
             });
         }

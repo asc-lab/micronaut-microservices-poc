@@ -8,7 +8,7 @@
             {{product.description}}
             <CoverList :covers="product.covers"></CoverList>
         </p>
-        <router-link :to="{name: 'product', params: { productCode: product.code, product: product }}">
+        <router-link :to="{name: 'product', params: { productCode: product.code }}">
             <b-button variant="primary">Kup</b-button>
         </router-link>
     </b-card>

@@ -3,13 +3,13 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <img class="card-img-top" v-bind:src="product.image" alt="Card image cap">
+                <img class="card-img-top" v-bind:src="productDetails.image" v-bind:alt="productDetails.name">
             </div>
             <div class="col-sm-8">
-                <h1 class="display-3">{{product.name}}</h1>
-                <p class="lead">{{product.description}}.</p>
+                <h1 class="display-3">{{productDetails.name}}</h1>
+                <p class="lead">{{productDetails.description}}.</p>
                 <hr class="my-4">
-                <p>Wprowadz dane potrzebne do obliczenia ceny.</p>
+                <p>Wprowadź dane potrzebne do obliczenia ceny.</p>
             </div>
         </div>
 
@@ -21,7 +21,7 @@
                         <label class="col-sm-2 col-form-label">{{a.question.text}} </label>
 
                         <div class="col-sm-6" v-if="a.question.type==='numeric'">
-                            <input type="numeric" class="form-control" v-model.number="a.answer" :disabled="mode=='VIEW' ? true : false">
+                            <input type="number" class="form-control" v-model.number="a.answer" :disabled="mode=='VIEW' ? true : false">
                         </div>
 
                         <div class="col-sm-6" v-if="a.question.type==='choice'">
@@ -48,7 +48,7 @@
                             <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="calculatePrice">Oblicz cenę</button>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="golist" role="button">Powrót</a>
+                            <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="returnToList" role="button">Powrót</a>
                         </div>
                     </div>
 
@@ -77,26 +77,31 @@
 
     export default {
         name: 'ProductDetails',
-        props: ['product'],
-        created: function () {
-            console.log(this.product);
-
-            // for (var i = 0; i < this.product.questions.length; i++) {
-            //     var answer = {answer: null, question: this.product.questions[i]};
-            //     this.answers.push(answer);
-            // }
+        props: {
+            productCode: String
         },
         data() {
             return {
+                productDetails: {},
                 answers: [],
                 mode: 'EDIT',
                 price: {
                     amountToPay: null
                 }
-            };
+            }
+        },
+        created: function () {
+            console.log(this.productCode);
+            HTTP.get('products/' + this.productCode).then(response => {
+                this.productDetails = response.data;
+                // for (var i = 0; i < this.productDetails.questions.length; i++) {
+                //     var answer = {answer: null, question: this.productDetails.questions[i]};
+                //     this.answers.push(answer);
+                // }
+            });
         },
         methods: {
-            golist: function () {
+            returnToList: function () {
                 //router.push({name: 'products'});
             },
             backToEdit: function () {
@@ -104,20 +109,20 @@
             },
             calculatePrice: function () {
                 const request = {
-                    'productCode': this.product.code,
+                    'productCode': this.productDetails.code,
                     'selectedCovers': [],
                     'answers': []
                 };
 
-                for (let i = 0; i < this.product.covers.length; i++) {
-                    request.selectedCovers.push(this.product.covers[i].code);
+                for (let i = 0; i < this.productDetails.covers.length; i++) {
+                    request.selectedCovers.push(this.productDetails.covers[i].code);
                 }
 
                 for (let j = 0; j < this.answers.length; j++) {
                     request.answers.push({'questionCode': this.answers[j].question.code, 'answer': this.answers[j].answer});
                 }
 
-                HTTP.post('/api/price', request).then(response => {
+                HTTP.post('/price', request).then(response => {
                     console.log(response.data);
                     this.mode = 'VIEW';
                     this.price.amountToPay = response.data.totalPremium;
