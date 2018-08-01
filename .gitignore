@@ -1,8 +1,9 @@
+# Maven
 **/target/
 **/.mvn/**
 !.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
+# STS
 .apt_generated
 .classpath
 .factorypath
@@ -11,12 +12,13 @@
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+# IntelliJ IDEA
 **/.idea
 **/*.iws
 **/*.iml
 **/*.ipr
 
+# NPM
 **/dist/
 **/node_modules/
 **/npm-debug.log*
@@ -36,3 +38,6 @@
 # Mac OSX Finder files.
 **/.DS_Store
 .DS_Store
+
+# Micronaut
+**/dependency-reduced-pom.xml
