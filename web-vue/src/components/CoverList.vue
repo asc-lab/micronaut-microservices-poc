@@ -3,15 +3,15 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Ryzyko</th>
-            <th>Suma ubezp.</th>
+            <th>Risk</th>
+            <th>Sum insured</th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(cover,index) in covers">
+        <tr v-for="(cover,index) in covers" :key="cover.code">
             <th scope="row">{{index+1}}</th>
             <td>{{cover.name}}</td>
-            <td class="text-right">{{cover.sumInsured}} <span v-if="cover.sumInsured">PLN</span></td>
+            <td class="text-right">{{cover.sumInsured}} <span v-if="cover.sumInsured">EUR</span></td>
         </tr>
         </tbody>
     </table>

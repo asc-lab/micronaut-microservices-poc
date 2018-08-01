@@ -11,7 +11,6 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.List;
 
-@Singleton
 @Controller("/api/products")
 public class ProductGatewayController {
 

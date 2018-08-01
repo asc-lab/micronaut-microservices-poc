@@ -19,8 +19,8 @@ public class PercentMarkupRule extends DiscountMarkupRule {
 
     @Override
     public Calculation apply(Calculation calculation) {
-        for (Cover c : calculation.getCovers().values()) {
-            c.setPrice(c.getPrice()
+        for (Cover cover : calculation.getCovers().values()) {
+            cover.setPrice(cover.getPrice()
                     .multiply(paramValue)
                     .setScale(2, BigDecimal.ROUND_HALF_UP)
             );

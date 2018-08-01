@@ -9,7 +9,7 @@
             <CoverList :covers="product.covers"></CoverList>
         </p>
         <router-link :to="{name: 'product', params: { productCode: product.code }}">
-            <b-button variant="primary">Kup</b-button>
+            <b-button variant="primary">Buy</b-button>
         </router-link>
     </b-card>
 </template>
@@ -25,7 +25,7 @@
 </script>
 
 <style scoped lang="scss">
-    .logo {
+    .card-img-top {
         max-height: 230px;
     }
 </style>

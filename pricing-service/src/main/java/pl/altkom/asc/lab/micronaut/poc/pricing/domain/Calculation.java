@@ -35,8 +35,8 @@ public class Calculation {
 
         context.put("policyFrom", policyFrom);
         context.put("policyTo", policyTo);
-        for (Cover c : covers.values()) {
-            context.put(c.getCode(), c);
+        for (Cover cover : covers.values()) {
+            context.put(cover.getCode(), cover);
         }
         context.putAll(subject);
 

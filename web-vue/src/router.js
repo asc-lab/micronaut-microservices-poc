@@ -4,6 +4,13 @@ import Home from './views/HomeView.vue'
 
 Vue.use(Router);
 
+function loadView(view) {
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    return () => import(/* webpackChunkName: "view-[request]" */ `./views/${view}View.vue`)
+}
+
 export default new Router({
     routes: [
         {
@@ -14,21 +21,18 @@ export default new Router({
         {
             path: '/about',
             name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/AboutView.vue')
+            component: loadView('About')
         },
         {
             path: '/products',
             name: 'products',
-            component: () => import('./views/ProductsView.vue')
+            component: loadView('Products')
         },
         {
             path: '/products/:productCode',
             name: 'product',
             props: true,
-            component: () => import('./views/ProductDetailsView.vue')
+            component: loadView('ProductDetails')
         }
     ]
 })
