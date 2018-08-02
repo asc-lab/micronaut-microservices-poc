@@ -84,7 +84,7 @@ Example JSON for `/policies` POST:
 
 ## Tracing requests with Zipkin
 <p align="center">
-    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-poc/master/readme-images/zipkin.png" />
+    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/zipkin.png" />
 </p>
 
 ## References
