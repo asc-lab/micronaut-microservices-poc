@@ -24,17 +24,6 @@ public class PolicyVersionCollection {
                 .get(); //change to or else throw
     }
 
-    //TODO: remove public
-    public PolicyVersion validAtDate(LocalDate theDate) {
-        Optional<PolicyVersion> version = versions
-                .stream()
-                .sorted(Comparators.BY_VERSION_NUMBER_DESC)
-                .filter(v -> v.isValidAt(theDate))
-                .findFirst();
-
-        return version.orElseGet(this::lastVersion);
-    }
-
     PolicyVersion lastVersion() {
         return versions
                 .stream().min(Comparators.BY_VERSION_NUMBER_DESC)

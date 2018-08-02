@@ -132,6 +132,8 @@
                     console.log(response.data);
                     this.mode = 'VIEW';
                     this.price.amountToPay = response.data.totalPrice;
+                }, () => {
+                    alert('Bad Things Happened!');
                 });
             }
         }

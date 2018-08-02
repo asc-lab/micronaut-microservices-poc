@@ -10,6 +10,7 @@ import pl.altkom.asc.lab.micronaut.poc.pricing.intrastructure.adapters.db.Tariff
 @Singleton
 @RequiredArgsConstructor
 public class DataLoader implements ApplicationEventListener<ServerStartupEvent> {
+
     private final TariffsDb tariffsDb;
 
     @Transactional
@@ -20,7 +21,15 @@ public class DataLoader implements ApplicationEventListener<ServerStartupEvent> 
         }
         
         if (!tariffsDb.findByCode("TRI").isPresent()) {
-            tariffsDb.add(DemoTariffsFactory.tourist());
+            tariffsDb.add(DemoTariffsFactory.travel());
+        }
+
+        if (!tariffsDb.findByCode("FAI").isPresent()) {
+            tariffsDb.add(DemoTariffsFactory.farm());
+        }
+
+        if (!tariffsDb.findByCode("CAR").isPresent()) {
+            tariffsDb.add(DemoTariffsFactory.car());
         }
     }
 }

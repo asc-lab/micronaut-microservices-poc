@@ -2,17 +2,20 @@ package pl.altkom.asc.lab.micronaut.poc.pricing;
 
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.runtime.server.EmbeddedServer;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.Arrays;
 import org.junit.AfterClass;
-import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceCommand;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceResult;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.ChoiceQuestionAnswer;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.NumericQuestionAnswer;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class PricingControllerTest {
 
@@ -28,42 +31,42 @@ public class PricingControllerTest {
     @Test
     public void canCalculateTravelPolicyPrice() {
         CalculatePriceCommand cmd = new CalculatePriceCommand(
-                        "TRI",
-                        LocalDate.of(2017,4,16),
-                        LocalDate.of(2018,4,15),
-                        Arrays.asList("C1", "C2"),
-                        Arrays.asList(
-                                        new NumericQuestionAnswer("NUM_OF_ADULTS", new BigDecimal("1")),
-                                        new NumericQuestionAnswer("NUM_OF_CHILDREN", new BigDecimal("1")),
-                                        new ChoiceQuestionAnswer("DESTINATION", "EUR")
-                        )
+                "TRI",
+                LocalDate.of(2017, 4, 16),
+                LocalDate.of(2018, 4, 15),
+                Arrays.asList("C1", "C2"),
+                Arrays.asList(
+                        new NumericQuestionAnswer("NUM_OF_ADULTS", new BigDecimal("1")),
+                        new NumericQuestionAnswer("NUM_OF_CHILDREN", new BigDecimal("1")),
+                        new ChoiceQuestionAnswer("DESTINATION", "EUR")
+                )
         );
-        
+
         CalculatePriceResult result = client.calculatePrice(cmd);
-        
+
         assertNotNull(result);
         assertEquals("Total premium should be 78", new BigDecimal("78"), result.getTotalPrice());
         assertEquals("C1 premium should be 26", new BigDecimal("26"), result.getCoversPrices().get("C1"));
         assertEquals("C2 should be 52", new BigDecimal("52"), result.getCoversPrices().get("C2"));
     }
-    
+
     @Test
     public void canCalculateHousePolicyPrice() {
         CalculatePriceCommand cmd = new CalculatePriceCommand(
-                        "HSI",
-                        LocalDate.of(2017,4,16),
-                        LocalDate.of(2018,4,15),
-                        Arrays.asList("C1", "C2","C3"),
-                        Arrays.asList(
-                                        new NumericQuestionAnswer("AREA", new BigDecimal("95")),
-                                        new NumericQuestionAnswer("NUM_OF_CLAIM", new BigDecimal("1")),
-                                        new ChoiceQuestionAnswer("FLOOD", "NO"),
-                                        new ChoiceQuestionAnswer("TYP", "APT")
-                        )
+                "HSI",
+                LocalDate.of(2017, 4, 16),
+                LocalDate.of(2018, 4, 15),
+                Arrays.asList("C1", "C2", "C3"),
+                Arrays.asList(
+                        new NumericQuestionAnswer("AREA", new BigDecimal("95")),
+                        new NumericQuestionAnswer("NUM_OF_CLAIM", new BigDecimal("1")),
+                        new ChoiceQuestionAnswer("FLOOD", "NO"),
+                        new ChoiceQuestionAnswer("TYP", "APT")
+                )
         );
-        
+
         CalculatePriceResult result = client.calculatePrice(cmd);
-        
+
         assertNotNull(result);
         assertEquals("Total premium should be 172.50", new BigDecimal("172.50"), result.getTotalPrice());
         assertEquals("C1 premium should be 118.75", new BigDecimal("118.75"), result.getCoversPrices().get("C1"));

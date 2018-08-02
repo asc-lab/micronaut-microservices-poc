@@ -6,11 +6,12 @@ import java.math.BigDecimal;
 
 class DemoTariffsFactory {
 
-    static Tariff tourist() {
+    static Tariff travel() {
         Tariff t = new Tariff(1L, "TRI");
 
         t.rules().addBasePriceRule("C1", null, "(NUM_OF_ADULTS) * (DESTINATION == 'EUR' ? 26.00B : 34.00B)");
         t.rules().addBasePriceRule("C2", null, "(NUM_OF_ADULTS + NUM_OF_CHILDREN) * 26.00B");
+
         t.discountMarkupRules().addPercentMarkup("DESTINATION == 'WORLD'", new BigDecimal("1.50"));
 
         return t;
@@ -30,6 +31,26 @@ class DemoTariffsFactory {
 
         t.discountMarkupRules().addPercentMarkup("FLOOD == 'YES'", new BigDecimal("1.50"));
         t.discountMarkupRules().addPercentMarkup("NUM_OF_CLAIM > 1 ", new BigDecimal("1.25"));
+
+        return t;
+    }
+
+    static Tariff farm() {
+        Tariff t = new Tariff(3L, "FAI");
+
+        t.rules().addBasePriceRule("C1", null, "10B");
+        t.rules().addBasePriceRule("C2", null, "20B");
+        t.rules().addBasePriceRule("C3", null, "30B");
+        t.rules().addBasePriceRule("C4", null, "40B");
+
+        t.discountMarkupRules().addPercentMarkup("FLOOD == 'YES'", new BigDecimal("1.50"));
+        t.discountMarkupRules().addPercentMarkup("NUM_OF_CLAIM > 2", new BigDecimal("2.00"));
+
+        return t;
+    }
+
+    static Tariff car() {
+        Tariff t = new Tariff(4L, "CAR");
 
         return t;
     }
