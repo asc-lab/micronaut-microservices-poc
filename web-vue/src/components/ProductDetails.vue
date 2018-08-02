@@ -101,6 +101,9 @@
             HTTP.get('products/' + this.productCode).then(response => {
                 this.productDetails = response.data;
                 console.log(this.productDetails);
+                if(!this.productDetails.questions)
+                    return;
+
                 for (let i = 0; i < this.productDetails.questions.length; i++) {
                     this.answers.push({
                         answer: null,

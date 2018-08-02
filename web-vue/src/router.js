@@ -33,6 +33,11 @@ export default new Router({
             name: 'product',
             props: true,
             component: loadView('ProductDetails')
+        },
+        {
+            path: '/policies',
+            name: 'policies',
+            component: loadView('Policies')
         }
     ]
 })

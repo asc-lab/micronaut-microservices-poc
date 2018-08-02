@@ -5,6 +5,8 @@
             |
             <router-link to="/products">Products</router-link>
             |
+            <router-link to="/policies">Policies</router-link>
+            |
             <router-link to="/about">About</router-link>
         </div>
 
