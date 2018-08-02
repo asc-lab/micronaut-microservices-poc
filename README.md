@@ -40,7 +40,9 @@ http://localhost:9411/zipkin/
 ```
 
 ### Kafka
-Go to [kafka-example](kafka-docker/README.md).
+Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup-apache-kafka-in-docker-on-windows).
+Folder [kafka-docker] contains the script copied from the above instruction.
+
 Open dashboard:
 ```
 http://localhost:9000/
