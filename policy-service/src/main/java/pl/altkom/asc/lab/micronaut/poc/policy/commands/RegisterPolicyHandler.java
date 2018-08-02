@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister;
+package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.client.kafka.KafkaPolicyClient;
@@ -8,7 +8,9 @@ import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRegisteredEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyResult;
 
 import javax.inject.Singleton;
 import java.util.Optional;
@@ -33,7 +35,7 @@ public class RegisterPolicyHandler implements CommandHandler<RegisterPolicyResul
         policyClient.policyRegisteredEvent(policy.getNumber(), new PolicyRegisteredEvent(policy));
         policyClient.policyRegisteredOutsideEvent(policy.getNumber(), new PolicyRegisteredApiEvent(new PolicyDto(policy.getNumber())));
 
-        return RegisterPolicyResult.success(policy);
+        return RegisterPolicyResult.success(policy.getNumber());
     }
 
     private Policy createNewPolicyWithFirstVersion(RegisterPolicyCommand registerPolicyCommand) {

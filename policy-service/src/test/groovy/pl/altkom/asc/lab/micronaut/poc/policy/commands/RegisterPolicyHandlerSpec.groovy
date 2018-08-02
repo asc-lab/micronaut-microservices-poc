@@ -1,8 +1,8 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands
 
 import pl.altkom.asc.lab.micronaut.poc.policy.commands.builders.PolicyBuilder
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.RegisterPolicyCommand
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.RegisterPolicyHandler
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyCommand
+import pl.altkom.asc.lab.micronaut.poc.policy.commands.RegisterPolicyHandler
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository
 import pl.altkom.asc.lab.micronaut.poc.policy.shared.exceptions.BusinessException

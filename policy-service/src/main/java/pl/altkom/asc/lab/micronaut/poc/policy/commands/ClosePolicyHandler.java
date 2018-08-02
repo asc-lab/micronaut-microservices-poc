@@ -1,7 +1,9 @@
-package pl.altkom.asc.lab.micronaut.poc.policy.commands.policyclose;
+package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.client.kafka.KafkaPolicyClient;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.ClosePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.ClosePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyClosedEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
@@ -30,6 +32,6 @@ public class ClosePolicyHandler implements CommandHandler<ClosePolicyResult, Clo
         policyRepository.save(policy);
         policyClient.policyClosedEvent(policy.getNumber(), new PolicyClosedEvent(policy));
 
-        return ClosePolicyResult.success(policy);
+        return ClosePolicyResult.success(policy.getNumber());
     }
 }

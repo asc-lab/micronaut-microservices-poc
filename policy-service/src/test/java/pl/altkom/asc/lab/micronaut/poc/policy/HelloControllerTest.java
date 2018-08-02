@@ -6,7 +6,6 @@ import io.micronaut.runtime.server.EmbeddedServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.altkom.asc.lab.micronaut.poc.policy.client.HelloClient;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.Health;
 
 import static org.junit.Assert.assertEquals;
@@ -14,12 +13,12 @@ import static org.junit.Assert.assertEquals;
 public class HelloControllerTest {
 
     private static EmbeddedServer server;
-    private static HelloClient client;
+    private static HelloTestClient client;
 
     @BeforeClass
     public static void setup() {
         server = ApplicationContext.run(EmbeddedServer.class);
-        client = server.getApplicationContext().createBean(HelloClient.class, server.getURL());
+        client = server.getApplicationContext().createBean(HelloTestClient.class, server.getURL());
     }
 
     @AfterClass

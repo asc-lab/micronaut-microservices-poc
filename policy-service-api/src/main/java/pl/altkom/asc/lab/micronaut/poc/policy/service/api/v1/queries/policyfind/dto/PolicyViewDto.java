@@ -1,12 +1,9 @@
-package pl.altkom.asc.lab.micronaut.poc.policy.queries.findpolicy.dto;
+package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Getter
 @Setter

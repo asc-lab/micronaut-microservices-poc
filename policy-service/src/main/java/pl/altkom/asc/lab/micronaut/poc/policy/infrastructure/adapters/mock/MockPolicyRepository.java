@@ -5,6 +5,7 @@ import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.db.JdbcPolicyViewRepository;
 
 import javax.inject.Singleton;
 import java.util.HashSet;
@@ -12,8 +13,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 
-//@Replaces(JdbcPolicyViewRepository.class)
-//@Requires(env = Environment.TEST)
+@Replaces(JdbcPolicyViewRepository.class)
+@Requires(env = Environment.TEST)
 @Singleton
 public class MockPolicyRepository implements PolicyRepository {
 
@@ -35,7 +36,7 @@ public class MockPolicyRepository implements PolicyRepository {
     }
 
     @Override
-    public void save(Policy newPolicy) {
-        policyMap.put(newPolicy.getNumber(), newPolicy);
+    public void save(Policy policy) {
+        policyMap.put(policy.getNumber(), policy);
     }
 }

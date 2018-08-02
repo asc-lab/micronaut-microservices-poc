@@ -15,4 +15,9 @@ import java.util.Map;
 public class CalculatePriceResult {
     private BigDecimal totalPrice;
     private Map<String, BigDecimal> coversPrices;
+
+    public static CalculatePriceResult failure() {
+        //TODO implement failure result
+        return new CalculatePriceResult();
+    }
 }

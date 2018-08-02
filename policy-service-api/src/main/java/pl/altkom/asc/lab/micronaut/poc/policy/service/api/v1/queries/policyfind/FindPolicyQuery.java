@@ -1,7 +1,7 @@
-package pl.altkom.asc.lab.micronaut.poc.policy.queries.findpolicy;
+package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind;
 
 import lombok.*;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.Query;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.Query;
 
 @Getter
 @Setter

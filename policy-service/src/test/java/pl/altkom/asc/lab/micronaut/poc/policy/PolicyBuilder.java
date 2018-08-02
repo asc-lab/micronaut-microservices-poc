@@ -1,6 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy;
 
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.dto.*;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.*;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyVersion;

@@ -14,7 +14,7 @@ public abstract class Specification<T> {
 
     public void ensureIsSatisfiedBy(T objectToCheck) {
         if (!isSatisfiedBy(objectToCheck)) {
-            //checkNotNull(getErrorCode(), "Error Code is required. Use failure(code, params) method");
+            //checkNotNull(getErrorCode(), "Error Code is required. Use empty(code, params) method");
             throw new SpecificationNotSatisfiedException(getErrorCode(), getErrorParams());
         }
     }

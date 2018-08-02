@@ -1,6 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.dto.*;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.*;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.MonetaryAmount;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.Percent;

@@ -4,7 +4,7 @@ import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
 
 import java.util.Optional;
 

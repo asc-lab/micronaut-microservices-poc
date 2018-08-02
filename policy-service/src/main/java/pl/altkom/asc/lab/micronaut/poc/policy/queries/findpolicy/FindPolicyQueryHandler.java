@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyViewRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.QueryHandler;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQuery;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
 
 import javax.inject.Singleton;
 import java.util.List;

@@ -1,9 +1,9 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands.builders
 
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.dto.CoPaymentDto
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.dto.LimitDto
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.dto.PersonDto
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.dto.PolicyVersionDto
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.CoPaymentDto
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.LimitDto
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.PersonDto
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.PolicyVersionDto
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyVersion

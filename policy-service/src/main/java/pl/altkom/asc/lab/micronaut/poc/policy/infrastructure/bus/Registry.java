@@ -3,6 +3,8 @@ package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.core.reflect.GenericTypeUtils;
 import io.micronaut.inject.BeanDefinition;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.Command;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.Query;
 
 import javax.inject.Singleton;
 import java.util.Collection;

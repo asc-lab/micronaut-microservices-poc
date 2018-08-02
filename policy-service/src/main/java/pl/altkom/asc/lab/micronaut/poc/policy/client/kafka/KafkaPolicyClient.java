@@ -5,7 +5,7 @@ import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyClosedEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRegisteredEvent;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
 
 @KafkaClient
 public interface KafkaPolicyClient {
@@ -13,7 +13,7 @@ public interface KafkaPolicyClient {
     @Topic("policy-registered-outside")
     void policyRegisteredOutsideEvent(@KafkaKey String policyNumber, PolicyRegisteredApiEvent event);
 
-    @Topic("policy-registered")
+    @Topic("policy-registered-inside")
     void policyRegisteredEvent(@KafkaKey String policyNumber, PolicyRegisteredEvent event);
 
     @Topic("policy-closed")

@@ -1,6 +1,8 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus;
 
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.Command;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.Query;
 
 import javax.inject.Singleton;
 

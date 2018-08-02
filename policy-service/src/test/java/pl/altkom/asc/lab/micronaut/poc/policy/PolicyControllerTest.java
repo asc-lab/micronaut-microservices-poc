@@ -8,23 +8,19 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.altkom.asc.lab.micronaut.poc.policy.client.PolicyClient;
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.RegisterPolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.commands.policyregister.RegisterPolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.queries.findpolicy.FindPolicyQueryResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.queries.findpolicy.dto.PolicyViewDto;
-
-import java.util.Optional;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
 
 public class PolicyControllerTest {
 
     private static EmbeddedServer server;
-    private static PolicyClient client;
+    private static PolicyTestClient client;
 
     @BeforeClass
     public static void setup() {
         server = ApplicationContext.run(EmbeddedServer.class);
-        client = server.getApplicationContext().createBean(PolicyClient.class, server.getURL());
+        client = server.getApplicationContext().createBean(PolicyTestClient.class, server.getURL());
     }
 
     @Test
