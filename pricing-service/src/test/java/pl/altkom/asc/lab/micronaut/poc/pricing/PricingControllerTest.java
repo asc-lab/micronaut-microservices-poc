@@ -28,6 +28,11 @@ public class PricingControllerTest {
         client = server.getApplicationContext().createBean(PricingTestClient.class, server.getURL());
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void exceptionWhenCommandIsNull() {
+        client.calculatePrice(null);
+    }
+
     @Test
     public void canCalculateTravelPolicyPrice() {
         CalculatePriceCommand cmd = new CalculatePriceCommand(
