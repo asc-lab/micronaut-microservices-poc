@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.payment;
+package pl.altkom.asc.lab.micronaut.poc.payment.infrastructure.adapters.web;
 
 import io.micronaut.configuration.hystrix.annotation.HystrixCommand;
 import io.micronaut.http.annotation.Controller;

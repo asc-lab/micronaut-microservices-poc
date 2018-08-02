@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.policy;
+package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.web;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
