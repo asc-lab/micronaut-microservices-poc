@@ -1,6 +1,7 @@
 # ASCLAB Micronaut PoC
 
-This is an example of a very simple insurance system made in a microservice architecture using Micronaut.
+This is an example of a very simple insurance system made in a microservice architecture using Micronaut. 
+
 Available functionalities:
 * show products catalog
 * calculate price for product based on questions defined on product and tariff definition (with MVEL engine)
