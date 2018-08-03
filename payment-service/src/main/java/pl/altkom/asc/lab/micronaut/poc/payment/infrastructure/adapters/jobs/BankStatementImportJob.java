@@ -15,7 +15,7 @@ public class BankStatementImportJob {
     private final BankStatementImportJobCfg jobCfg;
     private final InPaymentRegistrationService inPaymentRegistrationService;
 
-    @Scheduled(cron = "8h")
+    @Scheduled(fixedRate = "8h")
     public void importBankStatement() {
        log.info("Starting bank statement import job");
        inPaymentRegistrationService.registerInPayments(jobCfg.getImportDir(), LocalDate.now());
