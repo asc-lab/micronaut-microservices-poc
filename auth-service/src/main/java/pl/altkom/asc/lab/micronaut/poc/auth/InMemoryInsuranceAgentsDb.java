@@ -12,7 +12,7 @@ public class InMemoryInsuranceAgentsDb implements InsuranceAgents {
 
     public InMemoryInsuranceAgentsDb() {
         db.put(1L, new InsuranceAgent("jimmy.solid","secret", Arrays.asList("TRI","HSI","FAI","CAR")));
-        db.put(1L, new InsuranceAgent("danny.solid","secret", Arrays.asList("TRI","HSI")));
+        db.put(2L, new InsuranceAgent("danny.solid","secret", Arrays.asList("TRI","HSI")));
     }
     
     @Override

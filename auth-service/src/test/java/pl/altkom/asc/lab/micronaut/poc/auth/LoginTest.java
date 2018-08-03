@@ -9,7 +9,7 @@ import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
-import junit.framework.Assert;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.fail;
 import org.junit.AfterClass;
