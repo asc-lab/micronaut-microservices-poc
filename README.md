@@ -117,6 +117,7 @@ Example JSON for `/policies` POST:
 
 
 ## References
+* [Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html)
 * [Micronaut Workshop](https://alvarosanchez.github.io/micronaut-workshop/)
 * [Building microservices with Micronaut (Part I)](https://mfarache.github.io/mfarache/Building-microservices-Micronoaut/)
 * [Building microservices with Micronaut (Part II)](https://mfarache.github.io/mfarache/Traceability-microservices-Micronoaut/)
