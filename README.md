@@ -9,16 +9,20 @@ This command generate project with Spock test and Maven as build tool.
 
 ## Architecture overview
 
-* **gateway** - [Gateway pattern from EAA Catalog](https://martinfowler.com/eaaCatalog/gateway.html) implementation
-* **payment-service** - the main responsibility of this module is create account for new Policy and show policy accounts list
+<p align="center">
+    <img alt="Micronaut Microservices Architecture" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/micronaut-microservices-architecture.png" />
+</p>
+
+* **agent-portal-gateway** - [Gateway pattern from EAA Catalog](https://martinfowler.com/eaaCatalog/gateway.html) implementation
+* **payment-service** - create account for new Policy and show policy accounts list
 * **payment-service-api** - DTOs, exceptions and operations (methods) for payment-service
-* **policy-service** - the main responsibility of this module is register new Policy, close Policy and show policies list
-* **policy-service-api** - the main responsibility of this module is register new Policy, close Policy and show policies list
-* **pricing-service** - the main responsibility of this module is return price for selected services
+* **policy-service** - register new Policy, close Policy and show policies list
+* **policy-service-api** - DTOs, exceptions and operations (methods) for policy-service
+* **pricing-service** - return price for selected product based on tariff
 * **pricing-service-api** - DTOs, exceptions and operations (methods) for pricing-service
-* **product-service** - 
-* **product-service-api** -
-* **web-vue** -
+* **product-service** - simple product catalog
+* **product-service-api** - DTOs, exceptions and operations (methods) for product-service
+* **web-vue** - frontend
 
 ## Prerequisites
 
