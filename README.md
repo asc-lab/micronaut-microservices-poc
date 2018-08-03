@@ -1,11 +1,11 @@
 # ASCLAB Micronaut PoC
 
-Create new microservice with [Micronaut CLI](http://guides.micronaut.io/micronaut-cli/guide/index.html):
-```
-mn create-app pl.altkom.asc.lab.[SERVICE-NAME]-service -f spock -b maven
-```
-
-This command generate project with Spock test and Maven as build tool.
+This is an example of a very simple insurance system made in a microservice architecture using Micronaut.
+Available functionalities:
+* show products catalog
+* calculate price for product based on questions defined on product and tariff definition (with MVEL engine)
+* register new policy
+* ...
 
 ## Architecture overview
 
@@ -51,6 +51,15 @@ Open dashboard:
 ```
 http://localhost:9000/
 ```
+
+## Add new microservice
+
+Create new microservice with [Micronaut CLI](http://guides.micronaut.io/micronaut-cli/guide/index.html):
+```
+mn create-app pl.altkom.asc.lab.[SERVICE-NAME]-service -f spock -b maven
+```
+
+This command generate project with Spock test and Maven as build tool.
 
 ## Examples
 
