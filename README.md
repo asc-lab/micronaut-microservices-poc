@@ -28,7 +28,7 @@ This command generate project with Spock test and Maven as build tool.
 
 ### Consul
 ```
-docker run -p 8500:8500 consul
+docker run -p 8500:8500 consulsho
 ```
 Open dashboard:
 ```
@@ -88,10 +88,23 @@ Example JSON for `/policies` POST:
 }
 ```
 
-## Tracing requests with Zipkin
+## Dashboard examples
+
+### Tracing requests with Zipkin
 <p align="center">
     <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/zipkin.png" />
 </p>
+
+## Show topics on Kafka
+<p align="center">
+    <img alt="Kafka" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/kafka.png" />
+</p>
+
+## Show services in Consul
+<p align="center">
+    <img alt="Consul" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/consul.png" />
+</p>
+
 
 ## References
 * [Micronaut Workshop](https://alvarosanchez.github.io/micronaut-workshop/)
