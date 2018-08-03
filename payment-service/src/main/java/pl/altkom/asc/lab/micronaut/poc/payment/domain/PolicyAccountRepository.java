@@ -6,8 +6,10 @@ import java.util.Optional;
 public interface PolicyAccountRepository {
 
     Optional<PolicyAccount> findForPolicy(String policyNumber);
+    
+    Optional<PolicyAccount> findByNumber(String accountNumber);
 
-    void save(PolicyAccount policyAccount);
+    void add(PolicyAccount policyAccount);
 
     Collection<PolicyAccount> findAll();
 }

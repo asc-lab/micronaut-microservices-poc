@@ -23,3 +23,23 @@ tracing:
       url: http://localhost:9411
       sampler:
         probability: 1.0 # Configuration taking 100% of the request to be processed by Zipkin. In a real production system, that could be overwhelming.
+---
+payments:
+    importDir: c:\bank_imports
+---
+datasources:
+  default:
+    url: jdbc:h2:mem:default;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: ""
+    driverClassName: org.h2.Driver
+---
+jpa:
+ default:
+    packages-to-scan:
+        - 'pl.altkom.asc.lab.micronaut.poc.payment.domain'
+    properties:
+        hibernate:
+            hbm2ddl:
+                auto: update
+            show_sql: true

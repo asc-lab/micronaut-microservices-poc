@@ -4,9 +4,10 @@ import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
+
 
 import java.util.Optional;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
 
 @KafkaListener(offsetReset = OffsetReset.EARLIEST)
 public class PolicyRegisteredListener {
@@ -28,7 +29,7 @@ public class PolicyRegisteredListener {
     }
 
     private void createAccount(PolicyDto policy) {
-        policyAccountRepository.save(new PolicyAccount(policy.getPolicyNumber(), policyAccountNumberGenerator.generate()));
+        policyAccountRepository.add(new PolicyAccount(policy.getPolicyNumber(), policyAccountNumberGenerator.generate()));
     }
 
 }
