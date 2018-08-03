@@ -95,12 +95,12 @@ Example JSON for `/policies` POST:
     <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/zipkin.png" />
 </p>
 
-## Show topics on Kafka
+### Show topics on Kafka
 <p align="center">
     <img alt="Kafka" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/kafka.png" />
 </p>
 
-## Show services in Consul
+### Show services in Consul
 <p align="center">
     <img alt="Consul" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/consul.png" />
 </p>
