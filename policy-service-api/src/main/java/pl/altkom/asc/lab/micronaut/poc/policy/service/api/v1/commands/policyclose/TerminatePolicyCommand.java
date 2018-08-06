@@ -10,6 +10,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.Command;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClosePolicyCommand implements Command<ClosePolicyResult> {
+public class TerminatePolicyCommand implements Command<TerminatePolicyResult> {
     private String policyNumber;
 }

@@ -1,5 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
+import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
 import pl.altkom.asc.lab.micronaut.poc.policy.shared.exceptions.BusinessException;
@@ -37,7 +38,8 @@ public class PolicyVersionCollection {
             Person policyHolder,
             String accountNumber,
             DateRange coverPeriod,
-            DateRange versionPeriod
+            DateRange versionPeriod,
+            BigDecimal totalPremiumAmount
     ) {
         if (hasVersion(versionNumber)) {
             throw new BusinessException(
@@ -55,7 +57,8 @@ public class PolicyVersionCollection {
                 accountNumber,
                 coverPeriod,
                 versionPeriod,
-                new HashSet<>()
+                new HashSet<>(),
+                totalPremiumAmount
         );
         versions.add(ver);
         return ver;

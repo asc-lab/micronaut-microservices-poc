@@ -7,15 +7,15 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClosePolicyResult {
+public class TerminatePolicyResult {
 
     private String policyNumber;
 
-    public static ClosePolicyResult success(String policyNumber) {
-        return new ClosePolicyResult(policyNumber);
+    public static TerminatePolicyResult success(String policyNumber) {
+        return new TerminatePolicyResult(policyNumber);
     }
 
-    public static ClosePolicyResult empty() {
+    public static TerminatePolicyResult empty() {
         //TODO implement empty/fallback result
         return null;
     }

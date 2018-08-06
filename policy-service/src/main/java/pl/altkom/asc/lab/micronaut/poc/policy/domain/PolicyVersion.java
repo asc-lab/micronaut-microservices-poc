@@ -1,6 +1,7 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.math.BigDecimal;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -49,6 +50,8 @@ public class PolicyVersion {
 
     @OneToMany(mappedBy = "policyVersion", cascade = CascadeType.ALL)
     private Set<Cover> covers;
+    
+    private BigDecimal totalPremiumAmount;
 
     boolean isValidAt(LocalDate theDate) {
         return versionValidityPeriod.contains(theDate);
@@ -56,13 +59,5 @@ public class PolicyVersion {
 
     CoverCollection covers() {
         return new CoverCollection(this, covers);
-    }
-
-    CoPayment getCoPaymentFor(String serviceCode) {
-        return covers().getCoPaymentForService(serviceCode);
-    }
-
-    Limit getLimitFor(String serviceCode) {
-        return covers().getLimitForService(serviceCode);
     }
 }

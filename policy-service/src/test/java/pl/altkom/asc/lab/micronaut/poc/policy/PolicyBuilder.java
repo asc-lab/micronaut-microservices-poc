@@ -27,7 +27,8 @@ class PolicyBuilder {
                                 "2738123834783247723",
                                 DateRange.between(LocalDate.of(2018, 1, 1), LocalDate.of(2018, 12, 31)),
                                 DateRange.between(LocalDate.of(2018, 1, 1), LocalDate.of(9999, 12, 31)),
-                                null
+                                null,
+                                new BigDecimal("199")
                         ),
                         new PolicyVersion(
                                 2L,
@@ -38,7 +39,8 @@ class PolicyBuilder {
                                 "2738123834783247723",
                                 DateRange.between(LocalDate.of(2018, 1, 1), LocalDate.of(2018, 12, 31)),
                                 DateRange.between(LocalDate.of(2018, 1, 1), LocalDate.of(9999, 12, 31)),
-                                null
+                                null,
+                                new BigDecimal("199")
                         )
                 )));
     }

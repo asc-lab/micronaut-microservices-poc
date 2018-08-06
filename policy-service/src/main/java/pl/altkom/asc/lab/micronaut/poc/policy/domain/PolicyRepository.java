@@ -6,5 +6,5 @@ public interface PolicyRepository {
 
     Optional<Policy> findByNumber(String number);
 
-    void save(Policy policy);
+    void add(Policy policy);
 }

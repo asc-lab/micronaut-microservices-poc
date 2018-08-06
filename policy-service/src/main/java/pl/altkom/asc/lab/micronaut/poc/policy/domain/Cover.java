@@ -1,13 +1,12 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.math.BigDecimal;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -18,22 +17,17 @@ public class Cover {
     private Long id;
 
     private String code;
+    
+    private BigDecimal price;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "POLICY_VERSION_ID")
     private PolicyVersion policyVersion;
 
-    @OneToMany(mappedBy = "cover", cascade = CascadeType.ALL)
-    private Set<Service> services;
-
-    public Cover(PolicyVersion policyVersion, String code) {
+    public Cover(PolicyVersion policyVersion, String code, BigDecimal price) {
         this.policyVersion = policyVersion;
         this.code = code;
-        this.services = new HashSet<>();
-    }
-
-    ServiceCollection services() {
-        return new ServiceCollection(this, services);
+        this.price = price;
     }
 }

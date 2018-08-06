@@ -3,8 +3,8 @@ package pl.altkom.asc.lab.micronaut.poc.gateway.client.v1;
 import io.micronaut.http.client.Client;
 import io.micronaut.retry.annotation.Retryable;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyOperations;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.ClosePolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.ClosePolicyResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
@@ -20,5 +20,5 @@ public interface PolicyGatewayClient extends PolicyOperations {
     RegisterPolicyResult register(RegisterPolicyCommand cmd);
 
     @Override
-    ClosePolicyResult close(ClosePolicyCommand cmd);
+    TerminatePolicyResult close(TerminatePolicyCommand cmd);
 }

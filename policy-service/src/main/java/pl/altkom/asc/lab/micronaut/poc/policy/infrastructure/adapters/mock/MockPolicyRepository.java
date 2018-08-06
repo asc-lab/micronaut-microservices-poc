@@ -36,7 +36,7 @@ public class MockPolicyRepository implements PolicyRepository {
     }
 
     @Override
-    public void save(Policy policy) {
+    public void add(Policy policy) {
         policyMap.put(policy.getNumber(), policy);
     }
 }

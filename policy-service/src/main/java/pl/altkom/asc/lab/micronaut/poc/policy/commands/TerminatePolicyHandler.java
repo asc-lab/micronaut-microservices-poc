@@ -2,8 +2,8 @@ package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.client.kafka.KafkaPolicyClient;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.ClosePolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.ClosePolicyResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyClosedEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
@@ -15,23 +15,23 @@ import java.util.Optional;
 
 @Singleton
 @RequiredArgsConstructor
-public class ClosePolicyHandler implements CommandHandler<ClosePolicyResult, ClosePolicyCommand> {
+public class TerminatePolicyHandler implements CommandHandler<TerminatePolicyResult, TerminatePolicyCommand> {
 
     private final PolicyRepository policyRepository;
     private final KafkaPolicyClient policyClient;
 
     @Override
-    public ClosePolicyResult handle(ClosePolicyCommand cmd) {
+    public TerminatePolicyResult handle(TerminatePolicyCommand cmd) {
         Optional<Policy> policyOpt = policyRepository.findByNumber(cmd.getPolicyNumber());
         if(!policyOpt.isPresent())
             throw new BusinessException("POLICY NOT FOUND");
 
         Policy policy = policyOpt.get();
-        policy.close();
+        policy.terminate();
 
-        policyRepository.save(policy);
+        policyRepository.add(policy);
         policyClient.policyClosedEvent(policy.getNumber(), new PolicyClosedEvent(policy));
 
-        return ClosePolicyResult.success(policy.getNumber());
+        return TerminatePolicyResult.success(policy.getNumber());
     }
 }

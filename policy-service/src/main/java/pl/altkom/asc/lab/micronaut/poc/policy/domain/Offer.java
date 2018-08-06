@@ -57,6 +57,6 @@ public class Offer {
     Offers are valid only for 30 days
     */
     public boolean isExpired(LocalDate theDate) {
-        return creationDate.plusDays(30).isAfter(theDate);
+        return creationDate.plusDays(30).isBefore(theDate);
     }
 }

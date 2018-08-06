@@ -29,7 +29,7 @@ public class HibernatePolicyRepository implements PolicyRepository {
 
     @Transactional
     @Override
-    public void save(Policy policy) {
+    public void add(Policy policy) {
         currentSession().save(policy);
     }
 
