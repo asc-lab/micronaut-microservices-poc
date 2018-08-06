@@ -22,7 +22,7 @@ public class PolicyView {
     private LocalDate dateFrom;
     private LocalDate dateTo;
     private String policyHolder;
-    //TODO covers, totalPremium
+    private BigDecimal totalPremium;
 
     public PolicyView(String number) {
         this.number = number;

@@ -1,5 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.dto;
 
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,5 +17,5 @@ public class PolicyViewDto {
     private LocalDate dateFrom;
     private LocalDate dateTo;
     private String policyHolder;
-    //TODO covers, totalPremium
+    private BigDecimal totalPremium;
 }

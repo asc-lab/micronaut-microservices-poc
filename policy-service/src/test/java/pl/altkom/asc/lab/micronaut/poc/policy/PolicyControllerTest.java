@@ -17,7 +17,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferStatus;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.PersonDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.dto.PersonDto;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
 
 public class PolicyControllerTest {

@@ -13,7 +13,8 @@ final class PolicyViewDtoAssembler {
                 policy.getNumber(),
                 policy.getDateFrom(),
                 policy.getDateTo(),
-                policy.getPolicyHolder()
+                policy.getPolicyHolder(),
+                policy.getTotalPremium()
         );
     }
 }

@@ -2,6 +2,7 @@ package pl.altkom.asc.lab.micronaut.poc.policy.init;
 
 import io.micronaut.context.event.ApplicationEventListener;
 import io.micronaut.runtime.server.event.ServerStartupEvent;
+import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyViewRepository;
@@ -25,7 +26,8 @@ public class DataLoader implements ApplicationEventListener<ServerStartupEvent> 
                     "P1",
                     LocalDate.of(2018, 8, 1),
                     LocalDate.of(2019, 7, 31),
-                    "Robert Witkowski")
+                    "Robert Witkowski",
+                    new BigDecimal("200"))
             );
         }
 
@@ -34,7 +36,8 @@ public class DataLoader implements ApplicationEventListener<ServerStartupEvent> 
                     "P2",
                     LocalDate.of(2018, 7, 1),
                     LocalDate.of(2019, 6, 30),
-                    "John Smith")
+                    "John Smith",
+                    new BigDecimal("220"))
             );
         }
 

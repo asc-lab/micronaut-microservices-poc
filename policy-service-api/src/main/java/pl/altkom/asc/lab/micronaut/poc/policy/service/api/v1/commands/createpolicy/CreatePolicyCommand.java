@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.Command;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.dto.PersonDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.dto.PersonDto;
 
 @Getter
 @Setter

@@ -13,7 +13,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
 
 import javax.inject.Singleton;
-import java.util.Optional;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Offer;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
@@ -41,7 +40,7 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
         }
         
         //create policy from offer
-        Person policyHolder = new Person(cmd.getPolicyHolder().getFirstName(), cmd.getPolicyHolder().getLastName(), cmd.getPolicyHolder().getPesel());
+        Person policyHolder = new Person(cmd.getPolicyHolder().getFirstName(), cmd.getPolicyHolder().getLastName(), cmd.getPolicyHolder().getTaxId());
         Policy policy = policyFactory.fromOffer(offer, policyHolder);
         
         //save policy and update offer
