@@ -7,11 +7,11 @@ import io.micronaut.http.annotation.Post;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.PolicyGatewayClient;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
 
 import javax.inject.Inject;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
 
 @Controller("/api/policies")
 public class PolicyGatewayController {
@@ -24,14 +24,14 @@ public class PolicyGatewayController {
         return policyClient.policies();
     }
 
-    @Post("/register")
-    RegisterPolicyResult register(RegisterPolicyCommand cmd) {
-        return policyClient.register(cmd);
+    @Post("/create")
+    CreatePolicyResult create(CreatePolicyCommand cmd) {
+        return policyClient.create(cmd);
     }
 
-    @Post("/close")
-    TerminatePolicyResult close(TerminatePolicyCommand cmd) {
-        return policyClient.close(cmd);
+    @Post("/terminate")
+    TerminatePolicyResult terminate(TerminatePolicyCommand cmd) {
+        return policyClient.terminate(cmd);
     }
 
 }

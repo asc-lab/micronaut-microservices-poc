@@ -3,10 +3,10 @@ package pl.altkom.asc.lab.micronaut.poc.gateway.client.v1;
 import io.micronaut.http.client.Client;
 import io.micronaut.retry.annotation.Retryable;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyOperations;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyregister.RegisterPolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
 
 @Client(id = "policy-service", path = "/policies")
@@ -17,8 +17,8 @@ public interface PolicyGatewayClient extends PolicyOperations {
     FindPolicyQueryResult policies();
 
     @Override
-    RegisterPolicyResult register(RegisterPolicyCommand cmd);
+    CreatePolicyResult create(CreatePolicyCommand cmd);
 
     @Override
-    TerminatePolicyResult close(TerminatePolicyCommand cmd);
+    TerminatePolicyResult terminate(TerminatePolicyCommand cmd);
 }
