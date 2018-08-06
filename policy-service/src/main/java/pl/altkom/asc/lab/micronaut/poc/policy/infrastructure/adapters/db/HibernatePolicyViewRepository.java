@@ -4,33 +4,32 @@ import io.micronaut.spring.tx.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.annotations.RequiresJdbc;
+import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyView;
+import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyViewRepository;
 
 import javax.inject.Singleton;
-import java.util.Optional;
+import java.util.List;
 
 @RequiresJdbc
 @Singleton
 @RequiredArgsConstructor
-public class JdbcPolicyRepository implements PolicyRepository {
+public class HibernatePolicyViewRepository implements PolicyViewRepository {
 
     private final SessionFactory sessionFactory;
 
     @Transactional
     @Override
-    public Optional<Policy> findByNumber(String number) {
+    public List<PolicyView> findAll() {
         return currentSession()
-                .createQuery("from Policy p where p.number = :number", Policy.class)
-                .setParameter("number", number)
-                .uniqueResultOptional();
+                .createQuery("from PolicyView pv", PolicyView.class)
+                .list();
     }
 
     @Transactional
     @Override
-    public void save(Policy policy) {
-        currentSession().save(policy);
+    public void save(PolicyView view) {
+        currentSession().save(view);
     }
 
     private Session currentSession() {
