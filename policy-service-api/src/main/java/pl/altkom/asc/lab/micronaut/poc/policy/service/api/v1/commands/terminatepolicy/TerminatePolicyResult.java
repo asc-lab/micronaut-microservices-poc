@@ -16,7 +16,6 @@ public class TerminatePolicyResult {
     }
 
     public static TerminatePolicyResult empty() {
-        //TODO implement empty/fallback result
-        return null;
+        return new TerminatePolicyResult();
     }
 }
