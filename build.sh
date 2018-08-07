@@ -1,3 +1,6 @@
+mvn clean install -f payment-service-api
+[ $? -eq 0 ] || exit 1
+
 mvn clean install -f policy-service-api
 [ $? -eq 0 ] || exit 1
 
