@@ -7,6 +7,6 @@ import lombok.Setter;
 @ConfigurationProperties("payments")
 @Getter
 @Setter
-public class BankStatementImportJobCfg {
+class BankStatementImportJobCfg {
     private String importDir = "c:\\temp\\bank_imports";  
 }

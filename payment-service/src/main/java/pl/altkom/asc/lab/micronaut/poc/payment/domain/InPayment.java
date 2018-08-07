@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @DiscriminatorValue(value = "inpayment")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class InPayment extends AccountingEntry {
+
     public InPayment(PolicyAccount policyAccount, LocalDate creationDate, LocalDate effectiveDate, BigDecimal amount) {
         super(policyAccount,creationDate, effectiveDate, amount);
     }

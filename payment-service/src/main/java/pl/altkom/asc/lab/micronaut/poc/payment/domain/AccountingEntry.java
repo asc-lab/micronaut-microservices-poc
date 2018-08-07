@@ -27,13 +27,17 @@ public abstract class AccountingEntry {
     @Id
     @GeneratedValue
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "policy_account_id")
     private PolicyAccount policyAccount;
+
     @Column(name = "creation_date")
     private LocalDate creationDate;
+
     @Column(name = "effective_date")
     private LocalDate effectiveDate;
+
     @Column(name = "amount")
     private BigDecimal amount;
 

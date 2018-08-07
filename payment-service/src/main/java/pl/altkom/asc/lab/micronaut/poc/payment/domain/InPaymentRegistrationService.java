@@ -10,6 +10,7 @@ import pl.altkom.asc.lab.micronaut.poc.payment.domain.BankStatementFile.BankStat
 @Singleton
 @RequiredArgsConstructor
 public class InPaymentRegistrationService {
+
     private final PolicyAccountRepository policyAccountRepository;
     
     @Transactional
@@ -21,9 +22,7 @@ public class InPaymentRegistrationService {
         }
         
         List<BankStatement> bankStatements = fileToImport.read();
-        
         bankStatements.forEach(this::registerInPayment);
-        
         fileToImport.markProcessed();
     }
 

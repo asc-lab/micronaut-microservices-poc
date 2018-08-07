@@ -24,10 +24,13 @@ public class PolicyAccount {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column(name = "policy_number")
     private String policyNumber;
+
     @Column(name = "policy_account_number")
     private String policyAccountNumber;
+
     @OneToMany(mappedBy = "policyAccount", cascade = CascadeType.ALL)
     private List<AccountingEntry> entries;
 
