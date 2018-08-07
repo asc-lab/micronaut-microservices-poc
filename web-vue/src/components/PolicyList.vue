@@ -13,7 +13,7 @@
                     {key: 'number'},
                     {
                         key: 'dateFrom',
-                        formatter: (value, key, item) => {
+                        formatter: (value) => {
                             if (!value)
                                 return "";
                             return value[2] + "-" + value[1] + "-" + value[0];
@@ -21,7 +21,7 @@
                     },
                     {
                         key: 'dateTo',
-                        formatter: (value, key, item) => {
+                        formatter: (value) => {
                             if (!value)
                                 return "";
                             return value[2] + "-" + value[1] + "-" + value[0];
