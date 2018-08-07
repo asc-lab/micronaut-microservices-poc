@@ -53,10 +53,6 @@ public class PolicyVersion {
     
     private BigDecimal totalPremiumAmount;
 
-    boolean isValidAt(LocalDate theDate) {
-        return versionValidityPeriod.contains(theDate);
-    }
-
     CoverCollection covers() {
         return new CoverCollection(this, covers);
     }

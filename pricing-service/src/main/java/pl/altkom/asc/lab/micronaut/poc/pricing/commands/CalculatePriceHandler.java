@@ -5,9 +5,9 @@ import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Calculation;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariff;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariffs;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceCommand;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceResult;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.QuestionAnswer;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceCommand;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceResult;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.dto.QuestionAnswer;
 
 import javax.inject.Singleton;
 import java.util.Map;

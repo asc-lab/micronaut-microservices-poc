@@ -3,11 +3,11 @@ package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.policyregistered.dto.PolicyDto;
 
 
 import java.util.Optional;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.policyregistered.PolicyRegisteredApiEvent;
 
 @KafkaListener(offsetReset = OffsetReset.EARLIEST)
 public class PolicyRegisteredListener {

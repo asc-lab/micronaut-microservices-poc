@@ -1,11 +1,11 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
 import lombok.RequiredArgsConstructor;
-import pl.altkom.asc.lab.micronaut.poc.policy.client.kafka.KafkaPolicyClient;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.kafka.KafkaPolicyClient;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyClosedEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyTerminatedEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.shared.exceptions.BusinessException;
@@ -30,7 +30,7 @@ public class TerminatePolicyHandler implements CommandHandler<TerminatePolicyRes
         policy.terminate();
 
         policyRepository.add(policy);
-        policyClient.policyClosedEvent(policy.getNumber(), new PolicyClosedEvent(policy));
+        policyClient.policyClosedEvent(policy.getNumber(), new PolicyTerminatedEvent(policy));
 
         return TerminatePolicyResult.success(policy.getNumber());
     }

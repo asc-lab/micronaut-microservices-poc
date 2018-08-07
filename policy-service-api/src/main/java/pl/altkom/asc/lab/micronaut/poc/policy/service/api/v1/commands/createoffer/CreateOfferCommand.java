@@ -13,8 +13,8 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffe
 @Getter
 @Setter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class CreateOfferCommand implements Command<CreateOfferResult> {
     private String productCode;
     private LocalDate policyFrom;

@@ -8,13 +8,17 @@ import java.math.RoundingMode;
 
 @Embeddable
 @Getter
-public class MonetaryAmount implements Comparable<MonetaryAmount>  {
+public class MonetaryAmount implements Comparable<MonetaryAmount> {
     private final BigDecimal amount;
 
     public MonetaryAmount(BigDecimal amount) {
         this.amount = amount.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
+    protected MonetaryAmount() {
+        this.amount = BigDecimal.ZERO;
+    }
+    
     public static MonetaryAmount zero() {
         return from(new BigDecimal("0.00"));
     }
@@ -40,9 +44,6 @@ public class MonetaryAmount implements Comparable<MonetaryAmount>  {
         return new MonetaryAmount(new BigDecimal(amount));
     }
 
-    protected MonetaryAmount(){
-        this.amount = BigDecimal.ZERO;
-    }
 
     public MonetaryAmount add(MonetaryAmount monetaryAmount) {
         if (monetaryAmount == null) {
@@ -59,26 +60,6 @@ public class MonetaryAmount implements Comparable<MonetaryAmount>  {
         return new MonetaryAmount(amount.subtract(monetaryAmount.toBigDecimal()));
     }
 
-    public boolean isPositive() {
-        return amount.signum() == 1;
-    }
-
-    public boolean isNegative() {
-        return amount.signum() == -1;
-    }
-
-    public boolean isZero() {
-        return amount.signum() == 0;
-    }
-
-    public boolean isPositiveOrZero() {
-        return isPositive() || isZero();
-    }
-
-    public boolean isNegativeOrZero() {
-        return isNegative() || isZero();
-    }
-
     public boolean greaterThan(MonetaryAmount monetaryAmount) {
         return this.compareTo(monetaryAmount) == 1;
     }
@@ -92,7 +73,6 @@ public class MonetaryAmount implements Comparable<MonetaryAmount>  {
     }
 
     public boolean lowerOrEqual(MonetaryAmount monetaryAmount) {
-
         return this.compareTo(monetaryAmount) <= 0;
     }
 
@@ -104,8 +84,8 @@ public class MonetaryAmount implements Comparable<MonetaryAmount>  {
         return new MonetaryAmount(amount.setScale(0, RoundingMode.HALF_UP));
     }
 
-    public MonetaryAmount round(int numerOfDecimalPlaces) {
-        return new MonetaryAmount(amount.setScale(numerOfDecimalPlaces, RoundingMode.HALF_UP));
+    public MonetaryAmount round(int numberOfDecimalPlaces) {
+        return new MonetaryAmount(amount.setScale(numberOfDecimalPlaces, RoundingMode.HALF_UP));
     }
 
     public static MonetaryAmount min(MonetaryAmount first, MonetaryAmount second) {
@@ -143,7 +123,7 @@ public class MonetaryAmount implements Comparable<MonetaryAmount>  {
     }
 
     public BigDecimal toBigDecimal() {
-        return new BigDecimal(amount.toString());// amount;
+        return new BigDecimal(amount.toString());
     }
 
     @Override
@@ -153,7 +133,7 @@ public class MonetaryAmount implements Comparable<MonetaryAmount>  {
 
     @Override
     public boolean equals(Object object) {
-        if (object == null || !(object instanceof MonetaryAmount)) {
+        if (!(object instanceof MonetaryAmount)) {
             return false;
         }
         return amount.equals(((MonetaryAmount) object).toBigDecimal());

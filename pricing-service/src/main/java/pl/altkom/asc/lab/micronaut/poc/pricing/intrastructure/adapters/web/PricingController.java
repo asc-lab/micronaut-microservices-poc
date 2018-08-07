@@ -5,8 +5,8 @@ import io.micronaut.validation.Validated;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pl.altkom.asc.lab.micronaut.poc.pricing.commands.CalculatePriceHandler;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceCommand;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceResult;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceCommand;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceResult;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.PricingOperations;
 
 @Controller("/pricing")

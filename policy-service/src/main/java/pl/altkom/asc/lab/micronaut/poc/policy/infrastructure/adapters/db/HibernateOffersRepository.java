@@ -15,6 +15,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.annotations.Require
 @Singleton
 @RequiredArgsConstructor
 public class HibernateOffersRepository implements OfferRepository {
+
     private final SessionFactory sessionFactory;
     
     @Transactional

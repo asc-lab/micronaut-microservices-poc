@@ -15,4 +15,8 @@ public class CreateOfferResult {
     private String offerNumber;
     private BigDecimal totalPrice;
     private Map<String, BigDecimal> coversPrices;
+
+    public static CreateOfferResult empty() {
+        return new CreateOfferResult();
+    }
 }

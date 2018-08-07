@@ -1,18 +1,18 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.web;
 
-import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.validation.Validated;
-import javax.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.CommandBus;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyOperations;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.policyclose.TerminatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQuery;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.policyfind.FindPolicyQueryResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.findpolicy.FindPolicyQuery;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQuery;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
 
 @RequiredArgsConstructor
 @Validated
@@ -27,7 +27,12 @@ public class PolicyController implements PolicyOperations {
     }
 
     @Override
-    public CreatePolicyResult create(@Body @NotNull CreatePolicyCommand cmd) {
+    public GetPolicyDetailsQueryResult get(String policyNumber) {
+        return bus.executeQuery(new GetPolicyDetailsQuery(policyNumber));
+    }
+
+    @Override
+    public CreatePolicyResult create(CreatePolicyCommand cmd) {
         return bus.executeCommand(cmd);
     }
 

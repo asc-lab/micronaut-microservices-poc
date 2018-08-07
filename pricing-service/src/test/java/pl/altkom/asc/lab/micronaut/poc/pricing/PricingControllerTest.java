@@ -5,10 +5,10 @@ import io.micronaut.runtime.server.EmbeddedServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceCommand;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.CalculatePriceResult;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.ChoiceQuestionAnswer;
-import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.NumericQuestionAnswer;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceCommand;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceResult;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.dto.ChoiceQuestionAnswer;
+import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.dto.NumericQuestionAnswer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

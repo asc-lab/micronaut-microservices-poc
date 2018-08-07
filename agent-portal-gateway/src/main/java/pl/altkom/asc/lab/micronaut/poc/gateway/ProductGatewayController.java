@@ -8,7 +8,6 @@ import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.ProductGatewayClient;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductDto;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 import java.util.List;
 
 @Controller("/api/products")

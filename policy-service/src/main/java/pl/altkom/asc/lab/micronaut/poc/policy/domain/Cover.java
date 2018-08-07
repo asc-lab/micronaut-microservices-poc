@@ -30,4 +30,9 @@ public class Cover {
         this.code = code;
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return code + " - " + price;
+    }
 }
