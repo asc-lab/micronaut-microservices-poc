@@ -33,7 +33,7 @@ jackson:
 ---
 kafka:
   bootstrap:
-    servers: localhost:9092
+    servers: "${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}"
 ---
 consul:
   client:
