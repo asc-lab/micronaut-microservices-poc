@@ -61,7 +61,7 @@
                                 <label class="col-sm-3 col-form-label">Price</label>
                                 <div class="col-sm-9">
                                     <span class="float-left">
-                                        <strong>{{price.amountToPay}} PLN</strong>
+                                        <strong>{{price.amountToPay}} EUR</strong>
                                     </span>
                                 </div>
                             </div>

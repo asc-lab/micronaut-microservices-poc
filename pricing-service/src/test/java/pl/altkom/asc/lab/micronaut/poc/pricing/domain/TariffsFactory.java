@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 class TariffsFactory {
 
-    static Tariff tourist() {
+    static Tariff travel() {
         Tariff t = new Tariff(1L, "TRI");
 
         t.rules().addBasePriceRule("C1", null, "(NUM_OF_ADULTS) * (DESTINATION == 'EUR' ? 26.00B : 34.00B)");
@@ -30,6 +30,15 @@ class TariffsFactory {
 
         t.discountMarkupRules().addPercentMarkup("FLOOD == 'YES'", new BigDecimal("1.50"));
         t.discountMarkupRules().addPercentMarkup("NUM_OF_CLAIM > 1 ", new BigDecimal("1.25"));
+
+        return t;
+    }
+
+    static Tariff car() {
+        Tariff t = new Tariff(4L, "CAR");
+
+        t.rules().addBasePriceRule("C1", null, "100B");
+        t.discountMarkupRules().addPercentMarkup("NUM_OF_CLAIM > 2", new BigDecimal("50.00"));
 
         return t;
     }

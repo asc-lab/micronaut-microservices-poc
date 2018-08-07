@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ public class TariffTest {
                 Arrays.asList("C1", "C2", "C3"),
                 subject);
 
-        Tariff tariff = TariffsFactory.tourist();
+        Tariff tariff = TariffsFactory.travel();
 
         calculation = tariff.calculatePrice(calculation);
 
@@ -58,5 +59,25 @@ public class TariffTest {
         assertEquals("C1 premium should be 118.75", new BigDecimal("118.75"), calculation.getCovers().get("C1").getPrice());
         assertEquals("C2 should be 23.75", new BigDecimal("23.75"), calculation.getCovers().get("C2").getPrice());
         assertEquals("C3 should be 30", new BigDecimal("30"), calculation.getCovers().get("C3").getPrice());
+    }
+
+    @Test
+    public void canCalculateCarPolicyPrice() {
+        Map<String, Object> subject = new HashMap<>();
+        subject.put("NUM_OF_CLAIM", 1);
+
+        Calculation calculation = new Calculation(
+                "CAR",
+                LocalDate.of(2017, 4, 16),
+                LocalDate.of(2018, 4, 15),
+                Collections.singletonList("C1"),
+                subject);
+
+        Tariff tariff = TariffsFactory.car();
+
+        calculation = tariff.calculatePrice(calculation);
+
+        assertEquals("Total premium should be 100", new BigDecimal("100"), calculation.getTotalPremium());
+        assertEquals("C1 premium should be 100", new BigDecimal("100"), calculation.getCovers().get("C1").getPrice());
     }
 }

@@ -8,13 +8,13 @@ consul:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
 ---
-#tracing:
-#  zipkin:
-#    enabled: true
-#    http:
-#      url: http://localhost:9411
-#      sampler:
-#        probability: 0.1
+tracing:
+  zipkin:
+    enabled: true
+    http:
+      url: http://localhost:9411
+      sampler:
+        probability: 1.0 # Configuration taking 100% of the request to be processed by Zipkin. In a real production system, that could be overwhelming.
 ---
 datasources:
   default:

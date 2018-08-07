@@ -20,7 +20,7 @@ class DemoProductsFactory {
 
         p.addCover("C1", "Luggage", "", false, new BigDecimal("5000"));
         p.addCover("C2", "Illness", "", false, new BigDecimal("5000"));
-        p.addCover("C3", "Assistance", "", true, new BigDecimal("10000"));
+        p.addCover("C3", "Assistance", "", true, null);
 
         p.addQuestions(Arrays.asList(
                 new ChoiceQuestion("DESTINATION", 1, "Destination", Arrays.asList(
@@ -85,11 +85,18 @@ class DemoProductsFactory {
     }
 
     static Product car() {
-        return new Product(
+        Product p = new Product(
                 "CAR",
                 "Happy Driver",
                 "/static/car.jpg",
                 "Car insurance",
                 1);
+
+        p.addCover("C1", "Assistance", "", true, null);
+        p.addQuestions(Arrays.asList(
+                new NumericQuestion("NUM_OF_CLAIM", 3, "Number of claims in last 5 years")
+        ));
+
+        return p;
     }
 }
