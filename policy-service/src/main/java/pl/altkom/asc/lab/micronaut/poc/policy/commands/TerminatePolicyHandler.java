@@ -30,7 +30,7 @@ public class TerminatePolicyHandler implements CommandHandler<TerminatePolicyRes
         policy.terminate();
 
         policyRepository.add(policy);
-        policyClient.policyClosedEvent(policy.getNumber(), new PolicyTerminatedEvent(policy));
+        policyClient.policyTerminatedEvent(policy.getNumber(), new PolicyTerminatedEvent(policy));
 
         return TerminatePolicyResult.success(policy.getNumber());
     }

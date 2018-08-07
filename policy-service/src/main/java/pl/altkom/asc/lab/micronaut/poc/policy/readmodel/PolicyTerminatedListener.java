@@ -5,11 +5,11 @@ import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyTerminatedEvent;
 
-@KafkaListener(clientId = "policy-closed-listener", offsetReset = OffsetReset.EARLIEST)
+@KafkaListener(clientId = "policy-terminated-listener", offsetReset = OffsetReset.EARLIEST)
 public class PolicyTerminatedListener extends AbstractPolicyListener {
 
-    @Topic("policy-closed")
-    void onPolicyClosed(PolicyTerminatedEvent event) {
+    @Topic("policy-terminated")
+    void onPolicyTerminated(PolicyTerminatedEvent event) {
         saveMappedPolicy(event.getPolicy());
     }
 }

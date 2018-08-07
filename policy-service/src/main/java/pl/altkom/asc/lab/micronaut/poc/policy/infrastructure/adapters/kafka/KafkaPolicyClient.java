@@ -16,6 +16,6 @@ public interface KafkaPolicyClient {
     @Topic("policy-registered-inside")
     void policyRegisteredEvent(@KafkaKey String policyNumber, PolicyRegisteredEvent event);
 
-    @Topic("policy-closed")
-    void policyClosedEvent(@KafkaKey String policyNumber, PolicyTerminatedEvent event);
+    @Topic("policy-terminated")
+    void policyTerminatedEvent(@KafkaKey String policyNumber, PolicyTerminatedEvent event);
 }
