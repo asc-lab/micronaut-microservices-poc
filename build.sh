@@ -28,8 +28,8 @@ mvn clean install -f product-service
 mvn clean install -f agent-portal-gateway
 [ $? -eq 0 ] || exit 1
 
-yarn install --cwd web-vue
+yarn --cwd web-vue install
 [ $? -eq 0 ] || exit 1
-yarn run build --cwd web-vue
+yarn --cwd web-vue run build
 [ $? -eq 0 ] || exit 1
 
