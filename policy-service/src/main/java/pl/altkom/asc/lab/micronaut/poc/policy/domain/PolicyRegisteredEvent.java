@@ -1,11 +1,13 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class PolicyRegisteredEvent {
 
-    private final Policy policy;
+    private Policy policy;
 }
