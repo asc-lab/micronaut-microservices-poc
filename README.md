@@ -25,9 +25,39 @@ Available functionalities:
 * **product-service-api** - DTOs, exceptions and operations (methods) for product-service
 * **web-vue** - frontend
 
-## Prerequisites
+## Building
+For demo purposes build process is automated by a shell script:
+```
+build.sh
+```
 
-### Consul
+## Running
+
+Prerequisites:
+* docker
+* docker-compose
+
+### Automated deployment
+To run the whole system on local machine just type:
+```
+run.sh
+```
+This script will provision required infrastructure and start all services.
+Setup is powered by docker-compose and configured via `docker-compose.yml` file.
+
+Afterwards you need to add kafka cluster - either via web UI ([Kafka Manager](http://localhost:9000/) -> Cluster -> Add Cluster)
+or using provided script:
+```
+kafka-create-cluster.sh
+```
+
+At this point system is ready to use: [http://localhost](http://localhost)
+
+### Manual deployment
+
+If you want to run services manually (eg. from IDE), you have to provision infrastructure manually too:
+
+#### Consul
 ```
 docker run -p 8500:8500 consul
 ```
@@ -35,7 +65,7 @@ Open dashboard:
 ```
 http://localhost:8500
 ```
-### Zipkin
+#### Zipkin
 ```
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
@@ -44,7 +74,7 @@ Open dashboard:
 http://localhost:9411/zipkin/
 ```
 
-### Kafka
+#### Kafka
 Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup-apache-kafka-in-docker-on-windows).
 Folder [kafka-docker] contains the script copied from the above instruction.
 
