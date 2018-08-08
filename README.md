@@ -31,6 +31,8 @@ For demo purposes build process is automated by a shell script:
 build.sh
 ```
 
+This step requires Java 8 (JDK), Maven and Yarn.
+
 ## Running
 
 Prerequisites:
