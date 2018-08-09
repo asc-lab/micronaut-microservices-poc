@@ -22,19 +22,19 @@ public class BasePremiumCalculationRule {
     @Column(name = "price_formula")
     private String basePriceFormula;
 
-    public BasePremiumCalculationRule(String coverCode, String applyIfFormula, String basePriceFormula) {
+    BasePremiumCalculationRule(String coverCode, String applyIfFormula, String basePriceFormula) {
         this.coverCode = coverCode;
         this.applyIfFormula = applyIfFormula;
         this.basePriceFormula = basePriceFormula;
     }
 
-    public boolean applies(Calculation calculation) {
+    boolean applies(Calculation calculation) {
         return applyIfFormula == null || applyIfFormula.isEmpty()
                 ? true
                 : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);
     }
 
-    public BigDecimal calculateBasePrice(Calculation calculation) {
+    BigDecimal calculateBasePrice(Calculation calculation) {
         return MVEL.eval(basePriceFormula, calculation.toMap(), BigDecimal.class);
     }
 }

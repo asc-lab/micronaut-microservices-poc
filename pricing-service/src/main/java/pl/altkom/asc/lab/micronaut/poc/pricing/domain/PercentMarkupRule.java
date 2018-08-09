@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class PercentMarkupRule extends DiscountMarkupRule {
 
-    public PercentMarkupRule(Tariff tariff, String applyIfFormula, BigDecimal paramValue) {
+    PercentMarkupRule(Tariff tariff, String applyIfFormula, BigDecimal paramValue) {
         this.tariff = tariff;
         this.applyIfFormula = applyIfFormula;
         this.paramValue = paramValue;

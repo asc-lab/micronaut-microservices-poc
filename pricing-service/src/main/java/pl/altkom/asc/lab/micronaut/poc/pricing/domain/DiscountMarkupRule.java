@@ -29,7 +29,7 @@ public abstract class DiscountMarkupRule {
     @Column(name = "param_value")
     protected BigDecimal paramValue;
 
-    public boolean applies(Calculation calculation) {
+    boolean applies(Calculation calculation) {
         return applyIfFormula == null || applyIfFormula.isEmpty()
                 ? true
                 : MVEL.eval(applyIfFormula, calculation.toMap(), Boolean.class);

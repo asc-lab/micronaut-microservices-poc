@@ -30,7 +30,7 @@ public class Calculation {
         this.subject = subject;
     }
 
-    public Map<String, Object> toMap() {
+    Map<String, Object> toMap() {
         Map<String, Object> context = new HashMap<>();
 
         context.put("policyFrom", policyFrom);
@@ -44,7 +44,7 @@ public class Calculation {
     }
 
 
-    public void updateTotal() {
+    void updateTotal() {
         totalPremium = covers
                 .values()
                 .stream()

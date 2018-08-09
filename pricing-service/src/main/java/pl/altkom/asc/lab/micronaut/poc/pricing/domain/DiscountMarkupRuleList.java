@@ -8,7 +8,7 @@ public class DiscountMarkupRuleList {
     private Tariff tariff;
     private List<DiscountMarkupRule> discountMarkupRules;
 
-    public DiscountMarkupRuleList(Tariff tariff, List<DiscountMarkupRule> discountMarkupRules) {
+    DiscountMarkupRuleList(Tariff tariff, List<DiscountMarkupRule> discountMarkupRules) {
         this.tariff = tariff;
         this.discountMarkupRules = discountMarkupRules;
     }
@@ -17,7 +17,7 @@ public class DiscountMarkupRuleList {
         discountMarkupRules.add(new PercentMarkupRule(tariff, applyIfFormula, markup));
     }
 
-    public void apply(Calculation calculation) {
+    void apply(Calculation calculation) {
         discountMarkupRules
                 .stream()
                 .filter(r -> r.applies(calculation))
