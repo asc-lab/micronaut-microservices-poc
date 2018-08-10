@@ -84,6 +84,8 @@
             <artifactId>discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
+
+        <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>tracing</artifactId>
@@ -107,6 +109,7 @@
             <scope>compile</scope>
             <version>0.30.0</version>
         </dependency>
+        <!-- TRACING WITH ZIPKIN -->
 
         <dependency>
             <groupId>com.h2database</groupId>
