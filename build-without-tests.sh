@@ -25,13 +25,13 @@ mvn clean install -f auth-service
 mvn clean install -f payment-service
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f policy-service
+mvn clean install -f policy-service -Dmaven.test.skip
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f policy-search-service
+mvn clean install -f policy-search-service -Dmaven.test.skip
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f pricing-service
+mvn clean install -f pricing-service -Dmaven.test.skip
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f product-service

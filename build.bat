@@ -25,13 +25,13 @@ if errorlevel 1 exit /B 1
 call mvn clean install -f payment-service
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f policy-service -Dmaven.test.skip
+call mvn clean install -f policy-service
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f policy-search-service -Dmaven.test.skip
+call mvn clean install -f policy-search-service
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f pricing-service -Dmaven.test.skip
+call mvn clean install -f pricing-service
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f product-service
