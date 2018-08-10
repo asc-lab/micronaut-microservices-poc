@@ -2,9 +2,9 @@ package pl.altkom.asc.lab.micronaut.poc.policy.queries.getpolicydetails;
 
 import io.micronaut.spring.tx.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.command.bus.QueryHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.QueryHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQuery;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.shared.exceptions.BusinessException;

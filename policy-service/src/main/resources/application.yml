@@ -1,10 +1,6 @@
 micronaut:
     application:
         name: policy-service
-    executors:
-        consumer:
-            type: fixed
-            nThreads: 2
 ---
 datasources.default: {}
 ---
@@ -19,7 +15,6 @@ jpa:
  default:
     packages-to-scan:
         - 'pl.altkom.asc.lab.micronaut.poc.policy.domain'
-        - 'pl.altkom.asc.lab.micronaut.poc.policy.readmodel'
     properties:
         hibernate:
             hbm2ddl:

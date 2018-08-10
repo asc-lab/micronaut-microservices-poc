@@ -8,14 +8,14 @@ import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyVersion;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.db.HibernatePolicyViewRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.db.HibernatePolicyRepository;
 
 import javax.inject.Singleton;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
-@Replaces(HibernatePolicyViewRepository.class)
+@Replaces(HibernatePolicyRepository.class)
 @Requires(env = Environment.TEST)
 @Singleton
 public class MockPolicyRepository implements PolicyRepository {

@@ -3,7 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicyd
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.Query;
+import pl.altkom.asc.lab.micronaut.poc.command.bus.api.Query;
 
 @Getter
 @NoArgsConstructor

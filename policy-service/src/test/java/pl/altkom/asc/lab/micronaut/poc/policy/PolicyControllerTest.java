@@ -12,7 +12,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferStatus;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.dto.PersonDto;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
 
 import java.math.BigDecimal;
@@ -29,15 +28,6 @@ public class PolicyControllerTest {
     public static void setup() {
         server = ApplicationContext.run(EmbeddedServer.class);
         client = server.getApplicationContext().createBean(PolicyTestClient.class, server.getURL());
-    }
-
-    @Test
-    public void testPolicies() {
-        FindPolicyQueryResult policies = client.policies();
-
-        Assert.assertNotNull(policies);
-        Assert.assertNotNull(policies.getPolicies());
-        Assert.assertFalse(policies.getPolicies().isEmpty());
     }
 
     @Test

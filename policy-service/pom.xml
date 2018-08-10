@@ -163,6 +163,11 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>command-bus</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

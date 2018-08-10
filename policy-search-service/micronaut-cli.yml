@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: pl.altkom.asc.lab.micronaut.poc
+---
+testFramework: spock
+sourceLanguage: java

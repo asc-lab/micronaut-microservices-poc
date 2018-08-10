@@ -11,22 +11,8 @@
             return {
                 fields: [
                     {key: 'number'},
-                    {
-                        key: 'dateFrom',
-                        formatter: (value) => {
-                            if (!value)
-                                return "";
-                            return value[2] + "-" + value[1] + "-" + value[0];
-                        }
-                    },
-                    {
-                        key: 'dateTo',
-                        formatter: (value) => {
-                            if (!value)
-                                return "";
-                            return value[2] + "-" + value[1] + "-" + value[0];
-                        }
-                    },
+                    {key: 'dateFrom'},
+                    {key: 'dateTo'},
                     {key: 'policyHolder'}
 
                 ],

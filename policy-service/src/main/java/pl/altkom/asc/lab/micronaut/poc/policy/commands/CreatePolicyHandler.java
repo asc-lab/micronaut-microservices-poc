@@ -2,13 +2,13 @@ package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
 import io.micronaut.spring.tx.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.kafka.KafkaPolicyClient;
+import pl.altkom.asc.lab.micronaut.poc.command.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.*;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.CommandHandler;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.policyregistered.dto.PolicyDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.kafka.EventPublisher;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.policyregistered.PolicyRegisteredApiEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredEvent;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDto;
 
 import javax.inject.Singleton;
 import java.time.LocalDate;
@@ -20,7 +20,7 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
     private final PolicyRepository policyRepository;
     private final OfferRepository offerRepository;
     private final PolicyFactory policyFactory = new PolicyFactory();
-    private final KafkaPolicyClient policyClient;
+    private final EventPublisher eventPublisher;
 
     @Transactional
     @Override
@@ -41,9 +41,19 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
         policyRepository.add(policy);
 
         //publish events
-        policyClient.policyRegisteredEvent(policy.getNumber(), new PolicyRegisteredEvent(policy));
-        policyClient.policyRegisteredOutsideEvent(policy.getNumber(), new PolicyRegisteredApiEvent(new PolicyDto(policy.getNumber())));
+        eventPublisher.policyRegisteredEvent(policy.getNumber(), createEvent(policy));
 
         return new CreatePolicyResult(policy.getNumber());
+    }
+
+    private PolicyRegisteredEvent createEvent(Policy policy) {
+        return new PolicyRegisteredEvent(
+                new PolicyDto(
+                        policy.getNumber(),
+                        policy.getLastVersionValidityFrom(),
+                        policy.getLastVersionValidityTo(),
+                        policy.versions().lastVersion().getPolicyHolder().getFullName()
+                )
+        );
     }
 }

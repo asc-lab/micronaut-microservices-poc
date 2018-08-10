@@ -1,14 +1,11 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffer;
 
+import lombok.*;
+import pl.altkom.asc.lab.micronaut.poc.command.bus.api.Command;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffer.dto.QuestionAnswer;
+
 import java.time.LocalDate;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.Command;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffer.dto.QuestionAnswer;
 
 @Getter
 @Setter

@@ -2,11 +2,11 @@ package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
 import io.micronaut.spring.tx.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.command.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Offer;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferFactory;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.restclient.PricingClient;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffer.CreateOfferCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffer.CreateOfferResult;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceCommand;

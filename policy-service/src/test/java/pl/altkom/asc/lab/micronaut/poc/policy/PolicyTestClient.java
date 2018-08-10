@@ -8,14 +8,10 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpoli
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
 
 @Client(id = "/policy-service", path = "/policies")
 public interface PolicyTestClient {
-
-    @Get("/")
-    FindPolicyQueryResult policies();
 
     @Get("/{policyNumber}")
     GetPolicyDetailsQueryResult get(String policyNumber);

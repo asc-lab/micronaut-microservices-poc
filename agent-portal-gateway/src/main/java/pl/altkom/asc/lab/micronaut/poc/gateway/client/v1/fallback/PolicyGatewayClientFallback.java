@@ -7,7 +7,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpoli
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
 
 import javax.inject.Singleton;
 import javax.validation.constraints.NotNull;
@@ -15,11 +14,6 @@ import javax.validation.constraints.NotNull;
 @Singleton
 @Fallback
 public class PolicyGatewayClientFallback implements PolicyOperations {
-
-    @Override
-    public FindPolicyQueryResult policies() {
-        return FindPolicyQueryResult.empty();
-    }
 
     @Override
     public GetPolicyDetailsQueryResult get(@NotNull String policyNumber) {

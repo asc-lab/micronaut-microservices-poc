@@ -1,7 +1,16 @@
+call mvn clean install -f command-bus-api
+if errorlevel 1 exit /B 1
+
+call mvn clean install -f command-bus
+if errorlevel 1 exit /B 1
+
 call mvn clean install -f payment-service-api
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f policy-service-api
+if errorlevel 1 exit /B 1
+
+call mvn clean install -f policy-search-service-api
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f pricing-service-api
@@ -17,6 +26,9 @@ call mvn clean install -f payment-service
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f policy-service -Dmaven.test.skip
+if errorlevel 1 exit /B 1
+
+call mvn clean install -f policy-search-service -Dmaven.test.skip
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f pricing-service -Dmaven.test.skip

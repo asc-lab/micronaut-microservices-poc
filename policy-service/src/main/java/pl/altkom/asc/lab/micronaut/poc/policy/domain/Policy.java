@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,6 +28,14 @@ public class Policy {
     public Policy(String number) {
         this.number = number;
         this.versions = new HashSet<>();
+    }
+
+    public LocalDate getLastVersionValidityFrom() {
+        return versions().lastVersion().getVersionValidityPeriod().getFrom();
+    }
+
+    public LocalDate getLastVersionValidityTo() {
+        return versions().lastVersion().getVersionValidityPeriod().getTo();
     }
 
     public PolicyVersionCollection versions() {

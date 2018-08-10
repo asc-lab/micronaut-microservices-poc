@@ -154,14 +154,6 @@
             <version>1.5</version>
         </dependency>
         
-        <!--
-        <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>spring</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        -->
-        
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>jdbc-hikari</artifactId>

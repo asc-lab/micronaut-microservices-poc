@@ -124,6 +124,18 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>policy-search-service-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>policy-search-service-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
