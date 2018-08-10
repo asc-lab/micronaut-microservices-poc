@@ -1,27 +1,29 @@
 package pl.altkom.asc.lab.micronaut.poc.payment.infrastructure.adapters.db;
 
+import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession;
 import io.micronaut.spring.tx.annotation.Transactional;
 import java.util.Collection;
 import java.util.Optional;
+import javax.inject.Inject;
 import javax.inject.Singleton;
-import lombok.RequiredArgsConstructor;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccount;
 import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccountRepository;
 
 @Singleton
-@RequiredArgsConstructor
 public class PolicyAccountDb implements PolicyAccountRepository {
-    private final SessionFactory sessionFactory;
+    @Inject
+    @CurrentSession
+    private EntityManager entityManager;
     
     @Transactional
     @Override
     public Optional<PolicyAccount> findForPolicy(String policyNumber) {
         return query("from PolicyAccount p left join fetch p.entries where p.policyNumber = :policyNumber")
                 .setParameter("policyNumber", policyNumber)
-                .uniqueResultOptional();
+                .getResultStream()
+                .findFirst();
     }
 
     @Transactional
@@ -29,26 +31,23 @@ public class PolicyAccountDb implements PolicyAccountRepository {
     public Optional<PolicyAccount> findByNumber(String accountNumber) {
         return query("from PolicyAccount p left join fetch p.entries where p.policyAccountNumber = :accountNumber")
                 .setParameter("accountNumber", accountNumber)
-                .uniqueResultOptional();
+                .getResultStream()
+                .findFirst();
     }
     
     @Transactional
     @Override
     public void add(PolicyAccount policyAccount) {
-        currentSession().save(policyAccount);
+        entityManager.persist(policyAccount);
     }
 
     @Transactional
     @Override
     public Collection<PolicyAccount> findAll() {
-        return query("from PolicyAccount p").list();
+        return query("from PolicyAccount p").getResultList();
     }
     
-    private Session currentSession() {
-        return sessionFactory.getCurrentSession();
-    }
-    
-    private Query<PolicyAccount> query(String text) {
-        return currentSession().createQuery(text, PolicyAccount.class);
+    private TypedQuery<PolicyAccount> query(String text) {
+        return entityManager.createQuery(text, PolicyAccount.class);
     }
 }
