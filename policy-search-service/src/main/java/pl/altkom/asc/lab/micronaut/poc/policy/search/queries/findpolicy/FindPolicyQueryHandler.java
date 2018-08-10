@@ -1,11 +1,11 @@
-package pl.altkom.asc.lab.micronaut.poc.queries.findpolicy;
+package pl.altkom.asc.lab.micronaut.poc.policy.search.queries.findpolicy;
 
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.QueryHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQuery;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
-import pl.altkom.asc.lab.micronaut.poc.readmodel.PolicyView;
-import pl.altkom.asc.lab.micronaut.poc.readmodel.PolicyViewRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyView;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyViewRepository;
 
 import javax.inject.Singleton;
 import java.util.List;

@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.readmodel;
+package pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Builder

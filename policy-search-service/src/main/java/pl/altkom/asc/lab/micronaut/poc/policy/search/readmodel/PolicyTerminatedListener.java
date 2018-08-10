@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.readmodel;
+package pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel;
 
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;

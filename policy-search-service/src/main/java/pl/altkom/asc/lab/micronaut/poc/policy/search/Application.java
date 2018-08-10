@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc;
+package pl.altkom.asc.lab.micronaut.poc.policy.search;
 
 import io.micronaut.runtime.Micronaut;
 

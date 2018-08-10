@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.infrastructure.adapters.web;
+package pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.web;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.validation.Validated;

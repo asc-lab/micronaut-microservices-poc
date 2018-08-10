@@ -14,7 +14,7 @@ datasources:
 jpa:
  default:
     packages-to-scan:
-        - 'pl.altkom.asc.lab.micronaut.poc.readmodel'
+        - 'pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel'
     properties:
         hibernate:
             hbm2ddl:

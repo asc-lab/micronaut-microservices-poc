@@ -1,11 +1,11 @@
-package pl.altkom.asc.lab.micronaut.poc.infrastructure.adapters.mock;
+package pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.mock;
 
 import io.micronaut.context.annotation.Replaces;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
-import pl.altkom.asc.lab.micronaut.poc.infrastructure.adapters.db.HibernatePolicyViewRepository;
-import pl.altkom.asc.lab.micronaut.poc.readmodel.PolicyView;
-import pl.altkom.asc.lab.micronaut.poc.readmodel.PolicyViewRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.db.HibernatePolicyViewRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyView;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyViewRepository;
 
 import javax.inject.Singleton;
 import java.util.ArrayList;

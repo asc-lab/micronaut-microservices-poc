@@ -7,6 +7,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.find
 @Client(id = "/policy-search-service", path = "/policies")
 public interface PolicySearchTestClient {
 
-    @Get("/")
+    @Get
     FindPolicyQueryResult policies();
 }

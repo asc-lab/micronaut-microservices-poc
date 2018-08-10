@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.readmodel;
+package pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel;
 
 import java.util.List;
 
