@@ -8,8 +8,8 @@
     <version>1.0</version>
 
     <properties>
-        <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.Application</exec.mainClass>
-        <micronaut.version>1.0.0.M3</micronaut.version>
+        <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.policy.search.Application</exec.mainClass>
+        <micronaut.version>1.0.0.M4</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
