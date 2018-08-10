@@ -8,7 +8,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.Health;
 @Controller("/hello")
 public class HelloController {
 
-    @Get("/")
+    @Get
     public HttpStatus index() {
         return HttpStatus.OK;
     }

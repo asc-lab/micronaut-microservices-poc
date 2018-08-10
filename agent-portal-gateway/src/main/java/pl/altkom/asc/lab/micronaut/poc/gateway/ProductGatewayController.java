@@ -16,7 +16,7 @@ public class ProductGatewayController {
     @Inject
     private ProductGatewayClient client;
 
-    @Get("/")
+    @Get
     public Single<List<ProductDto>> getAll() {
         return client.getAll();
     }

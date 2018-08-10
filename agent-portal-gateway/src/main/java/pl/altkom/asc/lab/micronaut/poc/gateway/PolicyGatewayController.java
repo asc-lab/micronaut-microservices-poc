@@ -23,7 +23,7 @@ public class PolicyGatewayController {
     @Inject
     private PolicySearchGatewayClient policySearchClient;
 
-    @Get("/")
+    @Get
     FindPolicyQueryResult policies() {
         return policySearchClient.policies();
     }

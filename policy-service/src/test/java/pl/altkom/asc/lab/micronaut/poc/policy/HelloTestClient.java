@@ -8,7 +8,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.Health;
 @Client(id = "/policy-service", path = "/hello")
 public interface HelloTestClient {
 
-    @Get("/")
+    @Get
     HttpStatus index();
 
     @Get("/version")

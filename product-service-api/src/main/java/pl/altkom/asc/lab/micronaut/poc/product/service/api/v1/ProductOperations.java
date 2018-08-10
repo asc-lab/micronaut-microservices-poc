@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProductOperations {
 
-    @Get("/")
+    @Get
     Single<List<ProductDto>> getAll();
 
     @Get("/{productCode}")

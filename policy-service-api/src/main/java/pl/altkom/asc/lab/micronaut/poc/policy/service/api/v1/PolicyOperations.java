@@ -16,7 +16,7 @@ public interface PolicyOperations {
     @Get("/{policyNumber}")
     GetPolicyDetailsQueryResult get(@NotNull String policyNumber);
 
-    @Post("/")
+    @Post
     CreatePolicyResult create(@Body @NotNull CreatePolicyCommand cmd);
 
     @Post("/terminate")

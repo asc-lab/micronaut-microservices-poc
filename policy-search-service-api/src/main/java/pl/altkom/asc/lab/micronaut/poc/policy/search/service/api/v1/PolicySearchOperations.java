@@ -5,6 +5,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.find
 
 public interface PolicySearchOperations {
 
-    @Get("/")
+    @Get
     FindPolicyQueryResult policies();
 }
