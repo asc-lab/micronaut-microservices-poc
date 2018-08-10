@@ -1,30 +1,30 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.intrastructure.adapters.db;
 
+import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession;
 import io.micronaut.spring.tx.annotation.Transactional;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariff;
 import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariffs;
 
 import javax.inject.Singleton;
 import java.util.Optional;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 
 @Singleton
 public class TariffsDb implements Tariffs {
 
-    private final SessionFactory sessionFactory;
-
-    public TariffsDb(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    @Inject
+    @CurrentSession
+    EntityManager entityManager;
 
     @Transactional
     @Override
     public Optional<Tariff> findByCode(String code) {
-        return currentSession()
+        return entityManager
                 .createQuery("from Tariff t where t.code = :code", Tariff.class)
                 .setParameter("code", code)
-                .uniqueResultOptional();
+                .getResultStream()
+                .findFirst();
     }
 
     @Override
@@ -35,10 +35,8 @@ public class TariffsDb implements Tariffs {
     @Transactional
     @Override
     public void add(Tariff tariff) {
-        currentSession().save(tariff);
+        entityManager.persist(tariff);
     }
 
-    private Session currentSession() {
-        return sessionFactory.getCurrentSession();
-    }
+    
 }

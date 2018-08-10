@@ -26,9 +26,8 @@ public class Tariff {
 
     @OneToMany(mappedBy = "tariff", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DiscountMarkupRule> discountMarkupRules;
-
-    public Tariff(Long id, String code) {
-        this.id = id;
+    
+    public Tariff( String code) {
         this.code = code;
         this.basePriceCalculationRules = new ArrayList<>();
         this.discountMarkupRules = new ArrayList<>();

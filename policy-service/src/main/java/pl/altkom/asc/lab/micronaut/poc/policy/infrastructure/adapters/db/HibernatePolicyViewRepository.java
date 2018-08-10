@@ -1,38 +1,34 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.db;
 
+import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession;
 import io.micronaut.spring.tx.annotation.Transactional;
-import lombok.RequiredArgsConstructor;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.annotations.RequiresJdbc;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.readmodel.PolicyViewRepository;
 
 import javax.inject.Singleton;
 import java.util.List;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 
 @RequiresJdbc
 @Singleton
-@RequiredArgsConstructor
 public class HibernatePolicyViewRepository implements PolicyViewRepository {
-
-    private final SessionFactory sessionFactory;
+    @Inject
+    @CurrentSession
+    private EntityManager entityManager;
 
     @Transactional
     @Override
     public List<PolicyView> findAll() {
-        return currentSession()
+        return entityManager
                 .createQuery("from PolicyView pv", PolicyView.class)
-                .list();
+                .getResultList();
     }
 
     @Transactional
     @Override
     public void save(PolicyView view) {
-        currentSession().save(view);
-    }
-
-    private Session currentSession() {
-        return sessionFactory.getCurrentSession();
+        entityManager.persist(view);
     }
 }

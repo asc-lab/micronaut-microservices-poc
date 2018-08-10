@@ -17,9 +17,8 @@ public class MockOfferRepository implements OfferRepository{
     private Map<String, Offer> map = new ConcurrentHashMap<>();
     
     @Override
-    public Long add(Offer offer) {
+    public void add(Offer offer) {
         map.put(offer.getNumber(), offer);
-        return 1L;
     }
 
     @Override
