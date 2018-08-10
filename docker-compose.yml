@@ -37,6 +37,11 @@ services:
     image: mn-policy-service
     container_name: mn-policy-service
     network_mode: host
+mn-policy-search-service:
+  build: ./policy-search-service
+  image: mn-policy-searh-service
+  container_name: mn-policy-search-service
+  network_mode: host
   mn-pricing-service:
     build: ./pricing-service
     image: mn-pricing-service
