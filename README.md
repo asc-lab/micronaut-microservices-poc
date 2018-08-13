@@ -64,31 +64,20 @@ At this point system is ready to use: [http://localhost](http://localhost)
 
 If you want to run services manually (eg. from IDE), you have to provision infrastructure manually too:
 
-#### Consul
+* Consul dashboard: ```http://localhost:8500```
+* Zipkin dashboard: ```http://localhost:9411/zipkin/```
+* Kafka Manager dashboard: ```http://localhost:9000/```
+
+#### Consul without our scripts
 ```
 docker run -p 8500:8500 consul
 ```
-Open dashboard:
-```
-http://localhost:8500
-```
-#### Zipkin
+#### Zipkin without our scripts
 ```
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
-Open dashboard:
-```
-http://localhost:9411/zipkin/
-```
-
-#### Kafka
+#### Kafka without our scripts
 Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup-apache-kafka-in-docker-on-windows).
-Folder [kafka-docker] contains the script copied from the above instruction.
-
-Open dashboard:
-```
-http://localhost:9000/
-```
 
 ## Add new microservice
 
