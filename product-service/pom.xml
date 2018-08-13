@@ -33,12 +33,16 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- LOMBOK -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- LOMBOK -->
+
+        <!-- MICRONAUT CORE -->
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>http-client</artifactId>
@@ -64,15 +68,24 @@
             <artifactId>inject-java</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- MICRONAUT CORE -->
+
+        <!-- DISCOVERY CLIENT -->
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- DISCOVERY CLIENT -->
+
+        <!-- MONGO -->
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>mongo-reactive</artifactId>
         </dependency>
+        <!-- MONGO -->
+
+        <!-- MANAGEMENT -->
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>management</artifactId>
@@ -85,7 +98,9 @@
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>micrometer-registry-statsd</artifactId>
         </dependency>
+        <!-- MANAGEMENT -->
 
+        <!-- TESTS -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -98,12 +113,15 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- TESTS -->
 
+        <!-- INTERNAL -->
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
             <artifactId>product-service-api</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- INTERNAL -->
     </dependencies>
 
     <build>

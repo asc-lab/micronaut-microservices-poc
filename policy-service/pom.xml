@@ -33,6 +33,15 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- LOMBOK -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- LOMBOK -->
+
         <!-- CORE MICRONAUT -->
         <dependency>
             <groupId>io.micronaut</groupId>
@@ -120,12 +129,6 @@
         <!-- TRACING WITH ZIPKIN -->
 
         <!-- UTILITIES -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>

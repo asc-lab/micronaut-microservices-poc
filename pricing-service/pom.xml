@@ -33,6 +33,15 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- LOMBOK -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- LOMBOK -->
+
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>http-client</artifactId>
@@ -112,13 +121,6 @@
             <artifactId>h2</artifactId>
             <version>1.4.197</version>
             <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
