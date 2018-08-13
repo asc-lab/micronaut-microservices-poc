@@ -52,7 +52,7 @@ public class PolicyControllerTest {
                 "TRI",
                 LocalDate.of(2018, 8, 1),
                 LocalDate.of(2018, 8, 10),
-                new HashMap<String, String>(),
+                new HashMap<>(),
                 new BigDecimal("199"),
                 coverPrices,
                 OfferStatus.NEW,

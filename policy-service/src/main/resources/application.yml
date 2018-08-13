@@ -27,6 +27,8 @@ jackson:
     writeDatesAsTimestamps: true
 ---
 kafka:
+#  embedded:
+#    enabled: true
   bootstrap:
     servers: "${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}"
 ---
