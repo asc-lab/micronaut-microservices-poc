@@ -2,9 +2,9 @@ package pl.altkom.asc.lab.micronaut.poc.product.service;
 
 import io.micronaut.runtime.Micronaut;
 
-public class Application {
+public class ProductApplication {
 
     public static void main(String[] args) {
-        Micronaut.run(Application.class);
+        Micronaut.run(ProductApplication.class);
     }
 }
