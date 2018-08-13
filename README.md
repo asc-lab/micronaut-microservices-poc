@@ -27,17 +27,22 @@ Available functionalities:
 
 ## Building
 For demo purposes build process is automated by a shell script:
+For Unix-based systems:
 ```
 build.sh
 ```
+For Windows:
+```
+build.bat
+```
 
-This step requires Java 8 (JDK), Maven and Yarn.
+This step requires **Java 8 (JDK), Maven** and **Yarn**.
 
 ## Running
 
 Prerequisites:
-* docker
-* docker-compose
+* **docker**
+* **docker-compose**
 
 ### Automated deployment
 To run the whole system on local machine just type:
