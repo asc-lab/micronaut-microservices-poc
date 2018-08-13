@@ -33,13 +33,7 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
-            <scope>provided</scope>
-        </dependency>
-
+        <!-- CORE MICRONAUT -->
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>http-client</artifactId>
@@ -65,7 +59,14 @@
             <artifactId>inject-java</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- CORE MICRONAUT -->
 
+        <!-- DATABASE, JPA, HIBERNATE -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.197</version>
+        </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>jdbc-hikari</artifactId>
@@ -74,16 +75,23 @@
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>hibernate-jpa</artifactId>
         </dependency>
+        <!-- DATABASE, JPA, HIBERNATE -->
+
+        <!-- KAFKA -->
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>kafka</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- KAFKA -->
+
+        <!-- DISCOVERY CLIENT -->
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- DISCOVERY CLIENT -->
 
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
@@ -111,17 +119,19 @@
         </dependency>
         <!-- TRACING WITH ZIPKIN -->
 
+        <!-- UTILITIES -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.197</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+            <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>25.0-jre</version>
         </dependency>
+        <!-- UTILITIES -->
 
         <!-- TESTS -->
         <dependency>
@@ -167,6 +177,7 @@
         <!--</dependency>-->
         <!-- TESTS -->
 
+        <!-- INTERNAL -->
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
             <artifactId>policy-service-api</artifactId>
@@ -184,6 +195,7 @@
             <artifactId>command-bus</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- INTERNAL -->
     </dependencies>
 
     <build>
