@@ -3,6 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.mock;
 import io.micronaut.context.annotation.Replaces;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
+import io.micronaut.spring.tx.annotation.Transactional;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
@@ -14,6 +15,7 @@ import javax.inject.Singleton;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Replaces(HibernatePolicyRepository.class)
 @Requires(env = Environment.TEST)
@@ -22,8 +24,20 @@ public class MockPolicyRepository implements PolicyRepository {
 
     private Map<String, Policy> policyMap = init();
 
+    @Transactional
+    @Override
+    public Optional<Policy> findByNumber(String number) {
+        return Optional.ofNullable(policyMap.get(number));
+    }
+
+    @Transactional
+    @Override
+    public void add(Policy policy) {
+        policyMap.put(policy.getNumber(), policy);
+    }
+
     private Map<String, Policy> init() {
-        Map<String, Policy> map = new LinkedHashMap<>();
+        Map<String, Policy> map = new ConcurrentHashMap<>();
 
         map.put("1234", new Policy(1L, "1234", new HashSet<>(
                 Collections.singletonList(new PolicyVersion(2L,
@@ -65,15 +79,5 @@ public class MockPolicyRepository implements PolicyRepository {
         )));
 
         return map;
-    }
-
-    @Override
-    public Optional<Policy> findByNumber(String number) {
-        return Optional.ofNullable(policyMap.get(number));
-    }
-
-    @Override
-    public void add(Policy policy) {
-        policyMap.put(policy.getNumber(), policy);
     }
 }
