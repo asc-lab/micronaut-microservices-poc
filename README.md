@@ -44,7 +44,13 @@ Prerequisites:
 * **docker**
 * **docker-compose**
 
+For Windows users, append below line ```C:\Windows\System32\drivers\etc\hosts```:
+```
+127.0.0.1 kafkaserver
+```
+
 ### Automated deployment
+
 To run the whole system on local machine just type:
 ```
 run.sh
