@@ -1,29 +1,21 @@
 package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 @Entity
 @Inheritance
 @Table(name = "accounting_entry")
-@DiscriminatorColumn(name = "enty_type")
+@DiscriminatorColumn(name = "entry_type")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public abstract class AccountingEntry {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -41,13 +33,13 @@ public abstract class AccountingEntry {
     @Column(name = "amount")
     private BigDecimal amount;
 
-    public AccountingEntry(PolicyAccount policyAccount, LocalDate creationDate, LocalDate effectiveDate, BigDecimal amount) {
+    AccountingEntry(PolicyAccount policyAccount, LocalDate creationDate, LocalDate effectiveDate, BigDecimal amount) {
         this.policyAccount = policyAccount;
         this.creationDate = creationDate;
         this.effectiveDate = effectiveDate;
         this.amount = amount;
     }
-    
+
     public abstract BigDecimal apply(BigDecimal state);
 
     boolean isEffectiveOn(LocalDate theDate) {
