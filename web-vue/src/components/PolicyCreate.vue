@@ -1,5 +1,6 @@
 <template>
     <div class="form-container">
+        <h2>Fill information about Policy Holder</h2>
         <b-form @submit="createPolicy">
             <b-form-group id="firstNameGroup"
                           label="First name:"
@@ -76,5 +77,9 @@
     .form-container {
         width: 40%;
         margin: 0 auto;
+    }
+
+    h2 {
+        margin-bottom: 40px;
     }
 </style>

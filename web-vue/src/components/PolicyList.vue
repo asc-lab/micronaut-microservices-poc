@@ -1,5 +1,9 @@
 <template>
-    <b-table striped hover :items="policies" :fields="fields"></b-table>
+    <b-table bordered striped hover
+             :items="policies"
+             :fields="fields"
+             @row-clicked="showDetails">
+    </b-table>
 </template>
 
 <script>
@@ -14,7 +18,6 @@
                     {key: 'dateFrom'},
                     {key: 'dateTo'},
                     {key: 'policyHolder'}
-
                 ],
                 policies: []
             }
@@ -23,10 +26,11 @@
             HTTP.get('policies').then(response => {
                 this.policies = response.data.policies;
             });
+        },
+        methods: {
+            showDetails(record) {
+                this.$router.push({ name: 'policyDetails', params: { policyNumber: record.number }});
+            }
         }
     }
 </script>
-
-<style scoped>
-
-</style>
