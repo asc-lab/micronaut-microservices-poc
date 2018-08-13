@@ -23,6 +23,8 @@ services:
     image: "spotify/kafka:latest"
     container_name: kafka
     hostname: kafkaserver
+    networks:
+      - kafkanet
     ports:
       - 2181:2181
       - 9092:9092
@@ -32,8 +34,15 @@ services:
   kafka_manager:
     image: "mzagar/kafka-manager-docker:1.3.3.4"
     container_name: kafkamanager
-    hostname: kafkamanager
+    networks:
+      - kafkanet
     ports:
       - 9000:9000
+    links:
+      - kafkaserver
     environment:
       ZK_HOSTS: "kafkaserver:2181"
+
+networks:
+  kafkanet:
+    driver: bridge
