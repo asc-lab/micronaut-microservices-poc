@@ -8,6 +8,8 @@
             <router-link to="/policies">Policies</router-link>
             |
             <router-link to="/about">About</router-link>
+            |
+            <router-link to="/account">Account</router-link>
         </div>
 
         <hr/>

@@ -2,6 +2,7 @@ package pl.altkom.asc.lab.micronaut.poc.gateway;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.security.Secured;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.ProductGatewayClient;
@@ -10,6 +11,7 @@ import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductDto;
 import javax.inject.Inject;
 import java.util.List;
 
+@Secured("isAuthenticated()")
 @Controller("/api/products")
 public class ProductGatewayController {
 
