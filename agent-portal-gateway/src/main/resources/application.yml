@@ -22,3 +22,7 @@ tracing:
 ---
 jackson:
   dateFormat: dd.MM.yyyy
+---
+ribbon:
+    VipAddress: test
+    ServerListRefreshInterval: 2000
