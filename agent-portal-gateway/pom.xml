@@ -64,14 +64,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- RIBBON -->
-        <dependency>
-            <groupId>io.micronaut.configuration</groupId>
-            <artifactId>netflix-ribbon</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <!-- RIBBON -->
-
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
