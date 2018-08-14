@@ -2,12 +2,6 @@
 
 This is an example of a very simplified insurance sales system made in a microservice architecture using Micronaut. 
 
-Available functionalities:
-* show products catalog
-* calculate price for product based on questions defined on product and tariff definition (with MVEL engine)
-* register new policy
-* ...
-
 ## Architecture overview
 
 <p align="center">
