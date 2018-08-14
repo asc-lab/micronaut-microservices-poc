@@ -6,6 +6,7 @@ import com.mongodb.reactivestreams.client.MongoCollection;
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
+import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Product;
 import pl.altkom.asc.lab.micronaut.poc.product.service.domain.Products;
 
@@ -14,13 +15,10 @@ import java.util.List;
 
 
 @Singleton
+@RequiredArgsConstructor
 public class ProductsRepository implements Products {
 
     private final MongoClient mongoClient;
-
-    public ProductsRepository(MongoClient mongoClient) {
-        this.mongoClient = mongoClient;
-    }
 
     @Override
     public Single<Product> add(Product product) {

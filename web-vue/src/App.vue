@@ -59,6 +59,7 @@
     }
 
     footer > img {
+        margin-top: 20px;
         height: 60px;
     }
 
