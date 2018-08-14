@@ -7,11 +7,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import pl.altkom.asc.lab.micronaut.poc.payment.domain.InPaymentRegistrationService;
 
-
 @Prototype
 @Slf4j
 @RequiredArgsConstructor
 public class BankStatementImportJob {
+
     private final BankStatementImportJobCfg jobCfg;
     private final InPaymentRegistrationService inPaymentRegistrationService;
 
