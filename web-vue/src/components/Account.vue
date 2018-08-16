@@ -1,6 +1,5 @@
 <template>
-    <!--<div class="col-sm-4 col-sm-offset-4">-->
-    <div>
+    <div class="mx-auto" style="max-width: 20rem;">
         <div class="form-container" v-if="!auth.isAuthenticated()">
             <h2>Log in to your account</h2>
             <b-form @submit="login">
