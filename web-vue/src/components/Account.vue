@@ -1,8 +1,8 @@
 <template>
     <div class="mx-auto" style="max-width: 20rem;">
-        <div class="form-container" v-if="!auth.isAuthenticated()">
+        <div v-if="!auth.isAuthenticated()">
             <h2>Log in to your account</h2>
-            <b-form @submit="login">
+            <b-form>
                 <b-form-group id="usernameGroup"
                               label="Username:"
                               label-for="userName">
@@ -29,8 +29,8 @@
             </b-form>
 
         </div>
-        <div class="form-container" v-else>
-            <b-form @submit="logout">
+        <div v-else>
+            <b-form>
                 <b-button type="button" v-on:click="logout()" variant="primary">Logout</b-button>
             </b-form>
         </div>
