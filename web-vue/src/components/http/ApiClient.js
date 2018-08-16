@@ -12,3 +12,11 @@ export const HTTP = axios.create({
         }
     ]
 });
+
+HTTP.interceptors.response.use(
+    (response) => { return response },
+    (error) => {
+        console.log(error.response.status)
+        window.location.href = '/#/account'
+    }
+)

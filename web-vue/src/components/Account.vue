@@ -1,7 +1,7 @@
 <template>
     <!--<div class="col-sm-4 col-sm-offset-4">-->
     <div>
-        <div class="form-container" v-if="!auth.user.authenticated">
+        <div class="form-container" v-if="!auth.isAuthenticated()">
             <h2>Log in to your account</h2>
             <b-form @submit="login">
                 <b-form-group id="usernameGroup"
@@ -26,13 +26,13 @@
                     </b-form-input>
                 </b-form-group>
 
-                <b-button type="submit" variant="primary">Login</b-button>
+                <b-button type="button" v-on:click="login()" variant="primary">Login</b-button>
             </b-form>
 
         </div>
         <div class="form-container" v-else>
             <b-form @submit="logout">
-                <b-button type="submit" variant="primary">Logout</b-button>
+                <b-button type="button" v-on:click="logout()" variant="primary">Logout</b-button>
             </b-form>
         </div>
     </div>
@@ -59,9 +59,11 @@
                     password: this.credentials.password
                 }
                 auth.login(this, credentials)
+                window.location.href = '/'
             },
             logout() {
                 auth.logout()
+                window.location.reload()
             }
         }
 
