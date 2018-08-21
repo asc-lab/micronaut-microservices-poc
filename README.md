@@ -8,16 +8,32 @@ This is an example of a very simplified insurance sales system made in a microse
     <img alt="Micronaut Microservices Architecture" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/micronaut-microservices-architecture.png" />
 </p>
 
-* **agent-portal-gateway** - [Gateway pattern from EAA Catalog](https://martinfowler.com/eaaCatalog/gateway.html) implementation
-* **payment-service** - create account for new Policy and show policy accounts list
-* **payment-service-api** - DTOs, exceptions and operations (methods) for payment-service
-* **policy-service** - register new Policy, close Policy and show policies list
-* **policy-service-api** - DTOs, exceptions and operations (methods) for policy-service
-* **pricing-service** - return price for selected product based on tariff
-* **pricing-service-api** - DTOs, exceptions and operations (methods) for pricing-service
-* **product-service** - simple product catalog
-* **product-service-api** - DTOs, exceptions and operations (methods) for product-service
-* **web-vue** - frontend
+* **agent-portal-gateway** - Gateway pattern from EAA Catalog implementation. \
+The complexity of “business microservices” will be hidden by using Gateway pattern. This component is responsible for the proper redirection of requests to the appropriate services based on the configuration. The frontend application will only communicate with this component. This component show usage of non-blocking http declarative clients.
+
+* **payment-service** - main responsibilities: create Policy Account, show Policy Account list, register in payments from bank statement file. \
+This module is taking care of a managing policy accounts. Once the policy is created, an account is created in this service with expected money income.  Payment-service also has an implementation of a scheduled process where CSV file with payments is imported and payments are assigned to policy accounts. This component shows asynchronous communication between services using Kafka and ability to create background jobs using Micronaut. It also features accessing database using JPA.
+
+* **policy-service** - creates offers, converts offers to insurance policies, allows termination of policies. \
+In this service we demonstrated usage of CQRS pattern for better read/write operation isolation. This service demonstrates two ways of communication between services: synchronous REST based calls to pricing-service through HTTP Client to get the price, and asynchronous event based using Apache Kafka to publish information about newly created policies. In this service we also access RDBMS using JPA.
+
+* **policy-search-service** - provides insurance policy search. \
+This module listens for events from Kafka, converts received DTOs to “read model” (used later in search) and saves this in database. It also exposes REST endpoint for search policies.
+
+* **pricing-service** - calculates price for selected insurance product. \
+For each product a tariff should be defined. The tariff is a set of rules on the basis of which the price is calculated. MVEL language was used to define the rules. During the policy purchase process, the policy-service connects with this service to calculate a price. Price is calculated based on user’s answers for defined questions. Example below:
+
+* **product-service** - simple insurance product catalog. \
+Information about products are stored in MongoDB. Each product has code, name, image, description, cover list and question list (affect the price defined by the tariff). This module shows usage of reactive Mongo client.
+
+* **web-vue** - SPA application built with Vue.js and Bootstrap for Vue.
+
+* **auth-service** - JWT based authentication service, this services provides login functionality. \
+Based on login and password users get authenticated and JWT token with their privileges is created and returned. This services shows built-in Micronaut support for JWT based security.
+
+Each business microservice has also **-api module** (payment-service-api, policy-service-api etc.), where we defined commands, events, queries and operations. 
+
+In the picture you can also see the component **internal-command-bus**. This component is used internally by microservices if we want to use a CQRS pattern inside (simple example in OfferController in policy-service).
 
 ## Building
 This step requires **Java 8 (JDK), Maven** and **Yarn**.
