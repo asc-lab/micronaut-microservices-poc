@@ -2,6 +2,7 @@ package pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.db
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.reactivex.Maybe;
+import io.reactivex.Single;
 import javax.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
@@ -17,9 +18,10 @@ import org.elasticsearch.client.RestHighLevelClient;
 @Slf4j
 public class ElasticClientAdapter {
     private final RestHighLevelClient restHighLevelClient;
-    private final ObjectMapper jsonMapper = new ObjectMapper();
+    private final ElasticSearchSettings elasticSearchSettings;
 
-    public ElasticClientAdapter() {
+    public ElasticClientAdapter(ElasticSearchSettings elasticSearchSettings) {
+        this.elasticSearchSettings = elasticSearchSettings;
         this.restHighLevelClient = buildClient();
     }
     
@@ -57,12 +59,12 @@ public class ElasticClientAdapter {
     private RestHighLevelClient buildClient() {
         return new RestHighLevelClient(
                 RestClient
-                        .builder(new HttpHost("localhost", 9200))
+                        .builder(new HttpHost(elasticSearchSettings.getHost(), elasticSearchSettings.getPort()))
                         .setRequestConfigCallback(config -> config
-                                .setConnectTimeout(5_000)
-                                .setConnectionRequestTimeout(5_000)
-                                .setSocketTimeout(5_000)
+                                .setConnectTimeout(elasticSearchSettings.getConnectionTimeout())
+                                .setConnectionRequestTimeout(elasticSearchSettings.getConnectionRequestTimeout())
+                                .setSocketTimeout(elasticSearchSettings.getSocketTimeout())
                         )
-                        .setMaxRetryTimeoutMillis(5_000));
+                        .setMaxRetryTimeoutMillis(elasticSearchSettings.getMaxRetryTimeout()));
     }
 }
