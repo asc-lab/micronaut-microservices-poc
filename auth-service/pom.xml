@@ -4,7 +4,7 @@
     <artifactId>auth-service</artifactId>
     <version>0.1</version>
     <properties>
-        <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.auth.Application</exec.mainClass>
+        <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.auth.AuthApplication</exec.mainClass>
         <micronaut.version>1.0.0.M4</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>

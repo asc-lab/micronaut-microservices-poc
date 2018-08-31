@@ -1,6 +1,12 @@
 version: '2'
 
 services:
+  jsreport:
+    image: jsreport/jsreport
+    container_name: jsreport
+    hostname: jsreport
+    ports:
+      - 5488:5488
   consul:
     image: consul
     container_name: consul

@@ -23,6 +23,12 @@
             <div class="row">
                 <span><strong>Covers:</strong> {{ policy.covers | join }}</span>
             </div>
+            <div class="row">
+                <button type="submit"
+                        class="btn btn-primary"
+                        v-on:click.stop.prevent="documents">Documents
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -46,11 +52,18 @@
             })
         },
         filters: {
-            join: function(value) {
-                if(!value)
+            join: function (value) {
+                if (!value)
                     return '';
 
                 return value.join(', ');
+            }
+        },
+        methods: {
+            documents: function () {
+                HTTP.get("documents/" + this.policyNumber).then(response => {
+                    this.policy = response.data.policy;
+                })
             }
         }
     }

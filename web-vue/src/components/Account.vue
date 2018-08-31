@@ -40,6 +40,7 @@
 
 <script>
     import auth from './http/Auth'
+
     export default {
         data() {
             return {
@@ -57,11 +58,11 @@
                     username: this.credentials.username,
                     password: this.credentials.password
                 }
-                auth.login(this, credentials)
-                window.location.href = '/'
+                auth.login(this, credentials);
+                this.$router.push('/');
             },
             logout() {
-                auth.logout()
+                auth.logout();
                 window.location.reload()
             }
         }

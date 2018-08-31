@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: documents.service
+---
+testFramework: spek
+sourceLanguage: kotlin

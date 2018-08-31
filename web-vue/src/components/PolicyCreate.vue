@@ -42,7 +42,7 @@
 </template>
 
 <script>
-    import {HTTP} from "./http/ApiClient";
+    import auth from './http/Auth'
 
     export default {
         name: "PolicyCreate",
@@ -59,14 +59,18 @@
             }
         },
         methods: {
-            createPolicy: function() {
+            createPolicy: function () {
                 const request = {
                     offerNumber: this.offerNumber,
                     policyHolder: this.policyHolder
                 };
 
-                HTTP.post('policies/create', request).then(response => {
-                    this.$router.push({ name: 'policyDetails', params: { policyNumber: response.data.policyNumber }});
+                this.$http.post('http://localhost:8081/api/policies/create', request, {
+                    headers: {
+                        'Authorization': auth.getAuthHeader()
+                    }
+                }).then(response => {
+                    this.$router.push({name: 'policyDetails', params: {policyNumber: response.data.policyNumber}});
                 })
             }
         }

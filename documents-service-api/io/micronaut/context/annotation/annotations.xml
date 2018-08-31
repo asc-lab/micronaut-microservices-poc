@@ -1,0 +1,5 @@
+<root>
+    <item name='io.micronaut.context.annotation.Requires'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

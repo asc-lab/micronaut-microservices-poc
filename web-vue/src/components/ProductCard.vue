@@ -9,7 +9,7 @@
             <CoverList :covers="product.covers"></CoverList>
         </p>
         <router-link :to="{name: 'product', params: { productCode: product.code }}">
-            <b-button variant="primary">Buy</b-button>
+            <b-button type="submit" variant="primary">Confirm</b-button>
         </router-link>
     </b-card>
 </template>

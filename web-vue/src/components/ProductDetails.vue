@@ -43,12 +43,14 @@
                                 <label class="col-sm-3 col-form-label">{{a.question.text}} </label>
 
                                 <div class="col-sm-9" v-if="a.question.type==='numeric'">
-                                    <input required type="number" class="form-control" v-model="a.answer" :disabled="'VIEW' === mode"/>
+                                    <input required type="number" class="form-control" v-model="a.answer"
+                                           :disabled="'VIEW' === mode"/>
                                 </div>
 
                                 <div class="col-sm-9" v-if="a.question.type==='choice'">
                                     <select required class="form-control" v-model="a.answer" :disabled="'VIEW' === mode">
-                                        <option v-for="option in a.question.choices" v-bind:value="option.code" :key="option.code">
+                                        <option v-for="option in a.question.choices" v-bind:value="option.code"
+                                                :key="option.code">
                                             {{ option.label }}
                                         </option>
                                     </select>
@@ -75,7 +77,8 @@
             <div class="col-sm-12 margin-top-10">
                 <div class="d-flex flex-row-reverse" v-if="'EDIT' === mode">
                     <div class="p-2">
-                        <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="calculatePrice">Calculate price</button>
+                        <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="calculatePrice">Calculate price
+                        </button>
                     </div>
                     <div class="p-2">
                         <router-link :to="{name: 'products'}">
@@ -89,7 +92,8 @@
                         <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="createOffer">Buy</button>
                     </div>
                     <div class="p-2">
-                        <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="backToEdit" role="button">Change parameters</a>
+                        <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="backToEdit" role="button">Change
+                            parameters</a>
                     </div>
                     <div class="p-2">
                         <router-link :to="{name: 'products'}">
@@ -105,6 +109,7 @@
 
 <script>
     import {HTTP} from "./http/ApiClient";
+    import auth from './http/Auth'
 
     export default {
         name: 'ProductDetails',
@@ -166,7 +171,11 @@
                 return request;
             },
             calculatePrice: function () {
-                HTTP.post('offers', this.createRequest()).then(response => {
+                this.$http.post('http://localhost:8081/api/offers', this.createRequest(), {
+                    headers: {
+                        'Authorization': auth.getAuthHeader()
+                    }
+                }).then(response => {
                     this.mode = 'VIEW';
                     this.price.amountToPay = response.data.totalPrice;
                     this.offerNumber = response.data.offerNumber;

@@ -140,6 +140,12 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>documents.service.api</groupId>
+            <artifactId>documents-service-api</artifactId>
+            <version>0.1</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- INTERNAL -->
     </dependencies>
     <build>
