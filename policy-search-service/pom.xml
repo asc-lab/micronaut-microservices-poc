@@ -100,20 +100,17 @@
             <scope>compile</scope>
             <version>0.30.0</version>
         </dependency>
-
+        
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.197</version>
+          <groupId>org.elasticsearch.client</groupId>
+          <artifactId>elasticsearch-rest-high-level-client</artifactId>
+          <version>6.3.2</version>
         </dependency>
-        <dependency>
-            <groupId>io.micronaut.configuration</groupId>
-            <artifactId>jdbc-hikari</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.micronaut.configuration</groupId>
-            <artifactId>hibernate-jpa</artifactId>
-        </dependency>
+      <dependency>
+          <groupId>org.elasticsearch</groupId>
+          <artifactId>elasticsearch</artifactId>
+          <version>6.3.2</version>
+      </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
