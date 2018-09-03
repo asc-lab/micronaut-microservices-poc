@@ -7,4 +7,5 @@ import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.operations.Payment
 @Client(id = "payment-service", path = "/payment")
 @Retryable(attempts = "2", delay = "2s")
 public interface PaymentGatewayClient extends PaymentOperations {
+
 }

@@ -35,7 +35,7 @@ class PolicyRegisteredListener(private val policyDocumentRepository: PolicyDocum
         val policyDocument = PolicyDocument(
                 id = null,
                 policyNumber = event.policy.number,
-                bytes = generatedDocument?.body()
+                bytes = generatedDocument?.body()!!
         )
 
         policyDocumentRepository.add(policyDocument)
@@ -46,7 +46,6 @@ class PolicyRegisteredListener(private val policyDocumentRepository: PolicyDocum
         val request = HttpRequest.POST(uri, jsReportRequest)
                 .header(HttpHeaders.CONTENT_TYPE, "application/json")
         val flowable = create.toBlocking().exchange(request, ByteArray::class.java)
-        println("-----------------------")
         return flowable
     }
 

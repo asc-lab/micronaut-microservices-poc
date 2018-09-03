@@ -5,9 +5,9 @@ import documents.service.domain.PolicyDocument
 import documents.service.domain.PolicyDocumentRepository
 import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession
 import io.micronaut.spring.tx.annotation.Transactional
-import javax.inject.Inject
 import javax.inject.Singleton
 import javax.persistence.EntityManager
+import kotlin.streams.toList
 
 @Singleton
 @RequiresJdbc
@@ -24,7 +24,12 @@ open class PolicyDocymentDb(
 
     @Transactional
     override fun findByPolicyNumber(policyNumber: String): List<PolicyDocument> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return entityManager
+                .createQuery<PolicyDocument>("from PolicyDocument t where t.policyNumber= :policyNumber", PolicyDocument::class.java)
+                .setParameter("policyNumber", policyNumber)
+                .resultStream
+                .toList()
+
     }
 
 }

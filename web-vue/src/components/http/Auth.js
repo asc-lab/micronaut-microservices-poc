@@ -10,6 +10,7 @@ export default {
         context.$http.post(LOGIN_URL, creds)
             .then(
                 (response) => {
+                    localStorage.removeItem('jwt');
                     localStorage.setItem('jwt', response.body.accessToken);
                 },
                 (error) => {

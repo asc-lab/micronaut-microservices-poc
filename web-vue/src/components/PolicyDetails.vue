@@ -43,7 +43,8 @@
         },
         data() {
             return {
-                policy: {}
+                policy: {},
+                documentsList: []
             }
         },
         created: function () {
@@ -62,8 +63,44 @@
         methods: {
             documents: function () {
                 HTTP.get("documents/" + this.policyNumber).then(response => {
-                    this.policy = response.data.policy;
-                })
+                    this.documentsList = response.data.documents;
+                    this.documentsList.forEach((doc) => {
+                        var data = doc.content;
+                        var filename = 'Policy-' + doc.name + '.pdf';
+                        var blob = b64toBlob(data, '', 8),
+                            e = document.createEvent('MouseEvents'),
+                            a = document.createElement('a');
+                        a.download = filename;
+                        a.href = window.URL.createObjectURL(blob);
+                        a.dataset.downloadurl = ['text/json', a.download, a.href].join(':');
+                        e.initMouseEvent('click', true, false, window,
+                            0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                        a.dispatchEvent(e);
+                    })
+                });
+
+                function b64toBlob(b64Data, contentType, sliceSize) {
+                    contentType = contentType || '';
+                    sliceSize = sliceSize || 512;
+
+                    var byteCharacters = atob(b64Data);
+                    var byteArrays = [];
+
+                    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                        var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+                        var byteNumbers = new Array(slice.length);
+                        for (var i = 0; i < slice.length; i++) {
+                            byteNumbers[i] = slice.charCodeAt(i);
+                        }
+
+                        var byteArray = new Uint8Array(byteNumbers);
+
+                        byteArrays.push(byteArray);
+                    }
+
+                    return new Blob(byteArrays, {type: contentType});
+                }
             }
         }
     }

@@ -94,12 +94,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.22</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>kafka</artifactId>
         </dependency>
@@ -236,6 +230,8 @@
                 <configuration>
                     <compilerPlugins>
                         <plugin>all-open</plugin>
+                        <plugin>no-arg</plugin>
+                        <plugin>jpa</plugin>
                     </compilerPlugins>
                     <pluginOptions>
                         <option>all-open:annotation=io.micronaut.aop.Around</option>
@@ -308,6 +304,16 @@
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlinVersion}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>RELEASE</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-reflect</artifactId>
                         <version>${kotlinVersion}</version>
                     </dependency>
                 </dependencies>

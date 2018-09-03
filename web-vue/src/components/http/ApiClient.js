@@ -5,10 +5,6 @@ export const HTTP = axios.create({
     baseURL: 'http://localhost:8081/api/',
     transformRequest: [
         (data, headers) => {
-            console.info("data");
-            console.info(data);
-            console.info("headers");
-            console.info(headers);
             headers.Authorization = auth.getAuthHeader()
         }
     ]
@@ -19,9 +15,10 @@ HTTP.interceptors.response.use(
         return response
     },
     (error) => {
-        console.info("interecpotr error");
         console.log(error.response.status);
-        console.log(error)
-        // window.location.href = '/#/account'
+        if (error.response.status === 401 || error.response.status === 403) {
+            // console.log("Token expired or unauthorized");
+            // window.location.href = '/#/account'
+        }
     }
 )
