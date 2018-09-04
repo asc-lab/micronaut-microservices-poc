@@ -5,15 +5,15 @@ micronaut:
         port: 8081
         cors:
             enabled: true
-#    security:
-#      enabled: true
-#      token:
-#        jwt:
-#          enabled: true
-#          signatures:
-#            secret:
-#              generator:
-#                secret: pleaseChangeThisSecretForANewOne
+    security:
+      enabled: true
+      token:
+        jwt:
+          enabled: true
+          signatures:
+            secret:
+              generator:
+                secret: pleaseChangeThisSecretForANewOne
 ---
 consul:
   client:

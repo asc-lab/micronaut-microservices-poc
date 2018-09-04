@@ -31,6 +31,8 @@ Information about products are stored in MongoDB. Each product has code, name, i
 * **auth-service** - JWT based authentication service, this services provides login functionality. \
 Based on login and password users get authenticated and JWT token with their privileges is created and returned. This services shows built-in Micronaut support for JWT based security.
 
+* **documents-service** - Service build with kotlin. Responsible for generating pdf document when new policy event is received.
+
 Each business microservice has also **-api module** (payment-service-api, policy-service-api etc.), where we defined commands, events, queries and operations. 
 
 In the picture you can also see the component **internal-command-bus**. This component is used internally by microservices if we want to use a CQRS pattern inside (simple example in OfferController in policy-service).
