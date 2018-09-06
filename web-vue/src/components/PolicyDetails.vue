@@ -65,9 +65,9 @@
                 HTTP.get("documents/" + this.policyNumber).then(response => {
                     this.documentsList = response.data.documents;
                     this.documentsList.forEach((doc) => {
-                        var data = doc.content;
-                        var filename = 'Policy-' + doc.name + '.pdf';
-                        var blob = b64toBlob(data, '', 8),
+                        const data = doc.content;
+                        const filename = 'Policy-' + this.policyNumber + '.pdf';
+                        const blob = b64toBlob(data, '', 8),
                             e = document.createEvent('MouseEvents'),
                             a = document.createElement('a');
                         a.download = filename;
@@ -83,18 +83,18 @@
                     contentType = contentType || '';
                     sliceSize = sliceSize || 512;
 
-                    var byteCharacters = atob(b64Data);
-                    var byteArrays = [];
+                    const byteCharacters = atob(b64Data);
+                    const byteArrays = [];
 
-                    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-                        var slice = byteCharacters.slice(offset, offset + sliceSize);
+                    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                        const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-                        var byteNumbers = new Array(slice.length);
-                        for (var i = 0; i < slice.length; i++) {
+                        const byteNumbers = new Array(slice.length);
+                        for (let i = 0; i < slice.length; i++) {
                             byteNumbers[i] = slice.charCodeAt(i);
                         }
 
-                        var byteArray = new Uint8Array(byteNumbers);
+                        const byteArray = new Uint8Array(byteNumbers);
 
                         byteArrays.push(byteArray);
                     }
@@ -107,5 +107,4 @@
 </script>
 
 <style scoped>
-
 </style>
