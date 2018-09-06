@@ -4,6 +4,9 @@ mvn clean install -f command-bus-api
 mvn clean install -f command-bus
 [ $? -eq 0 ] || exit 1
 
+mvn clean install -f documents-service-api
+[ $? -eq 0 ] || exit 1
+
 mvn clean install -f payment-service-api
 [ $? -eq 0 ] || exit 1
 
@@ -20,6 +23,9 @@ mvn clean install -f product-service-api
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f auth-service
+[ $? -eq 0 ] || exit 1
+
+mvn clean install -f documents-service
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f payment-service
