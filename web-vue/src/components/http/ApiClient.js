@@ -17,8 +17,7 @@ HTTP.interceptors.response.use(
     (error) => {
         console.log(error.response.status);
         if (error.response.status === 401 || error.response.status === 403) {
-            // console.log("Token expired or unauthorized");
-            // window.location.href = '/#/account'
+            window.location.href = '/#/account'
         }
     }
-)
+);
