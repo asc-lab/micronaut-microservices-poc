@@ -10,9 +10,9 @@ import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
 
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.fail;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -38,8 +38,8 @@ public class LoginTest {
         HttpRequest loginRequest = HttpRequest.POST("/login", upc);
         HttpResponse<BearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(loginRequest, BearerAccessRefreshToken.class);
         
-        assertEquals("Status should be OK", rsp.getStatus(), HttpStatus.OK);
-        assertEquals("user should be jimmy", "jimmy.solid", rsp.getBody().get().getUsername());
+        Assert.assertEquals("Status should be OK", rsp.getStatus(), HttpStatus.OK);
+        Assert.assertEquals("user should be jimmy", "jimmy.solid", rsp.getBody().get().getUsername());
     }
     
     
@@ -51,7 +51,7 @@ public class LoginTest {
             HttpResponse<BearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(loginRequest, BearerAccessRefreshToken.class);
             fail();
         } catch (HttpClientResponseException ex) {
-            assertEquals("Status should be OK", ex.getStatus(), HttpStatus.UNAUTHORIZED);
+            Assert.assertEquals("Status should be OK", ex.getStatus(), HttpStatus.UNAUTHORIZED);
         }
         
     }
