@@ -4,9 +4,6 @@ const LOGIN_URL = API_URL + 'login'
 export default {
 
     login(context, creds) {
-        console.info(context)
-        console.info(creds)
-
         context.$http.post(LOGIN_URL, creds)
             .then(
                 (response) => {
