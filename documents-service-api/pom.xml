@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>documents.service.api</groupId>
+    <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>documents-service-api</artifactId>
-    <version>0.1</version>
+    <version>1.0</version>
+
     <properties>
         <exec.mainClass>documents.service.api.Application</exec.mainClass>
-        <micronaut.version>1.0.0.BUILD-SNAPSHOT</micronaut.version>
+        <micronaut.version>1.0.0.M4</micronaut.version>
         <jdk.version>1.8</jdk.version>
+        <kotlin.version>1.2.61</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlinVersion>1.2.61</kotlinVersion>
     </properties>
+
     <repositories>
         <repository>
             <id>oss.sonatype.org</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,13 +37,13 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlinVersion}</version>
+            <version>${kotlin.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-reflect</artifactId>
-            <version>${kotlinVersion}</version>
+            <version>${kotlin.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -60,7 +64,7 @@
             <plugin>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <groupId>org.jetbrains.kotlin</groupId>
-                <version>${kotlinVersion}</version>
+                <version>${kotlin.version}</version>
                 <executions>
                     <execution>
                         <id>kapt</id>
@@ -71,13 +75,6 @@
                             <sourceDirs>
                                 <sourceDir>src/main/kotlin</sourceDir>
                             </sourceDirs>
-                            <!--<annotationProcessorPaths>-->
-                                <!--<annotationProcessorPath>-->
-                                    <!--<groupId>io.micronaut</groupId>-->
-                                    <!--<artifactId>inject-java</artifactId>-->
-                                    <!--<version>${micronaut.version}</version>-->
-                                <!--</annotationProcessorPath>-->
-                            <!--</annotationProcessorPaths>-->
                         </configuration>
                     </execution>
                     <execution>
@@ -86,7 +83,7 @@
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <jvmTarget>1.8</jvmTarget>
+                            <jvmTarget>${jdk.version}</jvmTarget>
                             <sourceDirs>
                                 <sourceDir>src/main/kotlin</sourceDir>
                             </sourceDirs>
@@ -94,29 +91,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--<version>3.7.0</version>-->
-                <!--<configuration>-->
-                    <!--<proc>none</proc>-->
-                    <!--<source>1.8</source>-->
-                    <!--<target>1.8</target>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>default-compile</id>-->
-                        <!--<phase>none</phase>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>java-compile</id>-->
-                        <!--<phase>compile</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>compile</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 </project>

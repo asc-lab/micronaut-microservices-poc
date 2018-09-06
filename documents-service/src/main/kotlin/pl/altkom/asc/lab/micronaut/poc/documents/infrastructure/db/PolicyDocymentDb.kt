@@ -1,8 +1,8 @@
-package documents.service.infrastructure.db
+package pl.altkom.asc.lab.micronaut.poc.documents.infrastructure.db
 
-import documents.service.annotations.RequiresJdbc
-import documents.service.domain.PolicyDocument
-import documents.service.domain.PolicyDocumentRepository
+import pl.altkom.asc.lab.micronaut.poc.documents.annotations.RequiresJdbc
+import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocument
+import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocumentRepository
 import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession
 import io.micronaut.spring.tx.annotation.Transactional
 import javax.inject.Singleton
