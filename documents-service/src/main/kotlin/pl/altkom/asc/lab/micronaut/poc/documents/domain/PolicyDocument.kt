@@ -1,6 +1,5 @@
 package pl.altkom.asc.lab.micronaut.poc.documents.domain
 
-import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

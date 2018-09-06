@@ -13,7 +13,7 @@ datasources:
 jpa:
     default:
         packages-to-scan:
-        - 'documents.service.domain'
+        - 'pl.altkom.asc.lab.micronaut.poc.documents.domain'
         properties:
             hibernate:
                 hbm2ddl:
