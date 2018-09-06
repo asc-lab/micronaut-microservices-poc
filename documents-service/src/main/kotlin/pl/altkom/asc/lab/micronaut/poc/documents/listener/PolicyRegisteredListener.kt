@@ -1,10 +1,10 @@
-package documents.service.listener
+package pl.altkom.asc.lab.micronaut.poc.documents.listener
 
-import documents.service.domain.PolicyDocument
-import documents.service.domain.PolicyDocumentRepository
-import documents.service.listener.jsreport.JsReportRequest
-import documents.service.listener.jsreport.Template
-import documents.service.listener.jsreport.TemplateOptions
+import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocument
+import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocumentRepository
+import pl.altkom.asc.lab.micronaut.poc.documents.listener.jsreport.JsReportRequest
+import pl.altkom.asc.lab.micronaut.poc.documents.listener.jsreport.Template
+import pl.altkom.asc.lab.micronaut.poc.documents.listener.jsreport.TemplateOptions
 import io.micronaut.configuration.kafka.annotation.KafkaListener
 import io.micronaut.configuration.kafka.annotation.OffsetReset
 import io.micronaut.configuration.kafka.annotation.Topic

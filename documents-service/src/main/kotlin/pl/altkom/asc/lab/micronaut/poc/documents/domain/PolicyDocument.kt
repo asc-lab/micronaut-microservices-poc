@@ -1,4 +1,4 @@
-package documents.service.domain
+package pl.altkom.asc.lab.micronaut.poc.documents.domain
 
 import java.util.*
 import javax.persistence.Column

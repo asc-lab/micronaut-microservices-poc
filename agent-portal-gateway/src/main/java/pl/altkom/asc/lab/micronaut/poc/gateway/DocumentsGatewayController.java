@@ -1,6 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.gateway;
 
-import documents.service.api.queries.finddocuments.FindDocumentsResult;
+import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindDocumentsResult;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.security.Secured;

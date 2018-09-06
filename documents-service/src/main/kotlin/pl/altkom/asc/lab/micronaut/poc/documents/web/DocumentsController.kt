@@ -1,9 +1,9 @@
-package documents.service.web
+package pl.altkom.asc.lab.micronaut.poc.documents.web
 
-import documents.service.api.DocumentsOperations
-import documents.service.api.queries.finddocuments.FindDocumentsResult
-import documents.service.api.queries.finddocuments.GeneratedDocument
-import documents.service.domain.PolicyDocumentRepository
+import pl.altkom.asc.lab.micronaut.poc.documents.api.DocumentsOperations
+import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindDocumentsResult
+import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.GeneratedDocument
+import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocumentRepository
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.validation.Validated
@@ -15,7 +15,7 @@ class DocumentsController(private val policyDocumentRepository: PolicyDocumentRe
 
     override fun find(policyNumber: String): FindDocumentsResult {
         val findByPolicyNumber = policyDocumentRepository.findByPolicyNumber(policyNumber)
-        val list = findByPolicyNumber.map { policyDocument -> GeneratedDocument(policyNumber,policyDocument.bytes) }
+        val list = findByPolicyNumber.map { policyDocument -> GeneratedDocument(policyNumber, policyDocument.bytes) }
         return FindDocumentsResult(list)
     }
 }

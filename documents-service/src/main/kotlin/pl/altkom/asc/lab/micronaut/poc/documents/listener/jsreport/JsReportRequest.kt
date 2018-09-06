@@ -1,4 +1,4 @@
-package documents.service.listener.jsreport
+package pl.altkom.asc.lab.micronaut.poc.documents.listener.jsreport
 
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDto
 

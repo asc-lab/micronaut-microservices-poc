@@ -1,4 +1,4 @@
-package documents.service.annotations;
+package pl.altkom.asc.lab.micronaut.poc.documents.annotations;
 
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;

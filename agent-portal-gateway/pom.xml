@@ -141,9 +141,9 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>documents.service.api</groupId>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
             <artifactId>documents-service-api</artifactId>
-            <version>0.1</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <!-- INTERNAL -->

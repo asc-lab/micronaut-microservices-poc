@@ -1,4 +1,4 @@
-package documents.service
+package pl.altkom.asc.lab.micronaut.poc.documents
 
 import io.micronaut.runtime.Micronaut
 

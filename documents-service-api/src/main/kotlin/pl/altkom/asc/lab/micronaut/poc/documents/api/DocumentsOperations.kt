@@ -1,6 +1,6 @@
-package documents.service.api
+package pl.altkom.asc.lab.micronaut.poc.documents.api
 
-import documents.service.api.queries.finddocuments.FindDocumentsResult
+import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindDocumentsResult
 import io.micronaut.http.annotation.Get
 import org.jetbrains.annotations.NotNull
 
