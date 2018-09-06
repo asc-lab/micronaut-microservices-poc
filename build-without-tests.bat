@@ -49,7 +49,7 @@ if errorlevel 1 exit /B 1
 call mvn clean install -f document-service -Dmaven.test.skip
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f agent-portal-gateway
+call mvn clean install -f agent-portal-gateway -Dmaven.test.skip
 if errorlevel 1 exit /B 1
 
 call yarn --cwd web-vue install
