@@ -8,7 +8,6 @@
     <version>1.0</version>
 
     <properties>
-        <exec.mainClass>documents.service.api.Application</exec.mainClass>
         <micronaut.version>1.0.0.M4</micronaut.version>
         <jdk.version>1.8</jdk.version>
         <kotlin.version>1.2.61</kotlin.version>
@@ -17,8 +16,8 @@
 
     <repositories>
         <repository>
-            <id>oss.sonatype.org</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>jcenter.bintray.com</id>
+            <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
 
@@ -33,6 +32,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>

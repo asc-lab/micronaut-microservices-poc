@@ -17,8 +17,8 @@
 
     <repositories>
         <repository>
-            <id>oss.sonatype.org</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>jcenter.bintray.com</id>
+            <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
 
@@ -33,6 +33,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -101,7 +102,6 @@
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>kafka</artifactId>
         </dependency>
-
 
         <!-- DATABASE, JPA, HIBERNATE -->
         <dependency>
