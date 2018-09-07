@@ -1,6 +1,11 @@
 version: '2'
 
 services:
+  mn-documents-service:
+    build: ../documents-service
+    image: mn-documents-service
+    container_name: mn-documents-service
+    network_mode: host
   mn-policy-service:
     build: ../policy-service
     image: mn-policy-service
