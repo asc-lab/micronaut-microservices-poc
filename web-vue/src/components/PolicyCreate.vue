@@ -42,7 +42,7 @@
 </template>
 
 <script>
-    import auth from './http/Auth'
+    import {HTTP} from "./http/ApiClient";
 
     export default {
         name: "PolicyCreate",
@@ -65,11 +65,7 @@
                     policyHolder: this.policyHolder
                 };
 
-                this.$http.post('http://localhost:8081/api/policies/create', request, {
-                    headers: {
-                        'Authorization': auth.getAuthHeader()
-                    }
-                }).then(response => {
+                HTTP.post('policies/create', request).then(response => {
                     this.$router.push({name: 'policyDetails', params: {policyNumber: response.data.policyNumber}});
                 })
             }

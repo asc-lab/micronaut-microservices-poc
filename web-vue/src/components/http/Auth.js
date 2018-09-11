@@ -1,10 +1,10 @@
-const API_URL = 'http://localhost:8090/'
-const LOGIN_URL = API_URL + 'login'
+const API_URL = process.env.VUE_APP_AUTH_URL;
+const LOGIN_URL = API_URL + 'login';
 
 export default {
 
-    login(context, creds) {
-        context.$http.post(LOGIN_URL, creds)
+    login(context, credentials) {
+        context.$http.post(LOGIN_URL, credentials)
             .then(
                 (response) => {
                     localStorage.removeItem('jwt');
