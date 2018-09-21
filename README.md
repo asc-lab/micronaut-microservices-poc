@@ -1,4 +1,4 @@
-# ASCLAB Micronaut PoC
+# ASCLAB Micronaut PoC - LAB Insurance Sales Portal
 
 This is an example of a very simplified insurance sales system made in a microservice architecture using Micronaut.
 
