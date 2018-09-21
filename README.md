@@ -105,6 +105,7 @@ kafka-create-cluster.sh
 * Consul dashboard: ```http://localhost:8500```
 * Zipkin dashboard: ```http://localhost:9411/zipkin/```
 * Kafka Manager dashboard: ```http://localhost:9000/```
+* JSReport dashboard: ```http://localhost:5488/```
 
 #### Consul without our script
 ```
@@ -116,6 +117,11 @@ docker run -d -p 9411:9411 openzipkin/zipkin
 ```
 #### Kafka without our script
 Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup-apache-kafka-in-docker-on-windows).
+
+#### JSReport without our script
+```
+docker run -p 80:5488 jsreport/jsreport
+```
 
 ## Add new microservice
 
@@ -141,6 +147,11 @@ This command generate project in Java and Maven as build tool.
 ### Show registered services in Consul
 <p align="center">
     <img alt="Consul" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/consul.png" />
+</p>
+
+### Show document templates in JS Report
+<p align="center">
+    <img alt="JSReport" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/jsreport.png" />
 </p>
 
 
