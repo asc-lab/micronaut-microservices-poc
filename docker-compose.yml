@@ -1,6 +1,12 @@
 version: '2'
 
 services:
+  jsreport:
+    image: jsreport/jsreport
+    container_name: jsreport
+    hostname: jsreport
+    ports:
+      - 5488:5488
   consul:
     image: consul
     container_name: consul
@@ -32,6 +38,11 @@ services:
       - 9000:9000
     environment:
       ZK_HOSTS: "localhost:2181"
+  mn-documents-service:
+    build: ./documents-service
+    image: mn-documents-service
+    container_name: mn-documents-service
+    network_mode: host
   mn-policy-service:
     build: ./policy-service
     image: mn-policy-service

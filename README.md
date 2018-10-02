@@ -124,7 +124,7 @@ Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup
 
 #### JSReport without our script
 ```
-docker run -p 80:5488 jsreport/jsreport
+docker run -p 5488:5488 jsreport/jsreport
 ```
 
 ## Add new microservice
