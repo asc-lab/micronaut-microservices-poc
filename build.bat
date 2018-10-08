@@ -19,6 +19,9 @@ if errorlevel 1 exit /B 1
 call mvn clean install -f product-service-api
 if errorlevel 1 exit /B 1
 
+call mvn clean install -f documents-service-api
+if errorlevel 1 exit /B 1
+
 call mvn clean install -f auth-service
 if errorlevel 1 exit /B 1
 
@@ -26,6 +29,9 @@ call mvn clean install -f payment-service
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f policy-service
+if errorlevel 1 exit /B 1
+
+call mvn clean install -f documents-service
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f policy-search-service

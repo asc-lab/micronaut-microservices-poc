@@ -19,6 +19,9 @@ mvn clean install -f pricing-service-api
 mvn clean install -f product-service-api
 [ $? -eq 0 ] || exit 1
 
+mvn clean install -f documents-service-api
+[ $? -eq 0 ] || exit 1
+
 mvn clean install -f auth-service
 [ $? -eq 0 ] || exit 1
 
@@ -26,6 +29,9 @@ mvn clean install -f payment-service
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f policy-service
+[ $? -eq 0 ] || exit 1
+
+mvn clean install -f documents-service
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f policy-search-service
