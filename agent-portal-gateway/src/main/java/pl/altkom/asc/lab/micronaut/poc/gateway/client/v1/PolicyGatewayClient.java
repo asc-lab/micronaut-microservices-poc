@@ -3,7 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.gateway.client.v1;
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
-import io.micronaut.http.client.Client;
+import io.micronaut.http.client.annotation.Client;
 import io.micronaut.retry.annotation.Retryable;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.PolicyOperations;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createoffer.CreateOfferCommand;

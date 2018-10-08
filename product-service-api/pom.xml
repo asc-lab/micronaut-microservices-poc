@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <micronaut.version>1.0.0.M4</micronaut.version>
+        <micronaut.version>1.0.0.RC1</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 

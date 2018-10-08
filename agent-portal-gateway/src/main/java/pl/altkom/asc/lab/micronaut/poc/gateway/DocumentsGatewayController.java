@@ -3,7 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.gateway;
 import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindDocumentsResult;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.security.Secured;
+import io.micronaut.security.annotation.Secured;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.DocumentsGatewayClient;
 
 import javax.inject.Inject;

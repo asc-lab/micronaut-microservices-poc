@@ -2,7 +2,7 @@ package pl.altkom.asc.lab.micronaut.poc.gateway;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.security.Secured;
+import io.micronaut.security.annotation.Secured;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.ProductGatewayClient;

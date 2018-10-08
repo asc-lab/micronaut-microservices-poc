@@ -8,7 +8,7 @@ export default {
             .then(
                 (response) => {
                     localStorage.removeItem('jwt');
-                    localStorage.setItem('jwt', response.body.accessToken);
+                    localStorage.setItem('jwt', response.body.access_token);
                 },
                 (error) => {
                     console.info(error)
