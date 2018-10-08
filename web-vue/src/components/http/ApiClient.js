@@ -2,7 +2,7 @@ import axios from 'axios';
 import auth from './Auth';
 
 export const HTTP = axios.create({
-    baseURL: process.env.VUE_APP_BACKEND_URL,
+    baseURL: (process.env.VUE_APP_BACKEND_URL ? process.env.VUE_APP_BACKEND_URL : "/api/"),
     headers: {
         'Authorization': auth.getAuthHeader()
     }

@@ -1,4 +1,4 @@
-const API_URL = process.env.VUE_APP_AUTH_URL;
+const API_URL = (process.env.VUE_APP_AUTH_URL ? process.env.VUE_APP_AUTH_URL : "/");
 const LOGIN_URL = API_URL + 'login';
 
 export default {

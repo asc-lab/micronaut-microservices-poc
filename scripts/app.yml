@@ -41,6 +41,9 @@ services:
     image: mn-web-vue
     container_name: mn-web-vue
     network_mode: host
+    environment:
+        GATEWAY_URL: "http://localhost:8081"
+        AUTH_URL: "http://localhost:8090"
   mn-auth-service:
     build: ../auth-service
     image: mn-auth-service
