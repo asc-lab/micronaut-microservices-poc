@@ -15,6 +15,7 @@ HTTP.interceptors.response.use(
     (error) => {
         console.log(error.response.status);
         if (error.response.status === 401 || error.response.status === 403) {
+            auth.clearToken();
             window.location.href = '/#/account';
         }
     }

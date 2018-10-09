@@ -7,24 +7,28 @@ export default {
         context.$http.post(LOGIN_URL, credentials)
             .then(
                 (response) => {
-                    localStorage.removeItem('jwt');
+                    this.clearToken();
                     localStorage.setItem('jwt', response.body.access_token);
                 },
                 (error) => {
-                    console.info(error)
+                    console.info(error);
                 }
             )
     },
 
     logout() {
-        localStorage.removeItem('jwt')
+        this.clearToken();
+    },
+
+    clearToken() {
+        localStorage.removeItem('jwt');
     },
 
     isAuthenticated() {
-        return localStorage.getItem('jwt') != null
+        return localStorage.getItem('jwt') != null;
     },
 
     getAuthHeader() {
-        return 'Bearer ' + localStorage.getItem('jwt')
+        return 'Bearer ' + localStorage.getItem('jwt');
     }
 }
