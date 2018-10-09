@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: asc.demo
+defaultPackage: pl.altkom.asc.lab.micronaut.poc.product
 ---
 testFramework: junit
 sourceLanguage: java

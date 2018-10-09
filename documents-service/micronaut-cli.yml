@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: documents.service
+defaultPackage: pl.altkom.asc.lab.micronaut.poc.documents
 ---
 testFramework: spek
 sourceLanguage: kotlin

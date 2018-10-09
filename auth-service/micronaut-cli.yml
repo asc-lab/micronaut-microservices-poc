@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: pl.altkom.asc.lab.micronaut.poc
+defaultPackage: pl.altkom.asc.lab.micronaut.poc.auth
 ---
 testFramework: junit
 sourceLanguage: java
