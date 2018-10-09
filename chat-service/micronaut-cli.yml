@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: pl.altkom.asc.lab.micronaut.poc.chat
+---
+testFramework: junit
+sourceLanguage: java

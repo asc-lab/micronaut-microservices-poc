@@ -46,6 +46,9 @@ if errorlevel 1 exit /B 1
 call mvn clean install -f agent-portal-gateway
 if errorlevel 1 exit /B 1
 
+call mvn clean install -f chat-service
+if errorlevel 1 exit /B 1
+
 call yarn --cwd web-vue install
 if errorlevel 1 exit /B 1
 call yarn --cwd web-vue run build

@@ -42,6 +42,7 @@
     import auth from './http/Auth'
 
     export default {
+        name: "Account",
         data() {
             return {
                 credentials: {
@@ -49,21 +50,21 @@
                     password: ''
                 },
                 error: '',
-                auth: auth,
+                auth: auth
             }
         },
         methods: {
             login() {
-                var credentials = {
+                const credentials = {
                     username: this.credentials.username,
                     password: this.credentials.password
-                }
+                };
                 auth.login(this, credentials);
                 this.$router.push('/');
             },
             logout() {
                 auth.logout();
-                window.location.reload()
+                window.location.reload();
             }
         }
 

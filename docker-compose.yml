@@ -68,6 +68,16 @@ services:
     image: mn-product-service
     container_name: mn-product-service
     network_mode: host
+  mn-auth-service:
+    build: ./auth-service
+    image: mn-auth-service
+    container_name: mn-auth-service
+    network_mode: host
+  mn-chat-service:
+    build: ./chat-service
+    image: mn-chat-service
+    container_name: mn-chat-service
+    network_mode: host
   mn-agent-portal-gateway:
     build: ./agent-portal-gateway
     image: mn-agent-portal-gateway
@@ -78,9 +88,3 @@ services:
     image: mn-web-vue
     container_name: mn-web-vue
     network_mode: host
-  mn-auth-service:
-    build: ./auth-service
-    image: mn-auth-service
-    container_name: mn-auth-service
-    network_mode: host
-

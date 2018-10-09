@@ -20,14 +20,14 @@ export default new Router({
             component: Home
         },
         {
-            path: '/account',
-            name: 'account',
-            component: Account
+            path: '/chat',
+            name: 'chat',
+            component: loadView('Chat')
         },
         {
-            path: '/about',
-            name: 'about',
-            component: loadView('About')
+            path: '/account',
+            name: 'account',
+            component: loadView('Account')
         },
         {
             path: '/products',

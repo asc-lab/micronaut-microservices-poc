@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to ASCLAB Micronaut PoC"/>
-  </div>
+    <div>
+        <Home msg="Welcome to LAB Insurance Sales Portal"/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+    import Home from '@/components/Home.vue'
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'home',
+        components: {
+            Home
+        }
+    }
 </script>
