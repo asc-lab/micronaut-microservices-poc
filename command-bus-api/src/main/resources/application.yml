@@ -1,7 +1,0 @@
-micronaut:
-    application:
-        name: command-bus-api
-                
-#Uncomment to set server port
-#    server:
-#        port: 8080

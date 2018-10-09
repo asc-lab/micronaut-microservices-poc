@@ -1,7 +1,8 @@
 micronaut:
     application:
         name: documents-service
-
+    server:
+        port: -1
 ---
 datasources:
     default:
