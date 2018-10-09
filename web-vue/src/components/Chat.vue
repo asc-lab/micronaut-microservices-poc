@@ -16,6 +16,7 @@
 
 <script>
     import auth from './http/Auth'
+    import ws from './http/WebSocket'
 
     export default {
         name: "Chat",
@@ -33,8 +34,7 @@
         },
         created() {
             this.user = auth.getAuthDetails();
-
-            this.webSocket = new WebSocket("ws://localhost:8787/ws/chat/main/" + this.user.username);
+            this.webSocket = ws.create(this.user.username);
 
             this.webSocket.onmessage = event => {
                 console.log('Hello from websocket onmessage. Event: ' + event.data);
@@ -48,9 +48,8 @@
         methods: {
             send () {
                 this.chat += '[' + this.user.username + '] ' + this.message + '\n';
-                let tempMsg = this.message;
+                this.webSocket.send(this.message);
                 this.message = '';
-                this.webSocket.send(tempMsg);
             },
             appendToChat(text) {
                 this.chat += text + '\n';

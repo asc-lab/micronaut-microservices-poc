@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/HomeView.vue'
-import Account from './components/Account.vue'
 
 Vue.use(Router);
 
