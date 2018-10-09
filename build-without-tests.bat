@@ -22,34 +22,34 @@ if errorlevel 1 exit /B 1
 call mvn clean install -f product-service-api
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f document-service-api -Dmaven.test.skip
+call mvn clean install -f document-service-api -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f auth-service -Dmaven.test.skip
+call mvn clean install -f auth-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f policy-service -Dmaven.test.skip
+call mvn clean install -f policy-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f document-service -Dmaven.test.skip
+call mvn clean install -f document-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f payment-service -Dmaven.test.skip
+call mvn clean install -f payment-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f policy-search-service -Dmaven.test.skip
+call mvn clean install -f policy-search-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f pricing-service -Dmaven.test.skip
+call mvn clean install -f pricing-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f product-service -Dmaven.test.skip
+call mvn clean install -f product-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f document-service -Dmaven.test.skip
+call mvn clean install -f document-service -DskipTests
 if errorlevel 1 exit /B 1
 
-call mvn clean install -f agent-portal-gateway -Dmaven.test.skip
+call mvn clean install -f agent-portal-gateway -DskipTests
 if errorlevel 1 exit /B 1
 
 call yarn --cwd web-vue install

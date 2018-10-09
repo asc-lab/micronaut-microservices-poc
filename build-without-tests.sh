@@ -22,28 +22,28 @@ mvn clean install -f pricing-service-api
 mvn clean install -f product-service-api
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f auth-service -Dmaven.test.skip
+mvn clean install -f auth-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f policy-service -Dmaven.test.skip
+mvn clean install -f policy-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f documents-service -Dmaven.test.skip
+mvn clean install -f documents-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f payment-service -Dmaven.test.skip
+mvn clean install -f payment-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f policy-search-service -Dmaven.test.skip
+mvn clean install -f policy-search-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f pricing-service -Dmaven.test.skip
+mvn clean install -f pricing-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f product-service -Dmaven.test.skip
+mvn clean install -f product-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
-mvn clean install -f agent-portal-gateway -Dmaven.test.skip
+mvn clean install -f agent-portal-gateway -DskipTests
 [ $? -eq 0 ] || exit 1
 
 yarn --cwd web-vue install
