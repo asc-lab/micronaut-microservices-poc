@@ -136,7 +136,7 @@ mn create-app pl.altkom.asc.lab.[SERVICE-NAME]-service -b maven
 
 This command generate project in Java and Maven as build tool.
 
-## Dashboard examples
+## Examples
 
 ### Tracing requests with Zipkin
 <p align="center">
@@ -158,6 +158,10 @@ This command generate project in Java and Maven as build tool.
     <img alt="JSReport" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/jsreport.png" />
 </p>
 
+### Chat
+<p align="center">
+    <img alt="Chat" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/chat.gif" />
+</p>
 
 ## References
 * [Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html)
