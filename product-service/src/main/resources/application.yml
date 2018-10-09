@@ -1,6 +1,8 @@
 micronaut:
   application:
-      name: product-service
+    name: product-service
+  server:
+    port: -1
   metrics:
     enabled: true
 ---
