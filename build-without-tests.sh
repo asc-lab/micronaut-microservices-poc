@@ -46,7 +46,7 @@ mvn clean install -f product-service -DskipTests
 mvn clean install -f agent-portal-gateway -DskipTests
 [ $? -eq 0 ] || exit 1
 
-yarn --cwd web-vue install
-[ $? -eq 0 ] || exit 1
-yarn --cwd web-vue run build
-[ $? -eq 0 ] || exit 1
+#yarn --cwd web-vue install
+#[ $? -eq 0 ] || exit 1
+#yarn --cwd web-vue run build
+#[ $? -eq 0 ] || exit 1

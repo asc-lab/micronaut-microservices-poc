@@ -1,8 +1,8 @@
 micronaut:
-    application:
-        name: policy-search-service
-    server:
-        port: -1
+  application:
+    name: policy-search-service
+  server:
+    port: -1
 ---
 datasources.default: {}
 ---

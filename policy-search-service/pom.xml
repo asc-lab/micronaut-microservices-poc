@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.policy.search.PolicySearchApplication</exec.mainClass>
-        <micronaut.version>1.0.0.RC1</micronaut.version>
+        <micronaut.version>1.0.0.RC2</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
