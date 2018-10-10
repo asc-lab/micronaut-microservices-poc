@@ -44,7 +44,7 @@ public class LoginTest {
     
     
     @Test
-    public void canntLoginWithInvalidCredentials() {
+    public void cantLoginWithInvalidCredentials() {
         try {
             UsernamePasswordCredentials upc = new UsernamePasswordCredentials("jimmy.solid","secret111");
             HttpRequest loginRequest = HttpRequest.POST("/login", upc);

@@ -63,6 +63,6 @@ public class CustomClaimsTest {
         Assert.assertTrue(authentication.getAttributes().containsKey("exp"));
         Assert.assertTrue(authentication.getAttributes().containsKey("iat"));
         Assert.assertTrue(authentication.getAttributes().containsKey("avatar"));
-        Assert.assertTrue(authentication.getAttributes().get("avatar").equals("https://pickaface.net/gallery/avatar/unr_example_170227_1250_yq2lr.png"));
+        Assert.assertEquals("static/avatars/jimmy_solid.png", authentication.getAttributes().get("avatar"));
     }
 }

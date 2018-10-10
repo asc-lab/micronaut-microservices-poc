@@ -12,8 +12,21 @@ public class CustomBearerTokenRenderer extends BearerTokenRenderer {
     @Override
     public AccessRefreshToken render(UserDetails userDetails, Integer expiresIn, String accessToken, String refreshToken) {
         if (userDetails instanceof InsuranceAgentDetails) {
-            return new CustomBearerAccessRefreshToken(userDetails.getUsername(), userDetails.getRoles(), expiresIn, accessToken, refreshToken, ((InsuranceAgentDetails) userDetails).getAvatarUrl());
+            return new CustomBearerAccessRefreshToken(
+                    userDetails.getUsername(),
+                    userDetails.getRoles(),
+                    expiresIn,
+                    accessToken,
+                    refreshToken,
+                    ((InsuranceAgentDetails) userDetails).getAvatarUrl()
+            );
         }
-        return new BearerAccessRefreshToken(userDetails.getUsername(), userDetails.getRoles(), expiresIn, accessToken, refreshToken);
+
+        return new BearerAccessRefreshToken(
+                userDetails.getUsername(),
+                userDetails.getRoles(),
+                expiresIn,
+                accessToken,
+                refreshToken);
     }
 }

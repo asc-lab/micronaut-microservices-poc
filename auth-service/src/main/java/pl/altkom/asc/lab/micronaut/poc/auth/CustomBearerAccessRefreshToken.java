@@ -1,32 +1,25 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Collection;
 
-public class CustomBearerAccessRefreshToken extends BearerAccessRefreshToken {
+@NoArgsConstructor
+class CustomBearerAccessRefreshToken extends BearerAccessRefreshToken {
+
+    @Getter
     private String avatar;
 
-    public CustomBearerAccessRefreshToken() {
-
-    }
-
-    public CustomBearerAccessRefreshToken(String username,
-                                          Collection<String> roles,
-                                          Integer expiresIn,
-                                          String accessToken,
-                                          String refreshToken,
-                                          String avatar) {
+    CustomBearerAccessRefreshToken(String username,
+                                   Collection<String> roles,
+                                   Integer expiresIn,
+                                   String accessToken,
+                                   String refreshToken,
+                                   String avatar) {
         super(username, roles, expiresIn, accessToken, refreshToken);
         this.avatar = avatar;
 
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 }

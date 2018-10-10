@@ -8,8 +8,7 @@
                       placeholder="Type your message">
         </b-form-input>
 
-        <div class="messages-container">
-            <pre>{{chat}}</pre>
+        <div class="messages-container" v-html="chat">
         </div>
     </div>
 </template>
@@ -47,19 +46,39 @@
         },
         methods: {
             send () {
-                this.chat += '[' + this.user.username + '] ' + this.message + '\n';
-                this.webSocket.send(this.message);
+                const htmlMsg = '<p class="msg"><img class="avatar" src="' + this.user.avatar + '"/> [' + this.user.username + '] ' + this.message + '</p>';
+                this.webSocket.send(htmlMsg);
+                this.chat += htmlMsg.replace('<p class="msg">', '<p class="msg my-messages">');
                 this.message = '';
             },
             appendToChat(text) {
-                this.chat += text + '\n';
+                this.chat += text;
             }
         }
     }
 </script>
 
-<style scoped>
+<style>
     .messages-container {
-        margin-top: 20px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #message {
+        margin-bottom: 20px;
+    }
+
+    .avatar {
+        max-height: 50px;
+    }
+
+    .msg {
+        border: 1px lightblue solid;
+        padding: 5px;
+        border-radius: 30px;
+    }
+
+    .my-messages {
+        background-color: lightblue;
     }
 </style>

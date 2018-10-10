@@ -46,11 +46,11 @@ public class CustomLoginHandlerTest {
 
         //then:
         Assert.assertEquals(200, rsp.getStatus().getCode());
-        Assert.assertTrue(rsp.body()  != null);
-        Assert.assertTrue(rsp.body().getAccessToken()  != null);
-        Assert.assertTrue(rsp.body().getRefreshToken()  != null);
-        Assert.assertTrue(rsp.body().getAvatar()  != null);
-        Assert.assertEquals("https://pickaface.net/gallery/avatar/unr_example_170227_1250_yq2lr.png", rsp.body().getAvatar());
+        Assert.assertNotNull(rsp.body());
+        Assert.assertNotNull(rsp.body().getAccessToken());
+        Assert.assertNotNull(rsp.body().getRefreshToken());
+        Assert.assertNotNull(rsp.body().getAvatar());
+        Assert.assertEquals("avatars/jimmy_solid.png", rsp.body().getAvatar());
 
     }
 }

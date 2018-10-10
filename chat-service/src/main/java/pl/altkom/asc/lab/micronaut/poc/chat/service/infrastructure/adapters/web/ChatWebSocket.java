@@ -24,7 +24,7 @@ public class ChatWebSocket {
     public void onOpen(String topic, String username, WebSocketSession session) {
         String msg = "[" + username + "] Joined!";
         log.info(msg);
-        broadcaster.broadcastSync(msg, isValid(topic, session));
+        broadcaster.broadcastSync(formatStartCloseMessages(msg), isValid(topic, session));
     }
 
     @OnMessage
@@ -35,7 +35,7 @@ public class ChatWebSocket {
             WebSocketSession session) {
         String msg = "[" + username + "] " + message;
         log.info(msg);
-        broadcaster.broadcastSync(msg, isValid(topic, session));
+        broadcaster.broadcastSync(message, isValid(topic, session));
     }
 
     @OnClose
@@ -45,10 +45,14 @@ public class ChatWebSocket {
             WebSocketSession session) {
         String msg = "[" + username + "] Disconnected!";
         log.info(msg);
-        broadcaster.broadcastSync(msg, isValid(topic, session));
+        broadcaster.broadcastSync(formatStartCloseMessages(msg), isValid(topic, session));
     }
 
     private Predicate<WebSocketSession> isValid(String topic, WebSocketSession session) {
         return s -> s != session && topic.equalsIgnoreCase(s.getUriVariables().get("topic", String.class, null));
+    }
+
+    private String formatStartCloseMessages(String msg) {
+        return "<p>" + msg + "</p>";
     }
 }
