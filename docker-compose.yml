@@ -38,6 +38,19 @@ services:
       - 9000:9000
     environment:
       ZK_HOSTS: "localhost:2181"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    container_name: elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+        - 9200:9200
   mn-documents-service:
     build: ./documents-service
     image: mn-documents-service
