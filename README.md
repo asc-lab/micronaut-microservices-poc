@@ -35,6 +35,8 @@ Based on login and password users get authenticated and JWT token with their pri
 
 * **documents-service** - Service build with kotlin. Responsible for generating pdf document when new policy event is received.
 
+* **chat-service** - Example WebSocket usage. Chat for salesman.
+
 * **web-vue** - SPA application built with Vue.js and Bootstrap for Vue.
 
 Each business microservice has also **-api module** (payment-service-api, policy-service-api etc.), where we defined commands, events, queries and operations. 
