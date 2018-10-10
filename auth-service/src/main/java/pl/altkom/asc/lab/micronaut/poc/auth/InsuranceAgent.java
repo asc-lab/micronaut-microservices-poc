@@ -12,11 +12,13 @@ class InsuranceAgent {
 
     private String login;
     private String password;
+    private String avatar;
     private List<String> availableProducts;
 
-    InsuranceAgent(String login, String password, List<String> availableProducts) {
+    InsuranceAgent(String login, String password, String avatar, List<String> availableProducts) {
         this.login = login;
         this.password = password;
+        this.avatar = avatar;
         this.availableProducts = availableProducts;
     }
     
