@@ -1,5 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.search.queries.findpolicy;
 
+import io.reactivex.Maybe;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.QueryHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQuery;
@@ -13,20 +14,23 @@ import java.util.stream.Collectors;
 
 @Singleton
 @RequiredArgsConstructor
-public class FindPolicyQueryHandler implements QueryHandler<FindPolicyQueryResult, FindPolicyQuery> {
+public class FindPolicyQueryHandler implements QueryHandler<Maybe<FindPolicyQueryResult>, FindPolicyQuery> {
 
     private final PolicyViewRepository policyViewRepository;
 
     @Override
-    public FindPolicyQueryResult handle(FindPolicyQuery query) {
-        List<PolicyView> policies = policyViewRepository.findAll();
+    public Maybe<FindPolicyQueryResult> handle(FindPolicyQuery query) {
+        return policyViewRepository
+                .findAll(query)
+                .map(this::constructResult);
+    }
 
+    private FindPolicyQueryResult constructResult(List<PolicyView> policies) {
         return new FindPolicyQueryResult(
                 policies.stream()
                         .map(PolicyListItemDtoAssembler::map)
                         .collect(Collectors.toList())
         );
     }
-
 
 }

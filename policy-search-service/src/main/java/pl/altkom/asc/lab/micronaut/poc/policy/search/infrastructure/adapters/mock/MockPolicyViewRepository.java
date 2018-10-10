@@ -3,7 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.mo
 import io.micronaut.context.annotation.Replaces;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
-import pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.db.HibernatePolicyViewRepository;
+import io.reactivex.Maybe;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyViewRepository;
 
@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.db.ElasticPolicyViewRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQuery;
 
-@Replaces(HibernatePolicyViewRepository.class)
+@Replaces(ElasticPolicyViewRepository.class)
 @Requires(env = Environment.TEST)
 @Singleton
 public class MockPolicyViewRepository implements PolicyViewRepository {
@@ -32,8 +34,8 @@ public class MockPolicyViewRepository implements PolicyViewRepository {
     }
 
     @Override
-    public List<PolicyView> findAll() {
-        return new ArrayList<>(policyMap.values());
+    public Maybe<List<PolicyView>> findAll(FindPolicyQuery query) {
+        return Maybe.just(new ArrayList<>(policyMap.values()));
     }
 
     @Override
