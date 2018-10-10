@@ -1,9 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.search.infrastructure.adapters.db;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.reactivex.Maybe;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,10 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyViewRepository;
@@ -39,17 +35,16 @@ public class ElasticPolicyViewRepository implements PolicyViewRepository {
     @Override
     public Maybe<List<PolicyView>> findAll(FindPolicyQuery query) {
         SearchRequest searchRequest = new SearchRequest("policy-views");
-        MultiMatchQueryBuilder queryBuilder = QueryBuilders.multiMatchQuery(query.getQueryText(),
-                "number",
-                "policyHolder")
-                .type(MultiMatchQueryBuilder.Type.BEST_FIELDS)
-                .fuzziness(Fuzziness.AUTO);
+
+        QueryStringQueryBuilder queryStringQueryBuilder = QueryBuilders.queryStringQuery(query.getQueryText())
+                .field("number")
+                .field("policyHolder");
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(queryBuilder).size(10);
+        searchSourceBuilder.query(queryStringQueryBuilder).size(10);
 
         searchRequest.source(searchSourceBuilder);
-        
+
         return elasticClientAdapter
                 .search(searchRequest)
                 .map(this::mapSearchResponse);

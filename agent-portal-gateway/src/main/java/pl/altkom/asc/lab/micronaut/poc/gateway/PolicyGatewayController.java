@@ -28,7 +28,7 @@ public class PolicyGatewayController {
     private PolicySearchGatewayClient policySearchClient;
 
     @Get
-    Maybe<FindPolicyQueryResult> policies(@QueryValue("q") String queryText) {
+    Maybe<FindPolicyQueryResult> policies(@QueryValue(value = "q", defaultValue = "*") String queryText) {
         return policySearchClient.policies(queryText);
     }
 
