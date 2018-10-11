@@ -3,6 +3,7 @@ package pl.altkom.asc.lab.micronaut.poc.documents.listener
 import io.micronaut.configuration.kafka.annotation.KafkaListener
 import io.micronaut.configuration.kafka.annotation.OffsetReset
 import io.micronaut.configuration.kafka.annotation.Topic
+import io.micronaut.context.annotation.Value
 import io.micronaut.http.HttpHeaders
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpResponse
@@ -22,6 +23,12 @@ class PolicyRegisteredListener(private val policyDocumentRepository: PolicyDocum
 
     private val uri: String = "/api/report"
 
+    @Value("\${jsreport.host}")
+    private lateinit var host: String
+
+    @Value("\${jsreport.port}")
+    private lateinit  var port: String
+
     @Topic("policy-registered")
     fun onPolicyRegistered(event: PolicyRegisteredEvent) {
         val generatedDocument = generate(JsReportRequest(
@@ -40,7 +47,7 @@ class PolicyRegisteredListener(private val policyDocumentRepository: PolicyDocum
     }
 
     private fun generate(jsReportRequest: JsReportRequest): HttpResponse<ByteArray>? {
-        val create = HttpClient.create(URL("http", "localhost", 5488, ""))
+        val create = HttpClient.create(URL("http", host, port.toInt(), ""))
         val request = HttpRequest.POST(uri, jsReportRequest).header(HttpHeaders.CONTENT_TYPE, "application/json")
         return create.toBlocking().exchange(request, ByteArray::class.java)
     }
