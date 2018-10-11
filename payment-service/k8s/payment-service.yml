@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: payment-service
+  labels:
+    srv: payment-service
+spec:
+  type: ClusterIP
+  selector:
+    srv: payment-service
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80

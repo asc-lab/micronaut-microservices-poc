@@ -1,0 +1,32 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: policy-search-service
+  labels:
+    srv: policy-search-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: policy-search-service
+  template:
+    metadata:
+      labels:
+        srv: policy-search-service
+    spec:
+      containers:
+      - name: policy-search-service
+        image: ascmn/policy-search-service:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: SERVICE_PORT
+          value: "80"
+        - name: ZIPKIN_HOST
+          value: "zipkin"
+        - name: ZIPKIN_PORT
+          value: "9411"
+        - name: KAFKA_HOST
+          value: "kafka-server"
+        - name: KAFKA_PORT
+          value: "9092"

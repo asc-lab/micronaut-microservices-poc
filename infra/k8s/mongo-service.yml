@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mongo
+  labels:
+    srv: mongo
+spec:
+  type: ClusterIP
+  selector:
+    srv: mongo
+  ports:
+  - name: http
+    protocol: TCP
+    port: 27017
+    targetPort: 27017

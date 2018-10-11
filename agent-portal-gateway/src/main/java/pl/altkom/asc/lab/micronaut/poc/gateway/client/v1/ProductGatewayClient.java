@@ -6,7 +6,7 @@ import io.reactivex.Maybe;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductDto;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.ProductOperations;
 
-@Client(id = "product-service", path = "/products")
+@Client("http://product-service/products")
 @Retryable(attempts = "2", delay = "2s")
 public interface ProductGatewayClient extends ProductOperations {
 

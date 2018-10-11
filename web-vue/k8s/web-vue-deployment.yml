@@ -1,0 +1,26 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: web-vue
+  labels:
+    srv: web-vue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: web-vue
+  template:
+    metadata:
+      labels:
+        srv: web-vue
+    spec:
+      containers:
+      - name: web-vue
+        image: ascmn/web-vue:latest
+        env:
+        - name: GATEWAY_URL
+          value: "http://agent-portal-gateway"
+        - name: AUTH_URL
+          value: "http://auth-service"
+        ports:
+        - containerPort: 80

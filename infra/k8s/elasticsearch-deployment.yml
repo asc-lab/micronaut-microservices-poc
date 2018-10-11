@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: elasticsearch
+  labels:
+    srv: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: elasticsearch
+  template:
+    metadata:
+      labels:
+        srv: elasticsearch
+    spec:
+      containers:
+      - name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+        ports:
+        - containerPort: 9200
+        env:
+        - name: cluster.name
+          value: "docker-cluster"
+        - name: bootstrap.memory_lock
+          value: "true"
+        - name: ES_JAVA_OPTS
+          value: "-Xms512m -Xmx512m"

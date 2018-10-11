@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: auth-service
+  labels:
+    srv: auth-service
+spec:
+  type: ClusterIP
+  selector:
+    srv: auth-service
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80

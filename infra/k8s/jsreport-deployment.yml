@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: jsreport
+  labels:
+    srv: jsreport
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: jsreport
+  template:
+    metadata:
+      labels:
+        srv: jsreport
+    spec:
+      containers:
+      - name: jsreport
+        image: jsreport/jsreport
+        ports:
+        - containerPort: 5488

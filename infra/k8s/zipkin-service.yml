@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: zipkin
+  labels:
+    srv: zipkin
+spec:
+  type: ClusterIP
+  selector:
+    srv: zipkin
+  ports:
+  - name: http
+    protocol: TCP
+    port: 9411
+    targetPort: 9411

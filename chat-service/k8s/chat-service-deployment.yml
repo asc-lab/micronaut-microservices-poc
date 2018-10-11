@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: chat-service
+  labels:
+    srv: chat-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: chat-service
+  template:
+    metadata:
+      labels:
+        srv: chat-service
+    spec:
+      containers:
+      - name: chat-service
+        image: ascmn/chat-service:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: SERVICE_PORT
+          value: "80"
+        - name: ZIPKIN_HOST
+          value: zipkin
+        - name: ZIPKIN_PORT
+          value: "9411"

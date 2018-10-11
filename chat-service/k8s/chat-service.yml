@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: chat-service
+  labels:
+    srv: chat-service
+spec:
+  type: ClusterIP
+  selector:
+    srv: chat-service
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80

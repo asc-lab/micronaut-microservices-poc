@@ -32,12 +32,6 @@ kafka:
   bootstrap:
     servers: "${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}"
 ---
-consul:
-  client:
-    registration:
-      enabled: true
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
----
 tracing:
   zipkin:
     enabled: true

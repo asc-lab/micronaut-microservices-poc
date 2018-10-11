@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: product-service
+  labels:
+    srv: product-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: product-service
+  template:
+    metadata:
+      labels:
+        srv: product-service
+    spec:
+      containers:
+      - name: product-service
+        image: ascmn/product-service:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: SERVICE_PORT
+          value: "80"
+        - name: MONGO_HOST
+          value: mongo
+        - name: MONGO_PORT
+          value: "27017"

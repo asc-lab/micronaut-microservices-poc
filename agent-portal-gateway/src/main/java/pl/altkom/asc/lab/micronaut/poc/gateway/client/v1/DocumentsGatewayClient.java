@@ -5,7 +5,7 @@ import io.micronaut.retry.annotation.Retryable;
 import pl.altkom.asc.lab.micronaut.poc.documents.api.DocumentsOperations;
 import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindDocumentsResult;
 
-@Client(id = "documents-service", path = "/documents")
+@Client("http://document-service/documents")
 @Retryable(attempts = "2", delay = "2s")
 public interface DocumentsGatewayClient extends DocumentsOperations {
 

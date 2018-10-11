@@ -16,7 +16,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicyde
 
 import javax.validation.constraints.NotNull;
 
-@Client(id = "policy-service")
+@Client("http://policy-service")
 @Retryable(attempts = "2", delay = "2s")
 public interface PolicyGatewayClient extends PolicyOperations {
 

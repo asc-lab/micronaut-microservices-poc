@@ -13,12 +13,6 @@ mongodb:
     connectionPool:
       maxSize: 20
 ---
-consul:
-  client:
-    registration:
-      enabled: true
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
----
 endpoints:
   health:
     enabled: true

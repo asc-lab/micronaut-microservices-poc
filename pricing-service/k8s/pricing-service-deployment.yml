@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pricing-service
+  labels:
+    srv: pricing-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: pricing-service
+  template:
+    metadata:
+      labels:
+        srv: pricing-service
+    spec:
+      containers:
+      - name: pricing-service
+        image: ascmn/pricing-service:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: SERVICE_PORT
+          value: "80"
+        - name: ZIPKIN_HOST
+          value: "zipkin"
+        - name: ZIPKIN_PORT
+          value: "9411"

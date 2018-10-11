@@ -15,12 +15,6 @@ micronaut:
             generator:
               secret: pleaseChangeThisSecretForANewOne
 ---
-consul:
-  client:
-    registration:
-      enabled: false
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
----
 tracing:
   zipkin:
     enabled: true
