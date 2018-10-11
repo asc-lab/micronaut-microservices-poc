@@ -4,8 +4,8 @@ package pl.altkom.asc.lab.micronaut.poc.gateway;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
-import io.micronaut.security.annotation.Secured;
 import io.micronaut.http.annotation.QueryValue;
+import io.micronaut.security.annotation.Secured;
 import io.reactivex.Maybe;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.PolicyGatewayClient;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.PolicySearchGatewayClient;
@@ -28,8 +28,8 @@ public class PolicyGatewayController {
     private PolicySearchGatewayClient policySearchClient;
 
     @Get
-    Maybe<FindPolicyQueryResult> policies(@QueryValue(value = "q", defaultValue = "*") String queryText) {
-        return policySearchClient.policies(queryText);
+    Maybe<FindPolicyQueryResult> policies(@QueryValue(value = "q", defaultValue = "*") String q) {
+        return policySearchClient.policies(q);
     }
 
     @Get("/{policyNumber}")
