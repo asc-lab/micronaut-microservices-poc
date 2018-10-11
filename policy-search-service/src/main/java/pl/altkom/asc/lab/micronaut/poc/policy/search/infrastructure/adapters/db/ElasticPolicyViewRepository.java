@@ -22,19 +22,22 @@ import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.find
 @Slf4j
 @RequiredArgsConstructor
 public class ElasticPolicyViewRepository implements PolicyViewRepository {
+
+    private static final String INDEX_NAME = "policy-views";
+
     private final ElasticClientAdapter elasticClientAdapter;
     private final JsonConverter jsonConverter;
     
     @Override
     public void save(PolicyView policy) {
-        IndexRequest indexRequest = new IndexRequest("policy-views","policyview", policy.getNumber());
+        IndexRequest indexRequest = new IndexRequest(INDEX_NAME,"policyview", policy.getNumber());
         indexRequest.source(jsonConverter.stringifyObject(policy), XContentType.JSON);
         elasticClientAdapter.index(indexRequest).blockingGet();
     }
     
     @Override
     public Maybe<List<PolicyView>> findAll(FindPolicyQuery query) {
-        SearchRequest searchRequest = new SearchRequest("policy-views");
+        SearchRequest searchRequest = new SearchRequest(INDEX_NAME);
 
         QueryStringQueryBuilder queryStringQueryBuilder = QueryBuilders.queryStringQuery(query.getQueryText())
                 .field("number")

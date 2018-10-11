@@ -7,7 +7,7 @@ import lombok.Setter;
 @ConfigurationProperties("elastic")
 @Getter
 @Setter
-public class ElasticSearchSettings {
+class ElasticSearchSettings {
     private String host;
     private int port;
     private int connectionTimeout;
