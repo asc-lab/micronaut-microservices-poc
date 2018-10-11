@@ -59,7 +59,9 @@
             }
         },
         methods: {
-            createPolicy: function () {
+            createPolicy: function (evt) {
+                evt.preventDefault();
+
                 const request = {
                     offerNumber: this.offerNumber,
                     policyHolder: this.policyHolder
