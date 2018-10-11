@@ -2,7 +2,7 @@ micronaut:
   application:
     name: chat-service
   server:
-    port: 8787
+    port: ${SERVICE_PORT:8787}
   metrics:
     enabled: true
 ---

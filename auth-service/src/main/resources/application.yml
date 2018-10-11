@@ -2,7 +2,7 @@ micronaut:
   application:
     name: auth-service
   server:
-    port: 8090
+    port: ${SERVICE_PORT:8090}
     cors:
       enabled: true
   security:

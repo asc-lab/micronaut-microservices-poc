@@ -2,7 +2,7 @@ micronaut:
   application:
     name: policy-service
   server:
-    port: -1
+    port: ${SERVICE_PORT:-1}
 ---
 datasources:
   default:

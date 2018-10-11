@@ -2,7 +2,7 @@ micronaut:
   application:
     name: gateway
   server:
-    port: 8081
+    port: ${SERVICE_PORT:8081}
     cors:
       enabled: true
   security:
