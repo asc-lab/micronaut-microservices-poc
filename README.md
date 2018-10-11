@@ -22,7 +22,7 @@ This module is taking care of a managing policy accounts. Once the policy is cre
 In this service we demonstrated usage of CQRS pattern for better read/write operation isolation. This service demonstrates two ways of communication between services: synchronous REST based calls to pricing-service through HTTP Client to get the price, and asynchronous event based using Apache Kafka to publish information about newly created policies. In this service we also access RDBMS using JPA.
 
 * **policy-search-service** - provides insurance policy search. \
-This module listens for events from Kafka, converts received DTOs to “read model” (used later in search) and saves this in database. It also exposes REST endpoint for search policies.
+This module listens for events from Kafka, converts received DTOs to “read model” (used later in search) and saves this in database (ElasticSearch). It also exposes REST endpoint for search policies.
 
 * **pricing-service** - calculates price for selected insurance product. \
 For each product a tariff should be defined. The tariff is a set of rules on the basis of which the price is calculated. MVEL language was used to define the rules. During the policy purchase process, the policy-service connects with this service to calculate a price. Price is calculated based on user’s answers for defined questions. Example below:
