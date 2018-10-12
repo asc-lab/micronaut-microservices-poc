@@ -6,7 +6,7 @@ import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculate
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceResult;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.PricingOperations;
 
-@Client(id = "pricing-service")
+@Client("http://pricing-service")
 public interface PricingClient extends PricingOperations {
     @Override
     @Post("/pricing/calculate")

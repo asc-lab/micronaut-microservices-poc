@@ -6,7 +6,7 @@ import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.annotation.QueryValue;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
 
-@Client(id = "/policy-search-service", path = "/policies")
+@Client("http://policy-search-service/policies")
 public interface PolicySearchTestClient {
 
     @Get

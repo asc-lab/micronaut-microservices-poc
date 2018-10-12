@@ -5,7 +5,7 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.client.annotation.Client;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.Health;
 
-@Client(id = "/policy-service", path = "/hello")
+@Client("http://policy-service/hello")
 public interface HelloTestClient {
 
     @Get
