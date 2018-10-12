@@ -1,6 +1,6 @@
 KAFKAMANAGER=`kubectl -o json get services kafka-manager | jq -r .spec.clusterIP`
 CLUSTER_NAME=kafka-cluster
-KAFKASERVER_HOST=kafkaserver
+KAFKASERVER_HOST=kafka-server
 KAFKASERVER_PORT=2181
 curl \
   -vs -o /dev/null \
