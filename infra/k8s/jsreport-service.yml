@@ -5,7 +5,7 @@ metadata:
   labels:
     srv: jsreport
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     srv: jsreport
   ports:

@@ -1,4 +1,4 @@
-KAFKAMANAGER=`kubectl -o json get services kafka-manager | jq -r .spec.clusterIP`
+KAFKAMANAGER=`kubectl -o json get services kafka-manager | jq -r .status.loadBalancer.ingress[0].ip`
 CLUSTER_NAME=kafka-cluster
 KAFKASERVER_HOST=kafka-server
 KAFKASERVER_PORT=2181
