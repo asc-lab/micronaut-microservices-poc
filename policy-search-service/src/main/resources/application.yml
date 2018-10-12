@@ -38,8 +38,8 @@ tracing:
         probability: 1.0 # Configuration taking 100% of the request to be processed by Zipkin. In a real production system, that could be overwhelming.
 ---
 elastic:
-    host: localhost
-    port: 9200
+    host: ${ELASTIC_HOST:localhost}
+    port: ${ELASTIC_PORT:9200}
     connectionTimeout: 5000
     connectionRequestTimeout: 5000
     socketTimeout: 5000
