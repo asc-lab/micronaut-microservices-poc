@@ -92,3 +92,12 @@ steps:
   displayName: 'docker push $(dockerNamespace)/auth-service:$(tag)'
 - script: docker push $(dockerNamespace)/auth-service:latest
   displayName: 'docker push $(dockerNamespace)/auth-service:latest'
+# chat-service
+- script: docker build -t $(dockerNamespace)/chat-service chat-service
+  displayName: 'docker build chat-service'
+- script: docker tag $(dockerNamespace)/chat-service $(dockerNamespace)/chat-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/chat-service:$(tag)'
+- script: docker push $(dockerNamespace)/chat-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/chat-service:$(tag)'
+- script: docker push $(dockerNamespace)/chat-service:latest
+  displayName: 'docker push $(dockerNamespace)/chat-service:latest'
