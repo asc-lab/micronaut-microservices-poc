@@ -1,22 +1,22 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: document-service
+  name: documents-service
   labels:
-    srv: document-service
+    srv: documents-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: document-service
+      srv: documents-service
   template:
     metadata:
       labels:
-        srv: document-service
+        srv: documents-service
     spec:
       containers:
-      - name: document-service
-        image: ascmn/document-service:latest
+      - name: documents-service
+        image: ascmn/documents-service:latest
         ports:
         - containerPort: 80
         env:

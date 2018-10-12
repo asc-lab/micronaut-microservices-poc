@@ -1,13 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: document-service
+  name: documents-service
   labels:
-    srv: document-service
+    srv: documents-service
 spec:
   type: ClusterIP
   selector:
-    srv: document-service
+    srv: documents-service
   ports:
   - name: http
     protocol: TCP
