@@ -11,60 +11,6 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: 'build-without-tests.sh'
-# documents-service
-- script: docker build -t $(dockerNamespace)/documents-service documents-service
-  displayName: 'docker build documents-service'
-- script: docker tag $(dockerNamespace)/documents-service $(dockerNamespace)/documents-service:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/documents-service:$(tag)'
-- script: docker push $(dockerNamespace)/documents-service:$(tag)
-  displayName: 'docker push $(dockerNamespace)/documents-service:$(tag)'
-- script: docker push $(dockerNamespace)/documents-service:latest
-  displayName: 'docker push $(dockerNamespace)/documents-service:latest'
-# policy-service
-- script: docker build -t $(dockerNamespace)/policy-service policy-service
-  displayName: 'docker build policy-service'
-- script: docker tag $(dockerNamespace)/policy-service $(dockerNamespace)/policy-service:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/policy-service:$(tag)'
-- script: docker push $(dockerNamespace)/policy-service:$(tag)
-  displayName: 'docker push $(dockerNamespace)/policy-service:$(tag)'
-- script: docker push $(dockerNamespace)/policy-service:latest
-  displayName: 'docker push $(dockerNamespace)/policy-service:latest'
-# policy-search-service
-- script: docker build -t $(dockerNamespace)/policy-search-service policy-search-service
-  displayName: 'docker build policy-search-service'
-- script: docker tag $(dockerNamespace)/policy-search-service $(dockerNamespace)/policy-search-service:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/policy-search-service:$(tag)'
-- script: docker push $(dockerNamespace)/policy-search-service:$(tag)
-  displayName: 'docker push $(dockerNamespace)/policy-search-service:$(tag)'
-- script: docker push $(dockerNamespace)/policy-search-service:latest
-  displayName: 'docker push $(dockerNamespace)/policy-search-service:latest'
-# pricing-service
-- script: docker build -t $(dockerNamespace)/pricing-service pricing-service
-  displayName: 'docker build pricing-service'
-- script: docker tag $(dockerNamespace)/pricing-service $(dockerNamespace)/pricing-service:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/pricing-service:$(tag)'
-- script: docker push $(dockerNamespace)/pricing-service:$(tag)
-  displayName: 'docker push $(dockerNamespace)/pricing-service:$(tag)'
-- script: docker push $(dockerNamespace)/pricing-service:latest
-  displayName: 'docker push $(dockerNamespace)/pricing-service:latest'
-# payment-service
-- script: docker build -t $(dockerNamespace)/payment-service payment-service
-  displayName: 'docker build payment-service'
-- script: docker tag $(dockerNamespace)/payment-service $(dockerNamespace)/payment-service:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/payment-service:$(tag)'
-- script: docker push $(dockerNamespace)/payment-service:$(tag)
-  displayName: 'docker push $(dockerNamespace)/payment-service:$(tag)'
-- script: docker push $(dockerNamespace)/payment-service:latest
-  displayName: 'docker push $(dockerNamespace)/payment-service:latest'
-# product-service
-- script: docker build -t $(dockerNamespace)/product-service product-service
-  displayName: 'docker build product-service'
-- script: docker tag $(dockerNamespace)/product-service $(dockerNamespace)/product-service:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/product-service:$(tag)'
-- script: docker push $(dockerNamespace)/product-service:$(tag)
-  displayName: 'docker push $(dockerNamespace)/product-service:$(tag)'
-- script: docker push $(dockerNamespace)/product-service:latest
-  displayName: 'docker push $(dockerNamespace)/product-service:latest'
 # agent-portal-gateway
 - script: docker build -t $(dockerNamespace)/agent-portal-gateway agent-portal-gateway
   displayName: 'docker build agent-portal-gateway'
@@ -74,15 +20,6 @@ steps:
   displayName: 'docker push $(dockerNamespace)/agent-portal-gateway:$(tag)'
 - script: docker push $(dockerNamespace)/agent-portal-gateway:latest
   displayName: 'docker push $(dockerNamespace)/agent-portal-gateway:latest'
-# web-vue
-- script: docker build -t $(dockerNamespace)/web-vue web-vue
-  displayName: 'docker build web-vue'
-- script: docker tag $(dockerNamespace)/web-vue $(dockerNamespace)/web-vue:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/web-vue:$(tag)'
-- script: docker push $(dockerNamespace)/web-vue:$(tag)
-  displayName: 'docker push $(dockerNamespace)/web-vue:$(tag)'
-- script: docker push $(dockerNamespace)/web-vue:latest
-  displayName: 'docker push $(dockerNamespace)/web-vue:latest'
 # auth-service
 - script: docker build -t $(dockerNamespace)/auth-service auth-service
   displayName: 'docker build auth-service'
@@ -101,3 +38,66 @@ steps:
   displayName: 'docker push $(dockerNamespace)/chat-service:$(tag)'
 - script: docker push $(dockerNamespace)/chat-service:latest
   displayName: 'docker push $(dockerNamespace)/chat-service:latest'
+# documents-service
+- script: docker build -t $(dockerNamespace)/documents-service documents-service
+  displayName: 'docker build documents-service'
+- script: docker tag $(dockerNamespace)/documents-service $(dockerNamespace)/documents-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/documents-service:$(tag)'
+- script: docker push $(dockerNamespace)/documents-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/documents-service:$(tag)'
+- script: docker push $(dockerNamespace)/documents-service:latest
+  displayName: 'docker push $(dockerNamespace)/documents-service:latest'
+# payment-service
+- script: docker build -t $(dockerNamespace)/payment-service payment-service
+  displayName: 'docker build payment-service'
+- script: docker tag $(dockerNamespace)/payment-service $(dockerNamespace)/payment-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/payment-service:$(tag)'
+- script: docker push $(dockerNamespace)/payment-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/payment-service:$(tag)'
+- script: docker push $(dockerNamespace)/payment-service:latest
+  displayName: 'docker push $(dockerNamespace)/payment-service:latest'
+# policy-search-service
+- script: docker build -t $(dockerNamespace)/policy-search-service policy-search-service
+  displayName: 'docker build policy-search-service'
+- script: docker tag $(dockerNamespace)/policy-search-service $(dockerNamespace)/policy-search-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/policy-search-service:$(tag)'
+- script: docker push $(dockerNamespace)/policy-search-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/policy-search-service:$(tag)'
+- script: docker push $(dockerNamespace)/policy-search-service:latest
+  displayName: 'docker push $(dockerNamespace)/policy-search-service:latest'
+# policy-service
+- script: docker build -t $(dockerNamespace)/policy-service policy-service
+  displayName: 'docker build policy-service'
+- script: docker tag $(dockerNamespace)/policy-service $(dockerNamespace)/policy-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/policy-service:$(tag)'
+- script: docker push $(dockerNamespace)/policy-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/policy-service:$(tag)'
+- script: docker push $(dockerNamespace)/policy-service:latest
+  displayName: 'docker push $(dockerNamespace)/policy-service:latest'
+# pricing-service
+- script: docker build -t $(dockerNamespace)/pricing-service pricing-service
+  displayName: 'docker build pricing-service'
+- script: docker tag $(dockerNamespace)/pricing-service $(dockerNamespace)/pricing-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/pricing-service:$(tag)'
+- script: docker push $(dockerNamespace)/pricing-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/pricing-service:$(tag)'
+- script: docker push $(dockerNamespace)/pricing-service:latest
+  displayName: 'docker push $(dockerNamespace)/pricing-service:latest'
+# product-service
+- script: docker build -t $(dockerNamespace)/product-service product-service
+  displayName: 'docker build product-service'
+- script: docker tag $(dockerNamespace)/product-service $(dockerNamespace)/product-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/product-service:$(tag)'
+- script: docker push $(dockerNamespace)/product-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/product-service:$(tag)'
+- script: docker push $(dockerNamespace)/product-service:latest
+  displayName: 'docker push $(dockerNamespace)/product-service:latest'
+# web-vue
+- script: docker build -t $(dockerNamespace)/web-vue web-vue
+  displayName: 'docker build web-vue'
+- script: docker tag $(dockerNamespace)/web-vue $(dockerNamespace)/web-vue:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/web-vue:$(tag)'
+- script: docker push $(dockerNamespace)/web-vue:$(tag)
+  displayName: 'docker push $(dockerNamespace)/web-vue:$(tag)'
+- script: docker push $(dockerNamespace)/web-vue:latest
+  displayName: 'docker push $(dockerNamespace)/web-vue:latest'
