@@ -4,6 +4,14 @@ micronaut:
   server:
     port: ${SERVICE_PORT:-1}
 ---
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+---
 tracing:
   zipkin:
     enabled: true

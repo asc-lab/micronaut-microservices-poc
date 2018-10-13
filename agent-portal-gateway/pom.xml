@@ -69,6 +69,21 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- MANAGEMENT -->
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>management</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.configuration</groupId>
+            <artifactId>micrometer-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.configuration</groupId>
+            <artifactId>micrometer-registry-statsd</artifactId>
+        </dependency>
+        <!-- MANAGEMENT -->
+
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>

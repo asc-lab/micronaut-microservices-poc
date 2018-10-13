@@ -12,6 +12,14 @@ hystrix:
   stream:
     enabled: true
 ---
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+---
 tracing:
   zipkin:
     enabled: true
