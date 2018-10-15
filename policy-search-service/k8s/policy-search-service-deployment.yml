@@ -30,3 +30,17 @@ spec:
           value: "kafka-server"
         - name: KAFKA_PORT
           value: "9092"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 3
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 1
+          periodSeconds: 5

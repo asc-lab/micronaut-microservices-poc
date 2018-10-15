@@ -19,3 +19,17 @@ spec:
         image: openzipkin/zipkin:latest
         ports:
         - containerPort: 9411
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 9411
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 9411
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 5

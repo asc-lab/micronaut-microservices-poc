@@ -19,3 +19,17 @@ spec:
         image: jsreport/jsreport
         ports:
         - containerPort: 5488
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5488
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5488
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 5

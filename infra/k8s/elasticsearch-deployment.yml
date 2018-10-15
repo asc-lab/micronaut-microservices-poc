@@ -26,3 +26,17 @@ spec:
           value: "true"
         - name: ES_JAVA_OPTS
           value: "-Xms512m -Xmx512m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 9200
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 9200
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 1

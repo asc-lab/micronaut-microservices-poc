@@ -26,3 +26,17 @@ spec:
           value: zipkin
         - name: ZIPKIN_PORT
           value: "9411"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 3
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 1
+          periodSeconds: 5

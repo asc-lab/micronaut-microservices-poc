@@ -23,3 +23,17 @@ spec:
           value: "zookeeper:2181"
         ports:
         - containerPort: 9000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 9000
+          initialDelaySeconds: 3
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 9000
+          initialDelaySeconds: 30
+          timeoutSeconds: 1
+          periodSeconds: 5
