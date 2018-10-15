@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: zookeeper
+  labels:
+    srv: zookeeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      srv: zookeeper
+  template:
+    metadata:
+      labels:
+        srv: zookeeper
+    spec:
+      hostname: zookeeper
+      containers:
+      - name: zookeeper
+        image: bitnami/zookeeper:3.4.12
+        env:
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
+        ports:
+        - containerPort: 2181

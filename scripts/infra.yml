@@ -25,24 +25,35 @@ services:
     hostname: mongo
     ports:
       - 27017:27017
-  kafkaserver:
-    image: "spotify/kafka:latest"
-    container_name: kafka
-    hostname: kafkaserver
+  zookeeper:
+    image: 'bitnami/zookeeper:3.4.12'
+    container_name: zookeeper
+    hostname: zookeeper
     ports:
-      - 2181:2181
-      - 9092:9092
+    - 2181:2181
     environment:
-      ADVERTISED_HOST: kafkaserver
-      ADVERTISED_PORT: 9092
-  kafka_manager:
-    image: "mzagar/kafka-manager-docker:1.3.3.4"
-    container_name: kafkamanager
-    hostname: kafkamanager
+    - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka-server:
+    image: "bitnami/kafka:2.0.0"
+    container_name: kafka-server
+    hostname: kafka-server
     ports:
-      - 9000:9000
+    - 9092:9092
     environment:
-      ZK_HOSTS: "kafkaserver:2181"
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+    - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+    - zookeeper
+  kafka-manager:
+    image: "deric/kafka-manager:1.3.3.18"
+    container_name: kafka-manager
+    hostname: kafka-manager
+    ports:
+    - 9000:9000
+    environment:
+      ZK_HOSTS: "zookeeper:2181"
+    depends_on:
+    - zookeeper
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
     container_name: elasticsearch

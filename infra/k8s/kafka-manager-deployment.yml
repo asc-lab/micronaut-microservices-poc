@@ -14,11 +14,12 @@ spec:
       labels:
         srv: kafka-manager
     spec:
+      hostname: kafka-manager
       containers:
       - name: kafka-manager
-        image: mzagar/kafka-manager-docker:1.3.3.4
+        image: deric/kafka-manager:1.3.3.18
         env:
         - name: ZK_HOSTS
-          value: "kafka-server:2181"
+          value: "zookeeper:2181"
         ports:
         - containerPort: 9000
