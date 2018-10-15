@@ -20,6 +20,15 @@ micronaut:
             generator:
               secret: pleaseChangeThisSecretForANewOne
 ---
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+  metrics:
+    enabled: true
+    sensitive: false
+---
 tracing:
   zipkin:
     enabled: true
