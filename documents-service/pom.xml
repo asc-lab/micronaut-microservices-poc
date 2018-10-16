@@ -119,14 +119,6 @@
         </dependency>
         <!-- DATABASE, JPA, HIBERNATE -->
 
-        <!-- DISCOVERY CLIENT -->
-        <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>discovery-client</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <!-- DISCOVERY CLIENT -->
-
         <!-- MANAGEMENT -->
         <dependency>
             <groupId>io.micronaut</groupId>

@@ -72,11 +72,6 @@
             <artifactId>kafka</artifactId>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>discovery-client</artifactId>
-            <scope>compile</scope>
-        </dependency>
         <!-- MANAGEMENT -->
         <dependency>
             <groupId>io.micronaut</groupId>

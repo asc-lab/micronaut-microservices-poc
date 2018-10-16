@@ -60,11 +60,6 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>discovery-client</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.micronaut</groupId>
             <artifactId>security-jwt</artifactId>
             <scope>compile</scope>
         </dependency>

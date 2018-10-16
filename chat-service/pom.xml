@@ -70,14 +70,6 @@
         </dependency>
         <!-- MICRONAUT CORE -->
 
-        <!-- DISCOVERY CLIENT -->
-        <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>discovery-client</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <!-- DISCOVERY CLIENT -->
-
         <!-- MONGO -->
         <dependency>
             <groupId>io.micronaut.configuration</groupId>

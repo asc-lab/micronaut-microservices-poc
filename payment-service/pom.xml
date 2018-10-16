@@ -82,12 +82,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>discovery-client</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
         <!-- DATABASE, JPA, HIBERNATE -->
         <dependency>
             <groupId>com.h2database</groupId>
