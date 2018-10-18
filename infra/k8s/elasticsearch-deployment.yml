@@ -28,14 +28,14 @@ spec:
           value: "-Xms512m -Xmx512m"
         readinessProbe:
           httpGet:
-            path: /
+            path: /_cluster/health?local=true
             port: 9200
           initialDelaySeconds: 5
           timeoutSeconds: 1
           periodSeconds: 1
         livenessProbe:
           httpGet:
-            path: /
+            path: /_cluster/health?local=true
             port: 9200
           initialDelaySeconds: 60
           timeoutSeconds: 1
