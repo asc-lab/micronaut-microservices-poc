@@ -23,7 +23,7 @@ spec:
         - name: cluster.name
           value: "docker-cluster"
         - name: bootstrap.memory_lock
-          value: "true"
+          value: "false"
         - name: ES_JAVA_OPTS
           value: "-Xms512m -Xmx512m"
         readinessProbe:
