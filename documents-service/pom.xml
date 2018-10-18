@@ -163,12 +163,6 @@
         <!--API-->
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
-            <artifactId>policy-service</artifactId>
-            <version>1.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
             <artifactId>policy-service-api</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
