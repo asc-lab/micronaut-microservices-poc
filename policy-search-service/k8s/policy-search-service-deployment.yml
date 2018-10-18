@@ -30,6 +30,10 @@ spec:
           value: "kafka-server"
         - name: KAFKA_PORT
           value: "9092"
+        - name: ELASTIC_HOST
+          value: "elasticsearch"
+        - name: ELASTIC_PORT
+          value: "9200"
         readinessProbe:
           httpGet:
             path: /health
