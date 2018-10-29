@@ -1,6 +1,10 @@
+KAFKA_MANAGER_EXTERNAL_NAME=`kubectl -o json get services kafka-manager | jq -r .status.loadBalancer.ingress[0].hostname`
 KAFKA_MANAGER_EXTERNAL_IP=`kubectl -o json get services kafka-manager | jq -r .status.loadBalancer.ingress[0].ip`
 KAFKA_MANAGER_CLUSTER_IP=`kubectl -o json get services kafka-manager | jq -r .spec.clusterIP`
-if [ "$KAFKA_MANAGER_EXTERNAL_IP" != "null" ]
+if [ "$KAFKA_MANAGER_EXTERNAL_NAME" != "null" ]
+then
+    KAFKA_MANAGER=$KAFKA_MANAGER_EXTERNAL_NAME
+elif [ "$KAFKA_MANAGER_EXTERNAL_IP" != "null" ]
 then
     KAFKA_MANAGER=$KAFKA_MANAGER_EXTERNAL_IP
 else
