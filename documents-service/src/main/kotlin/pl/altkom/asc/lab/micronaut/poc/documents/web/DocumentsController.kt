@@ -5,9 +5,7 @@ import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindD
 import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.GeneratedDocument
 import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocumentRepository
 import io.micronaut.http.annotation.Controller
-import io.micronaut.http.annotation.Get
 import io.micronaut.validation.Validated
-import org.assertj.core.util.Lists
 
 @Validated
 @Controller("/documents")

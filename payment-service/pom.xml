@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.payment.PaymentApplication</exec.mainClass>
-        <micronaut.version>1.0.0.RC2</micronaut.version>
+        <micronaut.version>1.0.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -24,7 +24,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.micronaut</groupId>
-                <artifactId>bom</artifactId>
+                <artifactId>micronaut-bom</artifactId>
                 <version>${micronaut.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -45,40 +45,40 @@
         <!-- MICRONAUT CORE -->
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>http-client</artifactId>
+            <artifactId>micronaut-http-client</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>http-server-netty</artifactId>
+            <artifactId>micronaut-http-server-netty</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>inject</artifactId>
+            <artifactId>micronaut-inject</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>runtime</artifactId>
+            <artifactId>micronaut-runtime</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>inject-java</artifactId>
+            <artifactId>micronaut-inject-java</artifactId>
             <scope>provided</scope>
         </dependency>
         <!-- MICRONAUT CORE -->
 
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>kafka</artifactId>
+            <artifactId>micronaut-kafka</artifactId>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>netflix-hystrix</artifactId>
+            <artifactId>micronaut-netflix-hystrix</artifactId>
             <scope>compile</scope>
         </dependency>
 
@@ -91,12 +91,12 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>hibernate-jpa</artifactId>
+            <artifactId>micronaut-hibernate-jpa</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>jdbc-hikari</artifactId>
+            <artifactId>micronaut-jdbc-hikari</artifactId>
             <scope>compile</scope>
         </dependency>
         <!-- DATABASE, JPA, HIBERNATE -->
@@ -104,41 +104,38 @@
         <!-- MANAGEMENT -->
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>management</artifactId>
+            <artifactId>micronaut-management</artifactId>
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micrometer-core</artifactId>
+            <artifactId>micronaut-micrometer-core</artifactId>
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micrometer-registry-statsd</artifactId>
+            <artifactId>micronaut-micrometer-registry-statsd</artifactId>
         </dependency>
         <!-- MANAGEMENT -->
 
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>tracing</artifactId>
+            <artifactId>micronaut-tracing</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.zipkin.brave</groupId>
             <artifactId>brave-instrumentation-http</artifactId>
-            <version>4.19.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>io.zipkin.reporter2</groupId>
             <artifactId>zipkin-reporter</artifactId>
             <scope>runtime</scope>
-            <version>2.5.0</version>
         </dependency>
         <dependency>
             <groupId>io.opentracing.brave</groupId>
             <artifactId>brave-opentracing</artifactId>
             <scope>compile</scope>
-            <version>0.30.0</version>
         </dependency>
         <!-- TRACING WITH ZIPKIN -->
 
@@ -169,7 +166,7 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>inject-groovy</artifactId>
+            <artifactId>micronaut-inject-groovy</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -257,7 +254,7 @@
                             </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
-                                <artifactId>inject-java</artifactId>
+                                <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
                             </path>
                         </annotationProcessorPaths>

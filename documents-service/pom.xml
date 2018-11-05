@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.documents.DocumentsApplication</exec.mainClass>
-        <micronaut.version>1.0.0.RC2</micronaut.version>
+        <micronaut.version>1.0.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.version>1.2.61</kotlin.version>
@@ -26,7 +26,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.micronaut</groupId>
-                <artifactId>bom</artifactId>
+                <artifactId>micronaut-bom</artifactId>
                 <version>${micronaut.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -49,17 +49,17 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>runtime</artifactId>
+            <artifactId>micronaut-runtime</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>http-client</artifactId>
+            <artifactId>micronaut-http-client</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>http-server-netty</artifactId>
+            <artifactId>micronaut-http-server-netty</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -100,7 +100,7 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>kafka</artifactId>
+            <artifactId>micronaut-kafka</artifactId>
         </dependency>
 
         <!-- DATABASE, JPA, HIBERNATE -->
@@ -111,52 +111,49 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>jdbc-hikari</artifactId>
+            <artifactId>micronaut-jdbc-hikari</artifactId>
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>hibernate-jpa</artifactId>
+            <artifactId>micronaut-hibernate-jpa</artifactId>
         </dependency>
         <!-- DATABASE, JPA, HIBERNATE -->
 
         <!-- MANAGEMENT -->
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>management</artifactId>
+            <artifactId>micronaut-management</artifactId>
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micrometer-core</artifactId>
+            <artifactId>micronaut-micrometer-core</artifactId>
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micrometer-registry-statsd</artifactId>
+            <artifactId>micronaut-micrometer-registry-statsd</artifactId>
         </dependency>
         <!-- MANAGEMENT -->
 
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>tracing</artifactId>
+            <artifactId>micronaut-tracing</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.zipkin.brave</groupId>
             <artifactId>brave-instrumentation-http</artifactId>
-            <version>4.19.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>io.zipkin.reporter2</groupId>
             <artifactId>zipkin-reporter</artifactId>
             <scope>runtime</scope>
-            <version>2.5.0</version>
         </dependency>
         <dependency>
             <groupId>io.opentracing.brave</groupId>
             <artifactId>brave-opentracing</artifactId>
             <scope>compile</scope>
-            <version>0.30.0</version>
         </dependency>
         <!-- TRACING WITH ZIPKIN -->
 
@@ -256,7 +253,7 @@
                             <annotationProcessorPaths>
                                 <annotationProcessorPath>
                                     <groupId>io.micronaut</groupId>
-                                    <artifactId>inject-java</artifactId>
+                                    <artifactId>micronaut-inject-java</artifactId>
                                     <version>${micronaut.version}</version>
                                 </annotationProcessorPath>
                             </annotationProcessorPaths>
@@ -287,7 +284,7 @@
                             <annotationProcessorPaths>
                                 <annotationProcessorPath>
                                     <groupId>io.micronaut</groupId>
-                                    <artifactId>inject-java</artifactId>
+                                    <artifactId>micronaut-inject-java</artifactId>
                                     <version>${micronaut.version}</version>
                                 </annotationProcessorPath>
                             </annotationProcessorPaths>
