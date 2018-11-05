@@ -2,52 +2,52 @@ version: '2'
 
 services:
   mn-documents-service:
-    build: ../documents-service
+    build: ../../documents-service
     image: mn-documents-service
     container_name: mn-documents-service
     network_mode: host
   mn-policy-service:
-    build: ../policy-service
+    build: ../../policy-service
     image: mn-policy-service
     container_name: mn-policy-service
     network_mode: host
   mn-policy-search-service:
-    build: ../policy-search-service
+    build: ../../policy-search-service
     image: mn-policy-search-service
     container_name: mn-policy-search-service
     network_mode: host
   mn-pricing-service:
-    build: ../pricing-service
+    build: ../../pricing-service
     image: mn-pricing-service
     container_name: mn-pricing-service
     network_mode: host
   mn-payment-service:
-    build: ../payment-service
+    build: ../../payment-service
     image: mn-payment-service
     container_name: mn-payment-service
     network_mode: host
   mn-product-service:
-    build: ../product-service
+    build: ../../product-service
     image: mn-product-service
     container_name: mn-product-service
     network_mode: host
   mn-auth-service:
-    build: ../auth-service
+    build: ../../auth-service
     image: mn-auth-service
     container_name: mn-auth-service
     network_mode: host
   mn-chat-service:
-    build: ./chat-service
+    build: ../../chat-service
     image: mn-chat-service
     container_name: mn-chat-service
     network_mode: host
   mn-agent-portal-gateway:
-    build: ../agent-portal-gateway
+    build: ../../agent-portal-gateway
     image: mn-agent-portal-gateway
     container_name: mn-agent-portal-gateway
     network_mode: host
   mn-web-vue:
-    build: ../web-vue
+    build: ../../web-vue
     image: mn-web-vue
     container_name: mn-web-vue
     network_mode: host

@@ -12,19 +12,19 @@ wait-for-deployment() {
     done
 }
 
-SERVICES=`find ${BASE}/../*/k8s/*service.yml`
+SERVICES=`find ${BASE}/../../*/k8s/*service.yml`
 for SRV in ${SERVICES} ;
 do
     kubectl apply -f ${SRV}
 done
 
-kubectl apply -f ${BASE}/../infra/k8s/zookeeper-deployment.yml
+kubectl apply -f ${BASE}/../../infra/k8s/zookeeper-deployment.yml
 echo "waiting for zookeeper to start"
 wait-for-deployment zookeeper
 # workaround for missing zk readiness probe
 sleep 5
 
-DEPLOYMENTS=`find ${BASE}/../infra/k8s/*deployment.yml`
+DEPLOYMENTS=`find ${BASE}/../../infra/k8s/*deployment.yml`
 for DEPLOYMENT in ${DEPLOYMENTS} ;
 do
     kubectl apply -f ${DEPLOYMENT}
@@ -37,7 +37,7 @@ wait-for-deployment kafka-server
 
 ${BASE}/kafka-create-cluster.sh
 
-DEPLOYMENTS=`find ${BASE}/../*/k8s/*deployment.yml | grep -v /infra/k8s/`
+DEPLOYMENTS=`find ${BASE}/../../*/k8s/*deployment.yml | grep -v /infra/k8s/`
 for DEPLOYMENT in ${DEPLOYMENTS} ;
 do
     kubectl apply -f ${DEPLOYMENT}
