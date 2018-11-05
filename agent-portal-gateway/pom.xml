@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.gateway.AgentPortalGatewayApplication</exec.mainClass>
-        <micronaut.version>1.0.0.RC2</micronaut.version>
+        <micronaut.version>1.0.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -24,7 +24,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.micronaut</groupId>
-                <artifactId>bom</artifactId>
+                <artifactId>micronaut-bom</artifactId>
                 <version>${micronaut.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -35,63 +35,60 @@
     <dependencies>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>http-client</artifactId>
+            <artifactId>micronaut-http-client</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>http-server-netty</artifactId>
+            <artifactId>micronaut-http-server-netty</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>inject</artifactId>
+            <artifactId>micronaut-inject</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>runtime</artifactId>
+            <artifactId>micronaut-runtime</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>inject-java</artifactId>
+            <artifactId>micronaut-inject-java</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>discovery-client</artifactId>
+            <artifactId>micronaut-discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>security-jwt</artifactId>
+            <artifactId>micronaut-security-jwt</artifactId>
             <scope>compile</scope>
         </dependency>
 
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
-            <artifactId>tracing</artifactId>
+            <artifactId>micronaut-tracing</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.zipkin.brave</groupId>
             <artifactId>brave-instrumentation-http</artifactId>
-            <version>4.19.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>io.zipkin.reporter2</groupId>
             <artifactId>zipkin-reporter</artifactId>
             <scope>runtime</scope>
-            <version>2.5.0</version>
         </dependency>
         <dependency>
             <groupId>io.opentracing.brave</groupId>
             <artifactId>brave-opentracing</artifactId>
             <scope>compile</scope>
-            <version>0.30.0</version>
         </dependency>
         <!-- TRACING WITH ZIPKIN -->
 
@@ -204,7 +201,7 @@
                         <annotationProcessorPaths>
                             <path>
                                 <groupId>io.micronaut</groupId>
-                                <artifactId>inject-java</artifactId>
+                                <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
                             </path>
                         </annotationProcessorPaths>
