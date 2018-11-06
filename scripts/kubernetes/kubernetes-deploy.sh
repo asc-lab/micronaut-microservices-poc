@@ -1,8 +1,5 @@
 BASE=`dirname $0`
 
-#required by elasticsearch
-#sysctl -w vm.max_map_count=262144
-
 wait-for-deployment() {
     DEPLOYMENT=$1
     REPLICAS=0
