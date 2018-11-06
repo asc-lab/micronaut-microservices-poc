@@ -43,6 +43,10 @@ do
     kubectl apply -f ${DEPLOYMENT}
 done
 
+echo "waiting for jsreport to start"
+wait-for-deployment jsreport
+${BASE}/jsreport-deploy-template.sh
+
 WEB=`kubectl -o json get services web-vue | jq -r .spec.clusterIP`
 
 echo "HTTP endpoint: http://${WEB}"
