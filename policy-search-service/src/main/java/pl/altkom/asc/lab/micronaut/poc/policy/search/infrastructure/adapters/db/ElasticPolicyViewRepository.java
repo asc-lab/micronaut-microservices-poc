@@ -44,7 +44,7 @@ public class ElasticPolicyViewRepository implements PolicyViewRepository {
                 .field("policyHolder");
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(queryStringQueryBuilder).size(10);
+        searchSourceBuilder.query(queryStringQueryBuilder).size(100);
 
         searchRequest.source(searchSourceBuilder);
 
