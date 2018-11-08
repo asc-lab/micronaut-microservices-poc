@@ -24,6 +24,11 @@ export default new Router({
             component: loadView('Chat')
         },
         {
+            path: '/chatbot',
+            name: 'chatbot',
+            component: loadView('Chatbot')
+        },
+        {
             path: '/account',
             name: 'account',
             component: loadView('Account')

@@ -16,6 +16,12 @@
 
         <div id="main-container">
             <router-view/>
+
+            <div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
+                <div class="btn-holder">
+                    <router-link to="/chatbot" class="link">Live Chat</router-link>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -73,4 +79,34 @@
         color: black;
     }
 
+    #livechat-compact-container {
+        height: 153px;
+        position: fixed;
+        right: 0;
+        top: 30vh;
+        z-index: 10000;
+    }
+    .btn-chat a {
+        color: #fff;
+        text-decoration: none;
+        background: #1798F7;
+        padding: 24px 20px 8px;
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+        box-shadow: 0 0 0 1px #03b2ff inset;
+        border: 1px solid #144866;
+        border-radius: 2px;
+        -ms-transform: rotate(90deg) translate(0, -20px);
+        -webkit-transform: rotate(90deg) translate(0, -20px);
+        transform: rotate(90deg) translate(0, -20px);
+        position: relative;
+        right: -27px;
+        transition: background 0.2s, right 0.2s;
+    }
+    .btn-chat a:hover {
+        background: #47B6F5;
+        right: -20px;
+        transition: background 0.2s, right 0.2s;
+    }
 </style>
