@@ -7,8 +7,10 @@ import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.find
 import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyViewRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.dto.PolicyListItemDto;
 
 import javax.inject.Singleton;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +31,7 @@ public class FindPolicyQueryHandler implements QueryHandler<Maybe<FindPolicyQuer
         return new FindPolicyQueryResult(
                 policies.stream()
                         .map(PolicyListItemDtoAssembler::map)
+                        .sorted(Comparator.comparing(PolicyListItemDto::getDateFrom).reversed())
                         .collect(Collectors.toList())
         );
     }
