@@ -97,7 +97,7 @@ At this point system is ready to use: [http://localhost](http://localhost)
 
 ### Manual deployment
 
-If you want to run services manually (eg. from IDE), you have to provision infrastructure with script from ````scripts``` folder:
+If you want to run services manually (eg. from IDE), you have to provision infrastructure with script from ```scripts``` folder:
 ```
 infra-run.sh
 ```
@@ -166,6 +166,7 @@ This command generate project in Java and Maven as build tool.
 </p>
 
 ## References
+* [Building microservices with Micronaut - comprehensive guide](https://asc.altkom.pl/en/blog/microservices-micronaut/)
 * [Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html)
 * [Micronaut Workshop](https://alvarosanchez.github.io/micronaut-workshop/)
 * [Building microservices with Micronaut (Part I)](https://mfarache.github.io/mfarache/Building-microservices-Micronoaut/)

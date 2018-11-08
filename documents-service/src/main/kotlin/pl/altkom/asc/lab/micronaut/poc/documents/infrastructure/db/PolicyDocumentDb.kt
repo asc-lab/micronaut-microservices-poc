@@ -11,7 +11,7 @@ import kotlin.streams.toList
 
 @Singleton
 @RequiresJdbc
-open class PolicyDocymentDb(
+open class PolicyDocumentDb(
         @CurrentSession
         private val entityManager: EntityManager
 ) : PolicyDocumentRepository {
