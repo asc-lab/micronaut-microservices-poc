@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.documents.web
+package pl.altkom.asc.lab.micronaut.poc.documents.infrastructure.adapters.web
 
 import pl.altkom.asc.lab.micronaut.poc.documents.api.DocumentsOperations
 import pl.altkom.asc.lab.micronaut.poc.documents.api.queries.finddocuments.FindDocumentsResult
