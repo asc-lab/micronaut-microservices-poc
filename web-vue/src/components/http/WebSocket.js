@@ -1,4 +1,4 @@
-const CHAT_URL = (process.env.VUE_APP_CHAT_URL ? process.env.VUE_APP_CHAT_URL : "/");
+const CHAT_URL = (process.env.VUE_APP_CHAT_URL ? process.env.VUE_APP_CHAT_URL : "ws://" + window.location.hostname + "/");
 
 export default {
     create(user) {

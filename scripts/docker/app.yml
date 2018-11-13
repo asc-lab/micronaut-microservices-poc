@@ -54,3 +54,4 @@ services:
     environment:
         GATEWAY_URL: "http://localhost:8081"
         AUTH_URL: "http://localhost:8090"
+        CHAT_SERVICE_URL: "http://chat-service"

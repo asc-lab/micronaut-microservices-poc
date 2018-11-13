@@ -22,6 +22,8 @@ spec:
           value: "http://agent-portal-gateway"
         - name: AUTH_URL
           value: "http://auth-service"
+        - name: CHAT_SERVICE_URL
+          value: "http://chat-service"
         ports:
         - containerPort: 80
         readinessProbe:

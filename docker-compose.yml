@@ -190,6 +190,8 @@ services:
     environment:
       GATEWAY_URL: "http://agent-portal-gateway"
       AUTH_URL: "http://auth-service"
+      CHAT_SERVICE_URL: "http://chat-service"
     depends_on:
       - agent-portal-gateway
       - auth-service
+      - chat-service
