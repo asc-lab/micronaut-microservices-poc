@@ -1,0 +1,29 @@
+definitions:
+  config:
+    /hst:hst/hst:hosts/dev-localhost:
+      .meta:residual-child-node-category: content
+      jcr:primaryType: hst:virtualhostgroup
+      hst:cmslocation: http://localhost:8080/cms
+      hst:defaultport: 8080
+      /localhost:
+        .meta:residual-child-node-category: content
+        jcr:primaryType: hst:virtualhost
+        /hst:root:
+          .meta:residual-child-node-category: content
+          jcr:primaryType: hst:mount
+          hst:homepage: root
+          hst:mountpoint: /hst:hst/hst:sites/minicms
+          /api-manual:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:mount
+            hst:alias: api-manual
+            hst:ismapped: false
+            hst:namedpipeline: JaxrsRestPlainPipeline
+            hst:types: [rest]
+          /api:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:mount
+            hst:alias: api
+            hst:ismapped: false
+            hst:namedpipeline: RestApiPipeline
+            hst:types: [rest]

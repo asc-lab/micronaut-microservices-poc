@@ -1,0 +1,153 @@
+definitions:
+  config:
+    /hippo:namespaces/minicms/insurance:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: ['editor:editable', 'mix:referenceable']
+      jcr:uuid: 522dc156-9f14-4d78-983b-3076a26160ed
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 229cea66-f738-4e54-a478-4136a30d0a44
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['mix:referenceable', 'hipposysedit:remodel']
+          jcr:uuid: 6412daea-ee26-4e08-948f-c2121f23d64c
+          hipposysedit:node: true
+          hipposysedit:supertype: ['minicms:basedocument', 'hippostd:relaxed', 'hippotranslation:translated']
+          hipposysedit:uri: http://www.onehippo.org/minicms/nt/1.0
+          /productName:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:productName
+            hipposysedit:primary: false
+            hipposysedit:type: Label
+            hipposysedit:validators: [non-empty, required]
+          /html:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:html
+            hipposysedit:primary: false
+            hipposysedit:type: Html
+            hipposysedit:validators: [non-empty, required]
+          /moreDesc:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:moreDesc
+            hipposysedit:primary: false
+            hipposysedit:type: hippostd:html
+            hipposysedit:validators: [required]
+        /hipposysedit:nodetype[2]:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: e7a0e8ec-75b2-4e6f-bcb3-a32a8a4eac90
+          hipposysedit:node: true
+          hipposysedit:supertype: ['minicms:basedocument', 'hippostd:relaxed', 'hippotranslation:translated']
+          /productName:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:productName
+            hipposysedit:primary: false
+            hipposysedit:type: Label
+            hipposysedit:validators: [non-empty, required]
+          /html:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:html
+            hipposysedit:primary: false
+            hipposysedit:type: Html
+            hipposysedit:validators: [non-empty, required]
+          /moreDesc:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:moreDesc
+            hipposysedit:primary: false
+            hipposysedit:type: hippostd:html
+            hipposysedit:validators: [required]
+      /hipposysedit:prototypes:
+        jcr:primaryType: hipposysedit:prototypeset
+        /hipposysedit:prototype:
+          jcr:primaryType: minicms:insurance
+          hippostd:holder: holder
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:lastModifiedBy: ''
+          hippotranslation:id: document-type-locale-id
+          hippotranslation:locale: document-type-locale
+          jcr:mixinTypes: ['mix:referenceable']
+          minicms:productName: ''
+          minicms:html: ''
+          jcr:uuid: c0e8633b-e07f-4888-9252-36940498039a
+          hippostdpubwf:lastModificationDate: 2018-11-06T10:47:49.652+01:00
+          hippostdpubwf:creationDate: 2018-11-06T10:47:49.652+01:00
+          /minicms:moreDesc:
+            jcr:primaryType: hippostd:html
+            hippostd:content: ''
+        /hipposysedit:prototype[2]:
+          jcr:primaryType: nt:unstructured
+          jcr:mixinTypes: ['hippostd:publishableSummary', 'hippostd:relaxed', 'hippostdpubwf:document',
+            'hippotranslation:translated', 'mix:referenceable']
+          jcr:uuid: aa188c9a-dbe6-40e2-ba9e-4bf3eae1a58a
+          hippostd:holder: holder
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:creationDate: 2018-11-06T10:47:49.652+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-06T10:47:49.652+01:00
+          hippostdpubwf:lastModifiedBy: ''
+          hippotranslation:id: document-type-locale-id
+          hippotranslation:locale: document-type-locale
+          minicms:html: ''
+          minicms:productName: ''
+          /minicms:moreDesc:
+            jcr:primaryType: hippostd:html
+            hippostd:content: ''
+      /editor:templates:
+        jcr:primaryType: editor:templateset
+        /_default_:
+          jcr:primaryType: frontend:plugincluster
+          frontend:properties: [mode]
+          frontend:references: [wicket.model, model.compareTo, engine, validator.id]
+          frontend:services: [wicket.id, validator.id]
+          /root:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.field
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+          /productName:
+            jcr:primaryType: frontend:plugin
+            caption: Label
+            field: productName
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.css: []
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /html:
+            jcr:primaryType: frontend:plugin
+            caption: Html
+            field: html
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            hint: ''
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /moreDesc:
+            jcr:primaryType: frontend:plugin
+            caption: html
+            field: moreDesc
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.NodeFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig

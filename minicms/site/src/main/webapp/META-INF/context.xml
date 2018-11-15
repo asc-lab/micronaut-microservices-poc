@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context crossContext="true">
+
+  <Realm className="org.apache.catalina.realm.JAASRealm"
+         appName="HSTSITE"
+         userClassNames="org.hippoecm.hst.security.TransientUser"
+         roleClassNames="org.hippoecm.hst.security.TransientRole"
+         useContextClassLoader="true"/>
+  <Valve className="org.apache.catalina.authenticator.FormAuthenticator" characterEncoding="UTF-8"/>
+
+  <!-- enable RMI server -->
+  <!--
+  <Parameter name="start-remote-server" value="true" override="false"/>
+  <Parameter name="repository-address" value="rmi://127.0.0.1:1099/hipporepository" override="false"/>
+  -->
+  <!-- JCR Session Pooling Repository provided by HST-2 Core Components -->
+  <!-- If you want to use a pooling JCR repository from JNDI, uncomment the following and configure the correct jndiName. -->
+  <!--
+  <Resource name="jcr/repository" auth="Container"
+            type="javax.jcr.Repository"
+            factory="org.hippoecm.hst.core.jcr.pool.MultiplePoolingRepositoryFactory"
+            repositoryAddress="rmi://127.0.0.1:1099/hipporepository, rmi://127.0.0.1:1099/hipporepository"
+            defaultCredentialsUserID="admin, editor"
+            defaultCredentialsPassword="admin, editor"
+            readOnly="false, false"
+            maxActive="250, 250"
+            maxIdle="50, 50"
+            initialSize="0, 0"
+            maxWait="10000, 10000"
+            testOnBorrow="true, true"
+            testOnReturn="false, false"
+            testWhileIdle="false, false"
+            timeBetweenEvictionRunsMillis="60000, 60000"
+            numTestsPerEvictionRun="1, 1"
+            minEvictableIdleTimeMillis="60000, 60000" />
+  -->
+
+</Context>

@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:domains/everywhere/readonly:
+      jcr:primaryType: hipposys:authrole
+      hipposys:role: readonly
+      hipposys:users: [configuser]

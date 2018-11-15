@@ -1,0 +1,256 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:translations/hippo:types/minicms:blogpost:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Blog Post
+        minicms:authors: Author(s)
+        minicms:authors#hint: Link to author document(s)
+        minicms:categories: Categories
+        minicms:content: Content
+        minicms:introduction: Introduction
+        minicms:publicationdate: Publication Date
+        minicms:title: Title
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Blogpost
+        minicms:authors: Auteur(s)
+        minicms:authors#hint: Link naar auteur document(en)
+        minicms:categories: Categorieën
+        minicms:content: Inhoud
+        minicms:introduction: Introductie
+        minicms:publicationdate: Publicatiedatum
+        minicms:title: Titel
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Post blog
+        minicms:authors: Auteur(s)
+        minicms:authors#hint: Lien vers le(s) document(s) de l'auteur
+        minicms:categories: Catégories
+        minicms:content: Contenu
+        minicms:introduction: Introduction
+        minicms:publicationdate: Date de publication
+        minicms:title: Titre
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Blog-Post
+        minicms:authors: Verfasser
+        minicms:authors#hint: Link zu Verfasserdokument(en)
+        minicms:categories: Kategorien
+        minicms:content: Inhalt
+        minicms:introduction: Einführung
+        minicms:publicationdate: Publikationsdatum
+        minicms:title: Titel
+    /hippo:configuration/hippo:translations/hippo:types/minicms:author:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Author
+        minicms:accounts: Accounts
+        minicms:accounts#hint: External social media accounts
+        minicms:content: Description
+        minicms:content#hint: Information about the author
+        minicms:fullname: Name
+        minicms:fullname#hint: Full name
+        minicms:photo: Photo
+        minicms:photo#hint: Photo of the author
+        minicms:role: Role
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Auteur
+        minicms:accounts: Accounts
+        minicms:accounts#hint: Externe social media accounts
+        minicms:content: Beschrijving
+        minicms:content#hint: Informatie over de auteur
+        minicms:fullname: Naam
+        minicms:fullname#hint: Volledige naam
+        minicms:photo: Foto
+        minicms:photo#hint: Foto van de auteur
+        minicms:role: Rol
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Auteur
+        minicms:accounts: Konten
+        minicms:accounts#hint: Comptes médias sociaux externes
+        minicms:content: Description
+        minicms:content#hint: Informations sur l'auteur
+        minicms:fullname: Nom
+        minicms:fullname#hint: Nom complet
+        minicms:photo: Photo
+        minicms:photo#hint: Photo de l'auteur
+        minicms:role: Rôle
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Verfasser
+        minicms:accounts: Comptes
+        minicms:accounts#hint: Externe Konten soziale Medien
+        minicms:content: Beschreibung
+        minicms:content#hint: Informationen über den Verfasser
+        minicms:fullname: Name
+        minicms:fullname#hint: Vollständiger Name
+        minicms:photo: Foto
+        minicms:photo#hint: Foto des Verfassers
+        minicms:role: Rolle
+    /hippo:configuration/hippo:translations/hippo:types/minicms:account:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Account (Compound)
+        minicms:link: Link
+        minicms:link#hint: External link to the account
+        minicms:type: Type
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Account (Compound)
+        minicms:link: Link
+        minicms:link#hint: Externe link naar het account
+        minicms:type: Soort
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Compte (Compound)
+        minicms:link: Lien
+        minicms:link#hint: Lien externe vers le compte
+        minicms:type: Type
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Konto (Compound)
+        minicms:link: Link
+        minicms:link#hint: Externer Link zum Konto
+        minicms:type: Art
+    /hippo:configuration/hippo:translations/hippo:types/minicms:eventsdocument:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Event
+        minicms:content: Content
+        minicms:date: Start date
+        minicms:enddate: End date
+        minicms:image: Image
+        minicms:introduction: Introduction
+        minicms:location: Location
+        minicms:title: Title
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Evenement
+        minicms:content: Inhoud
+        minicms:date: Startdatum
+        minicms:enddate: Einddatum
+        minicms:image: Afbeelding
+        minicms:introduction: Introductie
+        minicms:location: Locatie
+        minicms:title: Titel
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Événement
+        minicms:content: Contenu
+        minicms:date: Date de début
+        minicms:enddate: Date de fin
+        minicms:image: Image
+        minicms:introduction: Introduction
+        minicms:location: Lieu
+        minicms:title: Titre
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Event
+        minicms:content: Inhalt
+        minicms:date: Startdatum
+        minicms:enddate: Enddatum
+        minicms:image: Abbildung
+        minicms:introduction: Einführung
+        minicms:location: Standort
+        minicms:title: Titel
+    /hippo:configuration/hippo:translations/hippo:types/minicms:faqitem:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: FAQ Item
+        minicms:answer: Answer
+        minicms:question: Question
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: FAQ Item
+        minicms:answer: Antwoord
+        minicms:question: Vraag
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Élément de FAQ
+        minicms:answer: Réponse
+        minicms:question: Question
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: FAQ-Item
+        minicms:answer: Antwort
+        minicms:question: Frage
+    /hippo:configuration/hippo:translations/hippo:types/minicms:faqlist:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: FAQ List
+        minicms:description: Description
+        minicms:faqitem: FAQ items
+        minicms:title: Title
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: FAQ Lijst
+        minicms:description: Beschrijving
+        minicms:faqitem: FAQ items
+        minicms:title: Titel
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Liste de FAQ
+        minicms:description: Description
+        minicms:faqitem: Éléments de FAQ
+        minicms:title: Titre
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: FAQ-Liste
+        minicms:description: Beschreibung
+        minicms:faqitem: FAQ-Items
+        minicms:title: Titel
+    /hippo:configuration/hippo:translations/hippo:types/minicms:newsdocument:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: News Item
+        minicms:author: Author
+        minicms:content: Content
+        minicms:date: Date
+        minicms:image: Image
+        minicms:introduction: Introduction
+        minicms:location: Location
+        minicms:source: Source
+        minicms:title: Title
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Nieuwsbericht
+        minicms:author: Auteur
+        minicms:content: Inhoud
+        minicms:date: Datum
+        minicms:image: Afbeelding
+        minicms:introduction: Introductie
+        minicms:location: Locatie
+        minicms:source: Bron
+        minicms:title: Titel
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: News
+        minicms:author: Verfasser
+        minicms:content: Inhalt
+        minicms:date: Datum
+        minicms:image: Abbildung
+        minicms:introduction: Einführung
+        minicms:location: Standort
+        minicms:source: Quelle
+        minicms:title: Titel
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        jcr:name: Message d'info
+        minicms:author: Auteur
+        minicms:content: Contenu
+        minicms:date: Date
+        minicms:image: Image
+        minicms:introduction: Introduction
+        minicms:location: Lieu
+        minicms:source: Source
+        minicms:title: Titre

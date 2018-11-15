@@ -1,0 +1,57 @@
+/content/documents/minicms/test:
+  .meta:order-before: p78
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['mix:referenceable']
+  jcr:uuid: 88ac1473-9d7d-4cb5-bc12-0f7150ef31ed
+  /test[1]:
+    jcr:primaryType: minicms:insurance
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 0173d33b-079b-451d-b9cb-be2c1bc10738
+    hippo:availability: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T14:03:18.996+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T14:03:18.996+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: d73c5ba4-6d4d-453a-863c-547c1abd1d75
+    hippotranslation:locale: en
+    minicms:html: <p>hsdghsagdhas</p>
+    minicms:productName: GHgdshdgash
+    /minicms:moreDesc:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>ashgdhasgd</p>
+  /test[2]:
+    jcr:primaryType: minicms:insurance
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 44591c33-b161-460f-8f98-ad2723aa7d35
+    hippo:availability: [preview]
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T14:03:18.996+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T14:03:43.386+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: d73c5ba4-6d4d-453a-863c-547c1abd1d75
+    hippotranslation:locale: en
+    minicms:html: <p>hsdghsagdhas</p>
+    minicms:productName: GHgdshdgash
+    /minicms:moreDesc:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>ashgdhasgd</p>
+  /test[3]:
+    jcr:primaryType: minicms:insurance
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: bf6f828f-333a-4bea-bf6b-f6b95ddca5d7
+    hippo:availability: [live]
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T14:03:18.996+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T14:03:43.386+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-06T14:03:54.171+01:00
+    hippotranslation:id: d73c5ba4-6d4d-453a-863c-547c1abd1d75
+    hippotranslation:locale: en
+    minicms:html: <p>hsdghsagdhas</p>
+    minicms:productName: GHgdshdgash
+    /minicms:moreDesc:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>ashgdhasgd</p>

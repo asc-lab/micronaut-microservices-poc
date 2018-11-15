@@ -1,0 +1,20 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hst:default/hst:templates/blog-author-posts:
+      jcr:primaryType: hst:template
+      hst:renderpath: webfile:/freemarker/hstdefault/blog/blog-author-posts.ftl
+    /hst:hst/hst:configurations/hst:default/hst:templates/blog-facet:
+      jcr:primaryType: hst:template
+      hst:renderpath: webfile:/freemarker/hstdefault/facet/blog-facet.ftl
+    /hst:hst/hst:configurations/hst:default/hst:templates/blog-list:
+      jcr:primaryType: hst:template
+      hst:renderpath: webfile:/freemarker/hstdefault/blog/blog-list.ftl
+    /hst:hst/hst:configurations/hst:default/hst:templates/eventslist-main-eventslist:
+      jcr:primaryType: hst:template
+      hst:renderpath: webfile:/freemarker/hstdefault/eventslist-main-eventslist.ftl
+    /hst:hst/hst:configurations/hst:default/hst:templates/faqlist-main:
+      jcr:primaryType: hst:template
+      hst:renderpath: webfile:/freemarker/hstdefault/faqlist-main.ftl
+    /hst:hst/hst:configurations/hst:default/hst:templates/newslist-main-newslist:
+      jcr:primaryType: hst:template
+      hst:renderpath: webfile:/freemarker/hstdefault/newslist-main-newslist.ftl

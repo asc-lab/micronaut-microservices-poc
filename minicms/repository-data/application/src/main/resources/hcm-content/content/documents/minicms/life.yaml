@@ -1,0 +1,86 @@
+/content/documents/minicms/life:
+  .meta:order-before: blog
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 5320b82f-a0c8-45d8-872b-8ff79d47052d
+  hippo:name: Life
+  /life[1]:
+    jcr:primaryType: minicms:insurance
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 9bf1829f-a16b-4b20-95f7-8ec293cdb047
+    hippo:availability: []
+    hippostd:holder: admin
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T10:48:13.792+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T11:16:50.768+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 873b88fe-0a9c-417c-9fae-cf450b389aff
+    hippotranslation:locale: en
+    minicms:html: <p><strong>Najs life</strong></p>
+    minicms:productName: News Lif
+    /minicms:moreDesc:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>You fell better with your Atari</p>
+
+        <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+      /atari-800.jpeg:
+        jcr:primaryType: hippo:facetselect
+        hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+  /life[2]:
+    jcr:primaryType: minicms:insurance
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 8d85fc03-0600-43f0-b600-cf5b50e138dc
+    hippo:availability: [preview]
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T10:48:13.792+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T10:48:51.334+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 873b88fe-0a9c-417c-9fae-cf450b389aff
+    hippotranslation:locale: en
+    minicms:html: <p><strong>Najs life</strong></p>
+    minicms:productName: News Lif
+    /minicms:moreDesc:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>You fell better with your Atari</p>
+
+        <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+      /atari-800.jpeg:
+        jcr:primaryType: hippo:facetselect
+        hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+  /life[3]:
+    jcr:primaryType: minicms:insurance
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 77689e98-603e-42aa-ac08-1526ffac1309
+    hippo:availability: [live]
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T10:48:13.792+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T10:48:51.334+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-06T10:48:54.320+01:00
+    hippotranslation:id: 873b88fe-0a9c-417c-9fae-cf450b389aff
+    hippotranslation:locale: en
+    minicms:html: <p><strong>Najs life</strong></p>
+    minicms:productName: News Lif
+    /minicms:moreDesc:
+      jcr:primaryType: hippostd:html
+      hippostd:content: |-
+        <p>You fell better with your Atari</p>
+
+        <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+      /atari-800.jpeg:
+        jcr:primaryType: hippo:facetselect
+        hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []

@@ -1,0 +1,24 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations:
+      /common:
+        jcr:primaryType: hst:configuration
+        /hst:sitemap:
+          jcr:primaryType: hst:sitemap
+        /hst:abstractpages:
+          jcr:primaryType: hst:pages
+        /hst:pages:
+          jcr:primaryType: hst:pages
+        /hst:components:
+          jcr:primaryType: hst:components
+        /hst:templates:
+          jcr:primaryType: hst:templates
+        /hst:sitemenus:
+          jcr:primaryType: hst:sitemenus
+        /hst:sitemapitemhandlers:
+          jcr:primaryType: hst:sitemapitemhandlers
+        /hst:catalog:
+          jcr:primaryType: hst:catalog
+      /minicms:
+        jcr:primaryType: hst:configuration
+        hst:inheritsfrom: [../common]

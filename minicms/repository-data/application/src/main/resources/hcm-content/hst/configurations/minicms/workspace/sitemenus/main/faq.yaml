@@ -1,0 +1,3 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:sitemenus/main/faq:
+  jcr:primaryType: hst:sitemenuitem
+  hst:referencesitemapitem: faq

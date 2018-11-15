@@ -1,0 +1,21 @@
+<component xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
+  <dependencySets>
+    <dependencySet>
+      <useProjectArtifact>false</useProjectArtifact>
+      <outputDirectory>shared/lib</outputDirectory>
+      <scope>provided</scope>
+      <includes>
+        <include>org.onehippo.cms7:hippo-cms7-commons</include>
+        <include>org.onehippo.cms7:hippo-services</include>
+        <include>org.onehippo.cms7:hippo-repository-api</include>
+        <include>org.onehippo.cms7:hippo-repository-builtin</include>
+        <include>org.slf4j:slf4j-api</include>
+        <include>org.slf4j:jcl-over-slf4j</include>
+        <include>org.apache.logging.log4j:log4j-slf4j-impl</include>
+        <include>org.apache.logging.log4j:log4j-api</include>
+        <include>org.apache.logging.log4j:log4j-core</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+</component>

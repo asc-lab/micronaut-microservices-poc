@@ -1,0 +1,15 @@
+<component xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
+  <dependencySets>
+    <dependencySet>
+      <useProjectArtifact>false</useProjectArtifact>
+      <outputDirectory>common/lib</outputDirectory>
+      <scope>provided</scope>
+      <includes>
+        <include>javax.jcr:jcr</include>
+        <include>org.apache.geronimo.specs:geronimo-jta_1.1_spec</include>
+        <include>javax.mail:mail</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+</component>

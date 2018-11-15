@@ -1,0 +1,46 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hst:default/hst:catalog/essentials-catalog:
+      jcr:primaryType: hst:containeritempackage
+      /facets:
+        jcr:primaryType: hst:containeritemcomponent
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsFacetsComponent
+        hst:iconpath: images/essentials/catalog-component-icons/facets.png
+        hst:label: Facets
+        hst:template: blog-facet
+        hst:xtype: hst.item
+      /bloglist:
+        jcr:primaryType: hst:containeritemcomponent
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsBlogComponent
+        hst:iconpath: images/essentials/catalog-component-icons/blog-list.png
+        hst:label: Blog List
+        hst:template: blog-list
+        hst:xtype: hst.item
+      /blogauthorposts:
+        jcr:primaryType: hst:containeritemcomponent
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsBlogAuthorPostsComponent
+        hst:iconpath: images/essentials/catalog-component-icons/blogposts-by-author.png
+        hst:label: Blog Posts by Author
+        hst:template: blog-author-posts
+        hst:xtype: hst.item
+      /eventslist:
+        jcr:primaryType: hst:containeritemcomponent
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsEventsComponent
+        hst:iconpath: images/essentials/catalog-component-icons/events-list.png
+        hst:label: Event List
+        hst:template: eventslist-main-eventslist
+        hst:xtype: hst.item
+      /faq:
+        jcr:primaryType: hst:containeritemcomponent
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsDocumentComponent
+        hst:iconpath: images/essentials/catalog-component-icons/faq.png
+        hst:label: FAQ
+        hst:template: faqlist-main
+        hst:xtype: hst.item
+      /newslist:
+        jcr:primaryType: hst:containeritemcomponent
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+        hst:iconpath: images/essentials/catalog-component-icons/news-list.png
+        hst:label: News List
+        hst:template: newslist-main-newslist
+        hst:xtype: hst.item

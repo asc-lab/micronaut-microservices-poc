@@ -1,0 +1,6 @@
+group: 
+  name: minicms
+  after: hippo-cms
+project: minicms
+module:
+  name: minicms-repository-data-application

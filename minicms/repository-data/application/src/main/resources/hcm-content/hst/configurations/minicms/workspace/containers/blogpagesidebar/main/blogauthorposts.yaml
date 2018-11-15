@@ -1,0 +1,7 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:containers/blogpagesidebar/main/blogauthorposts:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsBlogAuthorPostsComponent
+  hst:iconpath: images/essentials/catalog-component-icons/blogposts-by-author.png
+  hst:label: Blog Posts by Author
+  hst:template: blog-author-posts
+  hst:xtype: hst.item

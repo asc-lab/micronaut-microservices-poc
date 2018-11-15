@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Appenders>
+
+    <!-- console -->
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss} %-5p [%C.%M():%L] %m%n"/>
+    </Console>
+
+  </Appenders>
+  <Loggers>
+
+    <!-- CMS logging -->
+    <Logger name="org.apache.jackrabbit.core" level="warn"/>
+    <Logger name="org.apache.jackrabbit.extractor" level="warn"/>
+    <Logger name="org.apache.jackrabbit" level="warn"/>
+    <Logger name="org.hippoecm.repository" level="warn"/>
+    <Logger name="org.hippoecm.frontend" level="warn"/>
+    <Logger name="org.apache.wicket" level="warn"/>
+
+    <!-- Site logging -->
+    <Logger name="org.hippoecm.hst" level="warn"/>
+    <Logger name="freemarker" level="warn"/>
+    <Logger name="org.apache.cxf" level="warn"/>
+    <Logger name="javax.ws.rs.core" level="warn"/>
+    <Logger name="org.apache.commons.pool" level="warn"/>
+    <Logger name="org.apache.commons.beanutils" level="warn"/>
+
+    <!-- too many caching warnings -->
+    <Logger name="org.apache.jackrabbit.core.state" level="error"/>
+    <Logger name="org.apache.jackrabbit.core.ItemManager" level="error"/>
+    <Logger name="org.apache.jackrabbit.core.persistence.bundle.util.LRUNodeIdCache" level="error"/>
+
+    <!-- ignore wicket localizer warnings -->
+    <Logger name="org.apache.wicket.Localizer" level="error"/>
+
+    <!-- more info wanted -->
+    <Logger name="org.apache.jackrabbit.core.persistence.bundle" level="warn"/>
+    <Logger name="org.hippoecm.repository.jackrabbit.persistence" level="info"/>
+    <Logger name="org.hippoecm.repository.updater" level="info"/>
+    <Logger name="org.hippoecm.repository.export" level="info"/>
+
+    <!-- project logging -->
+    <Logger name="com.asc.lab.minicms" level="debug"/>
+
+    <Root level="warn">
+      <AppenderRef ref="console"/>
+    </Root>
+
+  </Loggers>
+</Configuration>

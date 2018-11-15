@@ -1,0 +1,36 @@
+<'minicms'='http://www.onehippo.org/minicms/nt/1.0'>
+<'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0.4'>
+<'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
+<'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
+<'hippotranslation'='http://www.onehippo.org/jcr/hippotranslation/nt/1.0'>
+
+[minicms:account] > hippo:compound, hippostd:relaxed
+  orderable
+
+[minicms:basedocument] > hippo:document, hippostd:publishableSummary, hippostdpubwf:document
+  orderable
+
+[minicms:author] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:blogpost] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:eventsdocument] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:faqitem] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:faqlist] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:insurance] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:newsdocument] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+
+[minicms:product] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+

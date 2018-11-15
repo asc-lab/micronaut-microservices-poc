@@ -1,0 +1,4 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:sitemenus/main/home:
+  .meta:order-before: blog
+  jcr:primaryType: hst:sitemenuitem
+  hst:referencesitemapitem: root

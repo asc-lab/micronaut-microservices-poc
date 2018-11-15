@@ -1,0 +1,10 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:containers/eventslist/main/eventslist:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsEventsComponent
+  hst:label: Events List
+  hst:parameternames: [hidePastEvents, documentTypes, sortField, sortOrder, includeSubtypes,
+    showPagination, path, pageSize, documentDateField]
+  hst:parametervalues: ['on', 'minicms:eventsdocument', '', desc, 'off', 'on', '',
+    '10', 'minicms:enddate']
+  hst:template: eventslist-main-eventslist
+  hst:xtype: hst.item

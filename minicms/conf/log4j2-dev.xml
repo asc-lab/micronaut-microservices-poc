@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+
+  <Appenders>
+
+    <!-- hippo-cms.log -->
+    <RollingFile name="cms" fileName="${sys:catalina.base}/logs/hippo-cms.log"
+                 filePattern="${sys:catalina.base}/logs/hippo-cms.log.%d{yyyy-MM-dd}">
+      <LookupFilter key="jndi:logging/contextName" value="cms" onMatch="ACCEPT"/>
+      <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss} %-5p %t [%C{1}.%M:%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+      </Policies>
+    </RollingFile>
+
+    <!-- hippo-site.log -->
+    <RollingFile name="site" fileName="${sys:catalina.base}/logs/hippo-site.log"
+                 filePattern="${sys:catalina.base}/logs/hippo-site.log.%d{yyyy-MM-dd}">
+      <LookupFilter key="jndi:logging/contextName" value="site" onMatch="ACCEPT"/>
+      <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss} %-5p %t [%C{1}.%M:%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+      </Policies>
+    </RollingFile>
+
+    <!-- hippo-audit.log -->
+    <RollingFile name="audit" fileName="${sys:catalina.base}/logs/hippo-audit.log"
+                 filePattern="${sys:catalina.base}/logs/hippo-audit.log.%d{yyyy-MM-dd}">
+      <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss} %-5p %t [%C{1}.%M:%L] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+      </Policies>
+    </RollingFile>
+
+    <!-- console -->
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss} %-5p %t [%C{1}.%M:%L] %m%n"/>
+    </Console>
+
+    <!-- messages -->
+    <Console name="messages" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss} %-5p %m%n"/>
+    </Console>
+
+    <!-- warnings -->
+    <Console name="warnings" target="SYSTEM_ERR">
+      <PatternLayout pattern="%%d{HH:mm:ss} %-5p [%C{1}] %m%n"/>
+    </Console>
+  </Appenders>
+
+  <Loggers>
+
+    <!-- CMS logging -->
+    <Logger name="org.apache.jackrabbit.core" level="warn"/>
+    <Logger name="org.apache.jackrabbit.extractor" level="warn"/>
+    <Logger name="org.apache.jackrabbit" level="warn"/>
+    <Logger name="org.hippoecm.repository" level="warn"/>
+    <Logger name="org.hippoecm.frontend" level="warn"/>
+    <Logger name="org.apache.wicket" level="warn"/>
+
+    <!-- DiagnosticsRequestCycleListener only logs when diagnostics are enabled in the repository at
+         /hippo:configuration/hippo:modules/diagnostics. Hence can be here on level 'info' -->
+    <Logger name="org.hippoecm.frontend.diagnosis.DiagnosticsRequestCycleListener" level="info"/>
+
+    <!-- audit logging -->
+    <Logger additivity="false" name="org.hippoecm.repository.api.Workflow" level="info">
+      <AppenderRef ref="audit"/>
+    </Logger>
+    <Logger additivity="false" name="org.onehippo.audit" level="info">
+      <AppenderRef ref="audit"/>
+    </Logger>
+
+    <!-- Site logging -->
+    <Logger name="org.hippoecm.hst" level="warn"/>
+
+    <!-- DiagnosticReportingValve only logs when diagnostics enabled in hst:hosts config in repo hence
+         can be here on level 'info' -->
+    <Logger name="org.hippoecm.hst.core.container.DiagnosticReportingValve" level="info"/>
+
+    <Logger name="freemarker" level="warn"/>
+
+    <!-- Freemarker errors -->
+    <Logger name="org.hippoecm.hst.servlet.HstFreemarkerServlet" additivity="false" level="warn">
+      <AppenderRef ref="warnings"/>
+    </Logger>
+    <Logger name="freemarker.servlet" additivity="false" level="fatal">
+      <!-- freemarker servlet errors will be logged by HstFreemarkerServlet -->
+      <AppenderRef ref="warnings"/>
+    </Logger>
+
+    <Logger name="org.apache.cxf" level="warn"/>
+    <Logger name="javax.ws.rs.core" level="warn"/>
+    <Logger name="org.apache.commons.pool" level="warn"/>
+    <Logger name="org.apache.commons.beanutils" level="warn"/>
+
+    <!-- too many caching warnings -->
+    <Logger name="org.apache.jackrabbit.core.state" level="error"/>
+    <Logger name="org.apache.jackrabbit.core.ItemManager" level="error"/>
+    <Logger name="org.apache.jackrabbit.core.persistence.bundle.util.LRUNodeIdCache" level="error"/>
+
+    <!-- ignore wicket localizer warnings -->
+    <Logger name="org.apache.wicket.Localizer" level="error"/>
+
+    <!-- more info wanted -->
+    <Logger name="org.apache.jackrabbit.core.persistence.bundle" level="warn"/>
+    <Logger name="org.hippoecm.repository.jackrabbit.persistence" level="info"/>
+    <Logger name="org.hippoecm.repository.updater" additivity="false" level="info">
+      <AppenderRef ref="messages"/>
+    </Logger>
+
+    <Logger name="org.onehippo.cms7.autoexport" additivity="false" level="info">
+      <AppenderRef ref="messages"/>
+    </Logger>
+
+    <Logger name="org.onehippo.cms7.services.webfiles.watch.WebFilesWatcher" additivity="false" level="info">
+      <AppenderRef ref="messages"/>
+    </Logger>
+    <Logger name="org.onehippo.cms7.services.autoreload.AutoReloadServiceModule" additivity="false" level="info">
+      <AppenderRef ref="messages"/>
+    </Logger>
+    <Logger name="org.hippoecm.hst.core.container.WebFileValve" additivity="false" level="info">
+      <AppenderRef ref="messages"/>
+    </Logger>
+
+    <!-- project logging -->
+    <Logger name="com.asc.lab.minicms" level="debug"/>
+
+    <Root level="warn">
+      <AppenderRef ref="site"/>
+      <AppenderRef ref="cms"/>
+      <AppenderRef ref="console"/>
+    </Root>
+
+  </Loggers>
+
+</Configuration>

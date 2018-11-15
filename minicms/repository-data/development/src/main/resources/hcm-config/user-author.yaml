@@ -1,0 +1,13 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:users/author:
+      jcr:primaryType: hipposys:user
+      hipposys:active: true
+      hipposys:password:
+        .meta:category: system
+        value: author
+      hipposys:passwordlastmodified:
+        .meta:category: system
+      hipposys:previouspasswords:
+        .meta:category: system
+      hipposys:securityprovider: internal

@@ -1,0 +1,94 @@
+/content/documents/minicms/promo-7:
+  .meta:order-before: java-faq
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 2bb26f38-a17e-433b-87ab-5d72c9a17a3b
+  hippo:name: promo 7
+  /promo-7[1]:
+    jcr:primaryType: minicms:newsdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: bfd6f220-2b85-4e99-941b-b60f358e69f3
+    hippo:availability: []
+    hippo:related___pathreference: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:20:57.227+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:25:32.662+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: b3d6c0b4-1b94-4b18-95d0-982802280d32
+    hippotranslation:locale: en
+    minicms:author: hhfggfh
+    minicms:date: 2018-11-10T20:21:00+01:00
+    minicms:documenttype: news
+    minicms:introduction: promo
+    minicms:location: ''
+    minicms:source: hhjgjhj
+    minicms:title: promo 7
+    /minicms:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>oromo</p>
+    /minicms:image:
+      jcr:primaryType: hippogallerypicker:imagelink
+      hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+      hippo:facets: []
+      hippo:modes: []
+      hippo:values: []
+  /promo-7[2]:
+    jcr:primaryType: minicms:newsdocument
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 3923ac8d-d41d-421d-b3f2-3677c9de1d5b
+    hippo:availability: [preview]
+    hippo:related___pathreference: []
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:20:57.227+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:25:32.627+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: b3d6c0b4-1b94-4b18-95d0-982802280d32
+    hippotranslation:locale: en
+    minicms:author: hhfggfh
+    minicms:date: 2018-11-10T20:21:00+01:00
+    minicms:documenttype: news
+    minicms:introduction: promo
+    minicms:location: ''
+    minicms:source: hhjgjhj
+    minicms:title: promo 7
+    /minicms:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>oromo</p>
+    /minicms:image:
+      jcr:primaryType: hippogallerypicker:imagelink
+      hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+      hippo:facets: []
+      hippo:modes: []
+      hippo:values: []
+  /promo-7[3]:
+    jcr:primaryType: minicms:newsdocument
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 7b05ed02-3e90-497e-b287-6ca9e47e29a3
+    hippo:availability: [live]
+    hippo:related___pathreference: []
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:20:57.227+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:25:32.627+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-10T20:25:41.031+01:00
+    hippotranslation:id: b3d6c0b4-1b94-4b18-95d0-982802280d32
+    hippotranslation:locale: en
+    minicms:author: hhfggfh
+    minicms:date: 2018-11-10T20:21:00+01:00
+    minicms:documenttype: news
+    minicms:introduction: promo
+    minicms:location: ''
+    minicms:source: hhjgjhj
+    minicms:title: promo 7
+    /minicms:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>oromo</p>
+    /minicms:image:
+      jcr:primaryType: hippogallerypicker:imagelink
+      hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+      hippo:facets: []
+      hippo:modes: []
+      hippo:values: []

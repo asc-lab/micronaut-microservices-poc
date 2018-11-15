@@ -1,0 +1,9 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:pages/faqpage:
+      jcr:primaryType: hst:component
+      hst:referencecomponent: hst:abstractpages/base
+      /main:
+        jcr:primaryType: hst:component
+        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsContentComponent
+        hst:template: faq-main

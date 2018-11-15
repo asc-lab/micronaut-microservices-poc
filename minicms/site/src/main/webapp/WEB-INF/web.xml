@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         id="site">
+
+
+  <display-name>LabCms site</display-name>
+  <description>LabCms site</description>
+
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+    <jsp-property-group>
+      <url-pattern>*.jspf</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+    <jsp-property-group>
+      <url-pattern>*.tag</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+    <jsp-property-group>
+      <url-pattern>*.tagf</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+  </jsp-config>
+
+  <!--
+    HST-2 Content Beans Annotation Configuration. You can configure it
+    with either xml or classes location filter. For example, if the
+    parameter value is set to '/WEB-INF/beans-annotated-classes.xml',
+    all the annotated bean classes will be loaded from the xml
+    configuration file. If the parameter value is set to
+    'classpath*:org/hippoecm/hst/demo/beans/**/*.class', all the
+    annotated bean classes will be automatically scanned from the
+    location. If the context parameter is not configured,
+    '/WEB-INF/beans-annotated-classes.xml' will be used by default.
+    Also, you can configure multiple classpath resource location filters
+    separated by comma or white spaces. For example, you can set the
+    parameter value to
+    'classpath*:org/hippoecm/hst/demo/beans/**/*.class,
+    classpath*:org/hippoecm/hst/demo2/beans/**/*.class' to specify two
+    or more different location filters.
+  -->
+  <context-param>
+    <param-name>hst-beans-annotated-classes</param-name>
+    <param-value>classpath*:com/asc/lab/minicms/**/*.class
+      ,classpath*:org/onehippo/**/*.class
+      ,classpath*:com/onehippo/**/*.class
+      ,classpath*:org/onehippo/forge/**/*.class
+    </param-value>
+  </context-param>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <filter>
+    <filter-name>XSSUrlFilter</filter-name>
+    <filter-class>org.hippoecm.hst.container.XSSUrlFilter</filter-class>
+  </filter>
+
+  <filter>
+    <filter-name>HstFilter</filter-name>
+    <filter-class>org.hippoecm.hst.container.HstFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>XSSUrlFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>HstFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- HstContextLoaderListener configuring/initializing/destroying HST Container -->
+  <listener>
+    <listener-class>org.hippoecm.hst.site.container.HstContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- Listener that dispatches http session events to ComponentManager. -->
+  <listener>
+    <listener-class>org.hippoecm.hst.site.container.session.HttpSessionEventPublisher</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>BinariesServlet</servlet-name>
+    <servlet-class>org.hippoecm.hst.servlet.BinariesServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>freemarker</servlet-name>
+    <servlet-class>org.hippoecm.hst.servlet.HstFreemarkerServlet</servlet-class>
+    <!-- FreemarkerServlet settings: -->
+    <init-param>
+      <param-name>TemplatePath</param-name>
+      <param-value>/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ContentType</param-name>
+      <param-value>text/html; charset=UTF-8</param-value>
+      <!-- Forces UTF-8 output encoding! -->
+    </init-param>
+    <!--
+      'template_exception_handler' determines what Freemarker does when it encounters an error:
+      - "ignore" lets Freemarker log an exception and then continue rendering.
+      - "debug" lets Freemarker log a stack trace, stops rendering and re-throws the exception.
+      - "rethrow" does not let Freemarker log a stack trace, stops rendering and re-throws the exception.
+      By default, if no template_exception_handler as above is configured, an extended "ignore" type
+      template exception handler will be configured which provides additional detail logging but like the
+      "ignore" handler will continue rendering.
+      <init-param>
+        <param-name>template_exception_handler</param-name>
+        <param-value>debug</param-value>
+      </init-param>
+    -->
+    <load-on-startup>200</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>TemplateComposerResourceServlet</servlet-name>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
+    <init-param>
+      <param-name>jarPathPrefix</param-name>
+      <param-value>/META-INF/hst/pagecomposer</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>org.hippoecm.hst.security.servlet.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SecurityResourceServlet</servlet-name>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
+    <init-param>
+      <param-name>jarPathPrefix</param-name>
+      <param-value>/META-INF/hst/security</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>HstResourceServlet</servlet-name>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
+    <init-param>
+      <param-name>jarPathPrefix</param-name>
+      <param-value>/META-INF/web-resources</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>PingServlet</servlet-name>
+    <servlet-class>org.hippoecm.hst.servlet.HstPingServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BinariesServlet</servlet-name>
+    <url-pattern>/binaries/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>freemarker</servlet-name>
+    <url-pattern>*.ftl</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>TemplateComposerResourceServlet</servlet-name>
+    <url-pattern>/hst/pagecomposer/sources/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SecurityResourceServlet</servlet-name>
+    <url-pattern>/login/hst/security/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>HstResourceServlet</servlet-name>
+    <url-pattern>/resources/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>PingServlet</servlet-name>
+    <url-pattern>/ping/*</url-pattern>
+  </servlet-mapping>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Login</web-resource-name>
+      <url-pattern>/login/resource</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>everybody</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <realm-name>HSTSITE</realm-name>
+    <form-login-config>
+      <form-login-page>/login/login</form-login-page>
+      <form-error-page>/login/error</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <security-role>
+    <description>Default role of Hippo Repository</description>
+    <role-name>everybody</role-name>
+  </security-role>
+
+  <error-page>
+    <error-code>400</error-code>
+    <location>/WEB-INF/jsp/errorpages/ErrorPage400.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>401</error-code>
+    <location>/WEB-INF/jsp/errorpages/ErrorPage401.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>403</error-code>
+    <location>/WEB-INF/jsp/errorpages/ErrorPage403.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/jsp/errorpages/ErrorPage404.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/jsp/errorpages/ErrorPage500.jsp</location>
+  </error-page>
+
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/WEB-INF/jsp/errorpages/ErrorPage500.jsp</location>
+  </error-page>
+
+  <env-entry>
+    <env-entry-name>logging/contextName</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>site</env-entry-value>
+  </env-entry>
+
+</web-app>
+

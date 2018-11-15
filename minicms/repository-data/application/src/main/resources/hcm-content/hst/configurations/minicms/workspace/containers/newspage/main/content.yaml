@@ -1,0 +1,5 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:containers/newspage/main/content:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsContentComponent
+  hst:template: newspage-main
+  hst:xtype: hst.item

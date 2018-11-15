@@ -1,0 +1,57 @@
+/content/documents/minicms/debugging-in-java:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: d744aeed-0109-4a7e-a386-d0b4255d599c
+  hippo:name: debugging in java
+  /debugging-in-java[1]:
+    jcr:primaryType: minicms:faqitem
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 77a6cd49-8b29-45a1-b3e9-867b0e1a5e67
+    hippo:availability: []
+    hippo:related___pathreference: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-13T09:34:41.517+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-13T09:34:41.517+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: dafb700c-a3b4-4701-a86b-4cd6810d5676
+    hippotranslation:locale: en
+    minicms:question: How to debug
+    /minicms:answer:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>hdghjasd&nbsp;hsadghasd&nbsp;hsadgashdgash</p>
+  /debugging-in-java[2]:
+    jcr:primaryType: minicms:faqitem
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 0aacbb3a-7a83-47d9-9a25-fa92a42311dc
+    hippo:availability: [preview]
+    hippo:related___pathreference: []
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-13T09:34:41.517+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-13T09:34:55.922+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: dafb700c-a3b4-4701-a86b-4cd6810d5676
+    hippotranslation:locale: en
+    minicms:question: How to debug
+    /minicms:answer:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>hdghjasd&nbsp;hsadghasd&nbsp;hsadgashdgash</p>
+  /debugging-in-java[3]:
+    jcr:primaryType: minicms:faqitem
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 0752fcc5-4c6c-4f7a-8a75-0263dbc11f33
+    hippo:availability: [live]
+    hippo:related___pathreference: []
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-13T09:34:41.517+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-13T09:34:55.922+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-13T09:34:58.508+01:00
+    hippotranslation:id: dafb700c-a3b4-4701-a86b-4cd6810d5676
+    hippotranslation:locale: en
+    minicms:question: How to debug
+    /minicms:answer:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>hdghjasd&nbsp;hsadghasd&nbsp;hsadgashdgash</p>

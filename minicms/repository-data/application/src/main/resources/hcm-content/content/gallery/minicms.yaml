@@ -1,0 +1,7 @@
+/content/gallery/minicms:
+  jcr:primaryType: hippogallery:stdImageGallery
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 5efeb44c-a055-4152-b197-5385a6b66f88
+  hippo:name: LabCms
+  hippostd:foldertype: [new-image-folder]
+  hippostd:gallerytype: ['hippogallery:imageset']

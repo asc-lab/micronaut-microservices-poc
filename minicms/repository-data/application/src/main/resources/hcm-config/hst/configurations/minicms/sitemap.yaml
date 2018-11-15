@@ -1,0 +1,83 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:sitemap:
+      jcr:primaryType: hst:sitemap
+      /root:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/homepage
+        hst:pagetitle: Home Page
+        hst:refId: root
+      /_any_:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/pagenotfound
+      /pagenotfound:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/pagenotfound
+        hst:pagetitle: Not Found Page
+        hst:refId: pagenotfound
+      /blog:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/bloglist
+        hst:pagetitle: List of Blog Posts
+        hst:refId: blog-list
+        hst:relativecontentpath: blog
+        /_any_.html:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/blogpage
+          hst:relativecontentpath: ${parent}/${1}
+        /_any_:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/bloglist
+          hst:relativecontentpath: ${parent}/${1}
+        /facet:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/bloglist
+          hst:pagetitle: Faceted List of Blog Posts
+          hst:relativecontentpath: blogFacets
+          /_default_.html:
+            jcr:primaryType: hst:sitemapitem
+            hst:componentconfigurationid: hst:pages/blogpage
+            hst:relativecontentpath: ${parent}/hippo:resultset/${1}
+          /_any_:
+            jcr:primaryType: hst:sitemapitem
+            hst:componentconfigurationid: hst:pages/bloglist
+            hst:relativecontentpath: ${parent}/${1}
+      /events:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/eventslist
+        hst:pagetitle: List of Events
+        hst:relativecontentpath: events
+        /_any_.html:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/eventspage
+          hst:relativecontentpath: ${parent}/${1}
+        /_any_:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/eventslist
+          hst:relativecontentpath: ${parent}/${1}
+      /faq:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/faqlist
+        hst:pagetitle: List of FAQ's
+        hst:relativecontentpath: faq
+        /_any_.html:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/faqpage
+          hst:relativecontentpath: ${parent}/${1}
+        /_default_.html:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/faqlist
+          hst:relativecontentpath: ${parent}/${1}
+      /news:
+        jcr:primaryType: hst:sitemapitem
+        hst:componentconfigurationid: hst:pages/newslist
+        hst:pagetitle: List of News Items
+        hst:relativecontentpath: news
+        /_any_.html:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/newspage
+          hst:relativecontentpath: ${parent}/${1}
+        /_any_:
+          jcr:primaryType: hst:sitemapitem
+          hst:componentconfigurationid: hst:pages/newslist
+          hst:relativecontentpath: ${parent}/${1}

@@ -1,0 +1,28 @@
+/content/gallery/minicms/atari-800.jpeg:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+  hippo:name: atari 800.jpeg
+  /atari-800.jpeg:
+    jcr:primaryType: hippogallery:imageset
+    hippo:availability: [live, preview]
+    hippogallery:filename: atari 800.jpeg
+    /hippogallery:thumbnail:
+      jcr:primaryType: hippogallery:image
+      hippo:filename: atari 800.jpeg
+      hippogallery:height: 33
+      hippogallery:width: 60
+      jcr:data:
+        type: binary
+        resource: /content/gallery/minicms/atari-800.jpeg/atari-800_thumbnail.jpeg
+      jcr:lastModified: 2018-11-06T10:43:29.447+01:00
+      jcr:mimeType: image/jpeg
+    /hippogallery:original:
+      jcr:primaryType: hippogallery:image
+      hippogallery:height: 90
+      hippogallery:width: 162
+      jcr:data:
+        type: binary
+        resource: /content/gallery/minicms/atari-800.jpeg/atari-800_original.jpeg
+      jcr:lastModified: 2018-11-06T10:43:29.447+01:00
+      jcr:mimeType: image/jpeg

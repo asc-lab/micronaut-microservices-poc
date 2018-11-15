@@ -1,0 +1,11 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:queries/hippo:templates/new-resource-bundle:
+      jcr:primaryType: hippostd:templatequery
+      hippostd:icon: adddocument_ico
+      hippostd:modify: [./_name, $name, './hippotranslation:locale', $inherited, './hippotranslation:id',
+        $uuid, './hippostdpubwf:createdBy', $holder, './hippostdpubwf:creationDate',
+        $now, './hippostdpubwf:lastModifiedBy', $holder, './hippostdpubwf:lastModificationDate',
+        $now, './hippostd:holder', $holder]
+      jcr:language: xpath
+      jcr:statement: //element(*,hipposysedit:namespacefolder)/element(*,mix:referenceable)/element(*,hipposysedit:templatetype)/hipposysedit:prototypes/element(hipposysedit:prototype,resourcebundle:resourcebundle)

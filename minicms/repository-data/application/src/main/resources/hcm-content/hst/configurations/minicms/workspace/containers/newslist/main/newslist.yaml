@@ -1,0 +1,10 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:containers/newslist/main/newslist:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+  hst:label: News List
+  hst:parameternames: [hidePastEvents, documentTypes, sortField, sortOrder, includeSubtypes,
+    showPagination, path, pageSize, documentDateField, hideFutureItems]
+  hst:parametervalues: ['on', 'minicms:newsdocument', '', desc, 'off', 'on', '', '10',
+    'minicms:date', 'on']
+  hst:template: newslist-main-newslist
+  hst:xtype: hst.item

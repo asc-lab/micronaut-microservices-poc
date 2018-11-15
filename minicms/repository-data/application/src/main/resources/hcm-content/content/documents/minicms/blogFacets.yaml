@@ -1,0 +1,15 @@
+/content/documents/minicms/blogFacets:
+  jcr:primaryType: hippofacnav:facetnavigation
+  hippo:docbase: 91bee141-a12f-4ddc-97f6-1b1f9c5d7dbd
+  hippofacnav:facetnodenames: [Authors, Categories, Tags, Date]
+  hippofacnav:facets: ['minicms:authornames', 'minicms:categories', 'hippostd:tags',
+    "minicms:publicationdate$[\n                {name:'Last 7 days',resolution:'day',\
+      \ begin:-6, end:1},\n                {name:'Last month',resolution:'day', begin:-30,\
+      \ end:1},\n                {name:'Last 3 months',resolution:'day', begin:-91,\
+      \ end:1},\n                {name:'Last 6 months',resolution:'day', begin:-182,\
+      \ end:1},\n                {name:'Last year',resolution:'day', begin:-365, end:1}\n\
+      \                ]"]
+  hippofacnav:filters: ['jcr:primaryType = minicms:blogpost']
+  hippofacnav:limit: 100
+  hippofacnav:sortby: ['minicms:publicationdate']
+  hippofacnav:sortorder: [descending]

@@ -1,0 +1,18 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:queries/hippo:templates/new-untranslated-folder:
+      jcr:primaryType: hippostd:templatequery
+      jcr:mixinTypes: ['hipposys:implementation']
+      hippostd:icon: addfolder_ico
+      hippostd:modify: [./_name, $name]
+      hipposys:classname: org.hippoecm.repository.impl.query.DirectPath
+      jcr:language: xpath
+      jcr:statement: "/jcr:root/hippo:configuration/hippo:queries/hippo:templates/new-untranslated-folder/hippostd:templates/node()\n\
+        \    "
+      /hippostd:templates:
+        jcr:primaryType: hippostd:templates
+        /hippostd:folder:
+          jcr:primaryType: hippostd:folder
+          jcr:mixinTypes: ['mix:versionable']
+          jcr:uuid: 674b371b-8340-4dbd-a0a9-45bb9341d58e
+          hippostd:foldertype: [new-resource-bundle, new-untranslated-folder]

@@ -1,0 +1,5 @@
+definitions:
+  config:
+    /hst:hst/hst:sites/minicms:
+      jcr:primaryType: hst:site
+      hst:content: /content/documents/minicms

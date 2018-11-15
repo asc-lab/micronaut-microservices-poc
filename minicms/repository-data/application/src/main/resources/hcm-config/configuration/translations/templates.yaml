@@ -1,0 +1,62 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:translations/hippo:templates/de:
+      new-resource-bundle: Neues Resource-Bundle
+      new-untranslated-folder: Neuer nicht übersetzter Ordner
+      new-blog-folder: Neuer Blog-Ordner
+      new-blogauthor-folder: Neuer Blogger-Ordner
+      new-blog-document: Neuer Blog-Post
+      new-blogauthor-document: Neuer Blogger
+      new-events-folder: Neuer Events-Ordner
+      new-events-document: Neues Event
+      new-faq-item-folder: Neues FAQ-Item-Ordner
+      new-faq-list: Neue FAQ-Liste
+      new-faq-item: Neues FAQ-Item
+      new-faq-list-document-folder: Neuer FAQ-Listen-Ordner
+      new-news-document: Neue News
+      new-news-folder: Neuer News-Ordner
+    /hippo:configuration/hippo:translations/hippo:templates/en:
+      new-resource-bundle: new resource bundle
+      new-untranslated-folder: new untranslated folder
+      new-blog-folder: new blog folder
+      new-blogauthor-folder: new blog author folder
+      new-blog-document: new blog post
+      new-blogauthor-document: new blog author
+      new-events-folder: new events folder
+      new-events-document: new event
+      new-faq-item-folder: new FAQ item folder
+      new-faq-list: new FAQ list
+      new-faq-item: new FAQ item
+      new-faq-list-document-folder: new FAQ list folder
+      new-news-document: new news item
+      new-news-folder: new news item folder
+    /hippo:configuration/hippo:translations/hippo:templates/fr:
+      new-resource-bundle: nouveau resource bundle
+      new-untranslated-folder: nouveau dossier non traduit
+      new-blog-folder: nouveau dossier post blog
+      new-blogauthor-folder: nouveau dossier auteur blog
+      new-blog-document: nouveau post blog
+      new-blogauthor-document: nouvel auteur blog
+      new-events-folder: nouveau dossier événements
+      new-events-document: nouvel événement
+      new-faq-item-folder: nouveau dossier élément FAQ
+      new-faq-list: nouvelle liste FAQ
+      new-faq-item: nouvel élément FAQ
+      new-faq-list-document-folder: nouveau dossier liste FAQ
+      new-news-document: nouveau message d'info
+      new-news-folder: nouveau dossier messages d'info
+    /hippo:configuration/hippo:translations/hippo:templates/nl:
+      new-resource-bundle: nieuwe resource bundle
+      new-untranslated-folder: nieuwe onvertaalde map
+      new-blog-folder: nieuwe blog posts map
+      new-blogauthor-folder: nieuwe blog auteurs map
+      new-blog-document: nieuwe blog post
+      new-blogauthor-document: nieuwe blog auteur
+      new-events-folder: nieuwe evenementenmap
+      new-events-document: nieuw evenement
+      new-faq-item-folder: nieuwe FAQ item map
+      new-faq-list: nieuwe FAQ lijst
+      new-faq-item: nieuw FAQ item
+      new-faq-list-document-folder: nieuwe FAQ lijst map
+      new-news-document: nieuw nieuwsbericht
+      new-news-folder: nieuwe nieuwsmap

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         id="cms">
+
+  <!-- General configuration -->
+  <display-name>LabCms CMS</display-name>
+  <description>LabCms CMS</description>
+
+  <context-param>
+    <description>The address of the repository</description>
+    <param-name>repository-address</param-name>
+    <param-value>vm://</param-value>
+  </context-param>
+  <context-param>
+    <description>The (relative) location where to store files</description>
+    <param-name>repository-directory</param-name>
+    <param-value>WEB-INF/storage</param-value>
+  </context-param>
+  <context-param>
+    <description>The location of the repository configuration file. Unless the location
+      starts with file://, the location is retrieved from within the application package as
+      resource.
+    </description>
+    <param-name>repository-config</param-name>
+    <param-value>repository.xml</param-value>
+  </context-param>
+
+  <!--No concurrent logins-->
+  <filter>
+    <filter-name>ConcurrentLogin</filter-name>
+    <filter-class>org.hippoecm.frontend.plugins.login.ConcurrentLoginFilter</filter-class>
+  </filter>
+
+  <!--Default application-->
+  <filter>
+    <filter-name>CMS</filter-name>
+    <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>cms</param-value>
+    </init-param>
+    <init-param>
+      <param-name>applicationClassName</param-name>
+      <param-value>org.hippoecm.frontend.Main</param-value>
+    </init-param>
+    <init-param>
+      <param-name>filterMappingUrlPattern</param-name>
+      <param-value>/*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wicket.configuration</param-name>
+      <param-value>deployment</param-value>
+    </init-param>
+    <init-param>
+      <param-name>repository-address</param-name>
+      <param-value>vm://</param-value>
+    </init-param>
+    <init-param>
+      <param-name>upload-limit</param-name>
+      <param-value>4096k</param-value>
+    </init-param>
+  </filter>
+
+  <!--Builtin console-->
+  <filter>
+    <filter-name>Console</filter-name>
+    <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+    <init-param>
+      <param-name>applicationClassName</param-name>
+      <param-value>org.hippoecm.frontend.Main</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>console</param-value>
+    </init-param>
+    <init-param>
+      <param-name>wicket.configuration</param-name>
+      <param-value>deployment</param-value>
+    </init-param>
+    <init-param>
+      <param-name>repository-address</param-name>
+      <param-value>vm://</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ConcurrentLogin</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>CMS</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>Console</filter-name>
+    <url-pattern>/console/*</url-pattern>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>org.hippoecm.frontend.plugins.login.ConcurrentLoginListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>AngularResourceServlet</servlet-name>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.SecureCmsResourceServlet</servlet-class>
+    <init-param>
+      <param-name>jarPathPrefix</param-name>
+      <param-value>/angular</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowedResourcePaths</param-name>
+      <param-value>
+        ^/.*\..*
+      </param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>CKEditorResourceServlet</servlet-name>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.SecureCmsResourceServlet</servlet-class>
+    <init-param>
+      <param-name>jarPathPrefix</param-name>
+      <param-value>/ckeditor</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowedResourcePaths</param-name>
+      <param-value>
+        ^/.*\..*
+      </param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SkinResourceServlet</servlet-name>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
+    <init-param>
+      <param-name>jarPathPrefix</param-name>
+      <param-value>/skin</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowedResourcePaths</param-name>
+      <param-value>
+        ^/.*\..*
+      </param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>LoggingServlet</servlet-name>
+    <servlet-class>org.hippoecm.repository.LoggingServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+
+  <!-- Repository -->
+  <servlet>
+    <servlet-name>Repository</servlet-name>
+    <servlet-class>org.hippoecm.repository.RepositoryServlet</servlet-class>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>PingServlet</servlet-name>
+    <servlet-class>org.hippoecm.repository.PingServlet</servlet-class>
+    <init-param>
+      <param-name>repository-address</param-name>
+      <param-value>vm://</param-value>
+    </init-param>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RepositoryJaxrsServlet</servlet-name>
+    <servlet-class>org.onehippo.repository.jaxrs.RepositoryJaxrsServlet</servlet-class>
+    <load-on-startup>6</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoggingServlet</servlet-name>
+    <url-pattern>/logging/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Repository</servlet-name>
+    <url-pattern>/repository/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>PingServlet</servlet-name>
+    <url-pattern>/ping/</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AngularResourceServlet</servlet-name>
+    <url-pattern>/angular/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CKEditorResourceServlet</servlet-name>
+    <url-pattern>/ckeditor/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SkinResourceServlet</servlet-name>
+    <url-pattern>/skin/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RepositoryJaxrsServlet</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- Timeout in minutes -->
+  <session-config>
+    <session-timeout>10</session-timeout>
+    <!--
+    The tracking-mode setting protects against so-called session fixation attacks.
+    Although this setting is not defined in the servlet 2.5 spec, Tomcat allows it here.
+    If your container does not then you can remove this setting but then should configure your container
+    to get the same protection.
+    -->
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/error.jsp</location>
+  </error-page>
+
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/WEB-INF/error.jsp</location>
+  </error-page>
+
+  <env-entry>
+    <env-entry-name>logging/contextName</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>cms</env-entry-value>
+  </env-entry>
+
+</web-app>

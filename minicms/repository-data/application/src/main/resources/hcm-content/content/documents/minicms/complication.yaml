@@ -1,0 +1,56 @@
+/content/documents/minicms/complication:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['mix:referenceable']
+  jcr:uuid: 4c06ed44-2c96-4952-a8b7-70c82e0b632c
+  /complication[1]:
+    jcr:primaryType: minicms:faqitem
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 26ca85f7-c58a-4b4d-9f03-348588ef148c
+    hippo:availability: []
+    hippo:related___pathreference: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:23:35.707+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:23:35.707+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 20e5f4a3-5a30-44e9-ba24-f3a04fd20589
+    hippotranslation:locale: en
+    minicms:question: how do i
+    /minicms:answer:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>ths way</p>
+  /complication[2]:
+    jcr:primaryType: minicms:faqitem
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: d9544dfc-6a6b-48d1-9fe1-aa479e977f55
+    hippo:availability: [preview]
+    hippo:related___pathreference: []
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:23:35.707+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:23:47.407+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 20e5f4a3-5a30-44e9-ba24-f3a04fd20589
+    hippotranslation:locale: en
+    minicms:question: how do i
+    /minicms:answer:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>ths way</p>
+  /complication[3]:
+    jcr:primaryType: minicms:faqitem
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 7a172d32-68f2-4641-8a55-58b2ce0bf191
+    hippo:availability: [live]
+    hippo:related___pathreference: []
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:23:35.707+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:23:47.407+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-10T20:23:49.532+01:00
+    hippotranslation:id: 20e5f4a3-5a30-44e9-ba24-f3a04fd20589
+    hippotranslation:locale: en
+    minicms:question: how do i
+    /minicms:answer:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p>ths way</p>

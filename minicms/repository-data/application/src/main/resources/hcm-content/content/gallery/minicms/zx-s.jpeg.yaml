@@ -1,0 +1,29 @@
+/content/gallery/minicms/zx-s.jpeg:
+  .meta:order-before: atari-800.jpeg
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+  hippo:name: zx s.jpeg
+  /zx-s.jpeg:
+    jcr:primaryType: hippogallery:imageset
+    hippo:availability: [live, preview]
+    hippogallery:filename: zx s.jpeg
+    /hippogallery:thumbnail:
+      jcr:primaryType: hippogallery:image
+      hippo:filename: zx s.jpeg
+      hippogallery:height: 38
+      hippogallery:width: 60
+      jcr:data:
+        type: binary
+        resource: /content/gallery/minicms/zx-s.jpeg/zx-s_thumbnail.jpeg
+      jcr:lastModified: 2018-11-06T10:43:29.078+01:00
+      jcr:mimeType: image/jpeg
+    /hippogallery:original:
+      jcr:primaryType: hippogallery:image
+      hippogallery:height: 90
+      hippogallery:width: 140
+      jcr:data:
+        type: binary
+        resource: /content/gallery/minicms/zx-s.jpeg/zx-s_original.jpeg
+      jcr:lastModified: 2018-11-06T10:43:29.078+01:00
+      jcr:mimeType: image/jpeg

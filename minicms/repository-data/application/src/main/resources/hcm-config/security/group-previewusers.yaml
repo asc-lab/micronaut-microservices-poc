@@ -1,0 +1,7 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:groups/previewusers:
+      jcr:primaryType: hipposys:group
+      hipposys:members: [previewuser]
+      hipposys:securityprovider: internal
+      hipposys:system: true

@@ -1,0 +1,48 @@
+/content/documents/minicms/p78:
+  .meta:order-before: java-faq
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['mix:referenceable']
+  jcr:uuid: b9adfab6-0d7d-4332-8fed-5998b87c9d21
+  /p78[1]:
+    jcr:primaryType: minicms:product
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 3ba14088-78a4-4593-88ef-9bfbcb1a561d
+    hippo:availability: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:19:31.567+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:19:31.568+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 87695add-e109-4b1f-aa98-210d3dff5c76
+    hippotranslation:locale: en
+    minicms:description: <p>bbnbbnmmbmnn</p>
+    minicms:name: <p>dgfhffghf</p>
+  /p78[2]:
+    jcr:primaryType: minicms:product
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: a719304a-38f0-43b0-ae34-77888abfc490
+    hippo:availability: [preview]
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:19:31.567+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:19:39.485+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 87695add-e109-4b1f-aa98-210d3dff5c76
+    hippotranslation:locale: en
+    minicms:description: <p>bbnbbnmmbmnn</p>
+    minicms:name: <p>dgfhffghf</p>
+  /p78[3]:
+    jcr:primaryType: minicms:product
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: fb6010db-5d00-4560-af6c-8dee12828444
+    hippo:availability: [live]
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-10T20:19:31.567+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-10T20:19:39.485+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-10T20:19:41.574+01:00
+    hippotranslation:id: 87695add-e109-4b1f-aa98-210d3dff5c76
+    hippotranslation:locale: en
+    minicms:description: <p>bbnbbnmmbmnn</p>
+    minicms:name: <p>dgfhffghf</p>

@@ -1,0 +1,7 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:workspace/hst:channel:
+      .meta:residual-child-node-category: content
+      jcr:primaryType: hst:channel
+      hst:name: LabCms
+      hst:type: website

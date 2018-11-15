@@ -1,0 +1,14 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:pages/blogpage:
+      jcr:primaryType: hst:component
+      hst:referencecomponent: hst:pages/blog
+      /main:
+        jcr:primaryType: hst:component
+        hst:template: blog-main
+        /sidebarcontainer:
+          jcr:primaryType: hst:containercomponentreference
+          hst:referencecomponent: blogpagesidebar/main
+        /detailcontainer:
+          jcr:primaryType: hst:containercomponentreference
+          hst:referencecomponent: blogpagedetail/main

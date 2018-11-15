@@ -1,0 +1,17 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:domains/webfiles:
+      jcr:primaryType: hipposys:domain
+      /readonly:
+        jcr:primaryType: hipposys:authrole
+        hipposys:groups: [liveusers, previewusers, sitewriters, webmaster]
+        hipposys:role: readonly
+      /webfiles-domain:
+        jcr:primaryType: hipposys:domainrule
+        /read-webfiles-and-descendants:
+          jcr:primaryType: hipposys:facetrule
+          hipposys:equals: true
+          hipposys:facet: jcr:path
+          hipposys:filter: false
+          hipposys:type: Reference
+          hipposys:value: /webfiles

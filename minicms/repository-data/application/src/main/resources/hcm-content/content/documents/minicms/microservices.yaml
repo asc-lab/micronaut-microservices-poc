@@ -1,0 +1,81 @@
+/content/documents/minicms/microservices:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 158c659a-87cc-4c2a-a731-8c735f1067aa
+  hippo:name: Microservices
+  /microservices[1]:
+    jcr:primaryType: minicms:blogpost
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 4a677b10-cfcb-4d59-9a28-43cf122e11d0
+    hippo:availability: []
+    hippo:related___pathreference: blogpost/hipposysedit:prototypes
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-13T15:21:58.144+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-13T15:23:06.458+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 40941f2c-c22b-4833-b1ec-ca1bb76779d9
+    hippotranslation:locale: en
+    minicms:authornames: ['']
+    minicms:categories: [cms, lorem]
+    minicms:introduction: Blah blah balah
+    minicms:publicationdate: 2018-11-13T15:22:00+01:00
+    minicms:title: Micronauting
+    /minicms:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p><iframe allowfullscreen="" src="https://www.youtube.com/embed/56j_f3OCg6E"
+        width="640" frameborder="0" height="360"></iframe></p>
+    /minicms:authors:
+      jcr:primaryType: hippo:mirror
+      hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+  /microservices[2]:
+    jcr:primaryType: minicms:blogpost
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: 4aff9f25-33d3-4579-8891-fe52712ef74e
+    hippo:availability: [preview]
+    hippo:related___pathreference: blogpost/hipposysedit:prototypes
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-13T15:21:58.144+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-13T15:23:06.307+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 40941f2c-c22b-4833-b1ec-ca1bb76779d9
+    hippotranslation:locale: en
+    minicms:authornames: ['']
+    minicms:categories: [cms, lorem]
+    minicms:introduction: Blah blah balah
+    minicms:publicationdate: 2018-11-13T15:22:00+01:00
+    minicms:title: Micronauting
+    /minicms:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p><iframe allowfullscreen="" src="https://www.youtube.com/embed/56j_f3OCg6E"
+        width="640" frameborder="0" height="360"></iframe></p>
+    /minicms:authors:
+      jcr:primaryType: hippo:mirror
+      hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+  /microservices[3]:
+    jcr:primaryType: minicms:blogpost
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: c1b5807f-15a6-4001-831e-88cb422cd155
+    hippo:availability: [live]
+    hippo:related___pathreference: blogpost/hipposysedit:prototypes
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-13T15:21:58.144+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-13T15:23:06.307+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-13T15:23:12.006+01:00
+    hippotranslation:id: 40941f2c-c22b-4833-b1ec-ca1bb76779d9
+    hippotranslation:locale: en
+    minicms:authornames: ['']
+    minicms:categories: [cms, lorem]
+    minicms:introduction: Blah blah balah
+    minicms:publicationdate: 2018-11-13T15:22:00+01:00
+    minicms:title: Micronauting
+    /minicms:content:
+      jcr:primaryType: hippostd:html
+      hippostd:content: <p><iframe allowfullscreen="" src="https://www.youtube.com/embed/56j_f3OCg6E"
+        width="640" frameborder="0" height="360"></iframe></p>
+    /minicms:authors:
+      jcr:primaryType: hippo:mirror
+      hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae

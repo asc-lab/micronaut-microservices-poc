@@ -1,0 +1,5 @@
+group: 
+  name: minicms
+  after: hippo-cms
+project: minicms
+module: minicms-repository-data-webfiles

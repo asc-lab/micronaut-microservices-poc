@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.onehippo.cms7</groupId>
+    <artifactId>hippo-cms7-release</artifactId>
+    <version>12.5.0</version>
+  </parent>
+
+  <name>LabCms</name>
+  <description>LabCms</description>
+  <groupId>com.asc.lab.minicms</groupId>
+  <artifactId>minicms</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <!-- 
+    The below project elements are emptied/overridden as otherwise their metadata would be
+    inherited or merged from the parent hippo-cms7-release pom (or its hippo-cms7-project pom).
+
+    DO NOT remove these tags but instead fill them in appropriately as needed, 
+    UNLESS the inherited values are valid for your project.
+  -->
+  <url/>
+  <inceptionYear/>
+  <organization/>
+  <licenses>
+    <license/>
+  </licenses>
+  <mailingLists>
+    <mailingList/>
+  </mailingLists>
+  <developers>
+    <developer/>
+  </developers>
+  <contributors>
+    <contributor/>
+  </contributors>
+  <issueManagement/>
+  <!--
+  <scm>
+    <connection/>
+    <developerConnection/>
+    <url/>
+  </scm>
+  -->
+  <ciManagement/>
+  <distributionManagement>
+    <repository>
+      <id>-</id>
+      <url>-</url>
+    </repository>
+    <snapshotRepository>
+      <id>-</id>
+      <url>-</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <!-- End of emptied/overridden metadata from parent hippo-cms7-release pom. -->
+
+  <properties>
+
+    <!--***START temporary override of versions*** -->
+    <!-- ***END temporary override of versions*** -->
+
+    <essentials.version>4.5.0</essentials.version>
+    <jsp-api.version>2.2</jsp-api.version>
+    <taglibs.version>1.2.5</taglibs.version>
+    <xalan.version>2.7.2</xalan.version>
+    <junit.version>4.12</junit.version>
+    <easymock.version>3.4</easymock.version>
+
+    <development-module-deploy-dir>shared/lib</development-module-deploy-dir>
+
+    <hippo.cms.locales>nl,de,fr,es,zh</hippo.cms.locales>
+    <buildNumber>${maven.build.timestamp}</buildNumber>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>hippo</id>
+      <name>Hippo maven 2 repository.</name>
+      <url>https://maven.onehippo.com/maven2/</url>
+    </repository>
+  </repositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.onehippo.cms7</groupId>
+        <artifactId>hippo-essentials-plugin-sdk-api</artifactId>
+        <version>${essentials.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>${jsp-api.version}</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- other predefined runtime scope versioned dependencies -->
+      <dependency>
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-spec</artifactId>
+        <version>${taglibs.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-impl</artifactId>
+        <version>${taglibs.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>xalan</groupId>
+        <artifactId>xalan</artifactId>
+        <version>${xalan.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>xalan</groupId>
+        <artifactId>serializer</artifactId>
+        <version>${xalan.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+
+      <!-- other predefined compile scope versioned dependencies -->
+      <dependency>
+        <groupId>org.freemarker</groupId>
+        <artifactId>freemarker</artifactId>
+        <version>${freemarker.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.easymock</groupId>
+        <artifactId>easymock</artifactId>
+        <version>${easymock.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <defaultGoal>package</defaultGoal>
+    <pluginManagement>
+      <plugins>
+        <!--
+          This plugin configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.
+        -->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <goals>
+                      <goal>regex-property</goal>
+                    </goals>
+                    <versionRange>[0.0,)</versionRange>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore/>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <Implementation-Build>${buildNumber}</Implementation-Build>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>jrebel</name>
+        </property>
+      </activation>
+      <modules>
+        <module>repository-data</module>
+        <module>cms</module>
+        <module>site</module>
+        <module>essentials</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>cargo.run</id>
+      <properties>
+        <!--Already defined in hippo-cms-project POM. Override here for project, if necessary-->
+        <!--<repo.bootstrap>true</repo.bootstrap>-->
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.cargo</groupId>
+            <artifactId>cargo-maven2-plugin</artifactId>
+            <configuration>
+              <configuration>
+				<properties>
+					<cargo.servlet.port>9080</cargo.servlet.port>
+				</properties>
+                <configfiles>
+                  <configfile>
+                    <file>${project.basedir}/conf/context.xml</file>
+                    <todir>conf/</todir>
+                    <tofile>context.xml</tofile>
+                  </configfile>
+                  <configfile>
+                    <file>${project.basedir}/conf/catalina-logging.properties</file>
+                    <todir>conf/</todir>
+                    <tofile>logging.properties</tofile>
+                  </configfile>
+                </configfiles>
+                <files>
+                  <file>
+                    <file>${project.basedir}/repository-data/development/target/minicms-repository-data-development-${project.version}.jar</file>
+                    <todir>${development-module-deploy-dir}</todir>
+                  </file>
+                </files>
+              </configuration>
+              <deployables>
+                <deployable>
+                  <type>war</type>
+                  <properties>
+                    <context>/cms</context>
+                  </properties>
+                  <location>${project.basedir}/cms/target/cms.war</location>
+                </deployable>
+                <deployable>
+                  <location>${project.basedir}/site/target/site.war</location>
+                  <type>war</type>
+                  <properties>
+                    <context>/site</context>
+                  </properties>
+                </deployable>
+                <deployable>
+                  <location>${project.basedir}/essentials/target/essentials.war</location>
+                  <type>war</type>
+                  <properties>
+                    <context>/essentials</context>
+                  </properties>
+                </deployable>
+              </deployables>
+              <container>
+                <systemProperties>
+                  <log4j.configurationFile>file://${project.basedir}/conf/log4j2-dev.xml</log4j.configurationFile>
+                  <!-- enables auto export and web files watch: -->
+                  <project.basedir>${project.basedir}</project.basedir>
+                  <send.usage.statistics.to.hippo>true</send.usage.statistics.to.hippo>
+                </systemProperties>
+              </container>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!-- additional profile to combine with cargo:run to *not* bootstrap the development module:
+           $ mvn -P cargo.run,without-development-data -->
+      <id>without-development-data</id>
+      <properties>
+        <development-module-deploy-dir>temp</development-module-deploy-dir>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>dist</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-slf4j-impl</artifactId>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-core</artifactId>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <defaultGoal>validate</defaultGoal>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>distro-assembly</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <descriptors>
+                    <descriptor>${project.basedir}/src/main/assembly/distribution.xml</descriptor>
+                  </descriptors>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>dist-with-development-data</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-slf4j-impl</artifactId>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-api</artifactId>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-core</artifactId>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <defaultGoal>validate</defaultGoal>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>distro-assembly-with-development-data</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <descriptors>
+                    <descriptor>${project.basedir}/src/main/assembly/distribution-with-development-data.xml</descriptor>
+                  </descriptors>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+
+</project>

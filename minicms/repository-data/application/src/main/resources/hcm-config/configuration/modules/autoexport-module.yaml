@@ -1,0 +1,5 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:modules/autoexport:
+      /hippo:moduleconfig:
+        autoexport:modules: ['repository-data/application:/']

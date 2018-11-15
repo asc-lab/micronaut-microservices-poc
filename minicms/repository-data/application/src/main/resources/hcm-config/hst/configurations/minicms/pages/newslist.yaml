@@ -1,0 +1,8 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:pages/newslist:
+      jcr:primaryType: hst:component
+      hst:referencecomponent: hst:abstractpages/base
+      /main:
+        jcr:primaryType: hst:containercomponentreference
+        hst:referencecomponent: newslist/main

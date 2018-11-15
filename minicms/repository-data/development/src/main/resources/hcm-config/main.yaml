@@ -1,0 +1,24 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:modules/autoexport/hippo:moduleconfig:
+      autoexport:modules:
+        operation: add
+        type: string
+        # this value tells auto-export to update existing definitions but not create new definitions here
+        # add path mappings to export development data into this module
+        value: ['repository-data/development'] 
+    /hippo:configuration/hippo:groups/author:
+      hipposys:members:
+        operation: add
+        type: string
+        value: [author]
+    /hippo:configuration/hippo:groups/editor:
+      hipposys:members:
+        operation: add
+        type: string
+        value: [editor]
+    /hippo:configuration/hippo:groups/webmaster:
+      hipposys:members:
+        operation: add
+        type: string
+        value: [editor]

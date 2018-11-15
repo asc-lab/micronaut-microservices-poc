@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/org/hippoecm/hst/site/optional/jaxrs/SpringComponentManager-rest-jackson.xml"/>
+  <import resource="classpath:/org/hippoecm/hst/site/optional/jaxrs/SpringComponentManager-rest-plain-pipeline.xml"/>
+  <import resource="classpath:/org/hippoecm/hst/site/optional/jaxrs/SpringComponentManager-rest-content-pipeline.xml"/>
+
+  <bean id="customRestPlainResourceProviders" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <property name="sourceList">
+      <list>
+        <bean class="org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider">
+          <constructor-arg>
+            <bean class="com.asc.lab.minicms.rest.InsuranceResource"/>
+          </constructor-arg>
+        </bean>
+        <bean class="org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider">
+          <constructor-arg>
+            <bean class="com.asc.lab.minicms.rest.ProductResource"/>
+          </constructor-arg>
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <!--
+    JAXB CONTEXT MAPPINGS
+  -->
+  <bean id="jaxrsHippoContextProvider" class="org.onehippo.cms7.essentials.components.rest.JaxbContextProvider">
+    <property name="beansPackage" value="com.asc.lab.minicms.beans"/>
+    <!--
+      you can add extra classes if needed as followed:
+    -->
+    <!--
+      <property name="classes">
+        <list>
+          <value type="java.lang.Class">org.example.beans.MyBean</value>
+        </list>
+      </property>
+    -->
+  </bean>
+
+  <bean id="jaxrsRestExceptionMapper" class="org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper">
+    <property name="printStackTrace" value="false" />
+  </bean>
+
+  <bean id="essentialsRestEntityProviders" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <property name="sourceList">
+      <list>
+        <ref bean="jaxrsHippoContextProvider"/>
+        <ref bean="jaxrsRestExceptionMapper"/>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="essentialsRestAllEntityProviders" class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+    <constructor-arg value="java.util.List" />
+    <property name="targetClass" value="org.apache.commons.collections.ListUtils" />
+    <property name="targetMethod" value="union" />
+    <property name="arguments">
+      <list>
+        <ref bean="jaxrsRestDefaultEntityProviders" />
+        <ref bean="essentialsRestEntityProviders" />
+      </list>
+    </property>
+  </bean>
+
+  <bean id="jaxrsRestPlainServiceValve" class="org.hippoecm.hst.core.container.JaxrsRestServiceValve"
+        init-method="initialize" destroy-method="destroy">
+    <constructor-arg>
+      <bean class="org.hippoecm.hst.jaxrs.cxf.CXFJaxrsService">
+        <constructor-arg value="jaxrsPlainService"/>
+        <property name="servletPath" value=""/>
+        <property name="jaxrsServerFactoryBean">
+          <bean class="org.apache.cxf.jaxrs.JAXRSServerFactoryBean">
+            <property name="address" value="/"/>
+            <property name="providers" ref="essentialsRestAllEntityProviders"/>
+            <property name="resourceProviders" ref="jaxrsRestPlainResourceProviders"/>
+            <property name="invoker" ref="jaxrsRestPlainServiceInvoker"/>
+          </bean>
+        </property>
+        <property name="inInterceptors">
+          <list>
+            <ref bean="jaxrsRestPlainServiceQueryStringReplacingInterceptor"/>
+          </list>
+        </property>
+      </bean>
+    </constructor-arg>
+    <property name="valveName" value="jaxrsRestPlainServiceValve"/>
+  </bean>
+
+</beans>

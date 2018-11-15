@@ -1,0 +1,8 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:containers/bloglistsidebar/main/content:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsFacetsComponent
+  hst:label: Facets
+  hst:parameternames: [facetPath, showPagination, pageSize]
+  hst:parametervalues: [blogFacets, 'on', '10']
+  hst:template: blog-facet
+  hst:xtype: hst.item

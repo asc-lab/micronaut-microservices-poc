@@ -1,0 +1,34 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:templates:
+      jcr:primaryType: hst:templates
+      /base-layout:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/base-layout.ftl
+      /base-top-menu:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/base-top-menu.ftl
+      /base-footer:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/base-footer.ftl
+      /homepage-main:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/homepage-main.ftl
+      /pagenotfound-main:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/pagenotfound-main.ftl
+      /blog-main:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/blog/blog-main.ftl
+      /blog-detail:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/hstdefault/blog/blog-detail.ftl
+      /eventspage-main:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/hstdefault/eventspage-main.ftl
+      /faq-main:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/minicms/faq-main.ftl
+      /newspage-main:
+        jcr:primaryType: hst:template
+        hst:renderpath: webfile:/freemarker/hstdefault/newspage-main.ftl

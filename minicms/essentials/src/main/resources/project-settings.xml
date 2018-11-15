@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <applicationSubModule>application</applicationSubModule>
+    <cmsModule>cms</cmsModule>
+    <confirmParams>false</confirmParams>
+    <developmentSubModule>development</developmentSubModule>
+    <enterprise>false</enterprise>
+    <extraTemplates>false</extraTemplates>
+    <projectNamespace>minicms</projectNamespace>
+    <repositoryDataModule>repository-data</repositoryDataModule>
+    <selectedBeansPackage>com.asc.lab.minicms.beans</selectedBeansPackage>
+    <selectedComponentsPackage>com.asc.lab.minicms.components</selectedComponentsPackage>
+    <selectedProjectPackage>com.asc.lab.minicms</selectedProjectPackage>
+    <selectedRestPackage>com.asc.lab.minicms.rest</selectedRestPackage>
+    <setupDone>true</setupDone>
+    <siteModule>site</siteModule>
+    <templateLanguage>freemarker</templateLanguage>
+    <useSamples>false</useSamples>
+    <webfilesSubModule>webfiles</webfilesSubModule>
+</project>

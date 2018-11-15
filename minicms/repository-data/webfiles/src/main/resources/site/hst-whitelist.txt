@@ -1,0 +1,26 @@
+##########################################################################
+#                                                                        #
+#   This file must contain all files and folders that                   #
+#   most be publicly available over http. Typically folders              #
+#   that contain server side scripts, such a freemarker                  #
+#   templates, should not be added as they in general should             #
+#   not be publicly available.                                           #
+#                                                                        #
+#   The whitelisting is *relative* to the 'web file bundle root'         #
+#   which is the folder in which this hst-whitelist.txt file is          #
+#   located.                                                             #
+#                                                                        #
+#   Examples assuming the web file bundle root is 'site':                #
+#                                                                        #
+#   css/       : whitelists all descendant web files below 'site/css/'   #
+#   common.js  : whitelists the file 'site/common.js'                    #
+#                                                                        #
+#   Note that the whitelisting is 'starts-with' based, thus for          #
+#   example whitelisting 'css' without '/' behind it, whitelists all     #
+#   files and folders that start with 'css'                              #
+#                                                                        #
+##########################################################################
+
+css/
+fonts/
+js/

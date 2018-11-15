@@ -1,0 +1,48 @@
+/content/documents/minicms/atari800xl:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 0a7fbd0c-bf35-4adf-bdf1-9c46316670ba
+  hippo:name: Atari800XL
+  /atari800xl[1]:
+    jcr:primaryType: minicms:product
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: a938bba5-ce64-4d03-9e1d-d228de7aef98
+    hippo:availability: []
+    hippostd:state: draft
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T10:29:20.572+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T10:29:20.572+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 060b925c-e8f3-424c-aab5-325f5cf1358d
+    hippotranslation:locale: en
+    minicms:description: <p>Gray keyboard and tape</p>
+    minicms:name: <p>Atari 800 XL</p>
+  /atari800xl[2]:
+    jcr:primaryType: minicms:product
+    jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+    jcr:uuid: d8fccb4f-cc8f-41f5-99eb-3babb51ba9eb
+    hippo:availability: [preview]
+    hippostd:state: unpublished
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T10:29:20.572+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T10:30:04.943+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippotranslation:id: 060b925c-e8f3-424c-aab5-325f5cf1358d
+    hippotranslation:locale: en
+    minicms:description: <p>Gray keyboard and tape</p>
+    minicms:name: <p>Atari 800 XL</p>
+  /atari800xl[3]:
+    jcr:primaryType: minicms:product
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: ff6c5d4f-213f-4131-8ae5-0eed52f90799
+    hippo:availability: [live]
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2018-11-06T10:29:20.572+01:00
+    hippostdpubwf:lastModificationDate: 2018-11-06T10:30:04.943+01:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2018-11-06T10:30:09.982+01:00
+    hippotranslation:id: 060b925c-e8f3-424c-aab5-325f5cf1358d
+    hippotranslation:locale: en
+    minicms:description: <p>Gray keyboard and tape</p>
+    minicms:name: <p>Atari 800 XL</p>

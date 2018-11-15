@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/minicms/hst:catalog:
+      jcr:primaryType: hst:catalog
+      /minicms-catalog:
+        jcr:primaryType: hst:containeritempackage

@@ -1,0 +1,374 @@
+/content/documents/minicms/blog:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+  jcr:uuid: 91bee141-a12f-4ddc-97f6-1b1f9c5d7dbd
+  hippostd:foldertype: [new-blog-folder, new-blogauthor-folder]
+  hippotranslation:id: 9bbc9a0f-2d7c-438d-8848-8899e86fc73f
+  hippotranslation:locale: en
+  /authors:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+    jcr:uuid: a8aa9499-6d90-4d3c-a908-1958a537b4a7
+    hippostd:foldertype: [new-blogauthor-document, new-blogauthor-folder]
+    hippotranslation:id: 1245af8f-f973-48cb-ae92-8a43b445cf39
+    hippotranslation:locale: en
+    /mike:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: e2847966-61b4-407b-8f9e-d8e0849d3cae
+      /mike[1]:
+        jcr:primaryType: minicms:author
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 55762618-21f1-41bb-8104-fa1fb3216ce3
+        hippo:availability: []
+        hippo:related___pathreference: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2018-11-10T20:18:00.273+01:00
+        hippostdpubwf:lastModificationDate: 2018-11-13T15:40:45.218+01:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: fc9c38e0-a750-4e7b-a6a3-03873c7535fd
+        hippotranslation:locale: en
+        minicms:fullname: mike
+        minicms:role: ''
+        /minicms:content:
+          jcr:primaryType: hippostd:html
+          hippostd:content: <p>mike</p>
+        /minicms:image:
+          jcr:primaryType: hippogallerypicker:imagelink
+          hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+          hippo:facets: []
+          hippo:modes: []
+          hippo:values: []
+        /minicms:photo:
+          jcr:primaryType: hippogallerypicker:imagelink
+          hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+          hippo:facets: []
+          hippo:modes: []
+          hippo:values: []
+      /mike[2]:
+        jcr:primaryType: minicms:author
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: 5e72ea4c-47d9-4e3d-abbf-821f9d7744fb
+        hippo:availability: [preview]
+        hippo:related___pathreference: []
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2018-11-10T20:18:00.273+01:00
+        hippostdpubwf:lastModificationDate: 2018-11-13T15:40:56.324+01:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: fc9c38e0-a750-4e7b-a6a3-03873c7535fd
+        hippotranslation:locale: en
+        minicms:fullname: mike
+        minicms:role: ''
+        /minicms:content:
+          jcr:primaryType: hippostd:html
+          hippostd:content: <p>mike</p>
+        /minicms:image:
+          jcr:primaryType: hippogallerypicker:imagelink
+          hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+          hippo:facets: []
+          hippo:modes: []
+          hippo:values: []
+        /minicms:photo:
+          jcr:primaryType: hippogallerypicker:imagelink
+          hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+          hippo:facets: []
+          hippo:modes: []
+          hippo:values: []
+      /mike[3]:
+        jcr:primaryType: minicms:author
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 7ea8d3d1-7cb2-4ade-92cf-1ba3d9ae5028
+        hippo:availability: [live]
+        hippo:related___pathreference: []
+        hippostd:state: published
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2018-11-10T20:18:00.273+01:00
+        hippostdpubwf:lastModificationDate: 2018-11-13T15:40:56.324+01:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippostdpubwf:publicationDate: 2018-11-13T15:40:58.345+01:00
+        hippotranslation:id: fc9c38e0-a750-4e7b-a6a3-03873c7535fd
+        hippotranslation:locale: en
+        minicms:fullname: mike
+        minicms:role: ''
+        /minicms:content:
+          jcr:primaryType: hippostd:html
+          hippostd:content: <p>mike</p>
+        /minicms:image:
+          jcr:primaryType: hippogallerypicker:imagelink
+          hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
+          hippo:facets: []
+          hippo:modes: []
+          hippo:values: []
+        /minicms:photo:
+          jcr:primaryType: hippogallerypicker:imagelink
+          hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
+          hippo:facets: []
+          hippo:modes: []
+          hippo:values: []
+  /2018:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+    jcr:uuid: 61d83ba7-d57a-4e32-838f-afe36e8a207b
+    hippostd:foldertype: [new-blog-document, new-blog-folder]
+    hippotranslation:id: fb0540a0-1d74-427b-86c5-971ea4d87dd6
+    hippotranslation:locale: en
+    /11:
+      jcr:primaryType: hippostd:folder
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 4161d42a-f97b-48fa-818a-130053324a3c
+      hippostd:foldertype: [new-blog-document, new-blog-folder]
+      hippotranslation:id: 302366b4-f8ab-4923-ad19-a3a5c60005d9
+      hippotranslation:locale: en
+      /post-one:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 8205e43f-d99c-4cc8-894d-0d7b572a795a
+        hippo:name: post one
+        /post-one[1]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 6a719b06-d48e-4a76-b7f6-09e61f56a2db
+          hippo:availability: []
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-10T20:15:51.579+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-10T20:15:51.580+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: a0c9f1f9-7e69-4a53-8343-c5a9ed449ace
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms]
+          minicms:introduction: this is post one
+          minicms:publicationdate: 2018-11-10T20:16:00+01:00
+          minicms:title: post one
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>some text</p>
+
+              <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+            /atari-800.jpeg:
+              jcr:primaryType: hippo:facetselect
+              hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+              hippo:facets: []
+              hippo:modes: []
+              hippo:values: []
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /post-one[2]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: c65275a6-894c-43f9-8adc-fb2b6fce2e70
+          hippo:availability: [preview]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-10T20:15:51.579+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-10T20:18:24.298+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: a0c9f1f9-7e69-4a53-8343-c5a9ed449ace
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms]
+          minicms:introduction: this is post one
+          minicms:publicationdate: 2018-11-10T20:16:00+01:00
+          minicms:title: post one
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>some text</p>
+
+              <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+            /atari-800.jpeg:
+              jcr:primaryType: hippo:facetselect
+              hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+              hippo:facets: []
+              hippo:modes: []
+              hippo:values: []
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /post-one[3]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 2f2372ee-c9a0-40c0-b019-fdfc9cad94e4
+          hippo:availability: [live]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-10T20:15:51.579+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-10T20:18:24.298+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2018-11-10T20:18:27.112+01:00
+          hippotranslation:id: a0c9f1f9-7e69-4a53-8343-c5a9ed449ace
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms]
+          minicms:introduction: this is post one
+          minicms:publicationdate: 2018-11-10T20:16:00+01:00
+          minicms:title: post one
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>some text</p>
+
+              <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+            /atari-800.jpeg:
+              jcr:primaryType: hippo:facetselect
+              hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+              hippo:facets: []
+              hippo:modes: []
+              hippo:values: []
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+      /headless-cms:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 55ded2b0-fd55-443f-bfc2-daa5f00cf9d3
+        hippo:name: Headless cms
+        /headless-cms[1]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 27d8309a-d2c8-484a-b691-4356ab99af99
+          hippo:availability: []
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-14T15:15:18.492+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-14T15:15:18.492+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: f025c4c9-baf2-49b7-8008-5c65fd0f2e35
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms, life]
+          minicms:introduction: Want to know more about headless cms?
+          minicms:publicationdate: 2018-11-14T15:15:00+01:00
+          minicms:title: Headless cms
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>Hello</p>
+
+              <p>&nbsp;</p>
+
+              <p>&nbsp;</p>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /headless-cms[2]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: fc77e497-298e-4134-9d98-2b866fb708a4
+          hippo:availability: [preview]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-14T15:15:18.492+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-14T15:16:15.761+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: f025c4c9-baf2-49b7-8008-5c65fd0f2e35
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms, life]
+          minicms:introduction: Want to know more about headless cms?
+          minicms:publicationdate: 2018-11-14T15:15:00+01:00
+          minicms:title: Headless cms
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>Hello</p>
+
+              <p>&nbsp;</p>
+
+              <p>&nbsp;</p>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /headless-cms[3]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 48647c4c-033e-4c53-9329-8e88632cca21
+          hippo:availability: [live]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-14T15:15:18.492+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-14T15:16:15.761+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2018-11-14T15:16:19.356+01:00
+          hippotranslation:id: f025c4c9-baf2-49b7-8008-5c65fd0f2e35
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms, life]
+          minicms:introduction: Want to know more about headless cms?
+          minicms:publicationdate: 2018-11-14T15:15:00+01:00
+          minicms:title: Headless cms
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>Hello</p>
+
+              <p>&nbsp;</p>
+
+              <p>&nbsp;</p>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+  /account-types:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 750613aa-6e96-4929-ab7c-60b82cecafe0
+    /account-types:
+      jcr:primaryType: selection:valuelist
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 4dee9e0e-d297-4416-9d2f-5d893be28e76
+      hippo:availability: [live, preview]
+      hippotranslation:id: 6ecb70cc-a37f-430b-a3a7-75b64b42363b
+      hippotranslation:locale: en
+      /selection:listitem[1]:
+        jcr:primaryType: selection:listitem
+        selection:key: github
+        selection:label: GitHub
+      /selection:listitem[2]:
+        jcr:primaryType: selection:listitem
+        selection:key: stackoverflow
+        selection:label: Stack Overflow
+      /selection:listitem[3]:
+        jcr:primaryType: selection:listitem
+        selection:key: twitter
+        selection:label: Twitter
+      /selection:listitem[4]:
+        jcr:primaryType: selection:listitem
+        selection:key: linkedin
+        selection:label: LinkedIn
+  /blog-categories:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: a9f065d6-ac12-4c64-8626-bdd1b1dbc450
+    /blog-categories:
+      jcr:primaryType: selection:valuelist
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: 4c5bd3e0-78ac-419b-ba97-df248cd71dfc
+      hippotranslation:id: 6a7f1c36-ff42-40e5-be59-bd18ff643408
+      hippotranslation:locale: en
+      /selection:listitem[1]:
+        jcr:primaryType: selection:listitem
+        selection:key: cms
+        selection:label: CMS
+      /selection:listitem[2]:
+        jcr:primaryType: selection:listitem
+        selection:key: life
+        selection:label: Life
+      /selection:listitem[3]:
+        jcr:primaryType: selection:listitem
+        selection:key: lorem
+        selection:label: Lorem
+      /selection:listitem[4]:
+        jcr:primaryType: selection:listitem
+        selection:key: ipsum
+        selection:label: Ipsum

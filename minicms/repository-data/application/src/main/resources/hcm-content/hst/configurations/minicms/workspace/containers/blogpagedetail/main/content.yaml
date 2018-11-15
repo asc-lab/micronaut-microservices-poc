@@ -1,0 +1,6 @@
+/hst:hst/hst:configurations/minicms/hst:workspace/hst:containers/blogpagedetail/main/content:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsContentComponent
+  hst:label: Blog Detail
+  hst:template: blog-detail
+  hst:xtype: hst.item
