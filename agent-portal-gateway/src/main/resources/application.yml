@@ -31,3 +31,6 @@ tracing:
 ---
 jackson:
   dateFormat: dd.MM.yyyy
+---
+hippocms:
+    url: http://localhost:9080

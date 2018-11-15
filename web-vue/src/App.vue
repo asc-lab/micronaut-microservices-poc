@@ -9,6 +9,8 @@
             |
             <router-link to="/chat">Chat</router-link>
             |
+            <router-link to="/blog">Blog</router-link>
+            |
             <router-link to="/account">Account</router-link>
         </div>
 

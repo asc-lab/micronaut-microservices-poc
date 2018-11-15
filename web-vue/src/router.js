@@ -29,6 +29,11 @@ export default new Router({
             component: loadView('Chatbot')
         },
         {
+            path: '/blog',
+            name: 'blog',
+            component: loadView('Blog')
+        },
+        {
             path: '/account',
             name: 'account',
             component: loadView('Account')
