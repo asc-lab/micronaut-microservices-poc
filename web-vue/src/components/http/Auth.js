@@ -6,10 +6,10 @@ const DETAILS_KEY = "auth-details";
 export default {
 
     login(context, credentials) {
+        this.clearToken();
         context.$http.post(LOGIN_URL, credentials)
             .then(
                 (response) => {
-                    this.clearToken();
                     localStorage.setItem(TOKEN_KEY, response.body.access_token);
                     localStorage.setItem(DETAILS_KEY, JSON.stringify(response.body));
                 },
@@ -36,9 +36,9 @@ export default {
     },
 
     getAuthDetails() {
-        if(!this.isAuthenticated())
+        if (!this.isAuthenticated())
             return null;
-        
+
         return JSON.parse(localStorage.getItem(DETAILS_KEY));
     }
 }
