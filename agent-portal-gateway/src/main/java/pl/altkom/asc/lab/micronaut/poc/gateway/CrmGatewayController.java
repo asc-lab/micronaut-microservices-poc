@@ -3,13 +3,14 @@ package pl.altkom.asc.lab.micronaut.poc.gateway;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import io.reactivex.Maybe;
 import javax.inject.Inject;
 import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogOperations;
 import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogPostDetails;
 import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogPostsPage;
 
-@Secured("isAuthenticated()")
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/api/crm")
 public class CrmGatewayController {
     @Inject

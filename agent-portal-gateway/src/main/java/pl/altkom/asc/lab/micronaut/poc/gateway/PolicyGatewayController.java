@@ -6,6 +6,7 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.annotation.QueryValue;
 import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import io.reactivex.Maybe;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.PolicyGatewayClient;
 import pl.altkom.asc.lab.micronaut.poc.gateway.client.v1.PolicySearchGatewayClient;
@@ -18,7 +19,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicyde
 
 import javax.inject.Inject;
 
-@Secured("isAuthenticated()")
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/api/policies")
 public class PolicyGatewayController {
 

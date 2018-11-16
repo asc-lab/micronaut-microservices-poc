@@ -165,6 +165,11 @@ This command generate project in Java and Maven as build tool.
     <img alt="Chat" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/chat_v2.gif" />
 </p>
 
+### Clear ElasticSearch index
+```
+curl -XDELETE localhost:9200/policy-views
+```
+
 ## References
 * [Building microservices with Micronaut - comprehensive guide](https://asc.altkom.pl/en/blog/microservices-micronaut/)
 * [Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html)
