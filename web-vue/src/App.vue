@@ -7,7 +7,7 @@
             |
             <router-link to="/policies">Policies</router-link>
             |
-            <router-link to="/chat">Chat</router-link>
+            <router-link to="/chat">Chat for Agents</router-link>
             |
             <router-link to="/blog">Blog</router-link>
             |
