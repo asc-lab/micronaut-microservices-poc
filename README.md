@@ -78,6 +78,11 @@ For Windows users, append below line ```C:\Windows\System32\drivers\etc\hosts```
 127.0.0.1 kafkaserver
 ```
 
+For frontend app running, you must add file ```.env.local``` based on ```.env-example``` .
+<p align="center">
+    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
+</p>
+
 ### Automated deployment
 
 To run the whole system on local machine just type:
