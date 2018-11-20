@@ -1,8 +1,8 @@
-package pl.altkom.asc.lab.micronaut.poc.documents.listener.jsreport
+package pl.altkom.asc.lab.micronaut.poc.documents.infrastructure.adapters.jsreport
 
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDto
 
-data class JsReportRequest(
+data class ReportRequest(
         val template: Template,
         val options: TemplateOptions,
         val data: PolicyDto
