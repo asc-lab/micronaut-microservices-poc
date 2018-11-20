@@ -9,7 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BlogPost {
-    private String id;
-    private String name;
+public class Author {
+
+    private String username;
+    private String email;
+    private boolean confirmed;
+    private boolean blocked;
 }

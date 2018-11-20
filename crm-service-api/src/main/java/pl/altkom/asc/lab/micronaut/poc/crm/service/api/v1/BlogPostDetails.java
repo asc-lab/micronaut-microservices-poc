@@ -21,5 +21,7 @@ public class BlogPostDetails {
     private List<String> categories;
     private String introduction;
     private String htmlContent;
+    private String markdownContent;
     private List<CrmLink> links;
+    private Author author;
 }

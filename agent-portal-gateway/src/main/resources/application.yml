@@ -34,3 +34,6 @@ jackson:
 ---
 hippocms:
     url: http://localhost:9080
+---
+#strapicms:
+#    url: http://localhost:1337

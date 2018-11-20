@@ -1,7 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.math.BigDecimal;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +8,7 @@ import lombok.NoArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
@@ -27,11 +26,8 @@ public class PolicyVersion {
     private Policy policy;
 
     private Long versionNumber;
-
     private String productCode;
-
     private Person policyHolder;
-
     private String accountNumber;
 
     @Embedded
@@ -50,7 +46,7 @@ public class PolicyVersion {
 
     @OneToMany(mappedBy = "policyVersion", cascade = CascadeType.ALL)
     private Set<Cover> covers;
-    
+
     private BigDecimal totalPremiumAmount;
 
     CoverCollection covers() {

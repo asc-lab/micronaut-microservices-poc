@@ -1,11 +1,10 @@
 package pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import lombok.*;
+
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
