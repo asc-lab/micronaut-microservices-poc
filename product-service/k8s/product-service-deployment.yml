@@ -22,6 +22,10 @@ spec:
         env:
         - name: SERVICE_PORT
           value: "80"
+        - name: ZIPKIN_HOST
+          value: zipkin
+        - name: ZIPKIN_PORT
+          value: "9411"
         - name: MONGO_HOST
           value: mongo
         - name: MONGO_PORT
