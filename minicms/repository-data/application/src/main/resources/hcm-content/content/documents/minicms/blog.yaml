@@ -135,7 +135,7 @@
           hippostd:state: draft
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2018-11-10T20:15:51.579+01:00
-          hippostdpubwf:lastModificationDate: 2018-11-10T20:15:51.580+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-19T19:30:48.636+01:00
           hippostdpubwf:lastModifiedBy: admin
           hippotranslation:id: a0c9f1f9-7e69-4a53-8343-c5a9ed449ace
           hippotranslation:locale: en
@@ -150,9 +150,21 @@
               <p>some text</p>
 
               <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+
+              <p>some more</p>
+
+              <p><img src="zx-s.jpeg/{_document}/hippogallery:original" /></p>
+
+              <p>&nbsp;</p>
             /atari-800.jpeg:
               jcr:primaryType: hippo:facetselect
               hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+              hippo:facets: []
+              hippo:modes: []
+              hippo:values: []
+            /zx-s.jpeg:
+              jcr:primaryType: hippo:facetselect
+              hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
               hippo:facets: []
               hippo:modes: []
               hippo:values: []
@@ -168,7 +180,7 @@
           hippostd:state: unpublished
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2018-11-10T20:15:51.579+01:00
-          hippostdpubwf:lastModificationDate: 2018-11-10T20:18:24.298+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-19T19:31:33.574+01:00
           hippostdpubwf:lastModifiedBy: admin
           hippotranslation:id: a0c9f1f9-7e69-4a53-8343-c5a9ed449ace
           hippotranslation:locale: en
@@ -183,9 +195,21 @@
               <p>some text</p>
 
               <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+
+              <p>some more</p>
+
+              <p><img src="zx-s.jpeg/{_document}/hippogallery:original" /></p>
+
+              <p>&nbsp;</p>
             /atari-800.jpeg:
               jcr:primaryType: hippo:facetselect
               hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+              hippo:facets: []
+              hippo:modes: []
+              hippo:values: []
+            /zx-s.jpeg:
+              jcr:primaryType: hippo:facetselect
+              hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
               hippo:facets: []
               hippo:modes: []
               hippo:values: []
@@ -201,9 +225,9 @@
           hippostd:state: published
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2018-11-10T20:15:51.579+01:00
-          hippostdpubwf:lastModificationDate: 2018-11-10T20:18:24.298+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-19T19:31:33.574+01:00
           hippostdpubwf:lastModifiedBy: admin
-          hippostdpubwf:publicationDate: 2018-11-10T20:18:27.112+01:00
+          hippostdpubwf:publicationDate: 2018-11-19T19:31:36.909+01:00
           hippotranslation:id: a0c9f1f9-7e69-4a53-8343-c5a9ed449ace
           hippotranslation:locale: en
           minicms:authornames: ['']
@@ -217,9 +241,21 @@
               <p>some text</p>
 
               <p><img src="atari-800.jpeg/{_document}/hippogallery:original" /></p>
+
+              <p>some more</p>
+
+              <p><img src="zx-s.jpeg/{_document}/hippogallery:original" /></p>
+
+              <p>&nbsp;</p>
             /atari-800.jpeg:
               jcr:primaryType: hippo:facetselect
               hippo:docbase: d0aa7080-e81e-4722-914e-ec09e7d48d3a
+              hippo:facets: []
+              hippo:modes: []
+              hippo:values: []
+            /zx-s.jpeg:
+              jcr:primaryType: hippo:facetselect
+              hippo:docbase: 8670b3c0-8b22-40b8-b71f-1e4dacd6602f
               hippo:facets: []
               hippo:modes: []
               hippo:values: []

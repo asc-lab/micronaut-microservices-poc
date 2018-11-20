@@ -8,6 +8,6 @@ public interface BlogOperations {
     @Get
     Maybe<BlogPostsPage> getBlogPosts(int pageNumber, int postsPerPage);
 
-   @Get("/{postId}")
+    @Get("/{postId}")
     Maybe<BlogPostDetails> getBlogPost(String postId);
 }
