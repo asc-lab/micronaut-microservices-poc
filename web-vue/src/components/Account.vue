@@ -59,7 +59,9 @@
                     username: this.credentials.username,
                     password: this.credentials.password
                 };
-                auth.login(this, credentials);
+                auth.login(this, credentials).then(() => {
+                    window.location.href = '/';
+                });
             },
             logout() {
                 auth.logout();
