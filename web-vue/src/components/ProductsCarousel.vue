@@ -12,8 +12,8 @@
 
                 <ProductHeader 
                     v-for="product in productsHeaders" :key="product.code"
-                    :productCode="product.title" 
-                    :productTitle="product.code" 
+                    :productCode="product.code" 
+                    :productTitle="product.title" 
                     :productShortDescription="product.shortDescription"
                     :productImageUrl="product.mainPictureUrl"
                     >

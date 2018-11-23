@@ -45,8 +45,7 @@ public class CrmGatewayController {
         InputStream is = crmImageClient.getImageByName(imageName);
         return new StreamedFile(is,imageName);
     }
-
-    @Secured(SecurityRule.IS_ANONYMOUS)
+    
     @Get("/imageset/{+imagePath}")
     StreamedFile imageByPath(String imagePath) throws IOException {
         InputStream is = crmImageClient.getImageByPath(imagePath);
