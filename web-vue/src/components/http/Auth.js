@@ -1,13 +1,14 @@
 const API_URL = (process.env.VUE_APP_AUTH_URL ? process.env.VUE_APP_AUTH_URL : "/");
 const LOGIN_URL = API_URL + 'login';
-const TOKEN_KEY = "jwt";
-const DETAILS_KEY = "auth-details";
+
+export const TOKEN_KEY = "jwt";
+export const DETAILS_KEY = "auth-details";
 
 export default {
 
     login(context, credentials) {
         this.clearToken();
-        context.$http.post(LOGIN_URL, credentials)
+        return context.$http.post(LOGIN_URL, credentials)
             .then(
                 (response) => {
                     localStorage.setItem(TOKEN_KEY, response.body.access_token);
@@ -25,14 +26,11 @@ export default {
 
     clearToken() {
         localStorage.removeItem(TOKEN_KEY);
+        localStorage.removeItem(DETAILS_KEY);
     },
 
     isAuthenticated() {
         return localStorage.getItem(TOKEN_KEY) != null;
-    },
-
-    getAuthHeader() {
-        return 'Bearer ' + localStorage.getItem(TOKEN_KEY);
     },
 
     getAuthDetails() {
@@ -42,3 +40,4 @@ export default {
         return JSON.parse(localStorage.getItem(DETAILS_KEY));
     }
 }
+
