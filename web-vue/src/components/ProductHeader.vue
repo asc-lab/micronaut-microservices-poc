@@ -4,7 +4,6 @@
 
                 <b-carousel-slide v-bind:img-src="imageUrl">
                     <h1>{{productTitle}}</h1>
-                    <h2>{{productImageUrl}}</h2>
                     <span v-html="productShortDescription"></span>
                 </b-carousel-slide>
 
@@ -24,15 +23,27 @@
             productShortDescription: String,
             productImageUrl: String
         },
+        computed: {
+            image: function() {
+                if (imageUrl) return imageUrl;
+
+                return defaultImageUrl;
+            }
+        },
         components: { },
         data() {
             return {
-                imageUrl: "https://picsum.photos/1024/480/?image=54"
+                defaultImageUrl: "https://picsum.photos/1024/480/?image=54",
+                imageUrl: null
             };
         },
         created: function () {
             HTTP.get('crm/imageset' + this.productImageUrl, { responseType: 'blob' }).then(response => {
                 this.x = response;
+                console.log(response);
+                var url = window.URL.createObjectURL(response.data);
+                console.log(url);
+                this.imageUrl = url;
             });
         }
     }
