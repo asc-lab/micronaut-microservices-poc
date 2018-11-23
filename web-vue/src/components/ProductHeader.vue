@@ -31,10 +31,7 @@
             };
         },
         created: function () {
-            //HTTP.get('crm/productHeaders').then(response => {
-            //    this.productsHeaders = response.data;
-            //});
-            HTTP.get('crm/imageset' + this.productImageUrl).then(response => {
+            HTTP.get('crm/imageset' + this.productImageUrl, { responseType: 'blob' }).then(response => {
                 this.x = response;
             });
         }

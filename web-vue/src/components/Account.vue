@@ -60,7 +60,6 @@
                     password: this.credentials.password
                 };
                 auth.login(this, credentials);
-                this.$router.push('/');
             },
             logout() {
                 auth.logout();

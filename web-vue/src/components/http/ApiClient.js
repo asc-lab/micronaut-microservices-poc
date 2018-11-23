@@ -8,9 +8,13 @@ export const HTTP = axios.create({
     }
 });
 
-HTTP.interceptors.request.use((request) => {
-    request.headers.Authorization = 'Bearer ' + localStorage.getItem("jwt");
-});
+HTTP.interceptors.request.use(
+    (request) => {
+        request.headers.Authorization = 'Bearer ' + localStorage.getItem("jwt");
+        return request;
+    },
+    (error) => Promise.reject(error)
+);
 
 HTTP.interceptors.response.use(
     (response) => {
@@ -19,8 +23,8 @@ HTTP.interceptors.response.use(
     (error) => {
         console.log(error.response.status);
         if (error.response.status === 401 || error.response.status === 403) {
-            auth.clearToken();
-            window.location.href = '/#/account';
+            //auth.clearToken();
+            //window.location.href = '/#/account';
         }
     }
 );

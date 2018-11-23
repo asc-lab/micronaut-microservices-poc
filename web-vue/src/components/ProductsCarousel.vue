@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    //import {HTTP} from "./http/ApiClient";
+    import {HTTP} from "./http/ApiClient";
     import ProductHeader from "./ProductHeader"
 
     export default {
@@ -38,9 +38,9 @@
             };
         },
         created: function () {
-            //HTTP.get('crm/productHeaders').then(response => {
-            //    this.productsHeaders = response.data;
-            //});
+            HTTP.get('crm/productHeaders').then(response => {
+                this.productsHeaders = response.data;
+            });
         }
     }
 </script>
