@@ -12,3 +12,5 @@ az aks get-credentials \
     --resource-group=${RESOURCE_GROUP} \
     --name=${CLUSTER} \
     --overwrite-existing
+
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
