@@ -31,6 +31,28 @@ definitions:
             hipposysedit:path: minicms:description
             hipposysedit:primary: false
             hipposysedit:type: Html
+        /hipposysedit:nodetype[2]:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 17156f65-083d-4ffe-a1bf-8a5a2b74c077
+          hipposysedit:node: true
+          hipposysedit:supertype: ['minicms:basedocument', 'hippostd:relaxed', 'hippotranslation:translated']
+          /name:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:name
+            hipposysedit:primary: false
+            hipposysedit:type: Html
+          /description:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: minicms:description
+            hipposysedit:primary: false
+            hipposysedit:type: Html
       /hipposysedit:prototypes:
         jcr:primaryType: hipposysedit:prototypeset
         /hipposysedit:prototype:
@@ -47,6 +69,21 @@ definitions:
           jcr:uuid: 1c2982ac-58c3-4267-9133-e07429110ad4
           hippostdpubwf:lastModificationDate: 2018-11-06T10:28:15.345+01:00
           hippostdpubwf:creationDate: 2018-11-06T10:28:15.346+01:00
+        /hipposysedit:prototype[2]:
+          jcr:primaryType: nt:unstructured
+          jcr:mixinTypes: ['hippostd:publishableSummary', 'hippostd:relaxed', 'hippostdpubwf:document',
+            'hippotranslation:translated', 'mix:referenceable']
+          jcr:uuid: 3a8df921-da48-4605-8945-08b088a1f1b0
+          hippostd:holder: holder
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:creationDate: 2018-11-06T10:28:15.346+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-06T10:28:15.345+01:00
+          hippostdpubwf:lastModifiedBy: ''
+          hippotranslation:id: document-type-locale-id
+          hippotranslation:locale: document-type-locale
+          minicms:description: ''
+          minicms:name: ''
       /editor:templates:
         jcr:primaryType: editor:templateset
         /_default_:

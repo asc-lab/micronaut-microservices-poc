@@ -38,11 +38,7 @@ export default {
                 for (var index = 0; index < links.length; index++) {
                     //links where name = data-hippo-link
                     var linkName = links[index].getAttribute('data-hippo-link');
-                    for (var j=0;j<response.data.links.length; j++) {
-                        if (response.data.links[j].name === linkName) {
-                            links[index].src =  imagesHanlderUrl + linkName;
-                        }
-                    }
+                    links[index].src =  imagesHanlderUrl + linkName;
                 }
                 return someElement.innerHTML;
             }

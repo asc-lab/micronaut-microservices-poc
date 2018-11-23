@@ -34,3 +34,6 @@
 [minicms:product] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
   orderable
 
+[minicms:productHeader] > hippostd:relaxed, hippotranslation:translated, minicms:basedocument
+  orderable
+

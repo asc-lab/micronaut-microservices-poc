@@ -1,0 +1,116 @@
+/content/gallery/minicms/productheaderimages:
+  jcr:primaryType: hippogallery:stdImageGallery
+  jcr:mixinTypes: ['hippo:named', 'mix:versionable']
+  jcr:uuid: 70f26d11-12b5-4089-b619-cbfa614d4626
+  hippo:name: productHeaderImages
+  hippostd:foldertype: [new-image-folder]
+  hippostd:gallerytype: ['hippogallery:imageset']
+  /car.jpg:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 5a605e0f-a10c-44ef-b002-a52573d84b58
+    /car.jpg:
+      jcr:primaryType: hippogallery:imageset
+      hippo:availability: [live, preview]
+      hippogallery:description: ''
+      hippogallery:filename: car.jpg
+      /hippogallery:thumbnail:
+        jcr:primaryType: hippogallery:image
+        hippo:filename: car.jpg
+        hippogallery:height: 39
+        hippogallery:width: 60
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/car.jpg/car_thumbnail.jpg
+        jcr:lastModified: 2018-11-22T09:05:26.869+01:00
+        jcr:mimeType: image/jpeg
+      /hippogallery:original:
+        jcr:primaryType: hippogallery:image
+        hippogallery:height: 333
+        hippogallery:width: 500
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/car.jpg/car_original.jpg
+        jcr:lastModified: 2018-11-22T09:05:26.869+01:00
+        jcr:mimeType: image/jpeg
+  /farm.jpg:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: a581d74f-f271-4323-a882-0fc55831dea6
+    /farm.jpg:
+      jcr:primaryType: hippogallery:imageset
+      hippo:availability: [live, preview]
+      hippogallery:filename: farm.jpg
+      /hippogallery:thumbnail:
+        jcr:primaryType: hippogallery:image
+        hippo:filename: farm.jpg
+        hippogallery:height: 39
+        hippogallery:width: 60
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/farm.jpg/farm_thumbnail.jpg
+        jcr:lastModified: 2018-11-22T09:05:27.102+01:00
+        jcr:mimeType: image/jpeg
+      /hippogallery:original:
+        jcr:primaryType: hippogallery:image
+        hippogallery:height: 333
+        hippogallery:width: 500
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/farm.jpg/farm_original.jpg
+        jcr:lastModified: 2018-11-22T09:05:27.102+01:00
+        jcr:mimeType: image/jpeg
+  /house.jpg:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 00aff3e0-3911-4527-a657-a2956e6e1498
+    /house.jpg:
+      jcr:primaryType: hippogallery:imageset
+      hippo:availability: [live, preview]
+      hippogallery:filename: house.jpg
+      /hippogallery:thumbnail:
+        jcr:primaryType: hippogallery:image
+        hippo:filename: house.jpg
+        hippogallery:height: 45
+        hippogallery:width: 60
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/house.jpg/house_thumbnail.jpg
+        jcr:lastModified: 2018-11-22T09:05:27.243+01:00
+        jcr:mimeType: image/jpeg
+      /hippogallery:original:
+        jcr:primaryType: hippogallery:image
+        hippogallery:height: 375
+        hippogallery:width: 500
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/house.jpg/house_original.jpg
+        jcr:lastModified: 2018-11-22T09:05:27.243+01:00
+        jcr:mimeType: image/jpeg
+  /travel.jpg:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 97e036f5-1fb5-4ca0-b3a3-5ea7f4159843
+    /travel.jpg:
+      jcr:primaryType: hippogallery:imageset
+      hippo:availability: [live, preview]
+      hippogallery:filename: travel.jpg
+      /hippogallery:thumbnail:
+        jcr:primaryType: hippogallery:image
+        hippo:filename: travel.jpg
+        hippogallery:height: 40
+        hippogallery:width: 60
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/travel.jpg/travel_thumbnail.jpg
+        jcr:lastModified: 2018-11-22T09:05:27.322+01:00
+        jcr:mimeType: image/jpeg
+      /hippogallery:original:
+        jcr:primaryType: hippogallery:image
+        hippogallery:height: 334
+        hippogallery:width: 500
+        jcr:data:
+          type: binary
+          resource: /content/gallery/minicms/productheaderimages/travel.jpg/travel_original.jpg
+        jcr:lastModified: 2018-11-22T09:05:27.322+01:00
+        jcr:mimeType: image/jpeg

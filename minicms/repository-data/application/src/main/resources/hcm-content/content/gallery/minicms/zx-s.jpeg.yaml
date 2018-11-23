@@ -7,6 +7,7 @@
   /zx-s.jpeg:
     jcr:primaryType: hippogallery:imageset
     hippo:availability: [live, preview]
+    hippogallery:description: ''
     hippogallery:filename: zx s.jpeg
     /hippogallery:thumbnail:
       jcr:primaryType: hippogallery:image

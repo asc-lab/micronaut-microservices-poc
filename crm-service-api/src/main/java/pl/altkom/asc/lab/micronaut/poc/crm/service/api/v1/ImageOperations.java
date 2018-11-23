@@ -7,5 +7,8 @@ import java.io.InputStream;
 
 public interface ImageOperations {
     @Get("/{imageName}")
-    InputStream getImage(String imageName) throws IOException;
+    InputStream getImageByName(String imageName) throws IOException;
+
+    @Get("/imageset/{+path}")
+    InputStream getImageByPath(String path) throws IOException;
 }

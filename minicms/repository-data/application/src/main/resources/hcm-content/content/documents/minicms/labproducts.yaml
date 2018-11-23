@@ -1,0 +1,371 @@
+/content/documents/minicms/labproducts:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: 50ed4ef0-9558-4658-9ce2-204aff9f92d2
+  hippo:name: labProducts
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 31de93d7-7cc8-408b-a44e-a9aefef35422
+  hippotranslation:locale: en
+  /tri:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: a65ccd38-1153-4b0a-8a0c-4c01b4b38e1e
+    hippo:name: TRI
+    /tri[1]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 41940d19-e3cd-4b7b-980e-86030389d626
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:37:14.749+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:37:14.749+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 23d909f1-9651-435d-9cc6-f412ecdd484e
+      hippotranslation:locale: en
+      minicms:code: TRI
+      minicms:title: Safe Travel
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 97e036f5-1fb5-4ca0-b3a3-5ea7f4159843
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur
+          adipiscing elit. Proin fermentum, ipsum eu commodo vulputate, augue est
+          volutpat arcu, ac finibus augue velit sit amet nulla. Sed in ultricies nisi.
+          Quisque egestas odio nisl, ut porta augue ultrices eget. Nam erat mi, congue
+          a varius fermentum, vulputate ac velit. Nunc ullamcorper sollicitudin risus
+          ut <em>ullamcorper</em>.</p>
+    /tri[2]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+      jcr:uuid: 007b33c8-ec3e-4fa2-a51a-c7a1959963f5
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:37:14.749+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:38:33.474+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 23d909f1-9651-435d-9cc6-f412ecdd484e
+      hippotranslation:locale: en
+      minicms:code: TRI
+      minicms:title: Safe Travel
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 97e036f5-1fb5-4ca0-b3a3-5ea7f4159843
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur
+          adipiscing elit. Proin fermentum, ipsum eu commodo vulputate, augue est
+          volutpat arcu, ac finibus augue velit sit amet nulla. Sed in ultricies nisi.
+          Quisque egestas odio nisl, ut porta augue ultrices eget. Nam erat mi, congue
+          a varius fermentum, vulputate ac velit. Nunc ullamcorper sollicitudin risus
+          ut <em>ullamcorper</em>.</p>
+    /tri[3]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: f406c785-fbd6-4957-b733-2e3bc7f3b0ec
+      hippo:availability: [live]
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:37:14.749+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:38:33.474+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2018-11-22T09:38:36.100+01:00
+      hippotranslation:id: 23d909f1-9651-435d-9cc6-f412ecdd484e
+      hippotranslation:locale: en
+      minicms:code: TRI
+      minicms:title: Safe Travel
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 97e036f5-1fb5-4ca0-b3a3-5ea7f4159843
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur
+          adipiscing elit. Proin fermentum, ipsum eu commodo vulputate, augue est
+          volutpat arcu, ac finibus augue velit sit amet nulla. Sed in ultricies nisi.
+          Quisque egestas odio nisl, ut porta augue ultrices eget. Nam erat mi, congue
+          a varius fermentum, vulputate ac velit. Nunc ullamcorper sollicitudin risus
+          ut <em>ullamcorper</em>.</p>
+  /hsi:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: 38d6f8f8-c1f3-40c5-ac40-5088b6e42e83
+    hippo:name: HSI
+    /hsi[1]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 4fa2e7d7-59cc-42bb-abb0-15b71f08f016
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:43:25.617+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:43:25.617+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: f03d48f1-1c6e-4d96-bfe6-b443a8c326d5
+      hippotranslation:locale: en
+      minicms:code: HSI
+      minicms:title: Happy House
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 00aff3e0-3911-4527-a657-a2956e6e1498
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin fermentum, ipsum eu commodo vulputate, augue est volutpat arcu, ac
+          finibus augue velit sit amet nulla. Sed in ultricies nisi.<strong> Quisque
+          egestas odio nisl, ut porta </strong>augue ultrices eget. Nam erat mi, congue
+          a varius fermentum, vulputate ac velit. Nunc ullamcorper sollicitudin risus
+          ut ullamcorper. <em>Morbi euismod interdum sem, suscipit sollicitudin nisl.
+          Nunc a malesuada ante. Nunc tempor massa quam, a venenatis libero molestie
+          condimentum. Integer tellus risus, tincidunt non dictum et, facilisis eu
+          magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi
+          placerat magna semper, lacinia massa ac, faucibus metus. Ut consectetur
+          nisl sit amet libero mattis blandit.&nbsp;</em></p>
+    /hsi[2]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+      jcr:uuid: 192a690a-8989-427d-bfbd-ed5803dc6076
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:43:25.617+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:44:12.964+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: f03d48f1-1c6e-4d96-bfe6-b443a8c326d5
+      hippotranslation:locale: en
+      minicms:code: HSI
+      minicms:title: Happy House
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 00aff3e0-3911-4527-a657-a2956e6e1498
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin fermentum, ipsum eu commodo vulputate, augue est volutpat arcu, ac
+          finibus augue velit sit amet nulla. Sed in ultricies nisi.<strong> Quisque
+          egestas odio nisl, ut porta </strong>augue ultrices eget. Nam erat mi, congue
+          a varius fermentum, vulputate ac velit. Nunc ullamcorper sollicitudin risus
+          ut ullamcorper. <em>Morbi euismod interdum sem, suscipit sollicitudin nisl.
+          Nunc a malesuada ante. Nunc tempor massa quam, a venenatis libero molestie
+          condimentum. Integer tellus risus, tincidunt non dictum et, facilisis eu
+          magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi
+          placerat magna semper, lacinia massa ac, faucibus metus. Ut consectetur
+          nisl sit amet libero mattis blandit.&nbsp;</em></p>
+    /hsi[3]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 3589044a-d6a3-4645-8f08-0db2aca19d31
+      hippo:availability: [live]
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:43:25.617+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:44:12.964+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2018-11-22T09:44:15.496+01:00
+      hippotranslation:id: f03d48f1-1c6e-4d96-bfe6-b443a8c326d5
+      hippotranslation:locale: en
+      minicms:code: HSI
+      minicms:title: Happy House
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 00aff3e0-3911-4527-a657-a2956e6e1498
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Proin fermentum, ipsum eu commodo vulputate, augue est volutpat arcu, ac
+          finibus augue velit sit amet nulla. Sed in ultricies nisi.<strong> Quisque
+          egestas odio nisl, ut porta </strong>augue ultrices eget. Nam erat mi, congue
+          a varius fermentum, vulputate ac velit. Nunc ullamcorper sollicitudin risus
+          ut ullamcorper. <em>Morbi euismod interdum sem, suscipit sollicitudin nisl.
+          Nunc a malesuada ante. Nunc tempor massa quam, a venenatis libero molestie
+          condimentum. Integer tellus risus, tincidunt non dictum et, facilisis eu
+          magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi
+          placerat magna semper, lacinia massa ac, faucibus metus. Ut consectetur
+          nisl sit amet libero mattis blandit.&nbsp;</em></p>
+  /fai:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: 755a971d-2bbb-446b-ac74-044db328b155
+    hippo:name: FAI
+    /fai[1]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: e7eec8d2-31ad-44a4-9950-1f345ad72ba5
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:44:31.367+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:44:31.367+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: a342378f-892f-4208-8ace-98533ada4805
+      hippotranslation:locale: en
+      minicms:code: FAI
+      minicms:title: Happy Farm
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: a581d74f-f271-4323-a882-0fc55831dea6
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Ut consectetur nisl sit amet libero mattis blandit. Duis
+          ultricies, turpis ut lacinia condimentum, leo sem suscipit nisi, at tincidunt
+          nibh felis non libero. Vivamus vestibulum mollis quam, sed tempus metus
+          volutpat ut. Duis quis auctor felis, a molestie nisi. Duis sed neque tortor.</p>
+    /fai[2]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+      jcr:uuid: 61e36b22-63dc-4e9e-a0c5-f85ecec526b1
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:44:31.367+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:45:01.263+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: a342378f-892f-4208-8ace-98533ada4805
+      hippotranslation:locale: en
+      minicms:code: FAI
+      minicms:title: Happy Farm
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: a581d74f-f271-4323-a882-0fc55831dea6
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Ut consectetur nisl sit amet libero mattis blandit. Duis
+          ultricies, turpis ut lacinia condimentum, leo sem suscipit nisi, at tincidunt
+          nibh felis non libero. Vivamus vestibulum mollis quam, sed tempus metus
+          volutpat ut. Duis quis auctor felis, a molestie nisi. Duis sed neque tortor.</p>
+    /fai[3]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 55827ff8-d22d-4e10-94de-ca9dd69f6f06
+      hippo:availability: [live]
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:44:31.367+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:45:01.263+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2018-11-22T09:45:03.399+01:00
+      hippotranslation:id: a342378f-892f-4208-8ace-98533ada4805
+      hippotranslation:locale: en
+      minicms:code: FAI
+      minicms:title: Happy Farm
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: a581d74f-f271-4323-a882-0fc55831dea6
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Ut consectetur nisl sit amet libero mattis blandit. Duis
+          ultricies, turpis ut lacinia condimentum, leo sem suscipit nisi, at tincidunt
+          nibh felis non libero. Vivamus vestibulum mollis quam, sed tempus metus
+          volutpat ut. Duis quis auctor felis, a molestie nisi. Duis sed neque tortor.</p>
+  /car:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: 675e6d61-ed03-4af7-9b0e-de8d13a83926
+    hippo:name: CAR
+    /car[1]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: eb40bf87-7e21-4292-b853-155e24321361
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:45:20.208+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:45:20.208+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: c05aea3f-3a6e-4794-9768-2a8cd0933eb3
+      hippotranslation:locale: en
+      minicms:code: CAR
+      minicms:title: Happy Driver
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 5a605e0f-a10c-44ef-b002-a52573d84b58
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>&nbsp;Nunc tempor massa quam, a venenatis libero molestie
+          condimentum. Integer tellus risus, <strong>tincidunt</strong> non dictum
+          et, facilisis eu magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus.&nbsp;</p>
+    /car[2]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+      jcr:uuid: 8c969bc9-8661-4e9c-85c0-ec1996d573a2
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:45:20.208+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:45:55.297+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: c05aea3f-3a6e-4794-9768-2a8cd0933eb3
+      hippotranslation:locale: en
+      minicms:code: CAR
+      minicms:title: Happy Driver
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 5a605e0f-a10c-44ef-b002-a52573d84b58
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>&nbsp;Nunc tempor massa quam, a venenatis libero molestie
+          condimentum. Integer tellus risus, <strong>tincidunt</strong> non dictum
+          et, facilisis eu magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus.&nbsp;</p>
+    /car[3]:
+      jcr:primaryType: minicms:productHeader
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: dcd386c6-3ed8-428e-b0dc-d79b61225798
+      hippo:availability: [live]
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-11-22T09:45:20.208+01:00
+      hippostdpubwf:lastModificationDate: 2018-11-22T09:45:55.297+01:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2018-11-22T09:45:58.389+01:00
+      hippotranslation:id: c05aea3f-3a6e-4794-9768-2a8cd0933eb3
+      hippotranslation:locale: en
+      minicms:code: CAR
+      minicms:title: Happy Driver
+      /minicms:mainPicture:
+        jcr:primaryType: hippogallerypicker:imagelink
+        hippo:docbase: 5a605e0f-a10c-44ef-b002-a52573d84b58
+        hippo:facets: []
+        hippo:modes: []
+        hippo:values: []
+      /minicms:shortDescription:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>&nbsp;Nunc tempor massa quam, a venenatis libero molestie
+          condimentum. Integer tellus risus, <strong>tincidunt</strong> non dictum
+          et, facilisis eu magna. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus.&nbsp;</p>

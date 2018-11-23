@@ -1,4 +1,5 @@
 /content/documents/minicms/microservices:
+  .meta:order-before: labproducts
   jcr:primaryType: hippo:handle
   jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
   jcr:uuid: 158c659a-87cc-4c2a-a731-8c735f1067aa

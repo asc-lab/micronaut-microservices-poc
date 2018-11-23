@@ -27,3 +27,10 @@ definitions:
             hst:ismapped: false
             hst:namedpipeline: RestApiPipeline
             hst:types: [rest]
+          /api-custom:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:mount
+            hst:alias: api-custom
+            hst:ismapped: false
+            hst:namedpipeline: JaxrsRestPlainPipeline
+            hst:types: [rest]

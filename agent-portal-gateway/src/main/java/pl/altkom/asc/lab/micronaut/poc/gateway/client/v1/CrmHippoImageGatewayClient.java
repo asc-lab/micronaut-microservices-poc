@@ -16,11 +16,20 @@ public class CrmHippoImageGatewayClient implements ImageOperations {
     }
 
     @Override
-    public InputStream getImage(String imageName) throws IOException {
+    public InputStream getImageByName(String imageName) throws IOException {
         return new BufferedInputStream(
                 new URL(config.getUrl() +
                         "/site/binaries/content/gallery/minicms/" +
                         imageName)
+                        .openStream());
+    }
+
+    @Override
+    public InputStream getImageByPath(String path) throws IOException {
+        return new BufferedInputStream(
+                new URL(config.getUrl() +
+                        "/site/binaries/" +
+                        path)
                         .openStream());
     }
 }

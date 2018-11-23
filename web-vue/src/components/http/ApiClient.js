@@ -8,6 +8,10 @@ export const HTTP = axios.create({
     }
 });
 
+HTTP.interceptors.request.use((request) => {
+    request.headers.Authorization = 'Bearer ' + localStorage.getItem("jwt");
+});
+
 HTTP.interceptors.response.use(
     (response) => {
         return response;

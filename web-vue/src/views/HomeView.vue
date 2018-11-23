@@ -1,16 +1,16 @@
 <template>
     <div>
-        <Home msg="Welcome to LAB Insurance Sales Portal"/>
+        <ProductsCarousel/>
     </div>
 </template>
 
 <script>
-    import Home from '@/components/Home.vue'
+    import ProductsCarousel from '@/components/ProductsCarousel.vue'
 
     export default {
         name: 'home',
         components: {
-            Home
+            ProductsCarousel
         }
     }
 </script>

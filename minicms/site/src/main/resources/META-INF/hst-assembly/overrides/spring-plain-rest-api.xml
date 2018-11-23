@@ -13,12 +13,7 @@
       <list>
         <bean class="org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider">
           <constructor-arg>
-            <bean class="com.asc.lab.minicms.rest.InsuranceResource"/>
-          </constructor-arg>
-        </bean>
-        <bean class="org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider">
-          <constructor-arg>
-            <bean class="com.asc.lab.minicms.rest.ProductResource"/>
+            <bean class="com.asc.lab.minicms.rest.ProductHeaderResource"/>
           </constructor-arg>
         </bean>
       </list>
