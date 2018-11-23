@@ -1,14 +1,12 @@
 <template>
     <div>
-        
-
                 <b-carousel-slide v-bind:img-src="imageUrl">
                     <h1>{{productTitle}}</h1>
                     <span v-html="productShortDescription"></span>
+                    <router-link :to="{name: 'product', params: { productCode: productCode }}">
+                        <b-button type="submit" variant="primary">Buy</b-button>
+                    </router-link>
                 </b-carousel-slide>
-
-        
-
     </div>
 </template>
 
