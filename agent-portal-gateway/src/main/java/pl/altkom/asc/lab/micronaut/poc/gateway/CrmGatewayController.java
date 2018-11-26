@@ -2,11 +2,15 @@ package pl.altkom.asc.lab.micronaut.poc.gateway;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.QueryValue;
 import io.micronaut.http.server.types.files.StreamedFile;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.rules.SecurityRule;
 import io.reactivex.Maybe;
+
+import javax.annotation.Nullable;
 import javax.inject.Inject;
+import javax.validation.constraints.Null;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
@@ -26,9 +30,14 @@ public class CrmGatewayController {
     @Inject
     private ProductHeaderOperations crmProductHeaderOperations;
     
-    @Get("/blogposts")
-    Maybe<BlogPostsPage> blogPosts() {
-    return crmBlogClient.getBlogPosts(0,100);
+    @Get("/blogposts{?pageNumber,pageSize,searchPhrase}")
+    Maybe<BlogPostsPage> blogPosts(@Nullable Integer pageNumber, @Nullable Integer pageSize, @Nullable String searchPhrase) {
+        BlogPostsPageRequest pageRequest = BlogPostsPageRequest.builder()
+                .pageNumber(pageNumber!=null ? pageNumber : 0)
+                .pageSize(pageSize!= null ? pageSize : 2)
+                .searchPhrase(searchPhrase!=null ? searchPhrase : "")
+                .build();
+        return crmBlogClient.getBlogPosts(pageRequest);
     }
 
     @Get("/blogposts/{postId}")
@@ -45,7 +54,7 @@ public class CrmGatewayController {
         InputStream is = crmImageClient.getImageByName(imageName);
         return new StreamedFile(is,imageName);
     }
-    
+
     @Get("/imageset/{+imagePath}")
     StreamedFile imageByPath(String imagePath) throws IOException {
         InputStream is = crmImageClient.getImageByPath(imagePath);

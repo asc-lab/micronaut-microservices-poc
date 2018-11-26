@@ -12,10 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Singleton;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogOperations;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogPostDetails;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogPostsPage;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.CrmLink;
+
+import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.*;
 
 @Singleton
 public class CrmHippoBlogGatewayClient implements BlogOperations {
@@ -26,11 +24,14 @@ public class CrmHippoBlogGatewayClient implements BlogOperations {
     }
     
     @Override
-    public Maybe<BlogPostsPage> getBlogPosts(int pageNumber, int postsPerPage) {
+    public Maybe<BlogPostsPage> getBlogPosts(BlogPostsPageRequest pageRequest) {
         Map<String,Object> params = new HashMap<String, Object>();
-        params.put("offset", pageNumber * postsPerPage);
-        params.put("max", postsPerPage);
-        String path = "/site/api/documents?_nodetype=minicms:blogpost&_offset={offset}&_max{max}";
+        params.put("offset", pageRequest.getPageNumber() * pageRequest.getPageSize());
+        params.put("max", pageRequest.getPageSize());
+        if (pageRequest.getSearchPhrase()!=null) {
+            params.put("query",pageRequest.getSearchPhrase());
+        }
+        String path = "/site/api/documents?_nodetype=minicms:blogpost&_offset={offset}&_max={max}&_query={query}";
         String uri = UriTemplate.of(path).expand(params);
         HttpRequest<?> req = HttpRequest.GET(uri);  
         return httpClient.retrieve(req, Argument.of(BlogPostsPage.class)).firstElement();

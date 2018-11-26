@@ -5,8 +5,8 @@ import io.reactivex.Maybe;
 
 public interface BlogOperations {
 
-    @Get
-    Maybe<BlogPostsPage> getBlogPosts(int pageNumber, int postsPerPage);
+    @Get("/{?pageNumber,pageSize,searchPhrase}")
+    Maybe<BlogPostsPage> getBlogPosts(BlogPostsPageRequest pageRequest);
 
     @Get("/{postId}")
     Maybe<BlogPostDetails> getBlogPost(String postId);

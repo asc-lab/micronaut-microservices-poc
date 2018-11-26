@@ -355,6 +355,198 @@
           /minicms:authors:
             jcr:primaryType: hippo:mirror
             hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+      /vue-conditional-rendering:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 9576b61d-fe03-42a0-82b9-71d32b9e79cf
+        hippo:name: vue conditional rendering
+        /vue-conditional-rendering[1]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 1cc3fe3b-1753-4a08-a264-aa76b63d5c2e
+          hippo:availability: []
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-26T09:31:12.648+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-26T09:31:12.649+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 5aa19980-7016-46cf-bfac-a918f6a284d4
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms]
+          minicms:introduction: This post describes how you can use conditional rendering
+            in vue
+          minicms:publicationdate: 2018-11-26T09:32:00+01:00
+          minicms:title: Vue conditional rendering
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>Because&nbsp;v-if&nbsp;is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use&nbsp;v-if&nbsp;on a&nbsp;&lt;template&gt;&nbsp;element, which serves as an invisible wrapper. The final rendered result will not include the&nbsp;&lt;template&gt;&nbsp;element.</p>
+
+              <p>&nbsp;</p>
+
+              <pre>
+              &lt;template v-if="ok"&gt;
+                &lt;h1&gt;Title&lt;/h1&gt;
+                &lt;p&gt;Paragraph 1&lt;/p&gt;
+                &lt;p&gt;Paragraph 2&lt;/p&gt;
+              &lt;/template&gt;</pre>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /vue-conditional-rendering[2]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 24c50d0d-7ad7-4cc0-9d6d-fc158a3bc81a
+          hippo:availability: [preview]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-26T09:31:12.648+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-26T09:32:47.045+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 5aa19980-7016-46cf-bfac-a918f6a284d4
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms]
+          minicms:introduction: This post describes how you can use conditional rendering
+            in vue
+          minicms:publicationdate: 2018-11-26T09:32:00+01:00
+          minicms:title: Vue conditional rendering
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>Because&nbsp;v-if&nbsp;is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use&nbsp;v-if&nbsp;on a&nbsp;&lt;template&gt;&nbsp;element, which serves as an invisible wrapper. The final rendered result will not include the&nbsp;&lt;template&gt;&nbsp;element.</p>
+
+              <p>&nbsp;</p>
+
+              <pre>
+              &lt;template v-if="ok"&gt;
+                &lt;h1&gt;Title&lt;/h1&gt;
+                &lt;p&gt;Paragraph 1&lt;/p&gt;
+                &lt;p&gt;Paragraph 2&lt;/p&gt;
+              &lt;/template&gt;</pre>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /vue-conditional-rendering[3]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 5ce78143-9c3d-41f7-96be-50c961e70360
+          hippo:availability: [live]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-26T09:31:12.648+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-26T09:32:47.045+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2018-11-26T09:32:50.956+01:00
+          hippotranslation:id: 5aa19980-7016-46cf-bfac-a918f6a284d4
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [cms]
+          minicms:introduction: This post describes how you can use conditional rendering
+            in vue
+          minicms:publicationdate: 2018-11-26T09:32:00+01:00
+          minicms:title: Vue conditional rendering
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <p>Because&nbsp;v-if&nbsp;is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use&nbsp;v-if&nbsp;on a&nbsp;&lt;template&gt;&nbsp;element, which serves as an invisible wrapper. The final rendered result will not include the&nbsp;&lt;template&gt;&nbsp;element.</p>
+
+              <p>&nbsp;</p>
+
+              <pre>
+              &lt;template v-if="ok"&gt;
+                &lt;h1&gt;Title&lt;/h1&gt;
+                &lt;p&gt;Paragraph 1&lt;/p&gt;
+                &lt;p&gt;Paragraph 2&lt;/p&gt;
+              &lt;/template&gt;</pre>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+      /monoliths-vs-microservices:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 646d219f-44dc-4ca5-b47b-0b42a052c9a0
+        hippo:name: Monoliths vs microservices
+        /monoliths-vs-microservices[1]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: fa338da3-de11-429f-aff6-35ad463c53a5
+          hippo:availability: []
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-26T09:35:48.474+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-26T09:35:48.474+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: c19cf568-afca-4f0b-9a7a-6442c7452360
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [life]
+          minicms:introduction: See diagram below to see difference :)
+          minicms:publicationdate: 2018-11-26T09:36:00+01:00
+          minicms:title: Monolith vs microservices
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: <p><img src="https://cdn-images-1.medium.com/max/800/0*HsR5CuFOMQet_9U4.png"
+              /></p>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /monoliths-vs-microservices[2]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: a1e4669f-579f-4296-bc41-6d2e11c6b851
+          hippo:availability: [preview]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-26T09:35:48.474+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-26T09:37:20.908+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: c19cf568-afca-4f0b-9a7a-6442c7452360
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [life]
+          minicms:introduction: See diagram below to see difference :)
+          minicms:publicationdate: 2018-11-26T09:36:00+01:00
+          minicms:title: Monolith vs microservices
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: <p><img src="https://cdn-images-1.medium.com/max/800/0*HsR5CuFOMQet_9U4.png"
+              /></p>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
+        /monoliths-vs-microservices[3]:
+          jcr:primaryType: minicms:blogpost
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 9f0c28a7-8929-4368-b464-febd5b1982e3
+          hippo:availability: [live]
+          hippo:related___pathreference: blogpost/hipposysedit:prototypes
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2018-11-26T09:35:48.474+01:00
+          hippostdpubwf:lastModificationDate: 2018-11-26T09:37:20.908+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2018-11-26T09:37:25.821+01:00
+          hippotranslation:id: c19cf568-afca-4f0b-9a7a-6442c7452360
+          hippotranslation:locale: en
+          minicms:authornames: ['']
+          minicms:categories: [life]
+          minicms:introduction: See diagram below to see difference :)
+          minicms:publicationdate: 2018-11-26T09:36:00+01:00
+          minicms:title: Monolith vs microservices
+          /minicms:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: <p><img src="https://cdn-images-1.medium.com/max/800/0*HsR5CuFOMQet_9U4.png"
+              /></p>
+          /minicms:authors:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: e2847966-61b4-407b-8f9e-d8e0849d3cae
   /account-types:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['mix:referenceable']
