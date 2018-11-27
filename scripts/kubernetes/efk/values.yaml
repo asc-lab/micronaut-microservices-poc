@@ -1,0 +1,29 @@
+# Customized version of: https://github.com/helm/charts/blob/master/stable/elastic-stack/values.yaml
+
+kibana:
+  env:
+    ELASTICSEARCH_URL: http://elk-elasticsearch-client.default.svc.cluster.local:9200
+
+logstash:
+  enabled: false
+
+filebeat:
+  enabled: false
+
+fluentd:
+  enabled: true
+
+fluent-bit:
+  enabled: true
+
+fluentd-elasticsearch:
+  enabled: true
+
+nginx-ldapauth-proxy:
+  enabled: false
+
+elasticsearch-curator:
+  enabled: true
+
+elasticsearch-exporter:
+  enabled: false
