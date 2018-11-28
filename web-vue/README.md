@@ -6,7 +6,7 @@ SPA application built with Vue.js and Bootstrap for Vue.
 
 You must add file ```.env.local``` based on ```.env-example``` .
 <p align="center">
-    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
+    <img alt="env-local" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
 </p>
 
 ## Project setup

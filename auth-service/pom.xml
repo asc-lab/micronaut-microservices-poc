@@ -84,6 +84,29 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- TRACING WITH ZIPKIN -->
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-tracing</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave-instrumentation-http</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing.brave</groupId>
+            <artifactId>brave-opentracing</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!-- TRACING WITH ZIPKIN -->
     </dependencies>
 
     <build>
