@@ -36,11 +36,8 @@
             };
         },
         created: function () {
-            HTTP.get('crm/imageset' + this.productImageUrl, { responseType: 'blob' }).then(response => {
-                this.x = response;
-                console.log(response);
+            HTTP.get('cms/imageset' + this.productImageUrl, { responseType: 'blob' }).then(response => {
                 var url = window.URL.createObjectURL(response.data);
-                console.log(url);
                 this.imageUrl = url;
             });
         }

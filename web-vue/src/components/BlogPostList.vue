@@ -68,7 +68,7 @@
                 this.loadBlogPosts();
             },
             loadBlogPosts() {
-                HTTP.get('crm/blogposts?pageNumber=' + this.currentPage + '&pageSize=' + this.pageSize + '&searchPhrase=' + this.searchPhrase).then(response => {
+                HTTP.get('cms/blogposts?pageNumber=' + this.currentPage + '&pageSize=' + this.pageSize + '&searchPhrase=' + this.searchPhrase).then(response => {
                     this.blogPosts = response.data.items;
                     this.hasMore = response.data.more;
                 });

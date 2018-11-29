@@ -4,9 +4,8 @@ import io.micronaut.core.type.Argument;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.client.RxHttpClient;
 import io.reactivex.Maybe;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.BlogPostsPage;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.ProductHeader;
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.ProductHeaderOperations;
+import pl.altkom.asc.lab.micronaut.poc.cms.service.api.v1.ProductHeader;
+import pl.altkom.asc.lab.micronaut.poc.cms.service.api.v1.ProductHeaderOperations;
 
 import javax.inject.Singleton;
 import java.net.MalformedURLException;
@@ -16,10 +15,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Singleton
-public class CrmHippoProductHeaderGatewayClient implements ProductHeaderOperations {
+public class CmsHippoProductHeaderGatewayClient implements ProductHeaderOperations {
     private final RxHttpClient httpClient;
 
-    public CrmHippoProductHeaderGatewayClient(CrmHippoConfig config) throws MalformedURLException {
+    public CmsHippoProductHeaderGatewayClient(CmsHippoConfig config) throws MalformedURLException {
         this.httpClient = RxHttpClient.create(new URL(config.getUrl()));
     }
     @Override
@@ -28,7 +27,7 @@ public class CrmHippoProductHeaderGatewayClient implements ProductHeaderOperatio
         HttpRequest<?> req = HttpRequest.GET(path);
         return httpClient
                 .retrieve(req, Argument.of(Map.class))
-                .map(doc -> CrmHippoProductHeaderGatewayClient.DocMapper.mapList(doc))
+                .map(doc -> CmsHippoProductHeaderGatewayClient.DocMapper.mapList(doc))
                 .firstElement();
     }
 

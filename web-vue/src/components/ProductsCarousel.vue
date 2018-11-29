@@ -38,7 +38,7 @@
             };
         },
         created: function () {
-            HTTP.get('crm/productHeaders').then(response => {
+            HTTP.get('cms/productHeaders').then(response => {
                 this.productsHeaders = response.data;
             });
         }

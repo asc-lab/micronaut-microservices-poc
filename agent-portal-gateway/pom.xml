@@ -145,7 +145,7 @@
         </dependency>
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
-            <artifactId>crm-service-api</artifactId>
+            <artifactId>cms-service-api</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>

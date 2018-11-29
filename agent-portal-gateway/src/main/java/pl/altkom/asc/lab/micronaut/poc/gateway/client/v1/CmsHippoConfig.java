@@ -2,8 +2,8 @@ package pl.altkom.asc.lab.micronaut.poc.gateway.client.v1;
 
 import io.micronaut.context.annotation.ConfigurationProperties;
 
-@ConfigurationProperties(CrmHippoConfig.PREFIX)
-public class CrmHippoConfig {
+@ConfigurationProperties(CmsHippoConfig.PREFIX)
+public class CmsHippoConfig {
     public static final String PREFIX = "hippocms";
      
     private String url;

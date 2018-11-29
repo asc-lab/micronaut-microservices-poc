@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 import javax.inject.Singleton;
 
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.*;
+import pl.altkom.asc.lab.micronaut.poc.cms.service.api.v1.*;
 
 @Singleton
-public class CrmHippoBlogGatewayClient implements BlogOperations {
+public class CmsHippoBlogGatewayClient implements BlogOperations {
     private final RxHttpClient httpClient;
 
-    public CrmHippoBlogGatewayClient(CrmHippoConfig config) throws MalformedURLException {
+    public CmsHippoBlogGatewayClient(CmsHippoConfig config) throws MalformedURLException {
         this.httpClient = RxHttpClient.create(new URL(config.getUrl()));
     }
     
@@ -83,14 +83,14 @@ public class CrmHippoBlogGatewayClient implements BlogOperations {
            return (Map)items().get("minicms:content");
        }
        
-       private List<CrmLink> contentLinks(){
-           List<CrmLink> links = new ArrayList<>();
+       private List<CmsLink> contentLinks(){
+           List<CmsLink> links = new ArrayList<>();
            if (!content().containsKey("links"))
                return links;
            
            Map linksMap = (Map)content().get("links");
            linksMap.forEach((k,v)->{
-               CrmLink l = new CrmLink((String)k,(String)((Map)v).get("url"));
+               CmsLink l = new CmsLink((String)k,(String)((Map)v).get("url"));
                links.add(l);
            });
            

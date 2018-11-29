@@ -24,14 +24,14 @@ export default {
             };
         },
         created: function() {
-            HTTP.get('crm/blogposts/' + this.postId).then(response => {
+            HTTP.get('cms/blogposts/' + this.postId).then(response => {
                 this.postDetails = response.data;
                 this.postDetails.htmlContent = this.resolveLinks(response);
             });
         },
         methods: {
             resolveLinks: function(response) {
-                const imagesHanlderUrl = process.env.VUE_APP_BACKEND_URL + 'crm/images/';
+                const imagesHanlderUrl = process.env.VUE_APP_BACKEND_URL + 'cms/images/';
                 var someElement = document.createElement('div');
                 someElement.innerHTML = response.data.htmlContent;
                 var links = someElement.querySelectorAll('img[data-hippo-link]');

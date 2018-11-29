@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1;
+package pl.altkom.asc.lab.micronaut.poc.cms.service.api.v1;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -21,5 +21,5 @@ public class BlogPostDetails {
     private List<String> categories;
     private String introduction;
     private String htmlContent;
-    private List<CrmLink> links;
+    private List<CmsLink> links;
 }

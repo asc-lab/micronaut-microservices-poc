@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1;
+package pl.altkom.asc.lab.micronaut.poc.cms.service.api.v1;
 
 import lombok.Builder;
 import lombok.Getter;

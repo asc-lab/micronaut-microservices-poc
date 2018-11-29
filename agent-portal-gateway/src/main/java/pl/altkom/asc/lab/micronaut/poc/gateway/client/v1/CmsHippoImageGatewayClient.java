@@ -1,6 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.gateway.client.v1;
 
-import pl.altkom.asc.lab.micronaut.poc.crm.service.api.v1.ImageOperations;
+import pl.altkom.asc.lab.micronaut.poc.cms.service.api.v1.ImageOperations;
 
 import javax.inject.Singleton;
 import java.io.BufferedInputStream;
@@ -9,9 +9,9 @@ import java.io.InputStream;
 import java.net.URL;
 
 @Singleton
-public class CrmHippoImageGatewayClient implements ImageOperations {
-    private final CrmHippoConfig config;
-    public CrmHippoImageGatewayClient(CrmHippoConfig config)  {
+public class CmsHippoImageGatewayClient implements ImageOperations {
+    private final CmsHippoConfig config;
+    public CmsHippoImageGatewayClient(CmsHippoConfig config)  {
         this.config = config;
     }
 
