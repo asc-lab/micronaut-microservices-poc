@@ -1,0 +1,1 @@
+sudo minikube stop
