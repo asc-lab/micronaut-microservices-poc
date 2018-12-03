@@ -5,7 +5,7 @@ metadata:
   labels:
     srv: kafka-manager
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     srv: kafka-manager
   ports:

@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jsreport-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: jsreport.${DOMAIN}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jsreport
+          servicePort: 80

@@ -5,7 +5,7 @@ metadata:
   labels:
     srv: web-vue
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     srv: web-vue
   ports:
