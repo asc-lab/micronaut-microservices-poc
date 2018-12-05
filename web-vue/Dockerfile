@@ -8,6 +8,8 @@ ENV \
 
 COPY ./dist /usr/share/nginx/html
 
+COPY ./nginx.conf /etc/nginx/
+
 COPY ./nginx-app.conf /etc/nginx/conf.d/default.tmpl
 
 COPY entrypoint.sh /
