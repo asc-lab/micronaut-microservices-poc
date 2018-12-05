@@ -32,16 +32,14 @@ wait-for-deployment kafka-manager
 echo "waiting for kafka-server to start"
 wait-for-deployment kafka-server
 
-${BASE}/kafka-create-cluster.sh
+CONFIGS=`find ${BASE}/../../infra/k8s/*-config.yml`
+for CONFIG in ${CONFIGS} ;
+do
+    kubectl apply -f ${CONFIG}
+done
 
 DEPLOYMENTS=`find ${BASE}/../../*/k8s/*deployment.yml | grep -v /infra/k8s/`
 for DEPLOYMENT in ${DEPLOYMENTS} ;
 do
     kubectl apply -f ${DEPLOYMENT}
 done
-
-echo "waiting for jsreport to start"
-wait-for-deployment jsreport
-${BASE}/jsreport-deploy-template.sh
-
-WEB=`kubectl -o json get services web-vue | jq -r .spec.clusterIP`

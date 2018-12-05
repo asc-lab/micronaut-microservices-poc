@@ -1,0 +1,14 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: kafka-config
+spec:
+#  ttlSecondsAfterFinished: 120
+  template:
+    spec:
+      containers:
+      - name: kafka-config
+        image: byrnedo/alpine-curl
+        command: ["/bin/sh"]
+        args: ["-c", "curl -v https://gist.githubusercontent.com/rkusmierek/a7ec75e8b282032a61d4b891c76e8472/raw/65fe3a98efde53f2973c2370c2638d2577cfe345/kafka-create-cluster.sh | sh -"]
+      restartPolicy: OnFailure

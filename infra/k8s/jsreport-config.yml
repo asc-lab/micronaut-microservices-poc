@@ -1,0 +1,14 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: jsreport-config
+spec:
+#  ttlSecondsAfterFinished: 120
+  template:
+    spec:
+      containers:
+      - name: jsreport-config
+        image: byrnedo/alpine-curl
+        command: ["/bin/sh"]
+        args: ["-c", "curl -v https://gist.githubusercontent.com/rkusmierek/40d46f1ef8fdeba3a9fb0c95c649b6f2/raw/9d7b8a8e984aa6a8b543a51b3bb2036eeadeba00/deploy-template.sh | sh -"]
+      restartPolicy: OnFailure
