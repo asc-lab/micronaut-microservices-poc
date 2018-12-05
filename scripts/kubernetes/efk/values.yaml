@@ -11,10 +11,10 @@ filebeat:
   enabled: false
 
 fluentd:
-  enabled: true
+  enabled: false
 
 fluent-bit:
-  enabled: true
+  enabled: false
 
 fluentd-elasticsearch:
   enabled: true
