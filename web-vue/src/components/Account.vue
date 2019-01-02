@@ -59,8 +59,9 @@
                     username: this.credentials.username,
                     password: this.credentials.password
                 };
-                auth.login(this, credentials);
-                this.$router.push('/');
+                auth.login(this, credentials).then(() => {
+                    window.location.href = '/';
+                });
             },
             logout() {
                 auth.logout();
