@@ -2,7 +2,7 @@
 
 This is an example of a very simplified insurance sales system made in a microservice architecture using Micronaut.
 
-Comprehensive guide describing exactly the architecture, applied design patterns and technologies can be found on **[our blog](https://asc.altkom.pl/en/blog/microservices-micronaut/)**.
+Comprehensive guide describing exactly the architecture, applied design patterns and technologies can be found on our blog in article **[Building Microservices with Micronaut](https://altkomsoftware.pl/en/blog/microservices-micronaut/)**.
 
 **We encourage you to read, because in this README there is only a substitute for all information.**
 
