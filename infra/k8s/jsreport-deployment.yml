@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: jsreport
   labels:
-    srv: jsreport
+    app: jsreport
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: jsreport
+      app: jsreport
   template:
     metadata:
       labels:
-        srv: jsreport
+        app: jsreport
     spec:
       containers:
       - name: jsreport

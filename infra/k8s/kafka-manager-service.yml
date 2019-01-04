@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: kafka-manager
   labels:
-    srv: kafka-manager
+    app: kafka-manager
 spec:
   type: ClusterIP
   selector:
-    srv: kafka-manager
+    app: kafka-manager
   ports:
   - name: http
     protocol: TCP

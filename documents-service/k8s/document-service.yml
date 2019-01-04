@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: documents-service
   labels:
-    srv: documents-service
+    app: documents-service
 spec:
   type: ClusterIP
   selector:
-    srv: documents-service
+    app: documents-service
   ports:
   - name: http
     protocol: TCP

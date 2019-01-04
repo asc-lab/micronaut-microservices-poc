@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: web-vue
   labels:
-    srv: web-vue
+    app: web-vue
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: web-vue
+      app: web-vue
   template:
     metadata:
       labels:
-        srv: web-vue
+        app: web-vue
     spec:
       containers:
       - name: web-vue

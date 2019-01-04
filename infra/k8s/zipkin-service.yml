@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: zipkin
   labels:
-    srv: zipkin
+    app: zipkin
 spec:
   type: ClusterIP
   selector:
-    srv: zipkin
+    app: zipkin
   ports:
   - name: http
     protocol: TCP

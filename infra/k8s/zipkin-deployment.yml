@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: zipkin
   labels:
-    srv: zipkin
+    app: zipkin
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: zipkin
+      app: zipkin
   template:
     metadata:
       labels:
-        srv: zipkin
+        app: zipkin
     spec:
       containers:
       - name: zipkin

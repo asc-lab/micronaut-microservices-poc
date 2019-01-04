@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: pricing-service
   labels:
-    srv: pricing-service
+    app: pricing-service
 spec:
   type: ClusterIP
   selector:
-    srv: pricing-service
+    app: pricing-service
   ports:
   - name: http
     protocol: TCP

@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: documents-service
   labels:
-    srv: documents-service
+    app: documents-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: documents-service
+      app: documents-service
   template:
     metadata:
       labels:
-        srv: documents-service
+        app: documents-service
     spec:
       containers:
       - name: documents-service

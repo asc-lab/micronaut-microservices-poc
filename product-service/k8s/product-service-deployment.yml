@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: product-service
   labels:
-    srv: product-service
+    app: product-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: product-service
+      app: product-service
   template:
     metadata:
       labels:
-        srv: product-service
+        app: product-service
     spec:
       containers:
       - name: product-service

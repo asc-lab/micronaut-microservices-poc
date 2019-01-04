@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: jsreport
   labels:
-    srv: jsreport
+    app: jsreport
 spec:
   type: ClusterIP
   selector:
-    srv: jsreport
+    app: jsreport
   ports:
   - name: http
     protocol: TCP

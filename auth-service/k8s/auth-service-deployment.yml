@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: auth-service
   labels:
-    srv: auth-service
+    app: auth-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: auth-service
+      app: auth-service
   template:
     metadata:
       labels:
-        srv: auth-service
+        app: auth-service
     spec:
       containers:
       - name: auth-service

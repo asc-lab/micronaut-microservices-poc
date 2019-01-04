@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: chat-service
   labels:
-    srv: chat-service
+    app: chat-service
 spec:
   type: ClusterIP
   selector:
-    srv: chat-service
+    app: chat-service
   ports:
   - name: http
     protocol: TCP

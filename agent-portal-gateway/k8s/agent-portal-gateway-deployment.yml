@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: agent-portal-gateway
   labels:
-    srv: agent-portal-gateway
+    app: agent-portal-gateway
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: agent-portal-gateway
+      app: agent-portal-gateway
   template:
     metadata:
       labels:
-        srv: agent-portal-gateway
+        app: agent-portal-gateway
     spec:
       containers:
       - name: agent-portal-gateway

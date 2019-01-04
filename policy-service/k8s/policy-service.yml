@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: policy-service
   labels:
-    srv: policy-service
+    app: policy-service
 spec:
   type: ClusterIP
   selector:
-    srv: policy-service
+    app: policy-service
   ports:
   - name: http
     protocol: TCP

@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: kafka-server
   labels:
-    srv: kafka-server
+    app: kafka-server
 spec:
   type: ClusterIP
   selector:
-    srv: kafka-server
+    app: kafka-server
   ports:
   - name: kafka
     protocol: TCP

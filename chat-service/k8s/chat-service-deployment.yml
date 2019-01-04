@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: chat-service
   labels:
-    srv: chat-service
+    app: chat-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: chat-service
+      app: chat-service
   template:
     metadata:
       labels:
-        srv: chat-service
+        app: chat-service
     spec:
       containers:
       - name: chat-service

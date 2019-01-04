@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: policy-service
   labels:
-    srv: policy-service
+    app: policy-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: policy-service
+      app: policy-service
   template:
     metadata:
       labels:
-        srv: policy-service
+        app: policy-service
     spec:
       containers:
       - name: policy-service

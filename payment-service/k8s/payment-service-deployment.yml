@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: payment-service
   labels:
-    srv: payment-service
+    app: payment-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: payment-service
+      app: payment-service
   template:
     metadata:
       labels:
-        srv: payment-service
+        app: payment-service
     spec:
       containers:
       - name: payment-service

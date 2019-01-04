@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: product-service
   labels:
-    srv: product-service
+    app: product-service
 spec:
   type: ClusterIP
   selector:
-    srv: product-service
+    app: product-service
   ports:
   - name: http
     protocol: TCP

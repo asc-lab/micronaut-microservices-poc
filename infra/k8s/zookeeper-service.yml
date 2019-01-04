@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: zookeeper
   labels:
-    srv: zookeeper
+    app: zookeeper
 spec:
   type: ClusterIP
   selector:
-    srv: zookeeper
+    app: zookeeper
   ports:
   - name: zk
     protocol: TCP

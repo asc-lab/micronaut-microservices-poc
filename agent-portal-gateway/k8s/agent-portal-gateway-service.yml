@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: agent-portal-gateway
   labels:
-    srv: agent-portal-gateway
+    app: agent-portal-gateway
 spec:
   type: ClusterIP
   selector:
-    srv: agent-portal-gateway
+    app: agent-portal-gateway
   ports:
   - name: http
     protocol: TCP

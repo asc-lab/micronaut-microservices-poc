@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: mongo
   labels:
-    srv: mongo
+    app: mongo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: mongo
+      app: mongo
   template:
     metadata:
       labels:
-        srv: mongo
+        app: mongo
     spec:
       containers:
       - name: mongo

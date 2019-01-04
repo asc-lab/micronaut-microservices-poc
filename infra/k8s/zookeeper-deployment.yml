@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: zookeeper
   labels:
-    srv: zookeeper
+    app: zookeeper
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: zookeeper
+      app: zookeeper
   template:
     metadata:
       labels:
-        srv: zookeeper
+        app: zookeeper
     spec:
       hostname: zookeeper
       containers:

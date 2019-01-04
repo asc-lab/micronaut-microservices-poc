@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: web-vue
   labels:
-    srv: web-vue
+    app: web-vue
 spec:
   type: ClusterIP
   selector:
-    srv: web-vue
+    app: web-vue
   ports:
   - name: http
     protocol: TCP

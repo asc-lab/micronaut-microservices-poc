@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: auth-service
   labels:
-    srv: auth-service
+    app: auth-service
 spec:
   type: ClusterIP
   selector:
-    srv: auth-service
+    app: auth-service
   ports:
   - name: http
     protocol: TCP

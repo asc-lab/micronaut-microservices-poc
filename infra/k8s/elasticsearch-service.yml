@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: elasticsearch
   labels:
-    srv: elasticsearch
+    app: elasticsearch
 spec:
   type: ClusterIP
   selector:
-    srv: elasticsearch
+    app: elasticsearch
   ports:
   - name: api
     protocol: TCP

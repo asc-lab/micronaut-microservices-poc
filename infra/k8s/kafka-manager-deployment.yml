@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: kafka-manager
   labels:
-    srv: kafka-manager
+    app: kafka-manager
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: kafka-manager
+      app: kafka-manager
   template:
     metadata:
       labels:
-        srv: kafka-manager
+        app: kafka-manager
     spec:
       hostname: kafka-manager
       containers:

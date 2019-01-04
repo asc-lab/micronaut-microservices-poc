@@ -3,11 +3,11 @@ apiVersion: v1
 metadata:
   name: payment-service
   labels:
-    srv: payment-service
+    app: payment-service
 spec:
   type: ClusterIP
   selector:
-    srv: payment-service
+    app: payment-service
   ports:
   - name: http
     protocol: TCP

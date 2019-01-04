@@ -3,16 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: elasticsearch
   labels:
-    srv: elasticsearch
+    app: elasticsearch
 spec:
   replicas: 1
   selector:
     matchLabels:
-      srv: elasticsearch
+      app: elasticsearch
   template:
     metadata:
       labels:
-        srv: elasticsearch
+        app: elasticsearch
     spec:
       securityContext:
         fsGroup: 1000
