@@ -1,0 +1,7 @@
+<h1>
+    <center>This is your new POLICY with number {{ number }}</center>
+</h1>
+<h2>From {{ from }} to {{ to }} </h2>
+<h2>Policy Holder: {{ policyHolder}} </h2>
+
+Thank you very much!

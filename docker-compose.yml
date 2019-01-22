@@ -63,7 +63,7 @@ services:
     network_mode: host
   mn-policy-search-service:
     build: ./policy-search-service
-    image: mn-policy-searh-service
+    image: mn-policy-search-service
     container_name: mn-policy-search-service
     network_mode: host
   mn-pricing-service:

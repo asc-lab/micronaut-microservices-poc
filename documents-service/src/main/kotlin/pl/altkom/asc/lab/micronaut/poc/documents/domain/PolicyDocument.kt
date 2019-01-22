@@ -12,6 +12,6 @@ data class PolicyDocument(
         @GeneratedValue
         val id: Long? = -1,
         val policyNumber: String = "",
-        @Column(columnDefinition = "BINARY(20000)")
+        @Column(columnDefinition = "BINARY(200000)")
         val bytes: ByteArray = ByteArray(1)
 )
