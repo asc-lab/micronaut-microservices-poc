@@ -7,49 +7,40 @@ services:
     hostname: jsreport
     ports:
       - 5488:5488
+  consul:
+    image: consul
+    container_name: consul
+    network_mode: host
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
-    hostname: zipkin
-    ports:
-    - 9411:9411
+    network_mode: host
   mongo:
     image: mongo
     container_name: mongo
-    hostname: mongo
-  zookeeper:
-    image: 'bitnami/zookeeper:3.4.12'
-    container_name: zookeeper
-    hostname: zookeeper
+    network_mode: host
+  kafkaserver:
+    image: "spotify/kafka:latest"
+    container_name: kafka
+    hostname: localhost
+    network_mode: host
     ports:
-    - 2181:2181
-    environment:
-    - ALLOW_ANONYMOUS_LOGIN=yes
-  kafka-server:
-    image: "bitnami/kafka:2.0.0"
-    container_name: kafka-server
-    hostname: kafka-server
-    ports:
+      - 2181:2181
       - 9092:9092
     environment:
-    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-    - ALLOW_PLAINTEXT_LISTENER=yes
-    depends_on:
-      - zookeeper
-  kafka-manager:
-    image: "deric/kafka-manager:1.3.3.18"
-    container_name: kafka-manager
-    hostname: kafka-manager
+      ADVERTISED_HOST: localhost
+      ADVERTISED_PORT: 9092
+  kafka_manager:
+    image: "mzagar/kafka-manager-docker:1.3.3.4"
+    container_name: kafkamanager
+    network_mode: host
     ports:
       - 9000:9000
     environment:
-      ZK_HOSTS: "zookeeper:2181"
-    depends_on:
-      - zookeeper
+      ZK_HOSTS: "localhost:2181"
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
     container_name: elasticsearch
-    hostname: elasticsearch
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
@@ -60,138 +51,53 @@ services:
         hard: -1
     ports:
         - 9200:9200
-  documents-service:
-    build: documents-service
-    image: ascmn/documents-service:latest
-    container_name: documents-service
-    hostname: document-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-      KAFKA_HOST: kafka-server
-      KAFKA_PORT: 9092
-      JSREPORT_HOST: jsreport
-      JSREPORT_PORT: 5488
-    depends_on:
-      - zipkin
-      - kafka-manager
-      - jsreport
-  policy-service:
-    build: policy-service
-    image: ascmn/policy-service:latest
-    container_name: policy-service
-    hostname: policy-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-      KAFKA_HOST: kafka-server
-      KAFKA_PORT: 9092
-    depends_on:
-      - zipkin
-      - kafka-server
-  policy-search-service:
-    build: policy-search-service
-    image: ascmn/policy-search-service:latest
-    container_name: policy-search-service
-    hostname: policy-search-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-      KAFKA_HOST: kafka-server
-      KAFKA_PORT: 9092
-      ELASTIC_HOST: elasticsearch
-      ELASTIC_PORT: 9200
-    depends_on:
-      - zipkin
-      - kafka-server
-      - elasticsearch
-  pricing-service:
-    build: pricing-service
-    image: ascmn/mn-pricing-service:latest
-    container_name: pricing-service
-    hostname: pricing-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-    depends_on:
-      - zipkin
-  payment-service:
-    build: payment-service
-    image: ascmn/payment-service:latest
-    container_name: payment-service
-    hostname: payment-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-      KAFKA_HOST: kafka-server
-      KAFKA_PORT: 9092
-    depends_on:
-      - zipkin
-      - kafka-server
-  product-service:
-    build: product-service
-    image: ascmn/product-service:latest
-    container_name: product-service
-    hostname: product-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-      MONGO_HOST: mongo
-      MONGO_PORT: 27017
-    depends_on:
-      - zipkin
-      - mongo
-  auth-service:
-    build: auth-service
-    image: ascmn/auth-service:latest
-    container_name: auth-service
-    hostname: auth-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-    depends_on:
-      - zipkin
-  chat-service:
-    build: chat-service
-    image: ascmn/chat-service:latest
-    container_name: chat-service
-    hostname: chat-service
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-    depends_on:
-      - zipkin
-  agent-portal-gateway:
-    build: agent-portal-gateway
-    image: ascmn/agent-portal-gateway:latest
-    container_name: agent-portal-gateway
-    hostname: agent-portal-gateway
-    environment:
-      SERVICE_PORT: 80
-      ZIPKIN_HOST: zipkin
-      ZIPKIN_PORT: 9411
-    depends_on:
-    - zipkin
-  web-vue:
-    build: web-vue
-    image: ascmn/web-vue:latest
-    container_name: web-vue
-    hostname: web-vue
-    ports:
-    - 80:80
-    environment:
-      GATEWAY_URL: "http://agent-portal-gateway"
-      AUTH_URL: "http://auth-service"
-      CHAT_SERVICE_URL: "http://chat-service"
-    depends_on:
-      - agent-portal-gateway
-      - auth-service
-      - chat-service
+  mn-documents-service:
+    build: ./documents-service
+    image: mn-documents-service
+    container_name: mn-documents-service
+    network_mode: host
+  mn-policy-service:
+    build: ./policy-service
+    image: mn-policy-service
+    container_name: mn-policy-service
+    network_mode: host
+  mn-policy-search-service:
+    build: ./policy-search-service
+    image: mn-policy-search-service
+    container_name: mn-policy-search-service
+    network_mode: host
+  mn-pricing-service:
+    build: ./pricing-service
+    image: mn-pricing-service
+    container_name: mn-pricing-service
+    network_mode: host
+  mn-payment-service:
+    build: ./payment-service
+    image: mn-payment-service
+    container_name: mn-payment-service
+    network_mode: host
+  mn-product-service:
+    build: ./product-service
+    image: mn-product-service
+    container_name: mn-product-service
+    network_mode: host
+  mn-auth-service:
+    build: ./auth-service
+    image: mn-auth-service
+    container_name: mn-auth-service
+    network_mode: host
+  mn-chat-service:
+    build: ./chat-service
+    image: mn-chat-service
+    container_name: mn-chat-service
+    network_mode: host
+  mn-agent-portal-gateway:
+    build: ./agent-portal-gateway
+    image: mn-agent-portal-gateway
+    container_name: mn-agent-portal-gateway
+    network_mode: host
+  mn-web-vue:
+    build: ./web-vue
+    image: mn-web-vue
+    container_name: mn-web-vue
+    network_mode: host

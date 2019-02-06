@@ -12,28 +12,30 @@
                 <p>Enter the data needed to calculate the price</p>
 
                 <div class="row">
-
                     <div class="col-sm-12">
-                        <form>
+
+                        <form @submit.prevent="submitForm">
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" for="policyFrom">Policy from </label>
+                                <label class="col-sm-3 col-form-label">Policy from </label>
                                 <div class="col-sm-9">
                                     <b-form-input v-model="policyFrom"
                                                   type="date"
                                                   id="policyFrom"
                                                   name="policyFrom"
                                                   :disabled="'VIEW' === mode"
+                                                  required
                                                   placeholder="Policy from"></b-form-input>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" for="policyTo">Policy to </label>
+                                <label class="col-sm-3 col-form-label">Policy to </label>
                                 <div class="col-sm-9">
                                     <b-form-input v-model="policyTo"
                                                   type="date"
                                                   id="policyTo"
                                                   name="policyTo"
+                                                  required
                                                   :disabled="'VIEW' === mode"
                                                   placeholder="Policy to"></b-form-input>
                                 </div>
@@ -43,8 +45,12 @@
                                 <label class="col-sm-3 col-form-label">{{a.question.text}} </label>
 
                                 <div class="col-sm-9" v-if="a.question.type==='numeric'">
-                                    <input required type="number" class="form-control" v-model="a.answer"
-                                           :disabled="'VIEW' === mode"/>
+                                    <b-form-input v-model="a.answer"
+                                                  class="form-control"
+                                                  type="number"
+                                                  :disabled="'VIEW' === mode"
+                                                  min="0"
+                                                  required></b-form-input>
                                 </div>
 
                                 <div class="col-sm-9" v-if="a.question.type==='choice'">
@@ -58,6 +64,11 @@
 
                             </div>
 
+                            <div v-if="errors.length">
+                                <strong>Please correct the following error(s):</strong>
+                                <p class="error" v-for="error in errors" :key="error">{{ error }}</p>
+                            </div>
+
                             <!-- displays price -->
                             <div class="form-group row" v-if="'VIEW' === mode">
                                 <label class="col-sm-3 col-form-label">Price</label>
@@ -67,38 +78,39 @@
                                     </span>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 margin-top-10">
+                                    <div class="d-flex flex-row-reverse" v-if="'EDIT' === mode">
+                                        <div class="p-2">
+                                            <b-button type="submit" variant="primary">Calculate price</b-button>
+                                        </div>
+                                        <div class="p-2">
+                                            <router-link :to="{name: 'products'}">
+                                                <b-button variant="secondary">Back</b-button>
+                                            </router-link>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row-reverse" v-if="'VIEW' === mode">
+                                        <div class="p-2">
+                                            <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="createOffer">Buy</button>
+                                        </div>
+                                        <div class="p-2">
+                                            <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="backToEdit" role="button">Change
+                                                parameters</a>
+                                        </div>
+                                        <div class="p-2">
+                                            <router-link :to="{name: 'products'}">
+                                                <b-button variant="secondary">Back</b-button>
+                                            </router-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-sm-12 margin-top-10">
-                <div class="d-flex flex-row-reverse" v-if="'EDIT' === mode">
-                    <div class="p-2">
-                        <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="calculatePrice">Calculate price
-                        </button>
-                    </div>
-                    <div class="p-2">
-                        <router-link :to="{name: 'products'}">
-                            <b-button variant="secondary">Back</b-button>
-                        </router-link>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-row-reverse" v-if="'VIEW' === mode">
-                    <div class="p-2">
-                        <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="createOffer">Buy</button>
-                    </div>
-                    <div class="p-2">
-                        <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="backToEdit" role="button">Change
-                            parameters</a>
-                    </div>
-                    <div class="p-2">
-                        <router-link :to="{name: 'products'}">
-                            <b-button variant="secondary">Back</b-button>
-                        </router-link>
                     </div>
                 </div>
             </div>
@@ -117,6 +129,7 @@
         },
         data() {
             return {
+                errors: [],
                 productDetails: {},
                 answers: [],
                 mode: 'EDIT',
@@ -169,6 +182,24 @@
 
                 return request;
             },
+            submitForm: function (e) {
+                const isValid = this.validate();
+                if (isValid)
+                    this.calculatePrice();
+                e.preventDefault();
+            },
+            validate() {
+                this.errors = [];
+
+                if(new Date(this.policyFrom) < new Date()) {
+                    this.errors.push('Policy from should be in future');
+                }
+                if(new Date(this.policyTo) < new Date()) {
+                    this.errors.push('Policy to should be in future');
+                }
+
+                return this.errors.length === 0;
+            },
             calculatePrice: function () {
                 HTTP.post('offers', this.createRequest()).then(response => {
                     this.mode = 'VIEW';
@@ -188,5 +219,13 @@
 <style scoped lang="scss">
     .margin-top-10 {
         margin-top: 10px;
+    }
+
+    .error {
+        border: red 2px solid;
+        width: 300px;
+        margin: 5px auto;
+        background: red;
+        color: white;
     }
 </style>
