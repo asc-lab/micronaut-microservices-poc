@@ -1,10 +1,11 @@
-kind: Deployment
+kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: kafka-server
   labels:
     app: kafka-server
 spec:
+  serviceName: kafka-server
   replicas: 1
   selector:
     matchLabels:
