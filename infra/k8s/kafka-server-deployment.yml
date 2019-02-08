@@ -1,10 +1,11 @@
-kind: Deployment
+kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: kafka-server
   labels:
     app: kafka-server
 spec:
+  serviceName: kafka-server
   replicas: 1
   selector:
     matchLabels:
@@ -34,6 +35,6 @@ spec:
         livenessProbe:
           tcpSocket:
             port: 9092
-          initialDelaySeconds: 30
+          initialDelaySeconds: 60
           timeoutSeconds: 1
           periodSeconds: 5

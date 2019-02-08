@@ -1,10 +1,11 @@
-kind: Deployment
+kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: elasticsearch
   labels:
     app: elasticsearch
 spec:
+  serviceName: elasticsearch
   replicas: 1
   selector:
     matchLabels:

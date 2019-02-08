@@ -1,9 +1,10 @@
 BASE=`dirname $0`
 
-wait-for-deployment() {
-    DEPLOYMENT=$1
+wait-for() {
+    RESOURCE_TYPE=$1
+    RESOURCE_NAME=$2
     REPLICAS=0
-    until [ $(kubectl get deployments -o json |jq -c ".items[] | select(.status.readyReplicas == 1 and .metadata.name == \"${DEPLOYMENT}\")" | jq .metadata.name | wc -l) -gt 0 ]; do
+    until [ $(kubectl get ${RESOURCE_TYPE} -o json |jq -c ".items[] | select(.status.readyReplicas == 1 and .metadata.name == \"${RESOURCE_NAME}\")" | jq .metadata.name | wc -l) -gt 0 ]; do
       echo waiting
       sleep 2
     done
@@ -17,7 +18,7 @@ done
 
 kubectl apply -f ${BASE}/../../infra/k8s/zookeeper-deployment.yml
 echo "waiting for zookeeper to start"
-wait-for-deployment zookeeper
+wait-for statefulset zookeeper
 # workaround for missing zk readiness probe
 sleep 5
 
@@ -28,9 +29,9 @@ do
 done
 
 echo "waiting for kafka-manager to start"
-wait-for-deployment kafka-manager
+wait-for deployment kafka-manager
 echo "waiting for kafka-server to start"
-wait-for-deployment kafka-server
+wait-for statefulset kafka-server
 
 CONFIGS=`find ${BASE}/../../infra/k8s/*-config.yml`
 for CONFIG in ${CONFIGS} ;
