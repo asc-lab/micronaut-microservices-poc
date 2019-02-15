@@ -1,23 +1,21 @@
 package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 
-import io.micronaut.configuration.kafka.annotation.KafkaListener;
-import io.micronaut.configuration.kafka.annotation.OffsetReset;
-import io.micronaut.configuration.kafka.annotation.Topic;
+import io.micronaut.configuration.rabbitmq.annotation.Queue;
+import io.micronaut.configuration.rabbitmq.annotation.RabbitListener;
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDto;
 
-
 import java.util.Optional;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredEvent;
 
 @RequiredArgsConstructor
-@KafkaListener(offsetReset = OffsetReset.EARLIEST)
+@RabbitListener
 public class PolicyRegisteredListener {
 
     private final PolicyAccountRepository policyAccountRepository;
     private final PolicyAccountNumberGenerator policyAccountNumberGenerator;
 
-    @Topic("policy-registered")
+    @Queue("policy-registered")
     void onPolicyRegistered(PolicyRegisteredEvent event) {
         Optional<PolicyAccount> accountOpt = policyAccountRepository.findForPolicy(event.getPolicy().getNumber());
 

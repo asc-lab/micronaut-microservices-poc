@@ -72,7 +72,8 @@
 
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micronaut-kafka</artifactId>
+            <artifactId>micronaut-rabbitmq</artifactId>
+            <version>LATEST</version>
             <scope>compile</scope>
         </dependency>
 

@@ -4,10 +4,6 @@ micronaut:
   server:
     port: ${SERVICE_PORT:-1}
 ---
-kafka:
-  bootstrap:
-    servers: "${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}"
----
 consul:
   client:
     registration:

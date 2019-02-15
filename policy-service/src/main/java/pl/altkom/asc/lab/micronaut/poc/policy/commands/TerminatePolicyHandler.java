@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.kafka.EventPublisher;
+import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.rabbitmq.EventPublisher;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy.TerminatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyTerminatedEvent;
@@ -32,7 +32,7 @@ public class TerminatePolicyHandler implements CommandHandler<TerminatePolicyRes
 
         policyRepository.add(policy);
 
-        eventPublisher.policyTerminatedEvent(policy.getNumber(), createEvent(policy));
+        eventPublisher.policyTerminatedEvent(createEvent(policy));
 
         return TerminatePolicyResult.success(policy.getNumber());
     }

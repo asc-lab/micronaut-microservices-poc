@@ -73,11 +73,6 @@ build.bat
 * **docker**
 * **docker-compose**
 
-For Windows users, append below line ```C:\Windows\System32\drivers\etc\hosts```:
-```
-127.0.0.1 kafkaserver
-```
-
 For frontend app running, you must add file ```.env.local``` based on ```.env-example``` .
 <p align="center">
     <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
@@ -92,10 +87,10 @@ docker-run.sh
 This script will provision required infrastructure and start all services.
 Setup is powered by docker-compose and configured via `docker-compose.yml` file.
 
-Afterwards you need to add kafka cluster - either via web UI ([Kafka Manager](http://localhost:9000/) -> Cluster -> Add Cluster)
+Afterwards you need to create exchanges/queues/bindings in RabbitMQ - either via web UI ([Rabbit Management](http://localhost:15672/)).
 or using provided script:
 ```
-kafka-create-cluster.sh
+rabbit-create-bindings-queues.sh
 ```
 
 At this point system is ready to use: [http://localhost](http://localhost)
@@ -107,15 +102,15 @@ If you want to run services manually (eg. from IDE), you have to provision infra
 infra-run.sh
 ```
 
-Afterwards you need to add kafka cluster - either via web UI ([Kafka Manager](http://localhost:9000/) -> Cluster -> Add Cluster)
+Afterwards you need to create exchanges/queues/bindings in RabbitMQ - either via web UI ([Rabbit Management](http://localhost:15672/)).
 or using provided script:
 ```
-kafka-create-cluster.sh
+rabbit-create-bindings-queues.sh
 ```
 
 * Consul dashboard: ```http://localhost:8500```
 * Zipkin dashboard: ```http://localhost:9411/zipkin/```
-* Kafka Manager dashboard: ```http://localhost:9000/```
+* Rabbit Management dashboard: ```http://localhost:15672/```
 * JSReport dashboard: ```http://localhost:5488/```
 
 #### Add POLICY template to JsReport
@@ -136,9 +131,6 @@ docker run -p 8500:8500 consul
 ```
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
-#### Kafka without our script
-Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup-apache-kafka-in-docker-on-windows).
-
 #### JSReport without our script
 ```
 docker run -p 5488:5488 jsreport/jsreport
@@ -160,9 +152,9 @@ This command generate project in Java and Maven as build tool.
     <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/zipkin.png" />
 </p>
 
-### Show topics on Kafka
+### Show exchange with binding in RabbitMQ
 <p align="center">
-    <img alt="Kafka" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/kafka.png" />
+    <img alt="RabbitMQ" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/rabbitmq.png" />
 </p>
 
 ### Show registered services in Consul

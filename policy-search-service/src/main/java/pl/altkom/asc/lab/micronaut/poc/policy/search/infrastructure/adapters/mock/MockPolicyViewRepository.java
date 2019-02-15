@@ -8,6 +8,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyView;
 import pl.altkom.asc.lab.micronaut.poc.policy.search.readmodel.PolicyViewRepository;
 
 import javax.inject.Singleton;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -25,10 +26,28 @@ public class MockPolicyViewRepository implements PolicyViewRepository {
     private Map<String, PolicyView> init() {
         Map<String, PolicyView> map = new LinkedHashMap<>();
 
-        map.put("1234", new PolicyView("1234"));
-        map.put("1235", new PolicyView("1235"));
-        map.put("1236", new PolicyView("1236"));
-        map.put("1237", new PolicyView("1237"));
+        map.put("1234", new PolicyView(
+                "1234",
+                LocalDate.of(2019, 1, 1),
+                LocalDate.of(2020,1,1),
+                "Xxxx Yyyy")
+        );
+        map.put("1235", new PolicyView(
+                "1235",
+                LocalDate.of(2019, 1, 1),
+                LocalDate.of(2020,1,1),
+                "Xxxx Yyyy")
+        );
+        map.put("1236", new PolicyView("1236",
+                LocalDate.of(2019, 1, 1),
+                LocalDate.of(2020,1,1),
+                "Xxxx Yyyy")
+        );
+        map.put("1237", new PolicyView("1237",
+                LocalDate.of(2019, 1, 1),
+                LocalDate.of(2020,1,1),
+                "Xxxx Yyyy")
+        );
 
         return map;
     }

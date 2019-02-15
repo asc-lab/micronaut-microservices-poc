@@ -4,7 +4,7 @@ import io.micronaut.spring.tx.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.*;
-import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.kafka.EventPublisher;
+import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.rabbitmq.EventPublisher;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredEvent;
@@ -41,7 +41,7 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
         policyRepository.add(policy);
 
         //publish events
-        eventPublisher.policyRegisteredEvent(policy.getNumber(), createEvent(policy));
+        eventPublisher.policyRegisteredEvent(createEvent(policy));
 
         return new CreatePolicyResult(policy.getNumber());
     }

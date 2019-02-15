@@ -86,13 +86,14 @@
         </dependency>
         <!-- DATABASE, JPA, HIBERNATE -->
 
-        <!-- KAFKA -->
+        <!-- RABBIT MQ -->
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micronaut-kafka</artifactId>
+            <artifactId>micronaut-rabbitmq</artifactId>
+            <version>LATEST</version>
             <scope>compile</scope>
         </dependency>
-        <!-- KAFKA -->
+        <!-- RABBIT MQ -->
 
         <!-- DISCOVERY CLIENT -->
         <dependency>
@@ -163,18 +164,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.apache.kafka</groupId>-->
-            <!--<artifactId>kafka-clients</artifactId>-->
-            <!--<version>1.1.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.kafka</groupId>-->
-            <!--<artifactId>kafka_2.12</artifactId>-->
-            <!--<version>1.1.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
         <!-- TESTS -->
 
         <!-- INTERNAL -->

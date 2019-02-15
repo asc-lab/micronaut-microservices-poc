@@ -19,25 +19,6 @@ services:
     image: mongo
     container_name: mongo
     network_mode: host
-  kafkaserver:
-    image: "spotify/kafka:latest"
-    container_name: kafka
-    hostname: localhost
-    network_mode: host
-    ports:
-      - 2181:2181
-      - 9092:9092
-    environment:
-      ADVERTISED_HOST: localhost
-      ADVERTISED_PORT: 9092
-  kafka_manager:
-    image: "mzagar/kafka-manager-docker:1.3.3.4"
-    container_name: kafkamanager
-    network_mode: host
-    ports:
-      - 9000:9000
-    environment:
-      ZK_HOSTS: "localhost:2181"
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
     container_name: elasticsearch
@@ -51,6 +32,14 @@ services:
         hard: -1
     ports:
         - 9200:9200
+  #TODO setup RabbitMQ
+  #  rabbitmq:
+  #    image: rabbitmq:management
+  #    ports:
+  #      - 5672:5672
+  #      - 15672:15672
+  #    volumes:
+  #      - rabbitmq_data
   mn-documents-service:
     build: ./documents-service
     image: mn-documents-service
