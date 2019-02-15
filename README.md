@@ -72,10 +72,11 @@ build.bat
 ### Prerequisites
 * **docker**
 * **docker-compose**
+* **RabbitMQ**
 
 For frontend app running, you must add file ```.env.local``` based on ```.env-example``` .
 <p align="center">
-    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
+    <img alt="Environment variables" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
 </p>
 
 ### Automated deployment
