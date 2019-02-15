@@ -10,7 +10,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.find
 import pl.altkom.asc.lab.micronaut.poc.policy.search.service.api.v1.queries.findpolicy.FindPolicyQueryResult;
 
 @RequiredArgsConstructor
-@Validated
 @Controller("/policies")
 public class PolicySearchController implements PolicySearchOperations {
 
