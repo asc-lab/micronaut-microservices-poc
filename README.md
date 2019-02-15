@@ -9,7 +9,7 @@ Comprehensive guide describing exactly the architecture, applied design patterns
 ## Architecture overview
 
 <p align="center">
-    <img alt="Micronaut Microservices Architecture" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/micronaut-microservices-architecture.png" />
+    <img alt="Micronaut Microservices Architecture" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/rabbitmq/readme-images/micronaut-microservices-architecture.png" />
 </p>
 
 * **agent-portal-gateway** - Gateway pattern from EAA Catalog implementation. \
