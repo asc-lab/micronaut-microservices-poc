@@ -1,0 +1,42 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 10px 10px 0 10px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#main-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px gray solid;
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-top: 30px;
+}
+
+footer > img {
+  margin-top: 20px;
+  height: 60px;
+}
+
+footer > hr {
+  width: 90%;
+}
+
+footer > p > a {
+  color: black;
+}
