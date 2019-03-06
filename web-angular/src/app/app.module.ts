@@ -14,9 +14,15 @@ import {ProductDetailsComponent} from './components/product-details/product-deta
 import {AccountComponent} from './components/account/account.component';
 import {HomeComponent} from './components/home/home.component';
 import {AuthService} from "./shared/auth-service";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from './components/material/material.module';
+import {PolicyService} from "./shared/policy-service";
+import {ProductService} from "./shared/product-service";
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import {ErrorDialogService} from "./components/error-dialog/error-dialog.service";
+import {AuthInterceptor} from "./shared/auth-interceptor";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -27,11 +33,13 @@ import {MaterialModule} from './components/material/material.module';
     ProductListComponent,
     ProductDetailsComponent,
     AccountComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FlexLayoutModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -44,7 +52,14 @@ import {MaterialModule} from './components/material/material.module';
     })
   ],
   providers: [
-    AuthService
+    AuthService,
+    PolicyService,
+    ProductService,
+    ErrorDialogService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
+  entryComponents: [
+    ErrorDialogComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,36 @@
-<p>
-  product-list works!
-</p>
+<div fxLayoutGap="10px grid">
+  <div fxLayout="column" fxFlex *ngFor="let product of products">
+    <mat-card class="product-card">
+      <mat-card-header>
+        <mat-card-title>{{product.name}}</mat-card-title>
+      </mat-card-header>
+      <img class="card-image" mat-card-image src="{{product.image}}" alt="{{product.name}}">
+      <mat-card-content>
+        <p>
+          {{product.description}}
+        </p>
+        <table mat-table [dataSource]="product.covers" class="mat-elevation-z8">
+          <ng-container matColumnDef="risk">
+            <th mat-header-cell *matHeaderCellDef> Risk </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="sumInsured">
+            <th mat-header-cell *matHeaderCellDef> Sum insured (EUR) </th>
+            <td mat-cell *matCellDef="let element"> {{element.sumInsured}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="['risk', 'sumInsured']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['risk', 'sumInsured'];"></tr>
+        </table>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions>
+          <a [routerLink]="['/products', product.code]">
+            <button mat-flat-button color="primary">BUY</button>
+          </a>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
