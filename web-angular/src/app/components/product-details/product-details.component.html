@@ -1,3 +1,20 @@
-<p>
-  product-details works!
-</p>
+<div
+  gdAreas="header header | side content"
+  gdGap="16px"
+  gdRows="auto auto auto">
+  <div gdArea="header">
+    <h1>{{ productDetails.name }}</h1>
+    <p>{{ productDetails.description }}</p>
+  </div>
+  <div gdArea="side">
+    <img src="{{productDetails.image}}" alt="{{productDetails.name}}"/>
+  </div>
+  <div gdArea="content">
+    <p>Enter the data needed to calculate the price</p>
+    <form [formGroup]="form" (ngSubmit)="submit(model)">
+      <formly-form [form]="form" [fields]="fields" [options]="options" [model]="model"></formly-form>
+      <a routerLink="/products"><button mat-flat-button>Back</button></a>
+      <button mat-flat-button color="primary" type="submit">Calculate price</button>
+    </form>
+  </div>
+</div>

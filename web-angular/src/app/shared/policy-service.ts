@@ -7,7 +7,13 @@ export class PolicyService {
   constructor(private http: HttpClient) {
   }
 
+  createOffer() {
 
+  }
+
+  calculatePrice() {
+
+  }
 
   getURL() {
     return environment.backend_url ? environment.backend_url : "";

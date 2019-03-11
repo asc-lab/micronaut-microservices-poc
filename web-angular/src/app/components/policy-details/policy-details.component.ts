@@ -10,6 +10,7 @@ export class PolicyDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

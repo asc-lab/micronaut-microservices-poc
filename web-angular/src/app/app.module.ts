@@ -19,10 +19,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from './components/material/material.module';
 import {PolicyService} from "./shared/policy-service";
 import {ProductService} from "./shared/product-service";
-import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import {ErrorDialogComponent} from './components/error-dialog/error-dialog.component';
 import {ErrorDialogService} from "./components/error-dialog/error-dialog.service";
 import {AuthInterceptor} from "./shared/auth-interceptor";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {FormlyMatDatepickerModule} from "@ngx-formly/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -49,14 +50,15 @@ import {FlexLayoutModule} from "@angular/flex-layout";
       validationMessages: [
         {name: 'required', message: 'This field is required'},
       ]
-    })
+    }),
+    FormlyMatDatepickerModule
   ],
   providers: [
     AuthService,
     PolicyService,
     ProductService,
     ErrorDialogService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   entryComponents: [
     ErrorDialogComponent

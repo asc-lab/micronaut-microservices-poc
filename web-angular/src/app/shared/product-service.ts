@@ -12,6 +12,10 @@ export class ProductService {
     return this.http.get(`${this.getURL()}/products`);
   }
 
+  getProduct(productCode: string) {
+    return this.http.get(`${this.getURL()}/products/${productCode}`);
+  }
+
   getURL() {
     return environment.backend_url ? environment.backend_url : "";
   }
