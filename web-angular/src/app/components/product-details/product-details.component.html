@@ -2,19 +2,39 @@
   gdAreas="header header | side content"
   gdGap="16px"
   gdRows="auto auto auto">
+
   <div gdArea="header">
     <h1>{{ productDetails.name }}</h1>
     <p>{{ productDetails.description }}</p>
   </div>
+
   <div gdArea="side">
     <img src="{{productDetails.image}}" alt="{{productDetails.name}}"/>
   </div>
+
   <div gdArea="content">
     <p>Enter the data needed to calculate the price</p>
-    <form [formGroup]="form" (ngSubmit)="submit(model)">
+
+    <form [formGroup]="form" (ngSubmit)="calculatePrice(model)">
+
+      <!-- START form inputs/selects -->
       <formly-form [form]="form" [fields]="fields" [options]="options" [model]="model"></formly-form>
-      <a routerLink="/products"><button mat-flat-button>Back</button></a>
-      <button mat-flat-button color="primary" type="submit">Calculate price</button>
+      <!-- END form inputs/selects -->
+
+      <div *ngIf="form.enabled">
+        <a routerLink="/products">
+          <button mat-flat-button>Back</button>
+        </a>
+        <button mat-flat-button color="primary" type="submit" [disabled]="!form.valid">Calculate price</button>
+      </div>
+
+      <div *ngIf="form.disabled">
+        <label>Price: </label>
+        <strong>{{proposedOffer.totalPrice}} EUR </strong>
+        <button mat-flat-button type="button" (click)="backToEdit()">Back</button>
+        <button mat-flat-button color="primary" type="button" (click)="buyOffer()">Buy</button>
+      </div>
+
     </form>
   </div>
 </div>

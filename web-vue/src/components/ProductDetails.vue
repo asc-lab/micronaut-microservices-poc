@@ -94,7 +94,7 @@
 
                                     <div class="d-flex flex-row-reverse" v-if="'VIEW' === mode">
                                         <div class="p-2">
-                                            <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="createOffer">Buy</button>
+                                            <button type="submit" class="btn btn-primary" v-on:click.stop.prevent="buyOffer">Buy</button>
                                         </div>
                                         <div class="p-2">
                                             <a class="btn btn-secondary" href="#" v-on:click.stop.prevent="backToEdit" role="button">Change
@@ -180,6 +180,7 @@
                     });
                 }
 
+                console.log(request);
                 return request;
             },
             submitForm: function (e) {
@@ -209,7 +210,7 @@
                     alert('Bad Things Happened!');
                 });
             },
-            createOffer: function () {
+            buyOffer: function () {
                 this.$router.push({name: 'createPolicy', params: {offerNumber: this.offerNumber}});
             }
         }
