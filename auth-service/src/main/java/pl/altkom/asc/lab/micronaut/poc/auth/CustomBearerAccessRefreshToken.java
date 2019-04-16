@@ -17,8 +17,9 @@ class CustomBearerAccessRefreshToken extends BearerAccessRefreshToken {
                                    Integer expiresIn,
                                    String accessToken,
                                    String refreshToken,
+                                   String tokenType,
                                    String avatar) {
-        super(username, roles, expiresIn, accessToken, refreshToken);
+        super(username, roles, expiresIn, accessToken, refreshToken, tokenType);
         this.avatar = avatar;
 
     }
