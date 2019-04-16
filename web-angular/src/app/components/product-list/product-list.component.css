@@ -1,0 +1,12 @@
+.product-card {
+  max-width: 400px;
+  height: 600px;
+}
+
+.card-image {
+  max-height: 200px;
+}
+
+table {
+  width: 100%;
+}

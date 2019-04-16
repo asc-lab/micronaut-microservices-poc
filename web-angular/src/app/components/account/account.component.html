@@ -1,0 +1,10 @@
+<div *ngIf="!isAuthenticated(); else logoutTemplate" class="account-container">
+  <form [formGroup]="form" (ngSubmit)="submit(model)">
+    <formly-form [form]="form" [fields]="fields" [options]="options" [model]="model"></formly-form>
+    <button mat-flat-button color="primary" type="submit">Login</button>
+  </form>
+</div>
+
+<ng-template #logoutTemplate>
+  <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+</ng-template>
