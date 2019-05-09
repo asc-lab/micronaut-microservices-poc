@@ -3,8 +3,8 @@ micronaut:
     name: chat-service
   server:
     port: ${SERVICE_PORT:8787}
-  metrics:
-    enabled: true
+#  metrics:
+#    enabled: true
 ---
 consul:
   client:
@@ -12,10 +12,10 @@ consul:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
 ---
-endpoints:
-  health:
-    enabled: true
-    sensitive: false
-  metrics:
-    enabled: true
-    sensitive: false
+#endpoints:
+#  health:
+#    enabled: true
+#    sensitive: false
+#  metrics:
+#    enabled: true
+#    sensitive: false
