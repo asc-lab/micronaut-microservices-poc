@@ -78,18 +78,18 @@
         <!-- MONGO -->
 
         <!-- MANAGEMENT -->
-<!--        <dependency>-->
-<!--            <groupId>io.micronaut</groupId>-->
-<!--            <artifactId>micronaut-management</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.micronaut.configuration</groupId>-->
-<!--            <artifactId>micronaut-micrometer-core</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.micronaut.configuration</groupId>-->
-<!--            <artifactId>micronaut-micrometer-registry-statsd</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-management</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.configuration</groupId>
+            <artifactId>micronaut-micrometer-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.configuration</groupId>
+            <artifactId>micronaut-micrometer-registry-statsd</artifactId>
+        </dependency>
         <!-- MANAGEMENT -->
 
         <!-- TESTS -->
