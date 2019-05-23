@@ -19,7 +19,9 @@ tracing:
     http:
       url: "http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}"
       sampler:
-        probability: 1.0 # Configuration taking 100% of the request to be processed by Zipkin. In a real production system, that could be overwhelming.
+        probability: 1.0
+        # Configuration taking 100% of the request to be processed by Zipkin.
+        # In a real production system, that could be overwhelming.
 ---
 datasources:
   default:

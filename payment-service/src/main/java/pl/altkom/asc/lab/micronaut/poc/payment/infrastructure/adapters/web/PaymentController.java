@@ -16,6 +16,7 @@ import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.exceptions.PolicyA
 @Controller("/payment")
 @RequiredArgsConstructor
 public class PaymentController implements PaymentOperations {
+
     private final PolicyAccountRepository policyAccountRepository;
 
     @Override
@@ -30,7 +31,10 @@ public class PaymentController implements PaymentOperations {
     @HystrixCommand
     public PolicyAccountBalanceDto accountBalance(String accountNumber) {
         return policyAccountRepository.findByNumber(accountNumber)
-                .map(account -> new PolicyAccountBalanceDto(account.getPolicyNumber(), account.getPolicyAccountNumber(), account.balanceAt(LocalDate.now())))
+                .map(account -> new PolicyAccountBalanceDto(
+                        account.getPolicyNumber(),
+                        account.getPolicyAccountNumber(),
+                        account.balanceAt(LocalDate.now())))
                 .orElseThrow(() -> new PolicyAccountNotFound(accountNumber));
     }
 }
