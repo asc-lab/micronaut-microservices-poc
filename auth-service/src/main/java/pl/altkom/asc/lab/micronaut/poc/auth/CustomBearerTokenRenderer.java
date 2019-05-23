@@ -1,6 +1,7 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
 import io.micronaut.context.annotation.Replaces;
+import io.micronaut.http.HttpHeaderValues;
 import io.micronaut.security.authentication.UserDetails;
 import io.micronaut.security.token.jwt.render.AccessRefreshToken;
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
@@ -8,6 +9,8 @@ import io.micronaut.security.token.jwt.render.BearerTokenRenderer;
 
 @Replaces(bean = BearerTokenRenderer.class)
 public class CustomBearerTokenRenderer extends BearerTokenRenderer {
+
+    private final String BEARER_TOKEN_TYPE = HttpHeaderValues.AUTHORIZATION_PREFIX_BEARER;
 
     @Override
     public AccessRefreshToken render(UserDetails userDetails, Integer expiresIn, String accessToken, String refreshToken) {
@@ -18,6 +21,7 @@ public class CustomBearerTokenRenderer extends BearerTokenRenderer {
                     expiresIn,
                     accessToken,
                     refreshToken,
+                    BEARER_TOKEN_TYPE,
                     ((InsuranceAgentDetails) userDetails).getAvatarUrl()
             );
         }
@@ -27,6 +31,7 @@ public class CustomBearerTokenRenderer extends BearerTokenRenderer {
                 userDetails.getRoles(),
                 expiresIn,
                 accessToken,
-                refreshToken);
+                refreshToken,
+                BEARER_TOKEN_TYPE);
     }
 }

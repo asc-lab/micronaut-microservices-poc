@@ -3,11 +3,19 @@ micronaut:
     name: product-service
   server:
     port: ${SERVICE_PORT:-1}
-  metrics:
-    enabled: true
+#  metrics:
+#    enabled: true
+---
+#endpoints:
+#  health:
+#    enabled: true
+#    sensitive: false
+#  metrics:
+#    enabled: true
+#    sensitive: false
 ---
 mongodb:
-    uri: "mongodb://${MONGO_HOST:localhost}:${MONGO_PORT:27017}/products-demo"
+    uri: "mongodb://${MG_HOST:localhost}:${MG_PORT:27017}/demo"
     cluster:
       maxWaitQueueSize: 5
     connectionPool:
@@ -18,14 +26,6 @@ consul:
     registration:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
----
-endpoints:
-  health:
-    enabled: true
-    sensitive: false
-  metrics:
-    enabled: true
-    sensitive: false
 ---
 tracing:
   zipkin:
