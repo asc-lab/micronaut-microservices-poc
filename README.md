@@ -89,6 +89,7 @@ To run the whole system on local machine just type:
 ```
 docker-run.sh
 ```
+Make sure you've first built the microservices! Check [this](https://github.com/asc-lab/micronaut-microservices-poc#building).
 This script will provision required infrastructure and start all services.
 Setup is powered by docker-compose and configured via `docker-compose.yml` file.
 
