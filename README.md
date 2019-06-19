@@ -182,7 +182,7 @@ This command generate project in Java and Maven as build tool.
 </p>
 
 ## References
-* [Building microservices with Micronaut - comprehensive guide](https://asc.altkom.pl/en/blog/microservices-micronaut/)
+* [Building microservices with Micronaut - comprehensive guide](https://altkomsoftware.pl/en/blog/microservices-micronaut/)
 * [Micronaut Docs](https://docs.micronaut.io/latest/guide/index.html)
 * [Micronaut Workshop](https://alvarosanchez.github.io/micronaut-workshop/)
 * [Building microservices with Micronaut (Part I)](https://mfarache.github.io/mfarache/Building-microservices-Micronoaut/)
