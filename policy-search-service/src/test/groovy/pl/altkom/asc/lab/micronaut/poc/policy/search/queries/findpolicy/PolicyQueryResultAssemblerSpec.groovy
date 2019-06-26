@@ -25,4 +25,19 @@ class PolicyQueryResultAssemblerSpec extends Specification {
             result.policies.get(2).number.equalsIgnoreCase("1")
     }
 
+    def 'should handle null start dates and place them at the end'() {
+        given:
+            PolicyQueryResultAssembler assembler = new PolicyQueryResultAssembler()
+            List<PolicyView> policies = new ArrayList<>(Arrays.asList(
+                    new PolicyView('1', LocalDate.of(2015,11,1), LocalDate.of(2016,10,30), 'Tom Hanks'),
+                    new PolicyView('2', null, null, 'Alanis Morissette'),
+                    new PolicyView('3', LocalDate.of(2015,11,2), LocalDate.of(2016,10,30), 'Andy Warhol')
+            ))
+
+        when:
+            FindPolicyQueryResult result = assembler.constructResult(policies)
+
+        then:
+           result.policies.get(2).number.equalsIgnoreCase("2")
+    }
 }

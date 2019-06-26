@@ -14,7 +14,7 @@ class PolicyQueryResultAssembler {
         return new FindPolicyQueryResult(
                 policies.stream()
                         .map(PolicyListItemDtoAssembler::map)
-                        .sorted(Comparator.comparing(PolicyListItemDto::getDateFrom).reversed())
+                        .sorted(Comparator.comparing(PolicyListItemDto::getDateFrom, Comparator.nullsLast(Comparator.reverseOrder())))
                         .collect(Collectors.toList())
         );
     }
