@@ -23,7 +23,6 @@ services:
     image: "spotify/kafka:latest"
     container_name: kafka
     hostname: localhost
-    network_mode: host
     ports:
       - 2181:2181
       - 9092:9092
@@ -33,7 +32,6 @@ services:
   kafka_manager:
     image: "mzagar/kafka-manager-docker:1.3.3.4"
     container_name: kafkamanager
-    network_mode: host
     ports:
       - 9000:9000
     environment:
