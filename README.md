@@ -73,6 +73,8 @@ build.bat
 * **docker**
 * **docker-compose**
 
+Windows users: make sure to set `core.autocrlf false` in git configuration before cloning this repository.
+
 For Windows users, append below line ```C:\Windows\System32\drivers\etc\hosts```:
 ```
 127.0.0.1 kafkaserver
