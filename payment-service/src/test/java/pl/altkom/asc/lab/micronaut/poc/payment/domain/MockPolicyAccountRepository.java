@@ -21,13 +21,14 @@ public class MockPolicyAccountRepository implements PolicyAccountRepository {
     }
 
     @Override
-    public Optional<PolicyAccount> findForPolicy(String policyNumber) {
+    public Optional<PolicyAccount> findByPolicyNumber(String policyNumber) {
         return Optional.ofNullable(policyAccountMap.get(policyNumber));
     }
 
     @Override
-    public void add(PolicyAccount policyAccount) {
+    public PolicyAccount save(PolicyAccount policyAccount) {
         policyAccountMap.put(policyAccount.getPolicyNumber(), policyAccount);
+        return policyAccount;
     }
 
     @Override
@@ -36,7 +37,7 @@ public class MockPolicyAccountRepository implements PolicyAccountRepository {
     }
 
     @Override
-    public Optional<PolicyAccount> findByNumber(String accountNumber) {
+    public Optional<PolicyAccount> findByPolicyAccountNumber(String accountNumber) {
         return policyAccountMap.values().stream()
                 .filter(ac -> ac.getPolicyAccountNumber().equals(accountNumber))
                 .findFirst();

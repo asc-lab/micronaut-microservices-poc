@@ -3,13 +3,21 @@ package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 import java.util.Collection;
 import java.util.Optional;
 
-public interface PolicyAccountRepository {
+import io.micronaut.data.repository.GenericRepository;
+import io.micronaut.data.annotation.*;
+import io.micronaut.data.model.*;
 
-    Optional<PolicyAccount> findForPolicy(String policyNumber);
+@Repository
+public interface PolicyAccountRepository extends GenericRepository<PolicyAccount, Long> {
+
+    @Join(value = "entries", type = Join.Type.FETCH) 
+    Optional<PolicyAccount> findByPolicyNumber(String policyNumber);
     
-    Optional<PolicyAccount> findByNumber(String accountNumber);
+    @Join(value = "entries", type = Join.Type.FETCH) 
+    @Query("FROM PolicyAccount p WHERE p.policyAccountNumber = :policyAccountNumber")
+    Optional<PolicyAccount> findByPolicyAccountNumber(String policyAccountNumber);
 
-    void add(PolicyAccount policyAccount);
+    PolicyAccount save(PolicyAccount policyAccount);
 
     Collection<PolicyAccount> findAll();
 }

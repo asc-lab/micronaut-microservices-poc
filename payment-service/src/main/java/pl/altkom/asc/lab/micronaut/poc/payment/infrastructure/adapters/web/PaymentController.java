@@ -30,7 +30,7 @@ public class PaymentController implements PaymentOperations {
     @Override
     @HystrixCommand
     public PolicyAccountBalanceDto accountBalance(String accountNumber) {
-        return policyAccountRepository.findByNumber(accountNumber)
+        return policyAccountRepository.findByPolicyAccountNumber(accountNumber)
                 .map(account -> new PolicyAccountBalanceDto(
                         account.getPolicyNumber(),
                         account.getPolicyAccountNumber(),

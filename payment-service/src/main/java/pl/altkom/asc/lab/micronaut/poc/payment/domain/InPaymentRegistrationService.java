@@ -29,7 +29,7 @@ public class InPaymentRegistrationService {
 
     private void registerInPayment(BankStatement bankStatement) {
         policyAccountRepository
-                .findByNumber(bankStatement.getAccountNumber())
+                .findByPolicyAccountNumber(bankStatement.getAccountNumber())
                 .ifPresent(account -> {
                     account.inPayment(bankStatement.getAmount(), bankStatement.getAccountingDate());
                 });
