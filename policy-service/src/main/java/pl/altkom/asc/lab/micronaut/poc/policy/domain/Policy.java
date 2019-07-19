@@ -20,6 +20,7 @@ public class Policy {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "number")
     private String number;
 
     @OneToMany(mappedBy = "policy", cascade = CascadeType.ALL)

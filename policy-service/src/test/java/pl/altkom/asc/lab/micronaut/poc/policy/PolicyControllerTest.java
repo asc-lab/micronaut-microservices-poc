@@ -58,7 +58,7 @@ public class PolicyControllerTest {
                 OfferStatus.NEW,
                 LocalDate.now()
         );
-        server.getApplicationContext().getBean(OfferRepository.class).add(offer111);
+        server.getApplicationContext().getBean(OfferRepository.class).save(offer111);
 
         //when policy creation is requested
         CreatePolicyCommand cmd = new CreatePolicyCommand(
