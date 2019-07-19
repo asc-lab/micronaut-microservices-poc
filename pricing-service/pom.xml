@@ -100,6 +100,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- PREDATOR -->
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-predator-hibernate-jpa</artifactId>
+            <version>1.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
+        
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
@@ -237,6 +244,12 @@
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
+                            </path>
+                            <!-- PREDATOR -->
+                             <path>
+                                <groupId>io.micronaut.data</groupId>
+                                <artifactId>micronaut-predator-processor</artifactId>
+                                <version>1.0.0.BUILD-SNAPSHOT</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
