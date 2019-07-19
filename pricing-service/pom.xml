@@ -18,6 +18,10 @@
             <id>jcenter.bintray.com</id>
             <url>https://jcenter.bintray.com</url>
         </repository>
+        <repository>
+            <id>https://oss.sonatype.org</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
     </repositories>
 
     <dependencyManagement>
@@ -106,7 +110,7 @@
             <artifactId>micronaut-predator-hibernate-jpa</artifactId>
             <version>1.0.0.BUILD-SNAPSHOT</version>
         </dependency>
-        
+
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
             <groupId>io.micronaut</groupId>
