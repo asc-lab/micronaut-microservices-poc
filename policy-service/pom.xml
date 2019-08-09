@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.policy.PolicyApplication</exec.mainClass>
-        <micronaut.version>1.2.0.RC2</micronaut.version>
+        <micronaut.version>1.2.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
