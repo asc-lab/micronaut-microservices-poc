@@ -75,6 +75,11 @@
                                 <artifactId>lombok</artifactId>
                                 <version>1.18.0</version>
                             </path>
+                            <path>
+                                <groupId>io.micronaut</groupId>
+                                <artifactId>micronaut-inject-java</artifactId>
+                                <version>${micronaut.version}</version>
+                            </path>
                         </annotationProcessorPaths>
                     </configuration>
                 </plugin>

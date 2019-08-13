@@ -7,6 +7,7 @@ import io.micronaut.data.repository.GenericRepository;
 import io.micronaut.data.annotation.*;
 import io.micronaut.data.jpa.annotation.EntityGraph;
 import io.micronaut.data.model.*;
+import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.PolicyAccountDto;
 
 @Repository
 public interface PolicyAccountRepository extends GenericRepository<PolicyAccount, Long> {
@@ -20,5 +21,5 @@ public interface PolicyAccountRepository extends GenericRepository<PolicyAccount
 
     PolicyAccount save(PolicyAccount policyAccount);
 
-    Collection<PolicyAccount> findAll();
+    Collection<PolicyAccountDto> findAll();
 }

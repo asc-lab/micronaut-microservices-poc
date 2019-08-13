@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.PolicyAccountDto;
 
 public class MockPolicyAccountRepository implements PolicyAccountRepository {
 
@@ -32,14 +34,27 @@ public class MockPolicyAccountRepository implements PolicyAccountRepository {
     }
 
     @Override
-    public Collection<PolicyAccount> findAll() {
-        return policyAccountMap.values();
+    public Collection<PolicyAccountDto> findAll() {
+        return policyAccountMap
+                .values()
+                .stream()
+                .map(this::mapToDto)
+                .collect(Collectors.toList());
     }
-
+    
     @Override
     public Optional<PolicyAccount> findByPolicyAccountNumber(String accountNumber) {
         return policyAccountMap.values().stream()
                 .filter(ac -> ac.getPolicyAccountNumber().equals(accountNumber))
                 .findFirst();
+    }
+    
+    
+    private PolicyAccountDto mapToDto(PolicyAccount entity){
+        return new PolicyAccountDto(
+                entity.getPolicyAccountNumber(),
+                entity.getPolicyNumber(),
+                entity.getCreated(),
+                entity.getUpdated());
     }
 }
