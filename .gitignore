@@ -28,6 +28,7 @@
 **/.idea/
 **/jsconfig.json
 **/.vscode/
+**/nbactions.xml
 
 # Typings file.
 **/typings/
