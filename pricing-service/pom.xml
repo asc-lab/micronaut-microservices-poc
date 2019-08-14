@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.pricing.PricingApplication</exec.mainClass>
-        <micronaut.version>1.1.0.RC2</micronaut.version>
+        <micronaut.version>1.2.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -17,6 +17,10 @@
         <repository>
             <id>jcenter.bintray.com</id>
             <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>https://oss.sonatype.org</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
@@ -87,7 +91,24 @@
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
             <artifactId>micronaut-hibernate-jpa</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.micronaut</groupId>
+                    <artifactId>runtime</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.micronaut</groupId>
+                    <artifactId>http</artifactId>
+                </exclusion>
+            </exclusions>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- PREDATOR -->
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-predator-hibernate-jpa</artifactId>
+            <version>1.0.0.BUILD-SNAPSHOT</version>
         </dependency>
 
         <!-- TRACING WITH ZIPKIN -->
@@ -227,6 +248,12 @@
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
+                            </path>
+                            <!-- PREDATOR -->
+                             <path>
+                                <groupId>io.micronaut.data</groupId>
+                                <artifactId>micronaut-predator-processor</artifactId>
+                                <version>1.0.0.BUILD-SNAPSHOT</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>

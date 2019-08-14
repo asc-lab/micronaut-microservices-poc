@@ -17,14 +17,14 @@ public class PolicyRegisteredListener {
 
     @Queue("policy-registered")
     void onPolicyRegistered(PolicyRegisteredEvent event) {
-        Optional<PolicyAccount> accountOpt = policyAccountRepository.findForPolicy(event.getPolicy().getNumber());
+        Optional<PolicyAccount> accountOpt = policyAccountRepository.findByPolicyNumber(event.getPolicy().getNumber());
 
         if (!accountOpt.isPresent())
             createAccount(event.getPolicy());
     }
 
     private void createAccount(PolicyDto policy) {
-        policyAccountRepository.add(new PolicyAccount(policy.getNumber(), policyAccountNumberGenerator.generate()));
+        policyAccountRepository.save(new PolicyAccount(policy.getNumber(), policyAccountNumberGenerator.generate()));
     }
 
 }

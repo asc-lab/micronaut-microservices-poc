@@ -9,7 +9,7 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.payment.PaymentApplication</exec.mainClass>
-        <micronaut.version>1.1.0.RC1</micronaut.version>
+        <micronaut.version>1.2.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -17,6 +17,10 @@
         <repository>
             <id>jcenter.bintray.com</id>
             <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>oss.sonatype.org</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
@@ -107,6 +111,13 @@
             <scope>compile</scope>
         </dependency>
         <!-- DATABASE, JPA, HIBERNATE -->
+
+        <!-- PREDATOR -->
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-predator-hibernate-jpa</artifactId>
+            <version>1.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
 
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
@@ -248,6 +259,12 @@
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
+                            </path>
+                            <!-- PREDATOR -->
+                             <path>
+                                <groupId>io.micronaut.data</groupId>
+                                <artifactId>micronaut-predator-processor</artifactId>
+                                <version>1.0.0.BUILD-SNAPSHOT</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>

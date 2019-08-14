@@ -38,7 +38,7 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
         Policy policy = policyFactory.fromOffer(offer, policyHolder);
 
         //save policy and update offer
-        policyRepository.add(policy);
+        policyRepository.save(policy);
 
         //publish events
         eventPublisher.policyRegisteredEvent(createEvent(policy));
