@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import pl.altkom.asc.lab.micronaut.poc.payment.service.api.v1.PolicyAccountDto;
 
 public class MockPolicyAccountRepository implements PolicyAccountRepository {
 
@@ -21,24 +23,38 @@ public class MockPolicyAccountRepository implements PolicyAccountRepository {
     }
 
     @Override
-    public Optional<PolicyAccount> findForPolicy(String policyNumber) {
+    public Optional<PolicyAccount> findByPolicyNumber(String policyNumber) {
         return Optional.ofNullable(policyAccountMap.get(policyNumber));
     }
 
     @Override
-    public void add(PolicyAccount policyAccount) {
+    public PolicyAccount save(PolicyAccount policyAccount) {
         policyAccountMap.put(policyAccount.getPolicyNumber(), policyAccount);
+        return policyAccount;
     }
 
     @Override
-    public Collection<PolicyAccount> findAll() {
-        return policyAccountMap.values();
+    public Collection<PolicyAccountDto> findAll() {
+        return policyAccountMap
+                .values()
+                .stream()
+                .map(this::mapToDto)
+                .collect(Collectors.toList());
     }
-
+    
     @Override
-    public Optional<PolicyAccount> findByNumber(String accountNumber) {
+    public Optional<PolicyAccount> findByPolicyAccountNumber(String accountNumber) {
         return policyAccountMap.values().stream()
                 .filter(ac -> ac.getPolicyAccountNumber().equals(accountNumber))
                 .findFirst();
+    }
+    
+    
+    private PolicyAccountDto mapToDto(PolicyAccount entity){
+        return new PolicyAccountDto(
+                entity.getPolicyAccountNumber(),
+                entity.getPolicyNumber(),
+                entity.getCreated(),
+                entity.getUpdated());
     }
 }

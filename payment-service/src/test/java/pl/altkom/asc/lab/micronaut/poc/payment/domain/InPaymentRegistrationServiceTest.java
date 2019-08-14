@@ -15,7 +15,7 @@ public class InPaymentRegistrationServiceTest {
     public void canReadStatementsFile() throws IOException {
         PolicyAccountRepository policyAccountRepository = new MockPolicyAccountRepository();
         InPaymentRegistrationService inPaymentRegistrationService = new InPaymentRegistrationService(policyAccountRepository);
-        PolicyAccount account231232132131 = policyAccountRepository.findByNumber("231232132131").get();
+        PolicyAccount account231232132131 = policyAccountRepository.findByPolicyAccountNumber("231232132131").get();
         assertEquals(BigDecimal.ZERO, account231232132131.balanceAt(LocalDate.of(2019,12,31)));
         File testData  = createTestData();
                 

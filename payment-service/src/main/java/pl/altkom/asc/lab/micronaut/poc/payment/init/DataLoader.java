@@ -6,14 +6,13 @@ import io.micronaut.spring.tx.annotation.Transactional;
 import javax.inject.Singleton;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccount;
-import pl.altkom.asc.lab.micronaut.poc.payment.infrastructure.adapters.db.PolicyAccountDb;
+import pl.altkom.asc.lab.micronaut.poc.payment.domain.*;
 
 @Singleton
 @Slf4j
 @RequiredArgsConstructor
 public class DataLoader  implements ApplicationEventListener<ServerStartupEvent> {
-    private final PolicyAccountDb policyAccountDb;
+    private final PolicyAccountRepository policyAccountDb;
 
     @Transactional
     @Override
@@ -23,8 +22,8 @@ public class DataLoader  implements ApplicationEventListener<ServerStartupEvent>
     }
     
     private void addIfNotExists(PolicyAccount account) {
-        if (!policyAccountDb.findByNumber(account.getPolicyAccountNumber()).isPresent()) {
-            policyAccountDb.add(account);
+        if (!policyAccountDb.findByPolicyAccountNumber(account.getPolicyAccountNumber()).isPresent()) {
+            policyAccountDb.save(account);
         }
     }
 }

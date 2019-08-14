@@ -22,19 +22,19 @@ public class PaymentController implements PaymentOperations {
     @Override
     @HystrixCommand
     public Collection<PolicyAccountDto> accounts() {
-        return policyAccountRepository.findAll().stream()
-                .map(account -> new PolicyAccountDto(account.getPolicyNumber(), account.getPolicyAccountNumber()))
-                .collect(Collectors.toList());
+        return policyAccountRepository.findAll();
     }
     
     @Override
     @HystrixCommand
     public PolicyAccountBalanceDto accountBalance(String accountNumber) {
-        return policyAccountRepository.findByNumber(accountNumber)
+        return policyAccountRepository.findByPolicyAccountNumber(accountNumber)
                 .map(account -> new PolicyAccountBalanceDto(
                         account.getPolicyNumber(),
                         account.getPolicyAccountNumber(),
-                        account.balanceAt(LocalDate.now())))
+                        account.balanceAt(LocalDate.now()),
+                        account.getCreated(),
+                        account.getUpdated()))
                 .orElseThrow(() -> new PolicyAccountNotFound(accountNumber));
     }
 }

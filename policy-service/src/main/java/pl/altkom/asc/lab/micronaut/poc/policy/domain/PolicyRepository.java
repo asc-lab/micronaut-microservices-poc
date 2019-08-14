@@ -1,10 +1,13 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
 import java.util.Optional;
+import io.micronaut.data.repository.GenericRepository;
+import io.micronaut.data.annotation.*;
+import io.micronaut.data.model.*;
 
-public interface PolicyRepository {
-
+@Repository
+public interface PolicyRepository extends GenericRepository<Policy,Long> {
     Optional<Policy> findByNumber(String number);
 
-    void add(Policy policy);
+    Policy save(Policy policy);
 }

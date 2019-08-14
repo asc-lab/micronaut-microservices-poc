@@ -37,7 +37,7 @@ public class CreateOfferHandler implements CommandHandler<CreateOfferResult, Cre
 
         //create & save offer
         Offer offer = OfferFactory.offerFromPrice(calcPriceCmd, price);
-        offerRepository.add(offer);
+        offerRepository.save(offer);
 
         //return result
         return constructResult(offer);

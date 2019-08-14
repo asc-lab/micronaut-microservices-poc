@@ -1,5 +1,7 @@
 package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 
+import io.micronaut.data.annotation.DateCreated;
+import io.micronaut.data.annotation.DateUpdated;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +11,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.Setter;
 
 @Entity
 @Table(name = "policy_account")
@@ -30,6 +34,16 @@ public class PolicyAccount {
 
     @OneToMany(mappedBy = "policyAccount", cascade = CascadeType.ALL)
     private List<AccountingEntry> entries;
+    
+    @Setter
+    @DateCreated
+    @Column(name = "created")
+    private Date created;
+    
+    @Setter
+    @DateUpdated
+    @Column(name = "updated")
+    private Date updated;
 
     public PolicyAccount(String policyNumber, String policyAccountNumber) {
         this.policyNumber = policyNumber;
