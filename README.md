@@ -1,5 +1,7 @@
 # ASCLAB Micronaut PoC - LAB Insurance Sales Portal
 
+[![Build Status](https://dev.azure.com/robertkusmierek/asc-mn-poc/_apis/build/status/build-master?branchName=master)](https://dev.azure.com/robertkusmierek/asc-mn-poc/_build/latest?definitionId=17&branchName=master)
+
 This is an example of a very simplified insurance sales system made in a microservice architecture using Micronaut.
 
 Comprehensive guide describing exactly the architecture, applied design patterns and technologies can be found on our blog in article **[Building Microservices with Micronaut](https://altkomsoftware.pl/en/blog/microservices-micronaut/)**.
