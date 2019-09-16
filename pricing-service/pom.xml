@@ -10,6 +10,7 @@
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.pricing.PricingApplication</exec.mainClass>
         <micronaut.version>1.2.0</micronaut.version>
+        <micronaut.data.version>1.0.0.M1</micronaut.data.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -104,11 +105,11 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- PREDATOR -->
+        <!-- MICRONAUT-DATA -->
         <dependency>
             <groupId>io.micronaut.data</groupId>
-            <artifactId>micronaut-predator-hibernate-jpa</artifactId>
-            <version>1.0.0.BUILD-SNAPSHOT</version>
+            <artifactId>micronaut-data-hibernate-jpa</artifactId>
+            <version>${micronaut.data.version}</version>
         </dependency>
 
         <!-- TRACING WITH ZIPKIN -->
@@ -249,11 +250,11 @@
                                 <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
                             </path>
-                            <!-- PREDATOR -->
+                            <!-- MICRONAUT-DATA -->
                              <path>
                                 <groupId>io.micronaut.data</groupId>
-                                <artifactId>micronaut-predator-processor</artifactId>
-                                <version>1.0.0.BUILD-SNAPSHOT</version>
+                                <artifactId>micronaut-data-processor</artifactId>
+                                <version>${micronaut.data.version}</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
