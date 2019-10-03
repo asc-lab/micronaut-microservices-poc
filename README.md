@@ -8,6 +8,13 @@ Comprehensive guide describing exactly the architecture, applied design patterns
 
 **We encourage you to read, because in this README there is only a substitute for all information.**
 
+Other articles around microservices that could be interesting:
+- [Simplify Data Access Code With Micronaut Data](https://altkomsoftware.pl/en/blog/micronaut-data/)
+- [Micronaut with RabbitMQ integration](https://altkomsoftware.pl/en/blog/micronaut-rabbitmq/)
+- [CQRS and Event Sourcing Intro For Developers](https://altkomsoftware.pl/en/blog/cqrs-event-sourcing/)
+- [From monolith to microservices – to migrate or not to migrate?](https://altkomsoftware.pl/en/blog/monolith-microservices/)
+- [Event Storming — innovation in IT projects](https://altkomsoftware.pl/en/blog/event-storming/)
+
 ## Architecture overview
 
 <p align="center">
