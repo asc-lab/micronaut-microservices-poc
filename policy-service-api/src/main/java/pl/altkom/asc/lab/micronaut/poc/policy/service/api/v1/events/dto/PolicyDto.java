@@ -17,4 +17,5 @@ public class PolicyDto {
     private String policyHolder;
     private String productCode;
     private BigDecimal totalPremium;
+    private String agentLogin;
 }
