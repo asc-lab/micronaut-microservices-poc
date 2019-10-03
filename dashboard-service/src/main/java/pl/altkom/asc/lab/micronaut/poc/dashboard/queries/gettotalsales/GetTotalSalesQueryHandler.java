@@ -14,6 +14,7 @@ import javax.inject.Singleton;
 @Singleton
 @RequiredArgsConstructor
 public class GetTotalSalesQueryHandler implements QueryHandler<GetTotalSalesQueryResult, GetTotalSalesQuery> {
+
     private final PolicyRepository policyRepository;
 
     @Override
