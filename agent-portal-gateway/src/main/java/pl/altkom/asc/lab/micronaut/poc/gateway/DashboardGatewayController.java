@@ -28,7 +28,6 @@ public class DashboardGatewayController {
         return client.queryTotalSales(query);
     }
 
-
     @Post("/trends")
     GetSalesTrendsQueryResult querySalesTrends(@Body GetSalesTrendsQuery query){
         return client.querySalesTrends(query);

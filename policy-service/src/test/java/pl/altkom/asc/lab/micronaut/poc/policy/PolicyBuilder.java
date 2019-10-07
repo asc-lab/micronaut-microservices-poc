@@ -1,5 +1,6 @@
 package pl.altkom.asc.lab.micronaut.poc.policy;
 
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.AgentRef;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyVersion;
@@ -15,6 +16,7 @@ class PolicyBuilder {
     static Policy build() {
         return new Policy(1L,
                 "P1212121",
+                AgentRef.of("admin"),
                 new HashSet<>(Arrays.asList(
                         new PolicyVersion(
                                 1L,

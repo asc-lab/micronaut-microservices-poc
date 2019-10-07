@@ -29,6 +29,7 @@ final class ProductsAssembler {
                 .covers(mapCovers(product))
                 .questions(mapQuestions(product))
                 .maxNumberOfInsured(product.getMaxNumberOfInsured())
+                .icon(product.getIcon())
                 .build();
     }
 

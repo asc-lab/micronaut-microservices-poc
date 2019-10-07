@@ -35,7 +35,8 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
 
         //create policy from offer
         Person policyHolder = new Person(cmd.getPolicyHolder().getFirstName(), cmd.getPolicyHolder().getLastName(), cmd.getPolicyHolder().getTaxId());
-        Policy policy = policyFactory.fromOffer(offer, policyHolder);
+        AgentRef agent = AgentRef.of(cmd.getAgentLogin());
+        Policy policy = policyFactory.fromOffer(offer, policyHolder, agent);
 
         //save policy and update offer
         policyRepository.save(policy);
