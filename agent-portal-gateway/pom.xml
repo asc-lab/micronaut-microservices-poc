@@ -143,6 +143,12 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
+            <artifactId>dashboard-service-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- INTERNAL -->
     </dependencies>
     <build>

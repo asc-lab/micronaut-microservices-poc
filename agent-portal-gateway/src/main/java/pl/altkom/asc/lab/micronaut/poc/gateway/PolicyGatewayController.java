@@ -18,6 +18,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatep
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
 
 import javax.inject.Inject;
+import java.security.Principal;
 
 @Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/api/policies")
@@ -39,7 +40,8 @@ public class PolicyGatewayController {
     }
 
     @Post("/create")
-    CreatePolicyResult create(CreatePolicyCommand cmd) {
+    CreatePolicyResult create(CreatePolicyCommand cmd, Principal principal) {
+        cmd.setAgentLogin(principal.getName());
         return policyClient.create(cmd);
     }
 

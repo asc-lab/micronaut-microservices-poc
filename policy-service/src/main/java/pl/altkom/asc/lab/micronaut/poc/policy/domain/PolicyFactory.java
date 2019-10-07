@@ -2,13 +2,12 @@ package pl.altkom.asc.lab.micronaut.poc.policy.domain;
 
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 public class PolicyFactory {
 
-    public Policy fromOffer(Offer offer, Person policyHolder) {
-        Policy policy = new Policy(UUID.randomUUID().toString());
+    public Policy fromOffer(Offer offer, Person policyHolder, AgentRef agent) {
+        Policy policy = new Policy(UUID.randomUUID().toString(), agent);
         addVersion(offer, policyHolder, policy);
         return policy;
     }

@@ -16,7 +16,8 @@ class DemoProductsFactory {
                 "Safe Traveller",
                 "/static/travel.jpg",
                 "Travel insurance",
-                10);
+                10,
+                "plane");
 
         p.addCover("C1", "Luggage", "", false, new BigDecimal("5000"));
         p.addCover("C2", "Illness", "", false, new BigDecimal("5000"));
@@ -40,7 +41,8 @@ class DemoProductsFactory {
                 "Happy House",
                 "/static/house.jpg",
                 "House insurance",
-                5);
+                5,
+                "building");
 
         p.addCover("C1", "Fire", "", false, new BigDecimal("200000"));
         p.addCover("C2", "Flood", "", false, new BigDecimal("100000"));
@@ -65,7 +67,8 @@ class DemoProductsFactory {
                 "Happy farm",
                 "/static/farm.jpg",
                 "Farm insurance",
-                1);
+                1,
+                "apple");
 
         p.addCover("C1", "Crops", "", false, new BigDecimal("200000"));
         p.addCover("C2", "Flood", "", false, new BigDecimal("100000"));
@@ -90,7 +93,8 @@ class DemoProductsFactory {
                 "Happy Driver",
                 "/static/car.jpg",
                 "Car insurance",
-                1);
+                1,
+                "car");
 
         p.addCover("C1", "Assistance", "", true, null);
         p.addQuestions(Arrays.asList(

@@ -23,12 +23,16 @@ public class Policy {
     @Column(name = "number")
     private String number;
 
+    @Embedded
+    private AgentRef agent;
+
     @OneToMany(mappedBy = "policy", cascade = CascadeType.ALL)
     private Set<PolicyVersion> versions;
 
-    public Policy(String number) {
+    public Policy(String number, AgentRef agent) {
         this.number = number;
         this.versions = new HashSet<>();
+        this.agent = agent;
     }
 
     public LocalDate getLastVersionValidityFrom() {

@@ -1,0 +1,27 @@
+---
+micronaut:
+  application:
+    name: dashboard-service
+  server:
+    host: localhost
+    port: ${SERVICE_PORT:-1}
+---
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
+
+---
+kafka:
+  bootstrap:
+    servers: localhost:9092
+
+---
+elastic:
+  host: ${ELASTIC_HOST:localhost}
+  port: ${ELASTIC_PORT:9200}
+  connectionTimeout: 5000
+  connectionRequestTimeout: 5000
+  socketTimeout: 5000
+  maxRetryTimeout: 5000

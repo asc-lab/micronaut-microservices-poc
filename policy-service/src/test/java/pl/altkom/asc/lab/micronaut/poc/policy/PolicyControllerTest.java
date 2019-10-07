@@ -63,7 +63,8 @@ public class PolicyControllerTest {
         //when policy creation is requested
         CreatePolicyCommand cmd = new CreatePolicyCommand(
                 "111",
-                new PersonDto("Timmy", "Lamb", "111111111116"));
+                new PersonDto("Timmy", "Lamb", "111111111116"),
+                "admin");
 
         CreatePolicyResult result = client.create(cmd);
 
