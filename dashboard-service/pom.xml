@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>dashboard.service</groupId>
   <artifactId>dashboard-service</artifactId>
-  <version>0.1</version>
+  <version>1.0</version>
   <properties>
     <micronaut.version>1.1.0</micronaut.version>
     <jdk.version>1.8</jdk.version>
