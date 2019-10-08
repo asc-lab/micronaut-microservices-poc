@@ -22,6 +22,9 @@ if errorlevel 1 exit /B 1
 call mvn clean install -f product-service-api
 if errorlevel 1 exit /B 1
 
+call mvn clean install -f dashboard-service-api
+if errorlevel 1 exit /B 1
+
 call mvn clean install -f auth-service -DskipTests
 if errorlevel 1 exit /B 1
 
@@ -44,6 +47,9 @@ call mvn clean install -f documents-service -DskipTests
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f chat-service -DskipTests
+if errorlevel 1 exit /B 1
+
+call mvn clean install -f dashboard-service -DskipTests
 if errorlevel 1 exit /B 1
 
 call mvn clean install -f agent-portal-gateway -DskipTests

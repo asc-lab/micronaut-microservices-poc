@@ -22,6 +22,9 @@ mvn clean install -f product-service-api
 mvn clean install -f documents-service-api
 [ $? -eq 0 ] || exit 1
 
+mvn clean install -f dashboard-service-api
+[ $? -eq 0 ] || exit 1
+
 mvn clean install -f auth-service
 [ $? -eq 0 ] || exit 1
 
@@ -41,6 +44,9 @@ mvn clean install -f pricing-service
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f product-service
+[ $? -eq 0 ] || exit 1
+
+mvn clean install -f dashboard-service
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f agent-portal-gateway

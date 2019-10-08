@@ -91,6 +91,11 @@ services:
     image: mn-chat-service
     container_name: mn-chat-service
     network_mode: host
+  mn-dashboard-service:
+    build: ./dashboard-service
+    image: mn-dashboard-service
+    container_name: mn-dashboard-service
+    network_mode: host
   mn-agent-portal-gateway:
     build: ./agent-portal-gateway
     image: mn-agent-portal-gateway
