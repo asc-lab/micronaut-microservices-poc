@@ -13,10 +13,13 @@
     "chart.js": "^2.8.0",
     "dotenv": "^6.0.0",
     "font-awesome": "~4.7.0",
+    "moment": "^2.24.0",
+    "underscore": "^1.9.1",
     "vue": "^2.5.16",
     "vue-chartjs": "^3.4.2",
     "vue-resource": "^1.5.1",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-underscore": "^0.1.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
