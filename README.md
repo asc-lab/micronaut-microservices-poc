@@ -46,6 +46,10 @@ Based on login and password users get authenticated and JWT token with their pri
 
 * **chat-service** - Example WebSocket usage. Chat for salesman.
 
+* **dashboard-service** - Business dashboards that presents our agents sales results. Dashboard service subscribes to events of selling policies and index sales data in ElasticSearch.
+Then ElasticSearch aggregation framework is used to calculate sales stats like: total sales and number of policies per product per time period,
+sales per agent in given time period and sales timeline. Sales stats are nicely visualized using ChartJS.
+
 * **web-vue** - SPA application built with Vue.js and Bootstrap for Vue.
 
 Each business microservice has also **-api module** (payment-service-api, policy-service-api etc.), where we defined commands, events, queries and operations. 
