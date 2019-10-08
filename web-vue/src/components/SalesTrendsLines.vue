@@ -46,7 +46,7 @@ export default {
             datasets: [
                 {
                     data: [],
-                    label: 'Sales per month (EUR)',
+                    label: 'Sales (EUR)',
                     backgroundColor: "#FF6384"
                 }
             ]
