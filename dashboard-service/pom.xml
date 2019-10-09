@@ -51,6 +51,11 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>io.micronaut.configuration</groupId>
+      <artifactId>micronaut-hibernate-validator</artifactId>
+      <version>${micronaut.version}</version>
+    </dependency>
+    <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-runtime</artifactId>
       <scope>compile</scope>
@@ -123,12 +128,6 @@
       <artifactId>command-bus</artifactId>
       <version>1.0</version>
     </dependency>
-      <dependency>
-          <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
-          <artifactId>policy-service-api</artifactId>
-          <version>1.0</version>
-          <scope>compile</scope>
-      </dependency>
     <dependency>
       <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
       <artifactId>policy-service-api</artifactId>
