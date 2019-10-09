@@ -23,8 +23,8 @@ public class DataLoader implements ApplicationEventListener<ServerStartupEvent> 
 
     @Override
     public void onApplicationEvent(ServerStartupEvent event) {
-        List<String> agents = Arrays.asList("jimmy.solid","danny.solid","admin","agent1","annn.wolf");
-        List<String> products = Arrays.asList("TRI","HSI","FAI", "CAR");
+        List<String> agents = Arrays.asList("jimmy.solid", "danny.solid", "admin", "agent1", "annn.wolf");
+        List<String> products = Arrays.asList("TRI", "HSI", "FAI", "CAR");
         LocalDateRange generationPeriod = LocalDateRange.between(
                 LocalDate.now().minusMonths(12),
                 LocalDate.now()
@@ -37,14 +37,12 @@ public class DataLoader implements ApplicationEventListener<ServerStartupEvent> 
                 .generate();
 
         log.info("Docs to save " + docs.size());
-
-        for (int i=0; i<docs.size(); i++) {
+        for (int i = 0; i < docs.size(); i++) {
             policyRepository.save(docs.get(i));
-            if (i%100==0) {
+            if (i % 100 == 0) {
                 log.info(i + " docs saved");
             }
         }
-
         log.info("Docs saved.");
     }
 }

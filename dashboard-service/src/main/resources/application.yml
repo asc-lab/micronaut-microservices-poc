@@ -11,12 +11,10 @@ consul:
     registration:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
-
 ---
 kafka:
   bootstrap:
     servers: localhost:9092
-
 ---
 elastic:
   host: ${ELASTIC_HOST:localhost}

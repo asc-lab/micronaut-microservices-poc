@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic;
+package pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.config;
 
 import io.micronaut.context.annotation.Factory;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,12 @@ public class ElasticConfig {
     @Singleton
     public RestHighLevelClient restHighLevelClient() {
         return new RestHighLevelClient(RestClient.builder(
-                new HttpHost(elasticSearchSettings.getHost(), elasticSearchSettings.getPort(), "http")));
+                new HttpHost(
+                        elasticSearchSettings.getHost(),
+                        elasticSearchSettings.getPort(),
+                        "http"
+                )
+        ));
     }
 
 }

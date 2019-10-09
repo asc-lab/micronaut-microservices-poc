@@ -17,7 +17,7 @@ import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.SalesResult;
 
 import java.math.BigDecimal;
 
-public class AgentSalesQueryAdapter extends QueryAdapter<AgentSalesQuery,AgentSalesQuery.Result> {
+public class AgentSalesQueryAdapter extends QueryAdapter<AgentSalesQuery, AgentSalesQuery.Result> {
     public AgentSalesQueryAdapter(AgentSalesQuery query) {
         super(query);
     }
@@ -28,20 +28,20 @@ public class AgentSalesQueryAdapter extends QueryAdapter<AgentSalesQuery,AgentSa
                 .types("policy_type");
 
         BoolQueryBuilder filterBuilder = QueryBuilders.boolQuery();
-        if (query.getFilterByAgentLogin()!=null) {
+        if (query.getFilterByAgentLogin() != null) {
             filterBuilder.must(QueryBuilders.termQuery("agentLogin.keyword", query.getFilterByAgentLogin()));
         }
-        if (query.getFilterByProductCode()!=null) {
+        if (query.getFilterByProductCode() != null) {
             filterBuilder.must(QueryBuilders.termQuery("productCode.keyword", query.getFilterByProductCode()));
         }
-        if (query.getFilterBySalesDate()!=null){
+        if (query.getFilterBySalesDate() != null) {
             RangeQueryBuilder datesRange = QueryBuilders
                     .rangeQuery("from")
                     .gte(query.getFilterBySalesDate().getFrom().toString())
                     .lt(query.getFilterBySalesDate().getTo().toString());
             filterBuilder.must(datesRange);
         }
-        AggregationBuilder aggBuilder = AggregationBuilders.filter("agg_filter",filterBuilder);
+        AggregationBuilder aggBuilder = AggregationBuilders.filter("agg_filter", filterBuilder);
 
         TermsAggregationBuilder sumAggBuilder = AggregationBuilders
                 .terms("count_by_agent")
@@ -63,9 +63,13 @@ public class AgentSalesQueryAdapter extends QueryAdapter<AgentSalesQuery,AgentSa
         AgentSalesQuery.Result.ResultBuilder result = AgentSalesQuery.Result.builder();
         Filter filterAgg = searchResponse.getAggregations().get("agg_filter");
         Terms agents = filterAgg.getAggregations().get("count_by_agent");
-        for (Terms.Bucket b : agents.getBuckets()){
+
+        for (Terms.Bucket b : agents.getBuckets()) {
             Sum sum = b.getAggregations().get("total_premium");
-            result.agentTotal(b.getKeyAsString(), SalesResult.of(b.getDocCount(),BigDecimal.valueOf(sum.getValue())));
+            result.agentTotal(
+                    b.getKeyAsString(),
+                    SalesResult.of(b.getDocCount(), BigDecimal.valueOf(sum.getValue()))
+            );
         }
 
         return result.build();

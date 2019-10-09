@@ -7,7 +7,7 @@
     <micronaut.version>1.1.0</micronaut.version>
     <jdk.version>1.8</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.dashboard.Application</exec.mainClass>
+    <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.dashboard.DashboardApplication</exec.mainClass>
   </properties>
   <repositories>
     <repository>

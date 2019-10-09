@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pl.allegro.tech.embeddedelasticsearch.EmbeddedElastic;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.*;
-import pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.JsonConverter;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.config.JsonConverter;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.PolicyElasticRepository;
 
 import java.math.BigDecimal;
