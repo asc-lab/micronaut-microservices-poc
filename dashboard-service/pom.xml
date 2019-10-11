@@ -75,6 +75,25 @@
       <artifactId>micronaut-http-server-netty</artifactId>
       <scope>compile</scope>
     </dependency>
+
+    <!-- MANAGEMENT -->
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-management</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.configuration</groupId>
+      <artifactId>micronaut-micrometer-core</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.configuration</groupId>
+      <artifactId>micronaut-micrometer-registry-statsd</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <!-- MANAGEMENT -->
+
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>

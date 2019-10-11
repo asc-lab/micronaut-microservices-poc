@@ -23,3 +23,12 @@ elastic:
   connectionRequestTimeout: 5000
   socketTimeout: 5000
   maxRetryTimeout: 5000
+---
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+  metrics:
+    enabled: true
+    sensitive: false
