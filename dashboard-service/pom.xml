@@ -61,11 +61,6 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-discovery-client</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>io.micronaut.configuration</groupId>
       <artifactId>micronaut-kafka</artifactId>
       <scope>compile</scope>

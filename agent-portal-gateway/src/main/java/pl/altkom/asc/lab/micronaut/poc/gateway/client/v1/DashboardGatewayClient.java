@@ -13,7 +13,7 @@ import pl.altkom.asc.lab.micronaut.poc.dashboard.service.api.v1.queries.getsales
 import pl.altkom.asc.lab.micronaut.poc.dashboard.service.api.v1.queries.gettotalsalesquery.GetTotalSalesQuery;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.service.api.v1.queries.gettotalsalesquery.GetTotalSalesQueryResult;
 
-@Client(id = "dashboard-service", path = "/dashboard")
+@Client(id = "http://dashboard-service", path = "/dashboard")
 @Retryable(attempts = "2", delay = "2s")
 public interface DashboardGatewayClient extends DashboardOperations {
 
