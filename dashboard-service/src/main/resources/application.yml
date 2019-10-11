@@ -14,7 +14,7 @@ consul:
 ---
 kafka:
   bootstrap:
-    servers: localhost:9092
+    servers: "${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}"
 ---
 elastic:
   host: ${ELASTIC_HOST:localhost}
