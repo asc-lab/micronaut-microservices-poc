@@ -47,6 +47,15 @@ steps:
   displayName: 'docker push $(dockerNamespace)/documents-service:$(tag)'
 - script: docker push $(dockerNamespace)/documents-service:latest
   displayName: 'docker push $(dockerNamespace)/documents-service:latest'
+  # dashboard-service
+- script: docker build -t $(dockerNamespace)/dashboard-service dashboard-service
+  displayName: 'docker build dashboard-service'
+- script: docker tag $(dockerNamespace)/dashboard-service $(dockerNamespace)/dashboard-service:$(tag)
+  displayName: 'docker tag $(dockerNamespace)/dashboard-service:$(tag)'
+- script: docker push $(dockerNamespace)/dashboard-service:$(tag)
+  displayName: 'docker push $(dockerNamespace)/dashboard-service:$(tag)'
+- script: docker push $(dockerNamespace)/dashboard-service:latest
+  displayName: 'docker push $(dockerNamespace)/dashboard-service:latest'
 # payment-service
 - script: docker build -t $(dockerNamespace)/payment-service payment-service
   displayName: 'docker build payment-service'

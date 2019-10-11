@@ -8,6 +8,13 @@ Comprehensive guide describing exactly the architecture, applied design patterns
 
 **We encourage you to read, because in this README there is only a substitute for all information.**
 
+Other articles around microservices that could be interesting:
+- [Simplify Data Access Code With Micronaut Data](https://altkomsoftware.pl/en/blog/micronaut-data/)
+- [Micronaut with RabbitMQ integration](https://altkomsoftware.pl/en/blog/micronaut-rabbitmq/)
+- [CQRS and Event Sourcing Intro For Developers](https://altkomsoftware.pl/en/blog/cqrs-event-sourcing/)
+- [From monolith to microservices – to migrate or not to migrate?](https://altkomsoftware.pl/en/blog/monolith-microservices/)
+- [Event Storming — innovation in IT projects](https://altkomsoftware.pl/en/blog/event-storming/)
+
 ## Architecture overview
 
 <p align="center">
@@ -38,6 +45,10 @@ Based on login and password users get authenticated and JWT token with their pri
 * **documents-service** - Service build with kotlin. Responsible for generating pdf document when new policy event is received.
 
 * **chat-service** - Example WebSocket usage. Chat for salesman.
+
+* **dashboard-service** - Business dashboards that presents our agents sales results. Dashboard service subscribes to events of selling policies and index sales data in ElasticSearch.
+Then ElasticSearch aggregation framework is used to calculate sales stats like: total sales and number of policies per product per time period,
+sales per agent in given time period and sales timeline. Sales stats are nicely visualized using ChartJS.
 
 * **web-vue** - SPA application built with Vue.js and Bootstrap for Vue.
 

@@ -4,16 +4,16 @@ import io.micronaut.context.annotation.Replaces;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
 import io.micronaut.spring.tx.annotation.Transactional;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyVersion;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.*;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
 
 import javax.inject.Singleton;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Replaces(PolicyRepository.class)
@@ -39,7 +39,7 @@ public class MockPolicyRepository implements PolicyRepository {
     private Map<String, Policy> init() {
         Map<String, Policy> map = new ConcurrentHashMap<>();
 
-        map.put("1234", new Policy(1L, "1234", new HashSet<>(
+        map.put("1234", new Policy(1L, "1234", AgentRef.of("jimmy.solid"), new HashSet<>(
                 Collections.singletonList(new PolicyVersion(2L,
                         null,
                         1L,
@@ -51,7 +51,7 @@ public class MockPolicyRepository implements PolicyRepository {
                         new HashSet<>(),
                         BigDecimal.TEN
                 )))));
-        map.put("1235", new Policy(2L, "1235", new HashSet<>(
+        map.put("1235", new Policy(2L, "1235", AgentRef.of("jimmy.solid"), new HashSet<>(
                 Collections.singletonList(new PolicyVersion(1L,
                         null,
                         1L,
@@ -64,7 +64,7 @@ public class MockPolicyRepository implements PolicyRepository {
                         BigDecimal.TEN
                 ))
         )));
-        map.put("1236", new Policy(3L, "1236", new HashSet<>(
+        map.put("1236", new Policy(3L, "1236", AgentRef.of("admin"), new HashSet<>(
                 Collections.singletonList(new PolicyVersion(3L,
                         null,
                         1L,

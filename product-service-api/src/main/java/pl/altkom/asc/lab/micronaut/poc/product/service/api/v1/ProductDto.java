@@ -20,4 +20,5 @@ public class ProductDto {
     private List<CoverDto> covers;
     private List<QuestionDto> questions;
     private int maxNumberOfInsured;
+    private String icon;
 }

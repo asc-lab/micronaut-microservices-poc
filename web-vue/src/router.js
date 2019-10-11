@@ -39,6 +39,11 @@ export default new Router({
             component: loadView('Products')
         },
         {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: loadView('Dashboard')
+        },
+        {
             path: '/products/:productCode',
             name: 'product',
             props: true,

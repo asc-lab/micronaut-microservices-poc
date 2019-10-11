@@ -22,6 +22,9 @@ mvn clean install -f pricing-service-api
 mvn clean install -f product-service-api
 [ $? -eq 0 ] || exit 1
 
+mvn clean install -f dashboard-service-api
+[ $? -eq 0 ] || exit 1
+
 mvn clean install -f auth-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
@@ -44,6 +47,9 @@ mvn clean install -f documents-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f chat-service -DskipTests
+[ $? -eq 0 ] || exit 1
+
+mvn clean install -f dashboard-service -DskipTests
 [ $? -eq 0 ] || exit 1
 
 mvn clean install -f agent-portal-gateway -DskipTests

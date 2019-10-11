@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -14,4 +15,7 @@ public class PolicyDto {
     private LocalDate from;
     private LocalDate to;
     private String policyHolder;
+    private String productCode;
+    private BigDecimal totalPremium;
+    private String agentLogin;
 }
