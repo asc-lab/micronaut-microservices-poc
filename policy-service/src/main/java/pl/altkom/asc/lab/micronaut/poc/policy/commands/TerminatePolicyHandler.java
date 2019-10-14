@@ -12,6 +12,7 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDt
 import pl.altkom.asc.lab.micronaut.poc.policy.shared.exceptions.BusinessException;
 
 import javax.inject.Singleton;
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Singleton
@@ -28,7 +29,7 @@ public class TerminatePolicyHandler implements CommandHandler<TerminatePolicyRes
             throw new BusinessException("POLICY NOT FOUND");
 
         Policy policy = policyOpt.get();
-        policy.terminate();
+        policy.terminate(LocalDate.now());
 
         policyRepository.save(policy);
 
@@ -40,8 +41,8 @@ public class TerminatePolicyHandler implements CommandHandler<TerminatePolicyRes
     private PolicyTerminatedEvent createEvent(Policy policy) {
         return new PolicyTerminatedEvent(new PolicyDto(
                 policy.getNumber(),
-                policy.getLastVersionValidityFrom(),
-                policy.getLastVersionValidityTo(),
+                policy.versions().lastVersion().getVersionValidityPeriod().getFrom(),
+                policy.versions().lastVersion().getVersionValidityPeriod().getTo(),
                 policy.versions().lastVersion().getPolicyHolder().getFullName(),
                 policy.versions().lastVersion().getProductCode(),
                 policy.versions().lastVersion().getTotalPremiumAmount(),

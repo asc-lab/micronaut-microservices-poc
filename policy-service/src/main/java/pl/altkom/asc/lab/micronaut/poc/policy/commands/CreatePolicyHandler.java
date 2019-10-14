@@ -51,8 +51,8 @@ public class CreatePolicyHandler implements CommandHandler<CreatePolicyResult, C
         return new PolicyRegisteredEvent(
                 new PolicyDto(
                         policy.getNumber(),
-                        policy.getLastVersionValidityFrom(),
-                        policy.getLastVersionValidityTo(),
+                        policy.versions().lastVersion().getVersionValidityPeriod().getFrom(),
+                        policy.versions().lastVersion().getVersionValidityPeriod().getTo(),
                         policy.versions().lastVersion().getPolicyHolder().getFullName(),
                         policy.versions().lastVersion().getProductCode(),
                         policy.versions().lastVersion().getTotalPremiumAmount(),
