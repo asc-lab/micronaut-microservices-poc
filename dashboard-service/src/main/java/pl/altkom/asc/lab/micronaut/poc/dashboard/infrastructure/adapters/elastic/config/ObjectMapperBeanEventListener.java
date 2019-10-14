@@ -1,4 +1,4 @@
-package pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic;
+package pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
