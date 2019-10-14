@@ -171,6 +171,16 @@ This command generate project in Java and Maven as build tool.
 
 ## Examples
 
+### Chat
+<p align="center">
+    <img alt="Chat" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/chat_v2.gif" />
+</p>
+
+### Sales Dashboard
+<p align="center">
+    <img alt="Sales Dashboard" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/sales_dashboard.jpg" />
+</p>
+
 ### Tracing requests with Zipkin
 <p align="center">
     <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/zipkin.png" />
@@ -189,11 +199,6 @@ This command generate project in Java and Maven as build tool.
 ### Show document templates in JS Report
 <p align="center">
     <img alt="JSReport" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/jsreport.png" />
-</p>
-
-### Chat
-<p align="center">
-    <img alt="Chat" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/chat_v2.gif" />
 </p>
 
 ## References
