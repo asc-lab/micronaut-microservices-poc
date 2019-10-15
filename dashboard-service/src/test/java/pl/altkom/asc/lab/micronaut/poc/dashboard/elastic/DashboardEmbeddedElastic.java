@@ -13,7 +13,7 @@ public class DashboardEmbeddedElastic {
             try {
                 embeddedElastic = createAndRun();
             } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException("Cannot start embedded Elastic", e);
             }
         }
         return embeddedElastic;
