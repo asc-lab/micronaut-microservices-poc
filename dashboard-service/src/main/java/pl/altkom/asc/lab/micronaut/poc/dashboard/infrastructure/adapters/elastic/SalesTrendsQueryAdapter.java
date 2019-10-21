@@ -50,7 +50,6 @@ public class SalesTrendsQueryAdapter extends QueryAdapter<SalesTrendsQuery,Sales
         aggBuilder.subAggregation(histBuilder);
 
         SearchSourceBuilder srcBuilder = new SearchSourceBuilder()
-                .query(QueryBuilders.matchAllQuery())
                 .aggregation(aggBuilder)
                 .size(0);
         searchRequest.source(srcBuilder);

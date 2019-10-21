@@ -48,7 +48,6 @@ class TotalSalesQueryAdapter extends QueryAdapter<TotalSalesQuery, TotalSalesQue
         aggBuilder.subAggregation(sumAggBuilder);
 
         SearchSourceBuilder srcBuilder = new SearchSourceBuilder()
-                .query(QueryBuilders.matchAllQuery())
                 .aggregation(aggBuilder)
                 .size(0);
         searchRequest.source(srcBuilder);

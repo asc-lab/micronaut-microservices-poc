@@ -50,7 +50,6 @@ public class AgentSalesQueryAdapter extends QueryAdapter<AgentSalesQuery, AgentS
         aggBuilder.subAggregation(sumAggBuilder);
 
         SearchSourceBuilder srcBuilder = new SearchSourceBuilder()
-                .query(QueryBuilders.matchAllQuery())
                 .aggregation(aggBuilder)
                 .size(0);
         searchRequest.source(srcBuilder);
