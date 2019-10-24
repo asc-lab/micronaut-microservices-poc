@@ -14,6 +14,7 @@ Other articles around microservices that could be interesting:
 - [CQRS and Event Sourcing Intro For Developers](https://altkomsoftware.pl/en/blog/cqrs-event-sourcing/)
 - [From monolith to microservices – to migrate or not to migrate?](https://altkomsoftware.pl/en/blog/monolith-microservices/)
 - [Event Storming — innovation in IT projects](https://altkomsoftware.pl/en/blog/event-storming/)
+- [\[SLIDES\] Building microservices with Micronaut - practical approach](https://docs.google.com/presentation/d/1WSp3S1zFTKxN1_9kli5J9xlTWrliVjIH8E-eNFb1ghM/edit?usp=sharing)
 
 ## Architecture overview
 
