@@ -160,6 +160,11 @@ Setup Kafka on Windows with [this instruction](https://zablo.net/blog/post/setup
 docker run -p 5488:5488 jsreport/jsreport
 ```
 
+## OpenAPI/Swagger docs
+**agent-portal-gateway** provides the API description.
+
+You can go to URL: `[http://localhost:8081/swagger/lab-insurance-sales-portal-api-1.0.yml][http://localhost:8081/swagger/lab-insurance-sales-portal-api-1.0.yml]`
+
 ## Add new microservice
 
 Create new microservice with [Micronaut CLI](http://guides.micronaut.io/micronaut-cli/guide/index.html):

@@ -8,6 +8,10 @@ micronaut:
       enabled: true
   security:
     enabled: true
+    intercept-url-map:
+      - pattern: /swagger/**
+        access:
+          - isAnonymous()
     token:
       jwt:
         enabled: true
@@ -15,6 +19,11 @@ micronaut:
           secret:
             generator:
               secret: pleaseChangeThisSecretForANewOne
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
 ---
 consul:
   client:
