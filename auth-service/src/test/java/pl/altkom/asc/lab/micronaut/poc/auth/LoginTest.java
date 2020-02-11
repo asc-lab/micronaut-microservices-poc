@@ -1,45 +1,42 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
-import io.micronaut.context.ApplicationContext;
+import org.junit.jupiter.api.Test;
+
+import javax.inject.Inject;
+
+import io.micronaut.context.annotation.Property;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
+import io.micronaut.test.annotation.MicronautTest;
 
-import static junit.framework.TestCase.fail;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.fail;
 
+@MicronautTest
+@Property(name = "micronaut.server.port", value = "-1")
 public class LoginTest {
-    private static EmbeddedServer server;
-    private static RxHttpClient httpClient;
-    
-    @BeforeClass
-    public static void setup() {
-        server = ApplicationContext.run(EmbeddedServer.class);
-        httpClient = server.getApplicationContext().createBean(RxHttpClient.class, server.getURL());
-    }
-    
-    @AfterClass
-    public static void cleanup() {
-        if (server != null)
-            server.stop();
-    }
-    
+    @Inject
+    private EmbeddedServer server;
+
+    @Inject
+    @Client("/")
+    private RxHttpClient httpClient;
+
     @Test
     public void canLoginWithValidCredentials() {
         UsernamePasswordCredentials upc = new UsernamePasswordCredentials("jimmy.solid","secret");
         HttpRequest loginRequest = HttpRequest.POST("/login", upc);
         HttpResponse<BearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(loginRequest, BearerAccessRefreshToken.class);
         
-        Assert.assertEquals("Status should be OK", rsp.getStatus(), HttpStatus.OK);
-        Assert.assertEquals("user should be jimmy", "jimmy.solid", rsp.getBody().get().getUsername());
+        assertThat(rsp.getStatus().getCode()).isEqualTo(200);
+        assertThat(rsp.getBody().get().getUsername()).isEqualTo("jimmy.solid");
     }
     
     
@@ -51,7 +48,7 @@ public class LoginTest {
             HttpResponse<BearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(loginRequest, BearerAccessRefreshToken.class);
             fail();
         } catch (HttpClientResponseException ex) {
-            Assert.assertEquals("Status should be OK", ex.getStatus(), HttpStatus.UNAUTHORIZED);
+            assertThat(ex.getStatus().getCode()).isEqualTo(HttpStatus.UNAUTHORIZED.getCode());
         }
         
     }

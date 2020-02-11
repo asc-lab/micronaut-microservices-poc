@@ -1,40 +1,31 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
-import io.micronaut.context.ApplicationContext;
+import org.junit.jupiter.api.Test;
+
+import javax.inject.Inject;
+
+import io.micronaut.context.annotation.Property;
 import io.micronaut.http.HttpMethod;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.annotation.Client;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
-import io.micronaut.security.handlers.LoginHandler;
-import io.micronaut.security.token.jwt.render.AccessRefreshToken;
-import io.micronaut.security.token.jwt.validator.JwtTokenValidator;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import io.micronaut.test.annotation.MicronautTest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+@MicronautTest
+@Property(name = "micronaut.server.port", value = "-1")
 public class CustomLoginHandlerTest {
-    private static EmbeddedServer server;
-    private static RxHttpClient httpClient;
+    @Inject
+    private EmbeddedServer server;
 
-    @BeforeClass
-    public static void setupServer() {
-        server = ApplicationContext.run(EmbeddedServer.class);
-        httpClient = server.getApplicationContext().createBean(RxHttpClient.class, server.getURL());
-    }
-
-    @AfterClass
-    public static void stopServer() {
-        if (httpClient != null) {
-            httpClient.stop();
-        }
-        if (server != null) {
-            server.stop();
-        }
-    }
+    @Inject
+    @Client("/")
+    private RxHttpClient httpClient;
 
     @Test
     public void customLoginHandler() {
@@ -45,12 +36,11 @@ public class CustomLoginHandlerTest {
         HttpResponse<CustomBearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(request, CustomBearerAccessRefreshToken.class);
 
         //then:
-        Assert.assertEquals(200, rsp.getStatus().getCode());
-        Assert.assertNotNull(rsp.body());
-        Assert.assertNotNull(rsp.body().getAccessToken());
-        Assert.assertNotNull(rsp.body().getRefreshToken());
-        Assert.assertNotNull(rsp.body().getAvatar());
-        Assert.assertEquals("static/avatars/jimmy_solid.png", rsp.body().getAvatar());
-
+        assertThat(rsp.getStatus().getCode()).isEqualTo(200);
+        assertThat(rsp.body()).isNotNull();
+        assertThat(rsp.body().getAccessToken()).isNotNull();
+        assertThat(rsp.body().getRefreshToken()).isNotNull();
+        assertThat(rsp.body().getAvatar()).isNotNull();
+        assertThat(rsp.body().getAvatar()).isEqualTo("static/avatars/jimmy_solid.png");
     }
 }

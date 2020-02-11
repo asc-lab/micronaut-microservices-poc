@@ -1,21 +1,24 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
+import org.reactivestreams.Publisher;
+
+import java.util.Optional;
+
+import javax.inject.Singleton;
+
 import io.micronaut.security.authentication.AuthenticationFailed;
 import io.micronaut.security.authentication.AuthenticationProvider;
 import io.micronaut.security.authentication.AuthenticationRequest;
 import io.micronaut.security.authentication.AuthenticationResponse;
 import io.reactivex.Flowable;
 import lombok.RequiredArgsConstructor;
-import org.reactivestreams.Publisher;
-
-import javax.inject.Singleton;
-import java.util.Optional;
 
 @Singleton
 @RequiredArgsConstructor
 public class AuthProvider implements AuthenticationProvider {
 
-    private final InsuranceAgents insuranceAgents;
+    //private final InsuranceAgents insuranceAgents;
+    private final InsuranceAgentsRepository insuranceAgents;
 
     @Override
     public Publisher<AuthenticationResponse> authenticate(AuthenticationRequest request) {
@@ -29,6 +32,6 @@ public class AuthProvider implements AuthenticationProvider {
     }
 
     private InsuranceAgentDetails createUserDetails(InsuranceAgent agent) {
-        return new InsuranceAgentDetails(agent.getLogin(), agent.getAvatar(), agent.getAvailableProducts());
+        return new InsuranceAgentDetails(agent.getLogin(), agent.getAvatar(), agent.availableProductCodes());
     }
 }

@@ -1,41 +1,35 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
-import io.micronaut.context.ApplicationContext;
+import org.junit.jupiter.api.Test;
+
+import javax.inject.Inject;
+
+import io.micronaut.context.annotation.Property;
 import io.micronaut.http.HttpMethod;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.annotation.Client;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.security.authentication.Authentication;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.AccessRefreshToken;
 import io.micronaut.security.token.jwt.validator.JwtTokenValidator;
+import io.micronaut.test.annotation.MicronautTest;
 import io.reactivex.Flowable;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Assert;
-import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+@MicronautTest
+@Property(name = "micronaut.server.port", value = "-1")
 public class CustomClaimsTest {
-    private static EmbeddedServer server;
-    private static RxHttpClient httpClient;
+    @Inject
+    private EmbeddedServer server;
 
-    @BeforeClass
-    public static void setupServer() {
-        server = ApplicationContext.run(EmbeddedServer.class);
-        httpClient = server.getApplicationContext().createBean(RxHttpClient.class, server.getURL());
-    }
-
-    @AfterClass
-    public static void stopServer() {
-        if (httpClient != null) {
-            httpClient.stop();
-        }
-        if (server != null) {
-            server.stop();
-        }
-    }
+    @Inject
+    @Client("/")
+    private RxHttpClient httpClient;
 
     @Test
     public void testCustomClaimsArePresentInJwt() {
@@ -46,10 +40,10 @@ public class CustomClaimsTest {
         HttpResponse<AccessRefreshToken> rsp = httpClient.toBlocking().exchange(request, AccessRefreshToken.class);
 
         //then:
-        Assert.assertEquals(200, rsp.getStatus().getCode());
-        Assert.assertTrue(rsp.body()  != null);
-        Assert.assertTrue(rsp.body().getAccessToken()  != null);
-        Assert.assertTrue(rsp.body().getRefreshToken()  != null);
+        assertThat(rsp.getStatus().getCode()).isEqualTo(200);
+        assertThat(rsp.body()).isNotNull();
+        assertThat(rsp.body().getAccessToken()).isNotNull();
+        assertThat(rsp.body().getRefreshToken()).isNotNull();
 
         //when:
         String accessToken = rsp.body().getAccessToken();
@@ -57,12 +51,12 @@ public class CustomClaimsTest {
         Authentication authentication = Flowable.fromPublisher(tokenValidator.validateToken(accessToken)).blockingFirst();
 
         //then:
-        Assert.assertTrue(authentication.getAttributes()!=null);
-        Assert.assertTrue(authentication.getAttributes().containsKey("roles"));
-        Assert.assertTrue(authentication.getAttributes().containsKey("iss"));
-        Assert.assertTrue(authentication.getAttributes().containsKey("exp"));
-        Assert.assertTrue(authentication.getAttributes().containsKey("iat"));
-        Assert.assertTrue(authentication.getAttributes().containsKey("avatar"));
-        Assert.assertEquals("static/avatars/jimmy_solid.png", authentication.getAttributes().get("avatar"));
+        assertThat(authentication.getAttributes()).isNotNull();
+        assertThat(authentication.getAttributes()).containsKey("roles");
+        assertThat(authentication.getAttributes()).containsKey("iss");
+        assertThat(authentication.getAttributes()).containsKey("exp");
+        assertThat(authentication.getAttributes()).containsKey("iat");
+        assertThat(authentication.getAttributes()).containsKey("avatar");
+        assertThat(authentication.getAttributes().get("avatar")).isEqualTo("static/avatars/jimmy_solid.png");
     }
 }
