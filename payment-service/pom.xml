@@ -9,8 +9,8 @@
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.payment.PaymentApplication</exec.mainClass>
-        <micronaut.version>1.2.0</micronaut.version>
-        <micronaut.data.version>1.0.0.M1</micronaut.data.version>
+        <micronaut.version>1.3.0</micronaut.version>
+        <micronaut.data.version>1.0.0</micronaut.data.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -102,11 +102,6 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut.configuration</groupId>
-            <artifactId>micronaut-hibernate-jpa</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.micronaut.configuration</groupId>
             <artifactId>micronaut-jdbc-hikari</artifactId>
             <scope>compile</scope>
         </dependency>
@@ -117,6 +112,21 @@
             <groupId>io.micronaut.data</groupId>
             <artifactId>micronaut-data-hibernate-jpa</artifactId>
             <version>${micronaut.data.version}</version>
+        </dependency>
+
+        <!-- spring managed tx -->
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-data-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>5.2.0.RELEASE</version>
         </dependency>
 
         <!-- TRACING WITH ZIPKIN -->

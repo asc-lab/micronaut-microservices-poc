@@ -1,10 +1,9 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing;
 
-import io.micronaut.context.ApplicationContext;
-import io.micronaut.runtime.server.EmbeddedServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceCommand;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceResult;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.dto.ChoiceQuestionAnswer;
@@ -13,6 +12,11 @@ import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculate
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
+
+import javax.validation.ConstraintViolationException;
+
+import io.micronaut.context.ApplicationContext;
+import io.micronaut.runtime.server.EmbeddedServer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -28,7 +32,7 @@ public class PricingControllerTest {
         client = server.getApplicationContext().createBean(PricingTestClient.class, server.getURL());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ConstraintViolationException.class)
     public void exceptionWhenCommandIsNull() {
         client.calculatePrice(null);
     }
