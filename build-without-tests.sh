@@ -55,9 +55,6 @@ mvn clean install -f dashboard-service -DskipTests
 mvn clean install -f agent-portal-gateway -DskipTests
 [ $? -eq 0 ] || exit 1
 
-npm install -g n
-[ $? -eq 0 ] || exit 1
-
 n 10.16.3
 [ $? -eq 0 ] || exit 1
 
