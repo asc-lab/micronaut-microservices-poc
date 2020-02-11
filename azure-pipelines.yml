@@ -9,7 +9,7 @@ steps:
   displayName: "docker login"
 - task: NodeTool@0
   inputs:
-    - versionSpec: 10.16.3
+    versionSpec: 10.16.3
 # Maven build
 - task: ShellScript@2
   inputs:
