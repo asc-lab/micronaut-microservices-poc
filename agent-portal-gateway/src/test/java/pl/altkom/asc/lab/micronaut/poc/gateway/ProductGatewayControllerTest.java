@@ -27,9 +27,4 @@ class ProductGatewayControllerTest {
 
         assertEquals(HttpStatus.UNAUTHORIZED, response.getStatus());
     }
-
-    @Test
-    void getProductsEndpointReturnsEmptyList() {
-        client.toBlocking().exchange(HttpRequest.GET("/api/products/").basicAuth("aaa", "aaa"));
-    }
 }
