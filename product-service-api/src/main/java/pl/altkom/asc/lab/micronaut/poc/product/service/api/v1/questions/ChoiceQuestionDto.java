@@ -1,10 +1,12 @@
 package pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.questions;
 
+import java.util.List;
+
+import io.micronaut.core.annotation.Introspected;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
+@Introspected
 @NoArgsConstructor
 @Getter
 public class ChoiceQuestionDto extends QuestionDto {

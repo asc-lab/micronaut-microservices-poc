@@ -1,11 +1,13 @@
 package pl.altkom.asc.lab.micronaut.poc.product.service.api.v1;
 
+import java.math.BigDecimal;
+
+import io.micronaut.core.annotation.Introspected;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
+@Introspected
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

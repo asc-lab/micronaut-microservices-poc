@@ -1,13 +1,16 @@
 package pl.altkom.asc.lab.micronaut.poc.product.service.api.v1;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.product.service.api.v1.questions.QuestionDto;
 
 import java.util.List;
 
+import io.micronaut.core.annotation.Introspected;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Introspected
 @Getter
 @Builder
 @NoArgsConstructor
