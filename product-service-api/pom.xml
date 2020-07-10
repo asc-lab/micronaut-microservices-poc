@@ -8,8 +8,14 @@
     <artifactId>product-service-api</artifactId>
     <version>1.0</version>
 
+    <parent>
+        <groupId>io.micronaut</groupId>
+        <artifactId>micronaut-parent</artifactId>
+        <version>2.0.0</version>
+    </parent>
+
     <properties>
-        <micronaut.version>1.3.0</micronaut.version>
+        <micronaut.version>2.0.0</micronaut.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -20,22 +26,15 @@
         </repository>
     </repositories>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.micronaut</groupId>
-                <artifactId>micronaut-bom</artifactId>
-                <version>${micronaut.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-runtime</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut</groupId>
+            <artifactId>micronaut-inject</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -62,6 +61,10 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>io.micronaut.build</groupId>
+                    <artifactId>micronaut-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.7.0</version>
@@ -76,6 +79,16 @@
                                 <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
                                 <version>1.18.0</version>
+                            </path>
+                            <path>
+                                <groupId>io.micronaut</groupId>
+                                <artifactId>micronaut-inject-java</artifactId>
+                                <version>${micronaut.version}</version>
+                            </path>
+                            <path>
+                                <groupId>io.micronaut</groupId>
+                                <artifactId>micronaut-validation</artifactId>
+                                <version>${micronaut.version}</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
