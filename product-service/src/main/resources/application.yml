@@ -7,6 +7,9 @@ micronaut:
 #  metrics:
 #    enabled: true
 ---
+jackson:
+  bean-introspection-module: true
+---
 #endpoints:
 #  health:
 #    enabled: true
