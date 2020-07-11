@@ -1,13 +1,15 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
+import io.micronaut.core.annotation.Introspected;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-import java.util.Map;
-
+@Introspected
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

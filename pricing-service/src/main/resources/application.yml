@@ -5,6 +5,9 @@ micronaut:
     host: localhost
     port: ${SERVICE_PORT:-1}
 ---
+jackson:
+  bean-introspection-module: true
+---
 consul:
   client:
     registration:

@@ -1,8 +1,8 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceCommand;
 import pl.altkom.asc.lab.micronaut.poc.pricing.service.api.v1.commands.calculateprice.CalculatePriceResult;
@@ -18,23 +18,25 @@ import javax.validation.ConstraintViolationException;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.runtime.server.EmbeddedServer;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 public class PricingControllerTest {
 
     private static EmbeddedServer server;
     private static PricingTestClient client;
 
-    @BeforeClass
+    @BeforeAll
     public static void setup() {
         server = ApplicationContext.run(EmbeddedServer.class);
         client = server.getApplicationContext().createBean(PricingTestClient.class, server.getURL());
     }
 
-    @Test(expected = ConstraintViolationException.class)
+    @Test
     public void exceptionWhenCommandIsNull() {
-        client.calculatePrice(null);
+        assertThrows(ConstraintViolationException.class, () -> client.calculatePrice(null));
     }
 
     @Test
@@ -54,9 +56,9 @@ public class PricingControllerTest {
         CalculatePriceResult result = client.calculatePrice(cmd);
 
         assertNotNull(result);
-        assertEquals("Total premium should be 78", new BigDecimal("78"), result.getTotalPrice());
-        assertEquals("C1 premium should be 26", new BigDecimal("26"), result.getCoversPrices().get("C1"));
-        assertEquals("C2 should be 52", new BigDecimal("52"), result.getCoversPrices().get("C2"));
+        assertEquals(new BigDecimal("78"), result.getTotalPrice(),"Total premium should be 78");
+        assertEquals(new BigDecimal("26"), result.getCoversPrices().get("C1"),"C1 premium should be 26");
+        assertEquals(new BigDecimal("52"), result.getCoversPrices().get("C2"),"C2 should be 52");
     }
 
     @Test
@@ -77,13 +79,13 @@ public class PricingControllerTest {
         CalculatePriceResult result = client.calculatePrice(cmd);
 
         assertNotNull(result);
-        assertEquals("Total premium should be 172.50", new BigDecimal("172.50"), result.getTotalPrice());
-        assertEquals("C1 premium should be 118.75", new BigDecimal("118.75"), result.getCoversPrices().get("C1"));
-        assertEquals("C2 should be 23.75", new BigDecimal("23.75"), result.getCoversPrices().get("C2"));
-        assertEquals("C3 should be 30", new BigDecimal("30"), result.getCoversPrices().get("C3"));
+        assertEquals(new BigDecimal("172.50"), result.getTotalPrice(),"Total premium should be 172.50");
+        assertEquals(new BigDecimal("118.75"), result.getCoversPrices().get("C1"),"C1 premium should be 118.75");
+        assertEquals(new BigDecimal("23.75"), result.getCoversPrices().get("C2"),"C2 should be 23.75");
+        assertEquals(new BigDecimal("30"), result.getCoversPrices().get("C3"),"C3 should be 30");
     }
 
-    @AfterClass
+    @AfterAll
     public static void cleanup() {
         if (server != null)
             server.stop();

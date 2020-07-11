@@ -1,6 +1,7 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.domain;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,7 +10,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class TariffTest {
     @Test
@@ -30,10 +32,10 @@ public class TariffTest {
 
         calculation = tariff.calculatePrice(calculation);
 
-        assertEquals("Total premium should be 78", new BigDecimal("98.00"), calculation.getTotalPremium());
-        assertEquals("C1 premium should be 26", new BigDecimal("26.00"), calculation.getCovers().get("C1").getPrice());
-        assertEquals("C2 should be 52", new BigDecimal("52.00"), calculation.getCovers().get("C2").getPrice());
-        assertEquals("C3 should be 20", new BigDecimal("20.00"), calculation.getCovers().get("C3").getPrice());
+        assertEquals(new BigDecimal("98.00"), calculation.getTotalPremium(), "Total premium should be 78");
+        assertEquals(new BigDecimal("26.00"), calculation.getCovers().get("C1").getPrice(), "C1 premium should be 26");
+        assertEquals(new BigDecimal("52.00"), calculation.getCovers().get("C2").getPrice(), "C2 should be 52");
+        assertEquals(new BigDecimal("20.00"), calculation.getCovers().get("C3").getPrice(),"C3 should be 20");
     }
 
     @Test
@@ -55,10 +57,10 @@ public class TariffTest {
 
         calculation = tariff.calculatePrice(calculation);
 
-        assertEquals("Total premium should be 172.50", new BigDecimal("172.50"), calculation.getTotalPremium());
-        assertEquals("C1 premium should be 118.75", new BigDecimal("118.75"), calculation.getCovers().get("C1").getPrice());
-        assertEquals("C2 should be 23.75", new BigDecimal("23.75"), calculation.getCovers().get("C2").getPrice());
-        assertEquals("C3 should be 30", new BigDecimal("30"), calculation.getCovers().get("C3").getPrice());
+        assertEquals(new BigDecimal("172.50"), calculation.getTotalPremium(),"Total premium should be 172.50");
+        assertEquals(new BigDecimal("118.75"), calculation.getCovers().get("C1").getPrice(),"C1 premium should be 118.75");
+        assertEquals(new BigDecimal("23.75"), calculation.getCovers().get("C2").getPrice(),"C2 should be 23.75");
+        assertEquals(new BigDecimal("30"), calculation.getCovers().get("C3").getPrice(),"C3 should be 30");
     }
 
     @Test
@@ -77,7 +79,7 @@ public class TariffTest {
 
         calculation = tariff.calculatePrice(calculation);
 
-        assertEquals("Total premium should be 100", new BigDecimal("100"), calculation.getTotalPremium());
-        assertEquals("C1 premium should be 100", new BigDecimal("100"), calculation.getCovers().get("C1").getPrice());
+        assertEquals(new BigDecimal("100"), calculation.getTotalPremium(),"Total premium should be 100");
+        assertEquals(new BigDecimal("100"), calculation.getCovers().get("C1").getPrice(),"C1 premium should be 100");
     }
 }
