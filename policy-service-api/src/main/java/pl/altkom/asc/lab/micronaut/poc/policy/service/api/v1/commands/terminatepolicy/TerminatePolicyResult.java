@@ -1,9 +1,11 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatepolicy;
 
+import io.micronaut.core.annotation.Introspected;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Introspected
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

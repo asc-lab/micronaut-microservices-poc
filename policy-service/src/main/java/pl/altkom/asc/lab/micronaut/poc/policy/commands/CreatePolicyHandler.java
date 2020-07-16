@@ -1,17 +1,25 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
-import io.micronaut.spring.tx.annotation.Transactional;
-import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.CommandHandler;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.*;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.AgentRef;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Offer;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyFactory;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.kafka.EventPublisher;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyRegisteredEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDto;
 
-import javax.inject.Singleton;
 import java.time.LocalDate;
+
+import javax.inject.Singleton;
+import javax.transaction.Transactional;
+
+import lombok.RequiredArgsConstructor;
 
 @Singleton
 @RequiredArgsConstructor

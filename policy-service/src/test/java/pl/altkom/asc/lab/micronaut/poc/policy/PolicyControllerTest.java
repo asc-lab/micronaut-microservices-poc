@@ -1,11 +1,9 @@
 package pl.altkom.asc.lab.micronaut.poc.policy;
 
-import io.micronaut.context.ApplicationContext;
-import io.micronaut.runtime.server.EmbeddedServer;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Offer;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferStatus;
@@ -19,12 +17,18 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.micronaut.context.ApplicationContext;
+import io.micronaut.runtime.server.EmbeddedServer;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class PolicyControllerTest {
 
     private static EmbeddedServer server;
     private static PolicyTestClient client;
 
-    @BeforeClass
+    @BeforeAll
     public static void setup() {
         server = ApplicationContext.run(EmbeddedServer.class);
         client = server.getApplicationContext().createBean(PolicyTestClient.class, server.getURL());
@@ -35,9 +39,9 @@ public class PolicyControllerTest {
         String policyNumber = "1234";
         GetPolicyDetailsQueryResult policy = client.get(policyNumber);
 
-        Assert.assertNotNull(policy);
-        Assert.assertNotNull(policy.getPolicy());
-        Assert.assertEquals(policyNumber, policy.getPolicy().getNumber());
+        assertNotNull(policy);
+        assertNotNull(policy.getPolicy());
+        assertEquals(policyNumber, policy.getPolicy().getNumber());
     }
 
     @Test
@@ -69,11 +73,11 @@ public class PolicyControllerTest {
         CreatePolicyResult result = client.create(cmd);
 
         //then policy is created and number is assigned
-        Assert.assertNotNull(result);
-        Assert.assertNotNull(result.getPolicyNumber());
+        assertNotNull(result);
+        assertNotNull(result.getPolicyNumber());
     }
 
-    @AfterClass
+    @AfterAll
     public static void cleanup() {
         if (server != null)
             server.stop();

@@ -1,12 +1,14 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import io.micronaut.core.annotation.Introspected;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-
+@Introspected
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,13 +1,12 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.infrastructure.adapters.mock;
 
-import io.micronaut.context.annotation.Replaces;
-import io.micronaut.context.annotation.Requires;
-import io.micronaut.context.env.Environment;
-import io.micronaut.spring.tx.annotation.Transactional;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.*;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.AgentRef;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyVersion;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.vo.DateRange;
 
-import javax.inject.Singleton;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Collections;
@@ -15,6 +14,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+
+import javax.inject.Singleton;
+import javax.transaction.Transactional;
+
+import io.micronaut.context.annotation.Replaces;
+import io.micronaut.context.annotation.Requires;
+import io.micronaut.context.env.Environment;
 
 @Replaces(PolicyRepository.class)
 @Requires(env = Environment.TEST)
