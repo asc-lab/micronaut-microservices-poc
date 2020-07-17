@@ -1,14 +1,17 @@
 package pl.altkom.asc.lab.micronaut.poc.payment.domain;
 
 import com.google.common.io.Files;
+
+import org.junit.jupiter.api.Test;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class InPaymentRegistrationServiceTest {
     @Test
