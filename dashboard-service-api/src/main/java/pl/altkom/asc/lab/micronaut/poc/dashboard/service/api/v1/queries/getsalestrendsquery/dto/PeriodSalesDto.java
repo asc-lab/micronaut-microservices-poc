@@ -1,13 +1,15 @@
 package pl.altkom.asc.lab.micronaut.poc.dashboard.service.api.v1.queries.getsalestrendsquery.dto;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import io.micronaut.core.annotation.Introspected;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-
+@Introspected
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
