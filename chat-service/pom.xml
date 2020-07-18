@@ -74,13 +74,6 @@
         </dependency>
         <!-- DISCOVERY CLIENT -->
 
-        <!-- MONGO -->
-        <dependency>
-            <groupId>io.micronaut.mongodb</groupId>
-            <artifactId>micronaut-mongo-reactive</artifactId>
-        </dependency>
-        <!-- MONGO -->
-
         <!-- MANAGEMENT -->
 <!--        <dependency>-->
 <!--            <groupId>io.micronaut</groupId>-->
