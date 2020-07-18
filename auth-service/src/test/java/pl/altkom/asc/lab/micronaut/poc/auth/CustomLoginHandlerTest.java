@@ -39,7 +39,7 @@ public class CustomLoginHandlerTest {
         assertThat(rsp.getStatus().getCode()).isEqualTo(200);
         assertThat(rsp.body()).isNotNull();
         assertThat(rsp.body().getAccessToken()).isNotNull();
-        assertThat(rsp.body().getRefreshToken()).isNotNull();
+        assertThat(rsp.body().getRefreshToken()).isNull();
         assertThat(rsp.body().getAvatar()).isNotNull();
         assertThat(rsp.body().getAvatar()).isEqualTo("static/avatars/jimmy_solid.png");
     }

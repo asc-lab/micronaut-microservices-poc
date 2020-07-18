@@ -7,17 +7,12 @@ micronaut:
     cors:
       enabled: true
   security:
-    enabled: true
-    endpoints:
-      login:
-        enabled: true
-      oauth:
-        enabled: true
+    authentication: bearer
     token:
       jwt:
-        enabled: true
         generator:
-          access-token-expiration: 86400
+          access-token:
+            expiration: 86400
         signatures:
           secret:
             generator:

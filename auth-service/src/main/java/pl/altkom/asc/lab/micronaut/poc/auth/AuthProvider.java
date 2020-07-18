@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import javax.inject.Singleton;
 
+import io.micronaut.http.HttpRequest;
 import io.micronaut.security.authentication.AuthenticationFailed;
 import io.micronaut.security.authentication.AuthenticationProvider;
 import io.micronaut.security.authentication.AuthenticationRequest;
@@ -21,10 +22,10 @@ public class AuthProvider implements AuthenticationProvider {
     private final InsuranceAgentsRepository insuranceAgents;
 
     @Override
-    public Publisher<AuthenticationResponse> authenticate(AuthenticationRequest request) {
-        Optional<InsuranceAgent> agent = insuranceAgents.findByLogin((String) request.getIdentity());
+    public Publisher<AuthenticationResponse> authenticate(HttpRequest<?> httpRequest, AuthenticationRequest<?, ?> authenticationRequest) {
+        Optional<InsuranceAgent> agent = insuranceAgents.findByLogin((String) authenticationRequest.getIdentity());
 
-        if (agent.isPresent() && agent.get().passwordMatches((String) request.getSecret())) {
+        if (agent.isPresent() && agent.get().passwordMatches((String) authenticationRequest.getSecret())) {
             return Flowable.just(createUserDetails(agent.get()));
         }
 

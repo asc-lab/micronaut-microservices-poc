@@ -43,7 +43,7 @@ public class CustomClaimsTest {
         assertThat(rsp.getStatus().getCode()).isEqualTo(200);
         assertThat(rsp.body()).isNotNull();
         assertThat(rsp.body().getAccessToken()).isNotNull();
-        assertThat(rsp.body().getRefreshToken()).isNotNull();
+        assertThat(rsp.body().getRefreshToken()).isNull();
 
         //when:
         String accessToken = rsp.body().getAccessToken();
