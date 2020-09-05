@@ -123,6 +123,16 @@
             <artifactId>micronaut-hibernate-jpa</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-data-hibernate-jpa</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.data</groupId>
+            <artifactId>micronaut-data-processor</artifactId>
+            <scope>compile</scope>
+        </dependency>
         <!-- DATABASE, JPA, HIBERNATE -->
 
         <!-- DISCOVERY CLIENT -->
