@@ -8,7 +8,7 @@
     <version>1.0</version>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>14</jdk.version>
     </properties>
 
     <repositories>
