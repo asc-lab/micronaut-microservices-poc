@@ -89,10 +89,6 @@
                             <version>${micronaut.data.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-Amicronaut.processing.group=pl.altkom.asc.lab.micronaut.poc</arg>
-                        <arg>-Amicronaut.processing.module=command-bus</arg>
-                    </compilerArgs>
                 </configuration>
                 <executions>
                     <execution>

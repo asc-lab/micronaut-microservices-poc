@@ -17,6 +17,7 @@
         <jdk.version>14</jdk.version>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.release>${jdk.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <micronaut.version>2.1.0</micronaut.version>
@@ -227,10 +228,6 @@
                             <version>${micronaut.data.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.example</arg>
-                        <arg>-Amicronaut.processing.module=demo</arg>
-                    </compilerArgs>
                 </configuration>
                 <executions>
                     <execution>

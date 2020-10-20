@@ -263,10 +263,6 @@
                                     <version>${micronaut.version}</version>
                                 </annotationProcessorPath>
                             </annotationProcessorPaths>
-                            <annotationProcessorArgs>
-                                <annotationProcessorArg>micronaut.processing.group=com.example</annotationProcessorArg>
-                                <annotationProcessorArg>micronaut.processing.module=demo</annotationProcessorArg>
-                            </annotationProcessorArgs>
                         </configuration>
                     </execution>
                     <execution>
