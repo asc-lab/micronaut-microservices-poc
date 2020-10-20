@@ -12,10 +12,12 @@ import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilder;
 import org.elasticsearch.search.aggregations.metrics.sum.Sum;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+
 import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.SalesResult;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.TotalSalesQuery;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 class TotalSalesQueryAdapter extends QueryAdapter<TotalSalesQuery, TotalSalesQuery.Result> {
 
@@ -65,7 +67,7 @@ class TotalSalesQueryAdapter extends QueryAdapter<TotalSalesQuery, TotalSalesQue
         for (Terms.Bucket b : products.getBuckets()){
             count += b.getDocCount();
             Sum sum = b.getAggregations().get("total_premium");
-            amount = amount.add(BigDecimal.valueOf(sum.getValue()).setScale(2,BigDecimal.ROUND_HALF_UP));
+            amount = amount.add(BigDecimal.valueOf(sum.getValue()).setScale(2, RoundingMode.HALF_UP));
             result.productTotal(b.getKeyAsString(), SalesResult.of(b.getDocCount(),BigDecimal.valueOf(sum.getValue())));
         }
         result.total(SalesResult.of(count,amount));

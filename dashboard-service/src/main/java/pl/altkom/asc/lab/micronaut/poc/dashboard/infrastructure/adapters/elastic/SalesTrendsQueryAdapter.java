@@ -13,10 +13,12 @@ import org.elasticsearch.search.aggregations.bucket.histogram.Histogram;
 import org.elasticsearch.search.aggregations.metrics.sum.Sum;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.joda.time.DateTime;
+
 import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.SalesResult;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.SalesTrendsQuery;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class SalesTrendsQueryAdapter extends QueryAdapter<SalesTrendsQuery,SalesTrendsQuery.Result> {
@@ -70,7 +72,7 @@ public class SalesTrendsQueryAdapter extends QueryAdapter<SalesTrendsQuery,Sales
                     new SalesTrendsQuery.PeriodSales(
                             LocalDate.of(key.getYear(),key.getMonthOfYear(),key.getDayOfMonth()),
                             b.getKeyAsString(),
-                            SalesResult.of(b.getDocCount(), BigDecimal.valueOf(sum.getValue()).setScale(2, BigDecimal.ROUND_HALF_UP))
+                            SalesResult.of(b.getDocCount(), BigDecimal.valueOf(sum.getValue()).setScale(2, RoundingMode.HALF_UP))
                     )
             );
         }
