@@ -1,16 +1,12 @@
 package pl.altkom.asc.lab.micronaut.poc.dashboard.elastic;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.apache.http.HttpHost;
-import org.elasticsearch.client.RestClient;
-import org.elasticsearch.client.RestHighLevelClient;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pl.allegro.tech.embeddedelasticsearch.EmbeddedElastic;
-import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.*;
-import pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.config.JsonConverter;
+import org.junit.jupiter.api.TestInstance;
+
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.LocalDateRange;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.PolicyDocument;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.TotalSalesQuery;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.PolicyElasticRepository;
 
 import java.math.BigDecimal;
@@ -20,11 +16,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PolicyElasticRepositoryGetTotalSalesTest {
-    static EmbeddedElastic el = DashboardEmbeddedElastic.getInstance();
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+public class PolicyElasticRepositoryGetTotalSalesTest extends EmbeddedElasticTest {
 
     @BeforeAll
-    public static void seedData() {
+    public void seedData() {
         List<PolicyDocument> docs = Arrays.asList(
                 new PolicyDocument(
                         "111-001",
@@ -116,20 +112,5 @@ public class PolicyElasticRepositoryGetTotalSalesTest {
 
         assertEquals(Long.valueOf(2L), total.getPerProductTotal().get("SAFE_HOUSE").getPoliciesCount());
         assertEquals(new BigDecimal("2000.0"), total.getPerProductTotal().get("SAFE_HOUSE").getPremiumAmount());
-    }
-
-
-    private static PolicyElasticRepository policyElasticRepository() {
-        return new PolicyElasticRepository(
-                new RestHighLevelClient(RestClient.builder(new HttpHost("localhost", el.getHttpPort(), "http"))),
-                new JsonConverter(objectMapper())
-        );
-    }
-
-    private static ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        return mapper;
     }
 }
