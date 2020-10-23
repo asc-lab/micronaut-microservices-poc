@@ -17,6 +17,7 @@ public class ElasticConfig {
 
     private final ElasticSearchSettings elasticSearchSettings;
 
+
     @Singleton
     public RestHighLevelClient restHighLevelClient() {
         return new RestHighLevelClient(

@@ -23,3 +23,7 @@ elastic:
   connectionRequestTimeout: 5000
   socketTimeout: 5000
   maxRetryTimeout: 5000
+
+
+elastichealth:
+  endpoint: http://${ELASTIC_HOST:localhost}:${ELASTIC_PORT:9200}/_cluster
