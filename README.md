@@ -6,6 +6,8 @@ This is an example of a very simplified insurance sales system made in a microse
 
 Comprehensive guide describing exactly the architecture, applied design patterns and technologies can be found on our blog in article **[Building Microservices with Micronaut](https://altkomsoftware.pl/en/blog/microservices-micronaut/)**.
 
+**We have recently upgraded to Java 14 (you must have JDK14 in order to build and run the project).**
+
 **We encourage you to read, because in this README there is only a substitute for all information.**
 
 Other articles around microservices that could be interesting:
@@ -58,7 +60,7 @@ Each business microservice has also **-api module** (payment-service-api, policy
 In the picture you can also see the component **internal-command-bus**. This component is used internally by microservices if we want to use a CQRS pattern inside (simple example in OfferController in policy-service).
 
 ## Building
-This step requires **Java 8 (JDK), Maven** and **Yarn**.
+This step requires **Java 14 (JDK), Maven** and **Yarn**.
 
 For demo purposes build process is automated by a shell script.
 For Unix-based systems:
