@@ -1,6 +1,6 @@
 # ASCLAB Micronaut PoC - LAB Insurance Sales Portal
 
-![Build Status](https://github.com/actions/asc-lab/micronaut-microservices-poc/workflows/.github/workflows/maven.yml/badge.svg)
+![Build Status](https://github.com/asc-lab/micronaut-microservices-poc/workflows/Java%20CI%20with%20Maven/badge.svg)
 
 This is an example of a very simplified insurance sales system made in a microservice architecture using Micronaut.
 
