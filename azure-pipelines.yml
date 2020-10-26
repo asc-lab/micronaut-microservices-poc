@@ -1,5 +1,5 @@
 pool:
-  vmImage: 'macOS 10.15'
+  vmImage: 'macos-10.15'
 
 variables:
   tag: '$(build.buildId)'
