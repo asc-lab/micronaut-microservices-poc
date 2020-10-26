@@ -9,17 +9,13 @@ public enum TimeAggregationUnit {
     YEAR;
 
     public DateHistogramInterval toDateHistogramInterval(){
-        switch (this) {
-            case DAY:
-                return DateHistogramInterval.DAY;
-            case WEEK:
-                return DateHistogramInterval.WEEK;
-            case MONTH:
-                return DateHistogramInterval.MONTH;
-            case YEAR:
-                return DateHistogramInterval.YEAR;
-            default:
+        return switch (this) {
+            case DAY-> DateHistogramInterval.DAY;
+            case WEEK-> DateHistogramInterval.WEEK;
+            case MONTH-> DateHistogramInterval.MONTH;
+            case YEAR-> DateHistogramInterval.YEAR;
+            default->
                 throw new IllegalArgumentException("Invalid unit value");
-        }
+        };
     }
 }

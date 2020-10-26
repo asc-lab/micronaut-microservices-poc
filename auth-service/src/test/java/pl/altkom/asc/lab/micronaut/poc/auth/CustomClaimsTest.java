@@ -16,7 +16,7 @@ import io.micronaut.security.authentication.Authentication;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.AccessRefreshToken;
 import io.micronaut.security.token.jwt.validator.JwtTokenValidator;
-import io.micronaut.test.annotation.MicronautTest;
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import io.reactivex.Flowable;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -48,7 +48,9 @@ public class CustomClaimsTest {
         //when:
         String accessToken = rsp.body().getAccessToken();
         JwtTokenValidator tokenValidator = server.getApplicationContext().getBean(JwtTokenValidator.class);
-        Authentication authentication = Flowable.fromPublisher(tokenValidator.validateToken(accessToken)).blockingFirst();
+        Authentication authentication = Flowable
+                .fromPublisher(tokenValidator.validateToken(accessToken,request))
+                .blockingFirst();
 
         //then:
         assertThat(authentication.getAttributes()).isNotNull();

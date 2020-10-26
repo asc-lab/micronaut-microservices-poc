@@ -1,6 +1,5 @@
 package pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic;
 
-import lombok.RequiredArgsConstructor;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -10,12 +9,22 @@ import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.*;
+
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.AgentSalesQuery;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.PolicyDocument;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.PolicyRepository;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.SalesTrendsQuery;
+import pl.altkom.asc.lab.micronaut.poc.dashboard.domain.TotalSalesQuery;
 import pl.altkom.asc.lab.micronaut.poc.dashboard.infrastructure.adapters.elastic.config.JsonConverter;
 
-import javax.inject.Singleton;
 import java.io.IOException;
 
+import javax.inject.Singleton;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Singleton
 @RequiredArgsConstructor
 public class PolicyElasticRepository implements PolicyRepository {
@@ -33,6 +42,7 @@ public class PolicyElasticRepository implements PolicyRepository {
         try {
             esClient.index(indexRequest);
         } catch (IOException e) {
+            log.error("Error while saving policy", e);
             throw new RuntimeException("Error while executing query", e);
         }
     }

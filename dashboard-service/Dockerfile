@@ -1,3 +1,4 @@
-FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
-COPY target/dashboard-service*.jar dashboard-service.jar
-CMD java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dcom.sun.management.jmxremote -noverify ${JAVA_OPTS} -jar dashboard-service.jar
+FROM adoptopenjdk/openjdk14:jre-14.0.2_12-alpine
+RUN apk --no-cache add curl
+COPY target/dashboard-service-1.0.jar dashboard-service.jar
+CMD java ${JAVA_OPTS} -jar dashboard-service.jar

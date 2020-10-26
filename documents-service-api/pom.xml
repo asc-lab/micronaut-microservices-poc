@@ -15,8 +15,8 @@
 
     <properties>
         <micronaut.version>2.1.0</micronaut.version>
-        <jdk.version>1.8</jdk.version>
-        <kotlin.version>1.2.61</kotlin.version>
+        <jdk.version>14</jdk.version>
+        <kotlin.version>1.4.10</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

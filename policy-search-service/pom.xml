@@ -14,7 +14,7 @@
     </parent>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>14</jdk.version>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
+            <version>1.18.16</version>
             <scope>provided</scope>
         </dependency>
         <!-- LOMBOK -->
@@ -190,7 +190,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.0</version>
+                            <version>1.18.16</version>
                         </path>
                         <path>
                             <groupId>io.micronaut</groupId>
@@ -208,10 +208,6 @@
                             <version>${micronaut.data.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.example</arg>
-                        <arg>-Amicronaut.processing.module=demo</arg>
-                    </compilerArgs>
                 </configuration>
                 <executions>
                     <execution>
@@ -224,7 +220,7 @@
                                 <path>
                                     <groupId>org.projectlombok</groupId>
                                     <artifactId>lombok</artifactId>
-                                    <version>1.18.0</version>
+                                    <version>1.18.16</version>
                                 </path>
                                 <path>
                                     <groupId>io.micronaut</groupId>

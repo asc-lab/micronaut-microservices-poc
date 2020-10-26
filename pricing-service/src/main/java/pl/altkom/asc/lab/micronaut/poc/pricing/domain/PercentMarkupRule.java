@@ -1,10 +1,12 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.domain;
 
-import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import java.math.BigDecimal;
+
+import lombok.NoArgsConstructor;
 
 @Entity
 @DiscriminatorValue("perc_markup")
@@ -22,7 +24,7 @@ public class PercentMarkupRule extends DiscountMarkupRule {
         for (Cover cover : calculation.getCovers().values()) {
             cover.setPrice(cover.getPrice()
                     .multiply(paramValue)
-                    .setScale(2, BigDecimal.ROUND_HALF_UP)
+                    .setScale(2, RoundingMode.HALF_UP)
             );
         }
         return calculation;

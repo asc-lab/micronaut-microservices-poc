@@ -17,7 +17,7 @@
 
     <properties>
         <micronaut.version>2.1.0</micronaut.version>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>14</jdk.version>
     </properties>
 
     <repositories>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
+            <version>1.18.16</version>
             <scope>provided</scope>
         </dependency>
 
@@ -81,7 +81,7 @@
                             <path>
                                 <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
-                                <version>1.18.0</version>
+                                <version>1.18.16</version>
                             </path>
                             <path>
                                 <groupId>io.micronaut</groupId>

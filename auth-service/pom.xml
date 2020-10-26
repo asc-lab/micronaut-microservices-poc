@@ -14,9 +14,10 @@
     </parent>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>14</jdk.version>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.release>${jdk.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <micronaut.version>2.1.0</micronaut.version>
@@ -38,7 +39,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.0</version>
+            <version>1.18.16</version>
             <scope>provided</scope>
         </dependency>
         <!-- LOMBOK -->
@@ -180,7 +181,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.0</version>
+                            <version>1.18.16</version>
                         </path>
                         <path>
                             <groupId>io.micronaut</groupId>
@@ -198,10 +199,6 @@
                             <version>${micronaut.data.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.example</arg>
-                        <arg>-Amicronaut.processing.module=demo</arg>
-                    </compilerArgs>
                 </configuration>
                 <executions>
                     <execution>
@@ -214,7 +211,7 @@
                                 <path>
                                     <groupId>org.projectlombok</groupId>
                                     <artifactId>lombok</artifactId>
-                                    <version>1.18.0</version>
+                                    <version>1.18.16</version>
                                 </path>
                                 <path>
                                     <groupId>io.micronaut</groupId>

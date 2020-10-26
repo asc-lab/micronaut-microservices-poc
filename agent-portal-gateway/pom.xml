@@ -14,9 +14,10 @@
     </parent>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>14</jdk.version>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.release>${jdk.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <micronaut.version>2.1.0</micronaut.version>
@@ -95,12 +96,23 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- TEST -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.test</groupId>
+            <artifactId>micronaut-test-junit5</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- TEST -->
 
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
@@ -198,7 +210,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.0</version>
+                            <version>1.18.16</version>
                         </path>
                         <path>
                             <groupId>io.micronaut</groupId>
@@ -216,10 +228,6 @@
                             <version>${micronaut.data.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.example</arg>
-                        <arg>-Amicronaut.processing.module=demo</arg>
-                    </compilerArgs>
                 </configuration>
                 <executions>
                     <execution>
@@ -232,7 +240,7 @@
                                 <path>
                                     <groupId>org.projectlombok</groupId>
                                     <artifactId>lombok</artifactId>
-                                    <version>1.18.0</version>
+                                    <version>1.18.16</version>
                                 </path>
                                 <path>
                                     <groupId>io.micronaut</groupId>
