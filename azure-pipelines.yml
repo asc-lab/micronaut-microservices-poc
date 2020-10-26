@@ -8,8 +8,8 @@ steps:
 - script: docker login -u $(dockerId) -p $(dockerPass)
   displayName: "docker login"
 - script: |
-    echo "##vso[task.setvariable variable=JAVA_HOME]$(JAVA_HOME_11_X64)"
-    echo "##vso[task.setvariable variable=PATH]$(JAVA_HOME_11_X64)/bin:$(PATH)"
+    echo "##vso[task.setvariable variable=JAVA_HOME]$(JAVA_HOME_14_X64)"
+    echo "##vso[task.setvariable variable=PATH]$(JAVA_HOME_14_X64)/bin:$(PATH)"
   displayName: "Set java version"
 - task: NodeTool@0
   inputs:
