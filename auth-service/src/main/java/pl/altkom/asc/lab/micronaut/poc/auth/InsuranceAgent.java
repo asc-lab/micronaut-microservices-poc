@@ -5,12 +5,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-import io.micronaut.core.annotation.Creator;
 import io.micronaut.data.annotation.Id;
 import io.micronaut.data.annotation.MappedEntity;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+
 
 
 @MappedEntity
