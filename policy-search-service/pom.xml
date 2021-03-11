@@ -21,7 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <micronaut.version>2.4.0</micronaut.version>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.policy.search.PolicySearchApplication</exec.mainClass>
-        <micronaut.data.version>1.1.1</micronaut.data.version>
+        <micronaut.data.version>2.3.1</micronaut.data.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
     </properties>
