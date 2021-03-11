@@ -33,6 +33,6 @@ public class AuthProvider implements AuthenticationProvider {
     }
 
     private InsuranceAgentDetails createUserDetails(InsuranceAgent agent) {
-        return new InsuranceAgentDetails(agent.getLogin(), agent.getAvatar(), agent.availableProductCodes());
+        return new InsuranceAgentDetails(agent.login(), agent.avatar(), agent.availableProductCodes());
     }
 }

@@ -14,16 +14,14 @@ import lombok.NoArgsConstructor;
 
 
 @MappedEntity
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-class InsuranceAgent {
-    @Id
-    private UUID id;
-    private String login;
-    private String password;
-    private String avatar;
-    private String availableProducts;
+record InsuranceAgent(
+    @Id UUID id,
+    String login,
+    String password,
+    String avatar,
+    String availableProducts) {
 
+    /*
     @Creator
     InsuranceAgent(UUID id,String login, String password, String avatar, String availableProducts) {
         this.id = id;
@@ -31,14 +29,10 @@ class InsuranceAgent {
         this.password = password;
         this.avatar = avatar;
         this.availableProducts = availableProducts;
-    }
+    }*/
 
     InsuranceAgent(UUID id,String login, String password, String avatar, List<String> availableProducts) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-        this.avatar = avatar;
-        this.availableProducts = String.join(";",availableProducts);
+        this(id,login,password,avatar,String.join(";",availableProducts));
     }
     
     boolean passwordMatches(String passwordToTest) {
