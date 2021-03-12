@@ -18,16 +18,6 @@ record InsuranceAgent(
     String avatar,
     String availableProducts) {
 
-    /*
-    @Creator
-    InsuranceAgent(UUID id,String login, String password, String avatar, String availableProducts) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-        this.avatar = avatar;
-        this.availableProducts = availableProducts;
-    }*/
-
     InsuranceAgent(UUID id,String login, String password, String avatar, List<String> availableProducts) {
         this(id,login,password,avatar,String.join(";",availableProducts));
     }
