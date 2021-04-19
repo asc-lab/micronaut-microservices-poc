@@ -184,6 +184,13 @@ This command generate project in Java and Maven as build tool.
 
 ## Examples
 
+### Sample users
+
+* admin / admin
+* jimmy.solid / secret
+* danny.solid / secret
+* agent1 / agent1
+
 ### Chat
 <p align="center">
     <img alt="Chat" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/chat_v2.gif" />
