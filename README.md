@@ -83,7 +83,7 @@ build.bat
 ```
 
 
-## Running
+## Running for development
 
 ### Prerequisites
 * **docker**
@@ -98,7 +98,7 @@ For Windows users, append below line ```C:\Windows\System32\drivers\etc\hosts```
 
 For frontend app running, you must add file ```.env.local``` based on ```.env-example``` .
 <p align="center">
-    <img alt="Zipkin" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
+    <img alt="Env" src="https://raw.githubusercontent.com/asc-lab/micronaut-microservices-poc/master/readme-images/env.png" />
 </p>
 
 ### Automated deployment
@@ -136,6 +136,7 @@ kafka-create-cluster.sh
 * Zipkin dashboard: ```http://localhost:9411/zipkin/```
 * Kafka Manager dashboard: ```http://localhost:9000/```
 * JSReport dashboard: ```http://localhost:5488/```
+
 
 #### max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 
