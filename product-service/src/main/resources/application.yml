@@ -10,14 +10,6 @@ micronaut:
 jackson:
   bean-introspection-module: true
 ---
-#endpoints:
-#  health:
-#    enabled: true
-#    sensitive: false
-#  metrics:
-#    enabled: true
-#    sensitive: false
----
 mongodb:
     uri: "mongodb://${MG_HOST:localhost}:${MG_PORT:27017}/demo"
     cluster:
@@ -29,7 +21,17 @@ consul:
   client:
     registration:
       enabled: true
+      check:
+        http: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
+---
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+#  metrics:
+#    enabled: true
+#    sensitive: false
 ---
 tracing:
   zipkin:
