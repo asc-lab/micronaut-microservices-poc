@@ -11,6 +11,7 @@ Comprehensive guide describing exactly the architecture, applied design patterns
 **We encourage you to read, because in this README there is only a substitute for all information.**
 
 Other articles around microservices that could be interesting:
+- [Building Business Dashboards with Micronaut and Elasticsearch Aggregations Framework](https://altkomsoftware.pl/en/blog/business-dashboards/)
 - [Simplify Data Access Code With Micronaut Data](https://altkomsoftware.pl/en/blog/micronaut-data/)
 - [Micronaut with RabbitMQ integration](https://altkomsoftware.pl/en/blog/micronaut-rabbitmq/)
 - [CQRS and Event Sourcing Intro For Developers](https://altkomsoftware.pl/en/blog/cqrs-event-sourcing/)
