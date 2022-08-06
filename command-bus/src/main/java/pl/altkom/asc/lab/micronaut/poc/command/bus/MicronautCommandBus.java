@@ -4,8 +4,6 @@ import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.api.Command;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.api.Query;
 
-import javax.inject.Singleton;
-
 @RequiredArgsConstructor
 public class MicronautCommandBus implements CommandBus {
 

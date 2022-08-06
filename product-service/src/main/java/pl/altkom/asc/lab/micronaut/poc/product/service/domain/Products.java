@@ -1,15 +1,13 @@
 package pl.altkom.asc.lab.micronaut.poc.product.service.domain;
 
-import io.reactivex.Maybe;
-import io.reactivex.Single;
-
 import java.util.List;
+import reactor.core.publisher.Mono;
 
 public interface Products {
 
-    Single<Product> add(Product product);
+    Mono<Product> add(Product product);
 
-    Single<List<Product>> findAll();
+    Mono<List<Product>> findAll();
 
-    Maybe<Product> findOne(String productCode);
+    Mono<Product> findOne(String productCode);
 }
