@@ -173,6 +173,14 @@
             <version>1.0</version>
         </dependency>
         <!-- INTERNAL -->
+
+        <!-- OPEN API -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -195,6 +203,7 @@
                     <configuration>
                         <compilerArgs>
                             <arg>-parameters</arg>
+                            <arg>-Amicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop</arg>
                         </compilerArgs>
                         <annotationProcessorPaths>
                             <path>
@@ -211,6 +220,11 @@
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-validation</artifactId>
                                 <version>${micronaut.version}</version>
+                            </path>
+                            <path>
+                                <groupId>io.micronaut.openapi</groupId>
+                                <artifactId>micronaut-openapi</artifactId>
+                                <version>4.4.3</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
