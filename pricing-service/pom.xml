@@ -10,26 +10,26 @@
     <parent>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>2.4.0</version>
+        <version>3.6.0</version>
     </parent>
 
     <properties>
-        <jdk.version>14</jdk.version>
+        <jdk.version>17</jdk.version>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <micronaut.version>2.4.0</micronaut.version>
+        <micronaut.version>3.6.0</micronaut.version>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.pricing.PricingApplication</exec.mainClass>
-        <micronaut.data.version>2.3.1</micronaut.data.version>
+        <micronaut.data.version>3.7.2</micronaut.data.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
     </properties>
 
     <repositories>
         <repository>
-            <id>jcenter.bintray.com</id>
-            <url>https://jcenter.bintray.com</url>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 
@@ -38,10 +38,17 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- LOMBOK -->
+
+        <!-- JEE -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
             <groupId>io.micronaut</groupId>
@@ -69,7 +76,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.micronaut</groupId>
+            <groupId>io.micronaut.discovery</groupId>
             <artifactId>micronaut-discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
@@ -87,23 +94,8 @@
 
         <!-- TRACING WITH ZIPKIN -->
         <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>micronaut-tracing</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.zipkin.brave</groupId>
-            <artifactId>brave-instrumentation-http</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.zipkin.reporter2</groupId>
-            <artifactId>zipkin-reporter</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.opentracing.brave</groupId>
-            <artifactId>brave-opentracing</artifactId>
+            <groupId>io.micronaut.tracing</groupId>
+            <artifactId>micronaut-tracing-zipkin</artifactId>
             <scope>compile</scope>
         </dependency>
         <!-- TRACING WITH ZIPKIN -->
@@ -111,21 +103,20 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.197</version>
+            <version>1.4.200</version>
             <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
             <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mvel</groupId>
             <artifactId>mvel2</artifactId>
-            <version>2.4.0.Final</version>
+            <version>2.4.7.Final</version>
         </dependency>
 
         <dependency>
@@ -199,7 +190,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.16</version>
+                            <version>${lombok.version}</version>
                         </path>
                         <path>
                             <groupId>io.micronaut</groupId>
@@ -229,7 +220,7 @@
                                 <path>
                                     <groupId>org.projectlombok</groupId>
                                     <artifactId>lombok</artifactId>
-                                    <version>1.18.16</version>
+                                    <version>${lombok.version}</version>
                                 </path>
                                 <path>
                                     <groupId>io.micronaut</groupId>

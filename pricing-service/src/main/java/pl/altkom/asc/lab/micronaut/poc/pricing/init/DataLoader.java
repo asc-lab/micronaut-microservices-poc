@@ -1,13 +1,11 @@
 package pl.altkom.asc.lab.micronaut.poc.pricing.init;
 
-import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariffs;
-
-import javax.inject.Singleton;
-import javax.transaction.Transactional;
-
 import io.micronaut.context.event.ApplicationEventListener;
 import io.micronaut.runtime.server.event.ServerStartupEvent;
+import jakarta.inject.Singleton;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import pl.altkom.asc.lab.micronaut.poc.pricing.domain.Tariffs;
 
 @Singleton
 @RequiredArgsConstructor
