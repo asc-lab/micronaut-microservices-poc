@@ -100,6 +100,13 @@
         </dependency>
         <!-- TRACING WITH ZIPKIN -->
 
+        <!-- OPEN API -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -186,6 +193,9 @@
                 <configuration>
                     <!-- Uncomment to enable incremental compilation -->
                     <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
+                    <compilerArgs>
+                        <arg>-Amicronaut.openapi.views.spec=rapidoc.enabled=true,swagger-ui.enabled=true,swagger-ui.theme=flattop</arg>
+                    </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -206,6 +216,11 @@
                             <groupId>io.micronaut.data</groupId>
                             <artifactId>micronaut-data-processor</artifactId>
                             <version>${micronaut.data.version}</version>
+                        </path>
+                        <path>
+                            <groupId>io.micronaut.openapi</groupId>
+                            <artifactId>micronaut-openapi</artifactId>
+                            <version>4.4.3</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
