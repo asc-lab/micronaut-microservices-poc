@@ -1,9 +1,8 @@
 package pl.altkom.asc.lab.micronaut.poc.payment.infrastructure.adapters.mock;
 
-import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccountNumberGenerator;
-
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 import java.util.UUID;
+import pl.altkom.asc.lab.micronaut.poc.payment.domain.PolicyAccountNumberGenerator;
 
 @Singleton
 public class MockPolicyAccountNumberGenerator implements PolicyAccountNumberGenerator {

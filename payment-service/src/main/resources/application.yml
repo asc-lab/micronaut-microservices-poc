@@ -46,8 +46,6 @@ datasources:
 ---
 jpa:
  default:
-    packages-to-scan:
-        - 'pl.altkom.asc.lab.micronaut.poc.payment.domain'
     properties:
         hibernate:
             hbm2ddl:
