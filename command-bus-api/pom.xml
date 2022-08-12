@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>command-bus-api</artifactId>
-    <version>1.0</version>
+    <version>3.0</version>
 
     <properties>
         <jdk.version>17</jdk.version>
@@ -14,8 +14,8 @@
 
     <repositories>
         <repository>
-            <id>jcenter.bintray.com</id>
-            <url>https://jcenter.bintray.com</url>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 

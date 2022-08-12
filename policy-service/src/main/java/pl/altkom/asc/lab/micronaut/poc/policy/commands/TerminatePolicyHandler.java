@@ -1,5 +1,8 @@
 package pl.altkom.asc.lab.micronaut.poc.policy.commands;
 
+import jakarta.inject.Singleton;
+import java.time.LocalDate;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import pl.altkom.asc.lab.micronaut.poc.command.bus.CommandHandler;
 import pl.altkom.asc.lab.micronaut.poc.policy.domain.Policy;
@@ -10,10 +13,6 @@ import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.terminatep
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.PolicyTerminatedEvent;
 import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.events.dto.PolicyDto;
 import pl.altkom.asc.lab.micronaut.poc.policy.shared.exceptions.BusinessException;
-
-import javax.inject.Singleton;
-import java.time.LocalDate;
-import java.util.Optional;
 
 @Singleton
 @RequiredArgsConstructor

@@ -6,7 +6,7 @@
 
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>product-service-api</artifactId>
-    <version>1.0</version>
+    <version>3.0</version>
 
     <parent>
         <groupId>io.micronaut</groupId>

@@ -1,47 +1,69 @@
 package pl.altkom.asc.lab.micronaut.poc.policy;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.Offer;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
-import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferStatus;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.dto.PersonDto;
-import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
-
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import jakarta.inject.Inject;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-
-import io.micronaut.context.ApplicationContext;
-import io.micronaut.runtime.server.EmbeddedServer;
-
+import org.junit.jupiter.api.Test;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.AgentRef;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Offer;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.OfferStatus;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.Person;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyFactory;
+import pl.altkom.asc.lab.micronaut.poc.policy.domain.PolicyRepository;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyCommand;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.CreatePolicyResult;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.commands.createpolicy.dto.PersonDto;
+import pl.altkom.asc.lab.micronaut.poc.policy.service.api.v1.queries.getpolicydetails.GetPolicyDetailsQueryResult;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@MicronautTest(transactional = false)
 public class PolicyControllerTest {
 
-    private static EmbeddedServer server;
-    private static PolicyTestClient client;
+    @Inject
+    private PolicyTestClient client;
 
-    @BeforeAll
-    public static void setup() {
-        server = ApplicationContext.run(EmbeddedServer.class);
-        client = server.getApplicationContext().createBean(PolicyTestClient.class, server.getURL());
-    }
-
+    @Inject
+    private OfferRepository offers;
+    
+    @Inject
+    private PolicyRepository policies;
+    
     @Test
     public void testGetPolicyByNumber() {
-        String policyNumber = "1234";
-        GetPolicyDetailsQueryResult policy = client.get(policyNumber);
+        Map<String, BigDecimal> coverPrices = new HashMap<>();
+        coverPrices.put("C1", new BigDecimal("100"));
+        coverPrices.put("C2", new BigDecimal("99"));
+        Offer offer112 = new Offer(
+            null,
+            "112",
+            "TRI",
+            LocalDate.of(2018, 8, 1),
+            LocalDate.of(2018, 8, 10),
+            new HashMap<>(),
+            new BigDecimal("199"),
+            coverPrices,
+            OfferStatus.NEW,
+            LocalDate.now()
+        );
+        offers.save(offer112);
+    
+        Person policyHolder = new Person("Jan", "Nowak", "1111111116");
+        AgentRef agent = AgentRef.of("jimmy.solid");
+        var policy = new PolicyFactory()
+            .fromOffer(offer112,policyHolder,agent);
+        policies.save(policy);
+        
+        String policyNumber = policy.getNumber();
+        GetPolicyDetailsQueryResult foundPolicy = client.get(policyNumber);
 
-        assertNotNull(policy);
-        assertNotNull(policy.getPolicy());
-        assertEquals(policyNumber, policy.getPolicy().getNumber());
+        assertNotNull(foundPolicy);
+        assertNotNull(foundPolicy.getPolicy());
+        assertEquals(policyNumber, foundPolicy.getPolicy().getNumber());
     }
 
     @Test
@@ -62,7 +84,7 @@ public class PolicyControllerTest {
                 OfferStatus.NEW,
                 LocalDate.now()
         );
-        server.getApplicationContext().getBean(OfferRepository.class).save(offer111);
+        offers.save(offer111);
 
         //when policy creation is requested
         CreatePolicyCommand cmd = new CreatePolicyCommand(
@@ -76,11 +98,5 @@ public class PolicyControllerTest {
         assertNotNull(result);
         assertNotNull(result.getPolicyNumber());
     }
-
-    @AfterAll
-    public static void cleanup() {
-        if (server != null)
-            server.stop();
-
-    }
+    
 }

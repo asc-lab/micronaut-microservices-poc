@@ -6,7 +6,7 @@
 
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>pricing-service-api</artifactId>
-    <version>1.0</version>
+    <version>3.0</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -23,8 +23,8 @@
 
     <repositories>
         <repository>
-            <id>jcenter.bintray.com</id>
-            <url>https://jcenter.bintray.com</url>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 

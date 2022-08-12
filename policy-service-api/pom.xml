@@ -6,24 +6,25 @@
 
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>policy-service-api</artifactId>
-    <version>1.0</version>
+    <version>3.0</version>
     <packaging>jar</packaging>
 
     <parent>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>2.4.0</version>
+        <version>3.6.0</version>
     </parent>
 
     <properties>
-        <micronaut.version>2.4.0</micronaut.version>
-        <jdk.version>14</jdk.version>
+        <micronaut.version>3.6.0</micronaut.version>
+        <jdk.version>17</jdk.version>
+        <release.version>17</release.version>
     </properties>
 
     <repositories>
         <repository>
-            <id>jcenter.bintray.com</id>
-            <url>https://jcenter.bintray.com</url>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 
@@ -47,14 +48,14 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
             <artifactId>command-bus-api</artifactId>
-            <version>1.0</version>
+            <version>3.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -81,7 +82,7 @@
                             <path>
                                 <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
-                                <version>1.18.16</version>
+                                <version>${lombok.version}</version>
                             </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
