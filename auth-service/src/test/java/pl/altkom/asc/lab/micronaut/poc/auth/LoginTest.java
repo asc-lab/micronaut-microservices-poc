@@ -1,21 +1,18 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
-import org.junit.jupiter.api.Test;
-
-import javax.inject.Inject;
-
 import io.micronaut.context.annotation.Property;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
-import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
-
+import jakarta.inject.Inject;
+import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -27,12 +24,12 @@ public class LoginTest {
 
     @Inject
     @Client("/")
-    private RxHttpClient httpClient;
+    private HttpClient httpClient;
 
     @Test
     public void canLoginWithValidCredentials() {
         UsernamePasswordCredentials upc = new UsernamePasswordCredentials("jimmy.solid","secret");
-        HttpRequest loginRequest = HttpRequest.POST("/login", upc);
+        var loginRequest = HttpRequest.POST("/login", upc);
         HttpResponse<BearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(loginRequest, BearerAccessRefreshToken.class);
         
         assertThat(rsp.getStatus().getCode()).isEqualTo(200);
@@ -43,8 +40,8 @@ public class LoginTest {
     @Test
     public void cantLoginWithInvalidCredentials() {
         try {
-            UsernamePasswordCredentials upc = new UsernamePasswordCredentials("jimmy.solid","secret111");
-            HttpRequest loginRequest = HttpRequest.POST("/login", upc);
+            var upc = new UsernamePasswordCredentials("jimmy.solid","secret111");
+            var loginRequest = HttpRequest.POST("/login", upc);
             HttpResponse<BearerAccessRefreshToken> rsp = httpClient.toBlocking().exchange(loginRequest, BearerAccessRefreshToken.class);
             fail();
         } catch (HttpClientResponseException ex) {

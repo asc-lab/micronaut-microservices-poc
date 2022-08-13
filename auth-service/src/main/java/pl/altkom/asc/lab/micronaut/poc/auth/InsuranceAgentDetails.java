@@ -1,18 +1,19 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
-
-import io.micronaut.security.authentication.UserDetails;
+import io.micronaut.security.authentication.ServerAuthentication;
+import java.util.Collection;
+import java.util.Map;
 import lombok.Getter;
 
-import java.util.Collection;
-
 @Getter
-class InsuranceAgentDetails extends UserDetails {
+class InsuranceAgentDetails extends ServerAuthentication {
 
-    private String avatarUrl;
+    private final String avatar;
 
-    InsuranceAgentDetails(String username, String avatarUrl, Collection<String> roles) {
-        super(username, roles);
-        this.avatarUrl = avatarUrl;
+    InsuranceAgentDetails(String username, String avatar, Collection<String> roles) {
+        super(username, roles, Map.of("avatar", avatar));
+        this.avatar = avatar;
    }
+   
+   
 }

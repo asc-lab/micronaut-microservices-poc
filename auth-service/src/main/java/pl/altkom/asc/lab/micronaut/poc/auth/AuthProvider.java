@@ -1,24 +1,21 @@
 package pl.altkom.asc.lab.micronaut.poc.auth;
 
-import org.reactivestreams.Publisher;
-
-import java.util.Optional;
-
-import javax.inject.Singleton;
-
 import io.micronaut.http.HttpRequest;
+import io.micronaut.security.authentication.Authentication;
 import io.micronaut.security.authentication.AuthenticationFailed;
 import io.micronaut.security.authentication.AuthenticationProvider;
 import io.micronaut.security.authentication.AuthenticationRequest;
 import io.micronaut.security.authentication.AuthenticationResponse;
-import io.reactivex.Flowable;
+import jakarta.inject.Singleton;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.reactivestreams.Publisher;
+import reactor.core.publisher.Mono;
 
 @Singleton
 @RequiredArgsConstructor
 public class AuthProvider implements AuthenticationProvider {
 
-    //private final InsuranceAgents insuranceAgents;
     private final InsuranceAgentsRepository insuranceAgents;
 
     @Override
@@ -26,13 +23,19 @@ public class AuthProvider implements AuthenticationProvider {
         Optional<InsuranceAgent> agent = insuranceAgents.findByLogin((String) authenticationRequest.getIdentity());
 
         if (agent.isPresent() && agent.get().passwordMatches((String) authenticationRequest.getSecret())) {
-            return Flowable.just(createUserDetails(agent.get()));
+            return Mono.just(new AuthenticationResponse() {
+    
+                @Override
+                public Optional<Authentication> getAuthentication() {
+                    return Optional.of(createAuthentication(agent.get()));
+                }
+            });
         }
 
-        return Flowable.just(new AuthenticationFailed());
+        return Mono.just(new AuthenticationFailed());
     }
 
-    private InsuranceAgentDetails createUserDetails(InsuranceAgent agent) {
+    private Authentication createAuthentication(InsuranceAgent agent) {
         return new InsuranceAgentDetails(agent.login(), agent.avatar(), agent.availableProductCodes());
     }
 }
